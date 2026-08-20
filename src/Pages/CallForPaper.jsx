@@ -197,14 +197,7 @@ export default function CallForPapers() {
     Papers
   </span>
 </h1>
-                        <p className="mt-8 max-w-4xl mx-auto text-lg md:text-xl leading-9 text-slate-300">
-              CYCRAI 2027 invites original and unpublished research papers
-              from academicians, researchers, industry professionals and
-              innovators worldwide. The conference provides a premier platform
-              to present cutting-edge research in Artificial Intelligence,
-              Cyber Security, Sustainable Engineering, Intelligent Systems and
-              Emerging Technologies.
-            </p>
+                       
 
             {/* CTA Buttons */}
 

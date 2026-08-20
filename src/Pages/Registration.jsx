@@ -451,21 +451,7 @@ export default function Registration() {
 
             {/* Description */}
 
-            <p
-              className="
-                mt-8
-                max-w-3xl
-                mx-auto
-                text-lg
-                md:text-xl
-                leading-9
-                text-slate-300
-              "
-            >
-              Register for CYCRAI 2027 and become part of an
-              international platform bringing together researchers,
-              academicians, industry professionals and innovators.
-            </p>
+            
 
 
             {/* Registration Button */}
@@ -683,19 +669,6 @@ export default function Registration() {
             </h2>
 
 
-            <p
-              className="
-                mt-8
-                max-w-3xl
-                mx-auto
-                text-lg
-                text-slate-400
-                leading-8
-              "
-            >
-              Explore the registration fee structure for authors,
-              delegates and accompanying participants.
-            </p>
 
           </motion.div>
 

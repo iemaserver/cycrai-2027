@@ -192,22 +192,7 @@ export default function Venue() {
 
             {/* Description */}
 
-            <p
-              className="
-                mt-8
-                max-w-4xl
-                mx-auto
-                text-lg
-                md:text-xl
-                leading-9
-                text-slate-300
-              "
-            >
-              CYCRAI 2027 will bring together researchers, academicians,
-              industry professionals and students at the Institute of
-              Engineering and Management, Kolkata, creating an environment
-              for research exchange, collaboration and innovation.
-            </p>
+            
 
           </motion.div>
 

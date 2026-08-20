@@ -66,133 +66,7 @@ export default function Speakers() {
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#020817] min-h-[85vh] pt-6 pb-24">
-        {/* Background Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Cyan Glow */}
-        <div className="absolute -top-40 left-0 w-[500px] h-[500px] bg-cyan-500/20 blur-[160px] rounded-full" />
-
-        {/* Blue Glow */}
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/20 blur-[170px] rounded-full" />
-
-        {/* Center Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-sky-500/10 blur-[180px] rounded-full" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            {/* Eyebrow */}
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-2 text-cyan-300 text-sm tracking-[3px] uppercase backdrop-blur-xl">
-              <Sparkles size={16} />
-              Speakers & Program
-            </span>
-
-            {/* Heading */}
-            <h1
-              className="
-                mt-8
-                text-5xl
-                md:text-7xl
-                font-black
-                leading-[1.15]
-                text-white
-              "
-            >
-              Meet Our
-
-              <span
-                className="
-                  block
-                  pb-3
-                  bg-gradient-to-r
-                  from-cyan-300
-                  via-sky-400
-                  to-blue-500
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Speakers
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="mt-8 max-w-4xl mx-auto text-lg md:text-xl leading-9 text-slate-300">
-              Discover keynote speakers, distinguished researchers, industry
-              leaders and innovators who will share their insights and shape
-              the conversations at CYCRAI 2027.
-            </p>
-
-            {/* Accent Line */}
-            <div className="mx-auto mt-10 h-1 w-40 rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
-          </motion.div>
-
-          {/* Hero Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {[
-              {
-                value: "Keynote",
-                label: "Distinguished Talks",
-              },
-              {
-                value: "Expert",
-                label: "Industry & Academia",
-              },
-              {
-                value: "Global",
-                label: "Research Community",
-              },
-              {
-                value: "Hybrid",
-                label: "Conference Experience",
-              },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="
-                  rounded-3xl
-                  border
-                  border-cyan-400/15
-                  bg-white/5
-                  backdrop-blur-2xl
-                  p-8
-                  text-center
-                  transition-all
-                  duration-300
-                  hover:-translate-y-2
-                  hover:border-cyan-400/40
-                  hover:shadow-[0_0_35px_rgba(34,211,238,.12)]
-                "
-              >
-                <h2 className="text-2xl md:text-3xl font-black text-cyan-300">
-                  {item.value}
-                </h2>
-
-                <p className="mt-3 text-sm md:text-base text-slate-400 tracking-wide">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* =========================================================
           SPEAKERS / PROGRAM SECTIONS
@@ -222,7 +96,7 @@ export default function Speakers() {
             className="text-center mb-20"
           >
             <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-              Conference Experience
+              Speakers & Program
             </span>
 
             <h2 className="mt-8 text-5xl md:text-6xl font-black text-white">
@@ -233,11 +107,7 @@ export default function Speakers() {
               </span>
             </h2>
 
-            <p className="mt-8 max-w-3xl mx-auto text-slate-400 text-lg leading-9">
-              CYCRAI 2027 brings together experts from research, academia and
-              industry to exchange knowledge, discuss emerging challenges and
-              explore the future of Cyber Security and Responsible AI.
-            </p>
+          
           </motion.div>
 
           {/* Main Cards */}
@@ -363,10 +233,7 @@ export default function Speakers() {
               </span>
             </h2>
 
-            <p className="mt-8 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
-              Experience a dynamic program designed to encourage knowledge
-              exchange, technical discussion, collaboration and innovation.
-            </p>
+            
           </motion.div>
 
           {/* Highlight Cards */}

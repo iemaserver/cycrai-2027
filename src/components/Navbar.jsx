@@ -2641,6 +2641,1535 @@
 
 
 
+// import { useEffect, useRef, useState } from "react";
+// import { Link, useLocation } from "react-router-dom";
+// import {
+//   ChevronDown,
+//   Menu,
+//   X,
+//   Home,
+//   UserRound,
+//   PenLine,
+//   CreditCard,
+//   UsersRound,
+//   CalendarDays,
+//   Clock3,
+//   MapPin,
+// } from "lucide-react";
+
+// export default function Navbar() {
+//   const location = useLocation();
+
+//   // =========================================================
+//   // STATES
+//   // =========================================================
+
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const [authorsOpen, setAuthorsOpen] = useState(false);
+//   const [mobileAuthorsOpen, setMobileAuthorsOpen] = useState(false);
+
+//   const [desktopExpanded, setDesktopExpanded] = useState(false);
+
+//   const collapseTimerRef = useRef(null);
+
+//   // =========================================================
+//   // NAVIGATION
+//   // =========================================================
+
+//   const navItems = [
+//     {
+//       name: "Home",
+//       path: "/",
+//       icon: Home,
+//     },
+//     {
+//       name: "About",
+//       path: "/about",
+//       icon: UserRound,
+//     },
+//     {
+//       name: "Registration",
+//       path: "/registration",
+//       icon: CreditCard,
+//     },
+//     {
+//       name: "Committee",
+//       path: "/committee",
+//       icon: UsersRound,
+//     },
+//     {
+//       name: "Program",
+//       path: "/speakers",
+//       icon: CalendarDays,
+//     },
+//     {
+//       name: "Important Dates",
+//       path: "/important-dates",
+//       icon: Clock3,
+//     },
+//     {
+//       name: "Venue",
+//       path: "/venue",
+//       icon: MapPin,
+//     },
+//   ];
+
+//   // =========================================================
+//   // AUTHORS
+//   // =========================================================
+
+//   const authorItems = [
+//     {
+//       name: "Call For Papers",
+//       path: "/call-for-papers",
+//       icon: PenLine,
+//     },
+//     {
+//       name: "Guidelines & Policies",
+//       path: "/guidelines",
+//       icon: PenLine,
+//     },
+//     {
+//       name: "Tracks",
+//       path: "/tracks",
+//       icon: PenLine,
+//     },
+//   ];
+
+//   // =========================================================
+//   // ACTIVE ROUTE
+//   // =========================================================
+
+//   const isActive = (path) => {
+//     if (path === "/") {
+//       return location.pathname === "/";
+//     }
+
+//     return location.pathname === path;
+//   };
+
+//   const isAuthorsActive = authorItems.some(
+//     (item) => location.pathname === item.path
+//   );
+
+//   // =========================================================
+//   // DESKTOP EXPAND
+//   // =========================================================
+
+//   const expandDesktopNav = () => {
+//     if (collapseTimerRef.current) {
+//       clearTimeout(collapseTimerRef.current);
+//       collapseTimerRef.current = null;
+//     }
+
+//     setDesktopExpanded(true);
+//   };
+
+//   // =========================================================
+//   // DESKTOP COLLAPSE
+//   // =========================================================
+
+//   const collapseDesktopNav = () => {
+//     if (collapseTimerRef.current) {
+//       clearTimeout(collapseTimerRef.current);
+//     }
+
+//     collapseTimerRef.current = setTimeout(() => {
+//       setDesktopExpanded(false);
+//       setAuthorsOpen(false);
+//     }, 450);
+//   };
+
+//   // =========================================================
+//   // NAVIGATION CLICK
+//   // =========================================================
+
+//   const handleNavigation = () => {
+//     setMenuOpen(false);
+//     setAuthorsOpen(false);
+//     setMobileAuthorsOpen(false);
+//     setDesktopExpanded(false);
+
+//     if (collapseTimerRef.current) {
+//       clearTimeout(collapseTimerRef.current);
+//       collapseTimerRef.current = null;
+//     }
+
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   };
+
+//   // =========================================================
+//   // ESCAPE
+//   // =========================================================
+
+//   useEffect(() => {
+//     const handleEscape = (event) => {
+//       if (event.key === "Escape") {
+//         setMenuOpen(false);
+//         setAuthorsOpen(false);
+//         setMobileAuthorsOpen(false);
+//         setDesktopExpanded(false);
+//       }
+//     };
+
+//     document.addEventListener("keydown", handleEscape);
+
+//     return () => {
+//       document.removeEventListener("keydown", handleEscape);
+//     };
+//   }, []);
+
+//   // =========================================================
+//   // ROUTE CHANGE
+//   // =========================================================
+
+//   useEffect(() => {
+//     setMenuOpen(false);
+//     setAuthorsOpen(false);
+//     setMobileAuthorsOpen(false);
+//     setDesktopExpanded(false);
+
+//     if (collapseTimerRef.current) {
+//       clearTimeout(collapseTimerRef.current);
+//       collapseTimerRef.current = null;
+//     }
+
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   }, [location.pathname]);
+
+//   // =========================================================
+//   // CLEANUP
+//   // =========================================================
+
+//   useEffect(() => {
+//     return () => {
+//       if (collapseTimerRef.current) {
+//         clearTimeout(collapseTimerRef.current);
+//       }
+//     };
+//   }, []);
+
+//   // =========================================================
+//   // MOBILE BODY LOCK
+//   // =========================================================
+
+//   useEffect(() => {
+//     if (menuOpen) {
+//       document.body.style.overflow = "hidden";
+//     } else {
+//       document.body.style.overflow = "";
+//     }
+
+//     return () => {
+//       document.body.style.overflow = "";
+//     };
+//   }, [menuOpen]);
+
+//   // =========================================================
+//   // DESKTOP NAV ITEM
+//   // =========================================================
+
+//   const DesktopNavItem = ({ item }) => {
+//     const active = isActive(item.path);
+//     const Icon = item.icon;
+
+//     return (
+//       <Link
+//         to={item.path}
+//         onClick={handleNavigation}
+//         className={`
+//           group
+//           relative
+
+//           flex
+//           items-center
+//           gap-4
+
+//           px-5
+//           py-4
+
+//           text-[15px]
+//           xl:text-[16px]
+
+//           font-medium
+
+//           transition-all
+//           duration-300
+
+//           overflow-hidden
+
+//           ${
+//             active
+//               ? "text-[#13C8F3]"
+//               : "text-white/85 hover:text-[#13C8F3]"
+//           }
+//         `}
+//       >
+//         {/* Hover background */}
+
+//         <span
+//           className={`
+//             absolute
+//             inset-0
+
+//             bg-gradient-to-r
+//             from-[#0CC8F2]/12
+//             via-[#0CC8F2]/5
+//             to-transparent
+
+//             transition-opacity
+//             duration-300
+
+//             ${
+//               active
+//                 ? "opacity-100"
+//                 : "opacity-0 group-hover:opacity-100"
+//             }
+//           `}
+//         />
+
+//         {/* Active cyan line */}
+
+//         <span
+//           className={`
+//             absolute
+//             left-0
+//             top-1/2
+
+//             -translate-y-1/2
+
+//             w-[3px]
+
+//             rounded-r-full
+
+//             bg-gradient-to-b
+//             from-[#13C8F3]
+//             to-[#2877FF]
+
+//             shadow-[0_0_14px_rgba(19,200,243,0.9)]
+
+//             transition-all
+//             duration-300
+
+//             ${
+//               active
+//                 ? "h-11 opacity-100"
+//                 : "h-0 opacity-0 group-hover:h-8 group-hover:opacity-100"
+//             }
+//           `}
+//         />
+
+//         {/* Icon */}
+
+//         <Icon
+//           size={20}
+//           strokeWidth={1.8}
+//           className={`
+//             relative
+//             z-10
+//             flex-shrink-0
+
+//             transition-all
+//             duration-300
+
+//             ${
+//               active
+//                 ? "text-[#13C8F3]"
+//                 : "text-white/75 group-hover:text-[#13C8F3]"
+//             }
+
+//             group-hover:scale-110
+//           `}
+//         />
+
+//         {/* Text */}
+
+//         <span className="relative z-10">
+//           {item.name}
+//         </span>
+//       </Link>
+//     );
+//   };
+
+//   // =========================================================
+//   // DESKTOP AUTHORS ITEM
+//   // =========================================================
+
+//   const AuthorsDesktop = () => {
+//     const active = isAuthorsActive || authorsOpen;
+
+//     return (
+//       <div className="relative">
+//         <button
+//           type="button"
+//           onClick={() => {
+//             expandDesktopNav();
+//             setAuthorsOpen((prev) => !prev);
+//           }}
+//           aria-expanded={authorsOpen}
+//           className={`
+//             group
+//             relative
+
+//             flex
+//             w-full
+//             items-center
+//             gap-4
+
+//             px-5
+//             py-4
+
+//             text-[15px]
+//             xl:text-[16px]
+
+//             font-medium
+
+//             transition-all
+//             duration-300
+
+//             overflow-hidden
+
+//             ${
+//               active
+//                 ? "text-[#13C8F3]"
+//                 : "text-white/85 hover:text-[#13C8F3]"
+//             }
+//           `}
+//         >
+//           {/* Background */}
+
+//           <span
+//             className={`
+//               absolute
+//               inset-0
+
+//               bg-gradient-to-r
+//               from-[#0CC8F2]/12
+//               via-[#0CC8F2]/5
+//               to-transparent
+
+//               transition-opacity
+//               duration-300
+
+//               ${
+//                 active
+//                   ? "opacity-100"
+//                   : "opacity-0 group-hover:opacity-100"
+//               }
+//             `}
+//           />
+
+//           {/* Active line */}
+
+//           <span
+//             className={`
+//               absolute
+//               left-0
+//               top-1/2
+
+//               -translate-y-1/2
+
+//               w-[3px]
+
+//               rounded-r-full
+
+//               bg-gradient-to-b
+//               from-[#13C8F3]
+//               to-[#2877FF]
+
+//               shadow-[0_0_14px_rgba(19,200,243,0.9)]
+
+//               transition-all
+//               duration-300
+
+//               ${
+//                 active
+//                   ? "h-11 opacity-100"
+//                   : "h-0 opacity-0 group-hover:h-8 group-hover:opacity-100"
+//               }
+//             `}
+//           />
+
+//           {/* Icon */}
+
+//           <PenLine
+//             size={20}
+//             strokeWidth={1.8}
+//             className={`
+//               relative
+//               z-10
+
+//               flex-shrink-0
+
+//               transition-all
+//               duration-300
+
+//               ${
+//                 active
+//                   ? "text-[#13C8F3]"
+//                   : "text-white/75 group-hover:text-[#13C8F3]"
+//               }
+
+//               group-hover:scale-110
+//             `}
+//           />
+
+//           {/* Text */}
+
+//           <span className="relative z-10 flex-1 text-left">
+//             Authors
+//           </span>
+
+//           <ChevronDown
+//             size={17}
+//             strokeWidth={2}
+//             className={`
+//               relative
+//               z-10
+
+//               transition-transform
+//               duration-300
+
+//               ${
+//                 authorsOpen
+//                   ? "rotate-180 text-[#13C8F3]"
+//                   : "rotate-0"
+//               }
+//             `}
+//           />
+//         </button>
+
+//         {/* =================================================
+//             AUTHORS SUBMENU
+//         ================================================= */}
+
+//         <div
+//           onMouseEnter={expandDesktopNav}
+//           onMouseLeave={collapseDesktopNav}
+//           className={`
+//             absolute
+
+//             left-full
+//             top-1/2
+
+//             -translate-y-1/2
+
+//             ml-3
+
+//             w-[245px]
+
+//             rounded-2xl
+
+//             border
+//             border-cyan-400/20
+
+//             bg-[#03101F]/95
+
+//             backdrop-blur-2xl
+
+//             shadow-[0_20px_60px_rgba(0,0,0,0.55)]
+
+//             overflow-hidden
+
+//             transition-all
+//             duration-300
+
+//             origin-left
+
+//             ${
+//               authorsOpen
+//                 ? "opacity-100 scale-100 translate-x-0 pointer-events-auto"
+//                 : "opacity-0 scale-95 -translate-x-3 pointer-events-none"
+//             }
+//           `}
+//         >
+//           {/* Top glow */}
+
+//           <div
+//             className="
+//               h-[2px]
+
+//               bg-gradient-to-r
+//               from-transparent
+//               via-[#13C8F3]
+//               to-transparent
+//             "
+//           />
+
+//           <div className="py-2">
+//             {authorItems.map((item, index) => {
+//               const Icon = item.icon;
+//               const activeItem = isActive(item.path);
+
+//               return (
+//                 <Link
+//                   key={item.name}
+//                   to={item.path}
+//                   onClick={handleNavigation}
+//                   className={`
+//                     group/sub
+
+//                     flex
+//                     items-center
+//                     gap-3
+
+//                     px-4
+//                     py-3.5
+
+//                     border-b
+//                     border-white/[0.05]
+
+//                     last:border-b-0
+
+//                     text-sm
+
+//                     transition-all
+//                     duration-300
+
+//                     ${
+//                       activeItem
+//                         ? "bg-cyan-400/10 text-[#13C8F3]"
+//                         : "text-white/75 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//                     }
+//                   `}
+//                 >
+//                   <span
+//                     className={`
+//                       flex
+//                       h-8
+//                       w-8
+
+//                       items-center
+//                       justify-center
+
+//                       rounded-lg
+
+//                       border
+
+//                       transition-all
+//                       duration-300
+
+//                       ${
+//                         activeItem
+//                           ? "border-cyan-400/50 bg-cyan-400/10"
+//                           : "border-cyan-400/15 bg-cyan-400/5 group-hover/sub:border-cyan-400/40"
+//                       }
+//                     `}
+//                   >
+//                     <Icon
+//                       size={15}
+//                       strokeWidth={1.8}
+//                     />
+//                   </span>
+
+//                   <span className="flex-1">
+//                     {item.name}
+//                   </span>
+
+//                   <span className="text-[9px] text-cyan-400/50">
+//                     0{index + 1}
+//                   </span>
+//                 </Link>
+//               );
+//             })}
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   // =========================================================
+//   // DESKTOP NAVBAR
+//   // =========================================================
+
+//   return (
+//     <>
+//       {/* =====================================================
+//           DESKTOP NAVBAR
+//       ====================================================== */}
+
+//       <aside
+//         onMouseEnter={expandDesktopNav}
+//         onMouseLeave={collapseDesktopNav}
+//         className={`
+//           hidden
+//           lg:flex
+
+//           fixed
+
+//           left-0
+//           top-1/2
+
+//           -translate-y-1/2
+
+//           z-[100]
+
+//           w-[225px]
+//           xl:w-[235px]
+
+//           flex-col
+
+//           rounded-r-[25px]
+
+//           border
+//           border-l-0
+//           border-cyan-400/25
+
+//           bg-[#020B18]/78
+
+//           backdrop-blur-2xl
+
+//           shadow-[15px_15px_60px_rgba(0,0,0,0.55)]
+
+//           transition-transform
+//           duration-500
+
+//           ease-[cubic-bezier(0.22,1,0.36,1)]
+
+//           ${
+//             desktopExpanded
+//               ? "translate-x-0"
+//               : "-translate-x-[calc(100%-48px)]"
+//           }
+//         `}
+//       >
+//         {/* =================================================
+//             OPTION 1 COLLAPSED TAB
+//         ================================================== */}
+
+//         <div
+//           className="
+//             absolute
+
+//             right-[-48px]
+
+//             top-1/2
+
+//             -translate-y-1/2
+
+//             h-[210px]
+//             w-[48px]
+
+//             flex
+//             flex-col
+//             items-center
+//             justify-between
+
+//             py-4
+
+//             rounded-r-[18px]
+
+//             border
+//             border-l-0
+//             border-cyan-400/35
+// bg-gradient-to-r
+// from-[#13C8F3]
+// via-[#18AEEF]
+// to-[#2877FF]
+
+//             backdrop-blur-xl
+
+//             shadow-[8px_0_30px_rgba(0,0,0,0.4)]
+
+//             overflow-hidden
+
+//             cursor-pointer
+
+//             group/tab
+
+//             transition-all
+//             duration-300
+
+//             hover:border-cyan-400/70
+//             hover:shadow-[0_0_30px_rgba(19,200,243,0.35)]
+//           "
+//           onMouseEnter={expandDesktopNav}
+//           onClick={expandDesktopNav}
+//         >
+//           {/* =================================================
+//               GLOW
+//           ================================================== */}
+
+//           <span
+//             className="
+//               absolute
+//               inset-y-0
+//               left-0
+
+//               w-[2px]
+
+//               bg-gradient-to-b
+//               from-transparent
+//               via-[#13C8F3]
+//               to-transparent
+
+//               shadow-[0_0_15px_rgba(19,200,243,0.9)]
+//             "
+//           />
+
+//           {/* =================================================
+//               MENU CIRCLE
+//           ================================================== */}
+
+//           <span
+//             className="
+//               relative
+//               z-10
+
+//               flex
+//               h-8
+//               w-8
+
+//               items-center
+//               justify-center
+
+//               rounded-full
+
+//               border
+//               border-cyan-400/60
+
+//               bg-[#061B30]/80
+
+//               text-cyan-300
+
+//               shadow-[0_0_15px_rgba(19,200,243,0.2)]
+
+//               transition-all
+//               duration-300
+
+//               group-hover/tab:bg-[#0A2944]
+//               group-hover/tab:border-cyan-300
+//               group-hover/tab:scale-105
+//             "
+//           >
+//             <Menu
+//               size={17}
+//               strokeWidth={2}
+//             />
+//           </span>
+
+//           {/* =================================================
+//               VERTICAL TEXT
+//           ================================================== */}
+
+//           <span
+//   className="
+//     relative
+//     z-10
+
+//     flex-1
+
+//     flex
+//     items-center
+//     justify-center
+
+//     text-[9px]
+
+//     font-semibold
+
+//     tracking-[0.18em]
+
+//     text-black
+
+//     [writing-mode:vertical-rl]
+
+//     rotate-180
+
+//     whitespace-nowrap
+
+//     transition-colors
+//     duration-300
+
+//     group-hover/tab:text-black
+//   "
+// >
+//   CLICK HERE
+// </span>
+
+//           {/* =================================================
+//               SMALL ARROW
+//           ================================================== */}
+
+//           <span
+//             className="
+//               relative
+//               z-10
+
+//               text-lg
+
+//               leading-none
+
+//               text-[#13C8F3]
+
+//               transition-transform
+//               duration-300
+
+//               group-hover/tab:translate-x-1
+//             "
+//           >
+//             »
+//           </span>
+//         </div>
+
+//         {/* =================================================
+//             TOP GLOW
+//         ================================================== */}
+
+//         <div
+//           className="
+//             absolute
+//             left-8
+//             right-8
+//             top-0
+
+//             h-px
+
+//             bg-gradient-to-r
+//             from-transparent
+//             via-[#13C8F3]/70
+//             to-transparent
+//           "
+//         />
+
+//         {/* =================================================
+//             NAVIGATION
+//         ================================================== */}
+
+//         <nav className="py-4">
+//           {/* HOME */}
+
+//           <DesktopNavItem item={navItems[0]} />
+
+//           {/* ABOUT */}
+
+//           <DesktopNavItem item={navItems[1]} />
+
+//           {/* AUTHORS */}
+
+//           <AuthorsDesktop />
+
+//           {/* REGISTRATION */}
+
+//           <DesktopNavItem item={navItems[2]} />
+
+//           {/* COMMITTEE */}
+
+//           <DesktopNavItem item={navItems[3]} />
+
+//           {/* PROGRAM */}
+
+//           <DesktopNavItem item={navItems[4]} />
+
+//           {/* IMPORTANT DATES */}
+
+//           <DesktopNavItem item={navItems[5]} />
+
+//           {/* VENUE */}
+
+//           <DesktopNavItem item={navItems[6]} />
+//         </nav>
+
+//         {/* =================================================
+//             DIVIDER
+//         ================================================== */}
+
+//         <div
+//           className="
+//             mx-5
+
+//             h-px
+
+//             bg-gradient-to-r
+//             from-transparent
+//             via-cyan-400/20
+//             to-transparent
+//           "
+//         />
+
+//         {/* =================================================
+//             CONTACT
+//         ================================================== */}
+
+//         <Link
+//           to="/contact"
+//           onClick={handleNavigation}
+//           className="
+//             group/contact
+
+//             relative
+
+//             mx-4
+//             my-4
+
+//             flex
+//             items-center
+//             justify-center
+
+//             rounded-xl
+
+//             border
+//             border-cyan-400/30
+
+//             bg-cyan-400/5
+
+//             px-4
+//             py-3
+
+//             text-[12px]
+
+//             font-semibold
+//             tracking-[0.08em]
+
+//             text-white
+
+//             overflow-hidden
+
+//             transition-all
+//             duration-300
+
+//             hover:border-cyan-400/70
+//             hover:bg-cyan-400/10
+//             hover:text-cyan-300
+
+//             hover:shadow-[0_0_25px_rgba(19,200,243,0.2)]
+//           "
+//         >
+//           {/* Shimmer */}
+
+//           <span
+//             className="
+//               absolute
+//               inset-0
+
+//               bg-gradient-to-r
+//               from-transparent
+//               via-white/10
+//               to-transparent
+
+//               -translate-x-full
+
+//               group-hover/contact:translate-x-full
+
+//               transition-transform
+//               duration-700
+//             "
+//           />
+
+//           <span className="relative z-10">
+//             CONTACT US
+//           </span>
+//         </Link>
+
+//         {/* =================================================
+//             BOTTOM GLOW
+//         ================================================== */}
+
+//         <div
+//           className="
+//             absolute
+
+//             bottom-0
+//             left-8
+//             right-8
+
+//             h-px
+
+//             bg-gradient-to-r
+//             from-transparent
+//             via-[#13C8F3]/50
+//             to-transparent
+//           "
+//         />
+//       </aside>
+
+//       {/* =====================================================
+//           MOBILE MENU BUTTON
+//       ====================================================== */}
+
+//       <button
+//         type="button"
+//         onClick={() => {
+//           setMenuOpen((prev) => !prev);
+//           setMobileAuthorsOpen(false);
+//         }}
+//         aria-label="Toggle navigation"
+//         aria-expanded={menuOpen}
+//         className="
+//           lg:hidden
+
+//           fixed
+
+//           top-5
+//           right-5
+
+//           z-[200]
+
+//           flex
+//           h-12
+//           w-12
+
+//           items-center
+//           justify-center
+
+//           rounded-2xl
+
+//           border
+//           border-cyan-400/30
+
+//           bg-[#020B18]/70
+
+//           backdrop-blur-xl
+
+//           text-[#13C8F3]
+
+//           shadow-[0_10px_35px_rgba(0,0,0,0.5)]
+
+//           transition-all
+//           duration-300
+
+//           hover:border-cyan-400/70
+//           hover:bg-[#061B30]
+
+//           active:scale-95
+//         "
+//       >
+//         {menuOpen ? (
+//           <X size={23} />
+//         ) : (
+//           <Menu size={23} />
+//         )}
+//       </button>
+
+//       {/* =====================================================
+//           MOBILE OVERLAY
+//       ====================================================== */}
+
+//       <div
+//         onClick={() => setMenuOpen(false)}
+//         className={`
+//           lg:hidden
+
+//           fixed
+//           inset-0
+
+//           z-[150]
+
+//           bg-black/60
+
+//           backdrop-blur-[3px]
+
+//           transition-opacity
+//           duration-300
+
+//           ${
+//             menuOpen
+//               ? "opacity-100 pointer-events-auto"
+//               : "opacity-0 pointer-events-none"
+//           }
+//         `}
+//       />
+
+//       {/* =====================================================
+//           MOBILE SIDEBAR
+//       ====================================================== */}
+
+//       <aside
+//         className={`
+//           lg:hidden
+
+//           fixed
+
+//           left-0
+//           top-0
+//           bottom-0
+
+//           z-[180]
+
+//           w-[290px]
+//           max-w-[82vw]
+
+//           flex
+//           flex-col
+
+//           border-r
+//           border-cyan-400/20
+
+//           bg-[#020B18]/95
+
+//           backdrop-blur-2xl
+
+//           shadow-[20px_0_60px_rgba(0,0,0,0.6)]
+
+//           transition-transform
+//           duration-500
+
+//           ease-[cubic-bezier(0.22,1,0.36,1)]
+
+//           ${
+//             menuOpen
+//               ? "translate-x-0"
+//               : "-translate-x-full"
+//           }
+//         `}
+//       >
+//         {/* MOBILE HEADER */}
+
+//         <div
+//           className="
+//             flex
+//             items-center
+//             justify-between
+
+//             px-6
+//             py-6
+
+//             border-b
+//             border-white/5
+//           "
+//         >
+//           <div>
+//             <p
+//               className="
+//                 text-[10px]
+
+//                 tracking-[0.4em]
+
+//                 text-[#13C8F3]
+//               "
+//             >
+//               CYCRAI
+//             </p>
+
+//             <p
+//               className="
+//                 mt-1
+
+//                 text-xl
+
+//                 font-bold
+
+//                 text-white
+//               "
+//             >
+//               2027
+//             </p>
+//           </div>
+
+//           <button
+//             type="button"
+//             onClick={() => setMenuOpen(false)}
+//             className="
+//               flex
+//               h-10
+//               w-10
+
+//               items-center
+//               justify-center
+
+//               rounded-xl
+
+//               border
+//               border-white/10
+
+//               text-white/70
+
+//               transition-all
+//               duration-300
+
+//               hover:border-cyan-400/50
+//               hover:text-cyan-400
+//             "
+//           >
+//             <X size={20} />
+//           </button>
+//         </div>
+
+//         {/* MOBILE NAVIGATION */}
+
+//         <nav className="flex-1 overflow-y-auto py-4">
+//           {/* HOME */}
+
+//           <MobileNavItem
+//             item={navItems[0]}
+//             active={isActive("/")}
+//             onClick={handleNavigation}
+//           />
+
+//           {/* ABOUT */}
+
+//           <MobileNavItem
+//             item={navItems[1]}
+//             active={isActive("/about")}
+//             onClick={handleNavigation}
+//           />
+
+//           {/* AUTHORS */}
+
+//           <div>
+//             <button
+//               type="button"
+//               onClick={() =>
+//                 setMobileAuthorsOpen((prev) => !prev)
+//               }
+//               className={`
+//                 flex
+//                 w-full
+//                 items-center
+//                 gap-4
+
+//                 px-6
+//                 py-4
+
+//                 border-l-[3px]
+
+//                 text-[15px]
+//                 font-medium
+
+//                 transition-all
+//                 duration-300
+
+//                 ${
+//                   isAuthorsActive
+//                     ? "border-[#13C8F3] bg-cyan-400/10 text-[#13C8F3]"
+//                     : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//                 }
+//               `}
+//             >
+//               <PenLine
+//                 size={20}
+//                 strokeWidth={1.8}
+//               />
+
+//               <span className="flex-1 text-left">
+//                 Authors
+//               </span>
+
+//               <ChevronDown
+//                 size={18}
+//                 className={`
+//                   transition-transform
+//                   duration-300
+
+//                   ${
+//                     mobileAuthorsOpen
+//                       ? "rotate-180"
+//                       : ""
+//                   }
+//                 `}
+//               />
+//             </button>
+
+//             {/* MOBILE AUTHORS */}
+
+//             <div
+//               className={`
+//                 overflow-hidden
+
+//                 bg-[#010813]/70
+
+//                 transition-all
+//                 duration-300
+
+//                 ${
+//                   mobileAuthorsOpen
+//                     ? "max-h-[220px]"
+//                     : "max-h-0"
+//                 }
+//               `}
+//             >
+//               {authorItems.map((item) => {
+//                 const Icon = item.icon;
+
+//                 return (
+//                   <Link
+//                     key={item.name}
+//                     to={item.path}
+//                     onClick={handleNavigation}
+//                     className={`
+//                       flex
+//                       items-center
+//                       gap-3
+
+//                       pl-11
+//                       pr-6
+//                       py-3.5
+
+//                       text-sm
+
+//                       transition-all
+//                       duration-300
+
+//                       ${
+//                         isActive(item.path)
+//                           ? "bg-cyan-400/10 text-[#13C8F3]"
+//                           : "text-white/65 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//                       }
+//                     `}
+//                   >
+//                     <Icon size={16} />
+
+//                     {item.name}
+//                   </Link>
+//                 );
+//               })}
+//             </div>
+//           </div>
+
+//           {/* REGISTRATION */}
+
+//           <MobileNavItem
+//             item={navItems[2]}
+//             active={isActive("/registration")}
+//             onClick={handleNavigation}
+//           />
+
+//           {/* COMMITTEE */}
+
+//           <MobileNavItem
+//             item={navItems[3]}
+//             active={isActive("/committee")}
+//             onClick={handleNavigation}
+//           />
+
+//           {/* PROGRAM */}
+
+//           <MobileNavItem
+//             item={navItems[4]}
+//             active={isActive("/speakers")}
+//             onClick={handleNavigation}
+//           />
+
+//           {/* IMPORTANT DATES */}
+
+//           <MobileNavItem
+//             item={navItems[5]}
+//             active={isActive("/important-dates")}
+//             onClick={handleNavigation}
+//           />
+
+//           {/* VENUE */}
+
+//           <MobileNavItem
+//             item={navItems[6]}
+//             active={isActive("/venue")}
+//             onClick={handleNavigation}
+//           />
+//         </nav>
+
+//         {/* MOBILE CONTACT */}
+
+//         <div
+//           className="
+//             border-t
+//             border-white/5
+
+//             p-5
+//           "
+//         >
+//           <Link
+//             to="/contact"
+//             onClick={handleNavigation}
+//             className="
+//               block
+//               w-full
+
+//               rounded-xl
+
+//               bg-gradient-to-r
+//               from-[#13C8F3]
+//               via-[#18AEEF]
+//               to-[#2877FF]
+
+//               px-5
+//               py-3.5
+
+//               text-center
+
+//               text-sm
+
+//               font-semibold
+
+//               tracking-wide
+
+//               text-white
+
+//               shadow-[0_8px_25px_rgba(37,108,246,0.25)]
+
+//               transition-all
+//               duration-300
+
+//               hover:brightness-110
+//             "
+//           >
+//             CONTACT US
+//           </Link>
+//         </div>
+//       </aside>
+//     </>
+//   );
+// }
+
+// // ===========================================================
+// // MOBILE NAV ITEM
+// // ===========================================================
+
+// function MobileNavItem({ item, active, onClick }) {
+//   const Icon = item.icon;
+
+//   return (
+//     <Link
+//       to={item.path}
+//       onClick={onClick}
+//       className={`
+//         group
+
+//         flex
+//         items-center
+//         gap-4
+
+//         px-6
+//         py-4
+
+//         border-l-[3px]
+
+//         text-[15px]
+
+//         font-medium
+
+//         transition-all
+//         duration-300
+
+//         ${
+//           active
+//             ? "border-[#13C8F3] bg-cyan-400/10 text-[#13C8F3]"
+//             : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//         }
+//       `}
+//     >
+//       <Icon
+//         size={20}
+//         strokeWidth={1.8}
+//         className="
+//           transition-transform
+//           duration-300
+
+//           group-hover:scale-110
+//         "
+//       />
+
+//       <span>
+//         {item.name}
+//       </span>
+//     </Link>
+//   );
+// }
+
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -2703,11 +4232,6 @@ export default function Navbar() {
       icon: CalendarDays,
     },
     {
-      name: "Important Dates",
-      path: "/important-dates",
-      icon: Clock3,
-    },
-    {
       name: "Venue",
       path: "/venue",
       icon: MapPin,
@@ -2730,9 +4254,9 @@ export default function Navbar() {
       icon: PenLine,
     },
     {
-      name: "Tracks",
-      path: "/tracks",
-      icon: PenLine,
+      name: "Important Dates",
+      path: "/important-dates",
+      icon: Clock3,
     },
   ];
 
@@ -2973,6 +4497,7 @@ export default function Navbar() {
           className={`
             relative
             z-10
+
             flex-shrink-0
 
             transition-all
@@ -3125,6 +4650,8 @@ export default function Navbar() {
           <span className="relative z-10 flex-1 text-left">
             Authors
           </span>
+
+          {/* Arrow */}
 
           <ChevronDown
             size={17}
@@ -3340,7 +4867,7 @@ export default function Navbar() {
         `}
       >
         {/* =================================================
-            OPTION 1 COLLAPSED TAB
+            COLLAPSED TAB
         ================================================== */}
 
         <div
@@ -3368,10 +4895,11 @@ export default function Navbar() {
             border
             border-l-0
             border-cyan-400/35
-bg-gradient-to-r
-from-[#13C8F3]
-via-[#18AEEF]
-to-[#2877FF]
+
+            bg-gradient-to-r
+            from-[#13C8F3]
+            via-[#18AEEF]
+            to-[#2877FF]
 
             backdrop-blur-xl
 
@@ -3392,9 +4920,7 @@ to-[#2877FF]
           onMouseEnter={expandDesktopNav}
           onClick={expandDesktopNav}
         >
-          {/* =================================================
-              GLOW
-          ================================================== */}
+          {/* Glow */}
 
           <span
             className="
@@ -3413,9 +4939,7 @@ to-[#2877FF]
             "
           />
 
-          {/* =================================================
-              MENU CIRCLE
-          ================================================== */}
+          {/* Menu Circle */}
 
           <span
             className="
@@ -3454,47 +4978,43 @@ to-[#2877FF]
             />
           </span>
 
-          {/* =================================================
-              VERTICAL TEXT
-          ================================================== */}
+          {/* Vertical Text */}
 
           <span
-  className="
-    relative
-    z-10
+            className="
+              relative
+              z-10
 
-    flex-1
+              flex-1
 
-    flex
-    items-center
-    justify-center
+              flex
+              items-center
+              justify-center
 
-    text-[9px]
+              text-[9px]
 
-    font-semibold
+              font-semibold
 
-    tracking-[0.18em]
+              tracking-[0.18em]
 
-    text-black
+              text-black
 
-    [writing-mode:vertical-rl]
+              [writing-mode:vertical-rl]
 
-    rotate-180
+              rotate-180
 
-    whitespace-nowrap
+              whitespace-nowrap
 
-    transition-colors
-    duration-300
+              transition-colors
+              duration-300
 
-    group-hover/tab:text-black
-  "
->
-  CLICK HERE
-</span>
+              group-hover/tab:text-black
+            "
+          >
+            CLICK HERE
+          </span>
 
-          {/* =================================================
-              SMALL ARROW
-          ================================================== */}
+          {/* Arrow */}
 
           <span
             className="
@@ -3566,13 +5086,9 @@ to-[#2877FF]
 
           <DesktopNavItem item={navItems[4]} />
 
-          {/* IMPORTANT DATES */}
-
-          <DesktopNavItem item={navItems[5]} />
-
           {/* VENUE */}
 
-          <DesktopNavItem item={navItems[6]} />
+          <DesktopNavItem item={navItems[5]} />
         </nav>
 
         {/* =================================================
@@ -3978,7 +5494,7 @@ to-[#2877FF]
 
                 ${
                   mobileAuthorsOpen
-                    ? "max-h-[220px]"
+                    ? "max-h-[260px]"
                     : "max-h-0"
                 }
               `}
@@ -3998,6 +5514,7 @@ to-[#2877FF]
 
                       pl-11
                       pr-6
+
                       py-3.5
 
                       text-sm
@@ -4045,18 +5562,10 @@ to-[#2877FF]
             onClick={handleNavigation}
           />
 
-          {/* IMPORTANT DATES */}
-
-          <MobileNavItem
-            item={navItems[5]}
-            active={isActive("/important-dates")}
-            onClick={handleNavigation}
-          />
-
           {/* VENUE */}
 
           <MobileNavItem
-            item={navItems[6]}
+            item={navItems[5]}
             active={isActive("/venue")}
             onClick={handleNavigation}
           />
@@ -4169,4 +5678,3 @@ function MobileNavItem({ item, active, onClick }) {
     </Link>
   );
 }
-

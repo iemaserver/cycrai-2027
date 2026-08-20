@@ -201,22 +201,7 @@ export default function ImportantDates() {
             </span>
           </h1>
 
-          {/* Description */}
-
-          <p
-            className="
-              mt-8
-              max-w-3xl
-              mx-auto
-              text-lg
-              md:text-xl
-              leading-8
-              text-slate-400
-            "
-          >
-            Follow the key milestones of CYCRAI 2027, from paper submission
-            and peer review to author registration and the conference itself.
-          </p>
+          
         </motion.div>
 
         {/* =====================================================

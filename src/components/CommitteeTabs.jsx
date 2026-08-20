@@ -1,257 +1,285 @@
-
 import { motion } from "framer-motion";
+import { committeeData } from "../data/committeeData";
 
 export default function CommitteeTabs({
   activeCommittee,
   setActiveCommittee,
 }) {
-  const tabs = [
-    {
-      key: "organizing",
-      label: "Organizing Committee",
-    },
-    {
-      key: "ieeeKolkata",
-      label: "IEEE Kolkata Section Steering Committee",
-    },
-    {
-      key: "ieeeCS",
-      label: "IEEE CS Kolkata Section Steering Committee",
-    },
-    {
-      key: "student",
-      label: "IEEE CS UEMK SB Committee",
-    },
-  ];
+  const committees = Object.entries(committeeData);
 
   return (
-    <section className="relative w-full mb-20 overflow-hidden">
+    <div className="w-full">
 
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 left-1/4 w-80 h-80 rounded-full bg-cyan-500/10 blur-[180px]" />
-        <div className="absolute -bottom-24 right-1/4 w-80 h-80 rounded-full bg-blue-600/10 blur-[180px]" />
-      </div>
+      {/* =========================================================
+          DESKTOP
+          ALL 7 IN ONE HORIZONTAL ROW
+      ========================================================= */}
+      <div className="hidden w-full md:block">
 
-      <div className="relative">
-
-                {/* Desktop */}
         <div
           className="
-            hidden
-            md:flex
-
-            p-2
-
+            flex
+            w-full
+            items-stretch
+            gap-1.5
             rounded-2xl
-
-            bg-[#071326]/80
-            backdrop-blur-xl
-
             border
             border-cyan-400/20
-
-            shadow-[0_0_35px_rgba(34,211,238,0.12)]
+            bg-[#071326]/80
+            p-1.5
+            backdrop-blur-xl
           "
         >
-          {tabs.map((tab) => {
-            const active = activeCommittee === tab.key;
+
+          {committees.map(([key, committee], index) => {
+            const isActive = activeCommittee === key;
 
             return (
-              <button
-                key={tab.key}
-                onClick={() => setActiveCommittee(tab.key)}
-                className="
-                  relative
-                  flex-1
-
-                  py-4
-                  px-6
-
-                  rounded-xl
-
-                  font-semibold
-
-                  overflow-hidden
-
-                  transition-all
-                  duration-300
-
-                  hover:scale-[1.02]
-                "
-              >
-                {active && (
-                  <motion.div
-                    layoutId="committeeTab"
-                    className="
-                      absolute
-                      inset-0
-
-                      rounded-xl
-
-                      bg-gradient-to-r
-                      from-cyan-500
-                      via-sky-500
-                      to-blue-600
-
-                      shadow-[0_0_25px_rgba(34,211,238,0.45)]
-                    "
-                    transition={{
-                      type: "spring",
-                      stiffness: 350,
-                      damping: 30,
-                    }}
-                  />
-                )}
-
-                <span
-                  className={`
-                    relative
-                    z-10
-
-                    text-sm
-                    lg:text-base
-
-                    transition-all
-                    duration-300
-
-                    ${
-                      active
-                        ? "text-white"
-                        : "text-gray-300 hover:text-cyan-300"
-                    }
-                  `}
-                >
-                  {tab.label}
-                </span>
-
-                {!active && (
-                  <div
-                    className="
-                      absolute
-                      bottom-0
-                      left-1/2
-
-                      h-[2px]
-                      w-0
-
-                      -translate-x-1/2
-
-                      bg-cyan-400
-
-                      transition-all
-                      duration-300
-
-                      group-hover:w-3/4
-                    "
-                  />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-                {/* Mobile */}
-
-        <div className="md:hidden space-y-4">
-          {tabs.map((tab) => {
-            const active = activeCommittee === tab.key;
-
-            return (
-              <button
-                key={tab.key}
-                onClick={() => setActiveCommittee(tab.key)}
+              <motion.button
+                key={key}
+                type="button"
+                onClick={() => setActiveCommittee(key)}
+                whileTap={{ scale: 0.97 }}
+                whileHover={{
+                  y: isActive ? 0 : -1,
+                }}
                 className={`
                   relative
-                  w-full
-
-                  overflow-hidden
-
-                  rounded-2xl
-
-                  px-5
-                  py-4
-
-                  text-left
-
-                  font-semibold
-
-                  backdrop-blur-xl
-
+                  flex
+                  min-w-0
+                  flex-1
+                  items-center
+                  justify-center
+                  rounded-xl
+                  border
+                  px-2
+                  py-3
+                  text-center
                   transition-all
                   duration-300
 
                   ${
-                    active
+                    isActive
                       ? `
+                        border-cyan-300/30
                         bg-gradient-to-r
                         from-cyan-500
-                        via-sky-500
                         to-blue-600
-
                         text-white
-
-                        shadow-[0_0_20px_rgba(34,211,238,0.45)]
+                        shadow-[0_0_20px_rgba(34,211,238,0.15)]
                       `
                       : `
-                        bg-[#071326]/80
-
-                        border
-                        border-cyan-400/20
-
-                        text-gray-300
-
-                        hover:border-cyan-400/60
-                        hover:text-cyan-300
-                        hover:shadow-[0_0_15px_rgba(34,211,238,0.15)]
+                        border-transparent
+                        bg-transparent
+                        text-slate-400
+                        hover:border-cyan-400/15
+                        hover:bg-cyan-500/[0.05]
+                        hover:text-white
                       `
                   }
                 `}
               >
-                <div className="flex items-center justify-between">
 
-                  <span>{tab.label}</span>
-
-                  <span
-                    className={`
-                      text-lg
-                      transition-transform
-                      duration-300
-
-                      ${active ? "rotate-90" : ""}
-                    `}
-                  >
-                    ›
-                  </span>
-
-                </div>
-
-                {!active && (
-                  <div
+                {/* Active Indicator */}
+                {isActive && (
+                  <motion.div
+                    layoutId="committee-active-desktop"
                     className="
                       absolute
-                      bottom-0
-                      left-0
-
+                      left-2
+                      right-2
+                      top-0
                       h-[2px]
-                      w-0
-
-                      bg-cyan-400
-
-                      transition-all
-                      duration-300
-
-                      hover:w-full
+                      rounded-full
+                      bg-white/70
                     "
                   />
                 )}
-              </button>
+
+                {/* Number */}
+                <span
+                  className={`
+                    mr-1.5
+                    shrink-0
+                    self-start
+                    pt-0.5
+                    text-[8px]
+                    font-bold
+
+                    ${
+                      isActive
+                        ? "text-white/80"
+                        : "text-cyan-400/60"
+                    }
+                  `}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                {/* Name */}
+                <span
+                  className="
+                    min-w-0
+                    text-[9px]
+                    font-semibold
+                    leading-[1.25]
+                    lg:text-[10px]
+                    xl:text-[11px]
+                  "
+                >
+                  {committee.title}
+                </span>
+
+              </motion.button>
             );
           })}
+
         </div>
 
       </div>
 
-    </section>
+
+      {/* =========================================================
+          MOBILE
+          3 + 3 + 1 GRID
+      ========================================================= */}
+      <div className="block md:hidden">
+
+        <div
+          className="
+            rounded-2xl
+            border
+            border-cyan-400/20
+            bg-[#071326]/80
+            p-2
+            backdrop-blur-xl
+          "
+        >
+
+          <div
+            className="
+              grid
+              grid-cols-3
+              gap-1.5
+            "
+          >
+
+            {committees.map(([key, committee], index) => {
+              const isActive = activeCommittee === key;
+
+              return (
+                <motion.button
+                  key={key}
+                  type="button"
+                  onClick={() => setActiveCommittee(key)}
+                  whileTap={{
+                    scale: 0.96,
+                  }}
+                  className={`
+                    relative
+                    flex
+                    min-h-[58px]
+                    min-w-0
+                    flex-col
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    px-1.5
+                    py-2
+                    text-center
+                    transition-all
+                    duration-300
+
+                    ${
+                      isActive
+                        ? `
+                          border-cyan-300/30
+                          bg-gradient-to-r
+                          from-cyan-500
+                          to-blue-600
+                          text-white
+                          shadow-[0_0_18px_rgba(34,211,238,0.14)]
+                        `
+                        : `
+                          border-white/[0.07]
+                          bg-white/[0.02]
+                          text-slate-400
+                          hover:border-cyan-400/20
+                          hover:bg-cyan-500/[0.05]
+                        `
+                    }
+
+                    ${
+                      index === 6
+                        ? "col-start-2"
+                        : ""
+                    }
+                  `}
+                >
+
+                  {/* Active Line */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="committee-active-mobile"
+                      className="
+                        absolute
+                        left-2
+                        right-2
+                        top-0
+                        h-[2px]
+                        rounded-full
+                        bg-white/70
+                      "
+                    />
+                  )}
+
+                  {/* Number */}
+                  <span
+                    className={`
+                      mb-1
+                      text-[8px]
+                      font-bold
+
+                      ${
+                        isActive
+                          ? "text-white/80"
+                          : "text-cyan-400/60"
+                      }
+                    `}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Committee Name */}
+                  <span
+                    className={`
+                      line-clamp-2
+                      w-full
+                      text-[8px]
+                      font-semibold
+                      leading-[1.2]
+
+                      ${
+                        isActive
+                          ? "text-white"
+                          : "text-slate-400"
+                      }
+                    `}
+                  >
+                    {committee.title}
+                  </span>
+
+                </motion.button>
+              );
+            })}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   );
 }

@@ -122,14 +122,7 @@ export default function Guidelines() {
 
             </h1>
 
-            <p className="mt-8 max-w-4xl mx-auto text-lg md:text-xl leading-9 text-slate-300">
-
-              Before submitting your manuscript, carefully review the
-              conference policies, IEEE formatting requirements,
-              double-blind review guidelines, publication ethics,
-              camera-ready instructions and important deadlines.
-
-            </p>
+           
 
             <div className="mt-12 flex flex-wrap justify-center gap-5">
 

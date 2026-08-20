@@ -155,7 +155,7 @@ export default function AboutSection() {
             </h1>
 
             {/* Subtitle */}
-            <p
+            {/* <p
               className="
                 mt-8
                 max-w-4xl
@@ -174,7 +174,7 @@ export default function AboutSection() {
               <span className="text-white font-semibold">
                 intelligent digital technologies.
               </span>
-            </p>
+            </p> */}
 
           </motion.div>
 
@@ -294,34 +294,22 @@ export default function AboutSection() {
             >
 
               <p className="text-slate-300 text-lg md:text-xl leading-8">
-                <span className="text-cyan-300 font-semibold">
+                {/* <span className="text-cyan-300 font-semibold">
                   CYCRAI 2027
-                </span>{" "}
-                is the flagship international conference organised by the
-                IEEE Computer Society, University of Engineering and Management
-                Kolkata Student Branch Chapter, dedicated to advancing
-                research, innovation, and collaboration at the intersection
-                of cybersecurity, responsible artificial intelligence, and
-                cryptography.
+                </span>{" "} */}
+                First International Conference on Cybersecurity, Cryptography and Responsible AI (CYCRAI 2027) will be organized by
+                Department of  Computer Science and Engineering(Cyber Security), Institute of Engineering & Management Kolkata, 
+                under University of Engineering and Management Kolkata, with Technical Co-Sponsorship of the IEEE Kolkata Section 
+                and IEEE Computer Society SBC during 29th September to 30th September, 2027.
               </p>
 
               <p className="mt-6 text-slate-400 text-lg leading-8">
-                The conference serves as a global platform bringing together
-                researchers, academicians, industry leaders, entrepreneurs,
-                and students to exchange ideas, present cutting-edge research,
-                and foster meaningful collaborations. CYCRAI 2027 aims to
-                shape the next generation of secure, responsible, and
-                intelligent digital ecosystems through innovation, knowledge
-                sharing, and interdisciplinary collaboration.
-              </p>
-
-              <p className="mt-6 text-slate-400 text-lg leading-8">
-                Through keynote talks, technical paper presentations,
-                workshops, tutorials, and industry sessions, CYCRAI 2027 aims
-                to accelerate innovation and foster meaningful knowledge
-                exchange while addressing real-world challenges in
-                cybersecurity, responsible AI, cryptography, cloud computing,
-                IoT, blockchain, and emerging digital infrastructure.
+                The event brings together researchers, professionals, and government
+                representatives to share their work, examine key challenges, and 
+                explore potential solutions. Keynote addresses, technical sessions, 
+                and networking activities are designed to encourage cross-disciplinary 
+                dialogue. Papers that are accepted and presented will be submitted for 
+                publication in the IEEE Xplore Digital Library.
               </p>
 
             </div>
@@ -332,16 +320,16 @@ export default function AboutSection() {
               CONFERENCE HIGHLIGHTS
           ===================================================== */}
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="mt-24"
-          >
+          > */}
 
             {/* Section Heading */}
-            <div className="text-center mb-14">
+            {/* <div className="text-center mb-14">
 
               <span
                 className="
@@ -386,10 +374,10 @@ export default function AboutSection() {
                 {" "}Transform.
               </h2>
 
-            </div>
+            </div> */}
 
             {/* Highlight Cards */}
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {/* <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
 
               {highlights.map((item, index) => {
                 const Icon = item.icon;
@@ -422,7 +410,7 @@ export default function AboutSection() {
                     "
                   >
 
-                    {/* Hover Glow */}
+                    
                     <div
                       className="
                         absolute
@@ -477,7 +465,7 @@ export default function AboutSection() {
 
             </div>
 
-          </motion.div>
+          </motion.div> */}
 
         </div>
       </section>
@@ -567,7 +555,7 @@ export default function AboutSection() {
               </span>
             </h2>
 
-            <p
+            {/* <p
               className="
                 mt-8
                 max-w-3xl
@@ -579,7 +567,7 @@ export default function AboutSection() {
             >
               Explore the interconnected research domains shaping the future
               of secure, responsible, and intelligent digital societies.
-            </p>
+            </p> */}
 
           </motion.div>
 
