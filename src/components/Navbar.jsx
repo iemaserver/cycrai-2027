@@ -4173,12 +4173,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-  ChevronDown,
+   ChevronDown,
   Menu,
   X,
   Home,
   UserRound,
   PenLine,
+  FileSearch,
   CreditCard,
   UsersRound,
   CalendarDays,
@@ -4243,22 +4244,27 @@ export default function Navbar() {
   // =========================================================
 
   const authorItems = [
-    {
-      name: "Call For Papers",
-      path: "/call-for-papers",
-      icon: PenLine,
-    },
-    {
-      name: "Guidelines & Policies",
-      path: "/guidelines",
-      icon: PenLine,
-    },
-    {
-      name: "Important Dates",
-      path: "/important-dates",
-      icon: Clock3,
-    },
-  ];
+  {
+    name: "Call For Papers",
+    path: "/call-for-papers",
+    icon: PenLine,
+  },
+  {
+    name: "Guidelines & Policies",
+    path: "/guidelines",
+    icon: PenLine,
+  },
+  {
+    name: "Review Process",
+    path: "/review-process",
+    icon: FileSearch,
+  },
+  {
+    name: "Important Dates",
+    path: "/important-dates",
+    icon: Clock3,
+  },
+];
 
   // =========================================================
   // ACTIVE ROUTE
@@ -5494,7 +5500,7 @@ export default function Navbar() {
 
                 ${
                   mobileAuthorsOpen
-                    ? "max-h-[260px]"
+                    ? "max-h-[350px]"
                     : "max-h-0"
                 }
               `}

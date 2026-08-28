@@ -79,6 +79,7 @@ import Home from "./Pages/Home.jsx";
 import TopBar from "./components/TopBar.jsx";
 import About from "./Pages/About.jsx";
 import Guidelines from "./Pages/Guidelines.jsx";
+import ReviewProcess from "./Pages/ReviewProcess.jsx";
 import Committee from "./Pages/Committee.jsx";
 import CallForPapers from "./Pages/CallForPaper.jsx";
 import Speakers from "./Pages/Speakers.jsx";
@@ -125,6 +126,7 @@ function App() {
 
           <Route path="/committee" element={<Committee />} />
           <Route path="/call-for-papers" element={<CallForPapers />} />
+          <Route path="/review-process" element={<ReviewProcess />} />
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/tracks" element={<Tracks />} />
           <Route path="/important-dates" element={<ImportantDates />} />
