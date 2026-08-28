@@ -3,7 +3,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 import LogoStrip from "./LogoStrip";
-import heroBg from "../assets/image/new_bg_2.png";
+import heroBg from "../assets/image/a_new_bg.png";
 
 export default function Hero() {
   const navigate = useNavigate();
