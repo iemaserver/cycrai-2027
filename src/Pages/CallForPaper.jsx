@@ -201,7 +201,7 @@ export default function CallForPapers() {
 
             {/* CTA Buttons */}
 
-            <div className="mt-12 flex flex-wrap justify-center gap-5">
+            {/* <div className="mt-12 flex flex-wrap justify-center gap-5">
 
               <button
                 onClick={() => setShowCmtPopup(true)}
@@ -256,7 +256,7 @@ export default function CallForPapers() {
                 Explore Tracks
               </button>
 
-            </div>
+            </div> */}
 
           </motion.div>
 

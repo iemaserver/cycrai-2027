@@ -183,138 +183,125 @@ export default function AboutSection() {
           ===================================================== */}
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="
-              mt-20
-              grid
-              lg:grid-cols-[0.8fr_1.2fr]
-              gap-10
-              lg:gap-16
-              items-stretch
-            "
-          >
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.7 }}
+  className="
+    mt-20
+    w-full
+    max-w-6xl
+    mx-auto
+  "
+>
+  {/* Single About Card */}
+  <div
+    className="
+      group
+      relative
+      overflow-hidden
 
-            {/* Theme Card */}
-            <div
-              className="
-                relative
-                overflow-hidden
-                rounded-[30px]
-                border
-                border-cyan-400/20
-                bg-gradient-to-br
-                from-cyan-500/10
-                via-[#071326]
-                to-[#020817]
-                backdrop-blur-2xl
-                p-8
-                md:p-10
-              "
-            >
+      rounded-[30px]
 
-              {/* Glow */}
-              <div
-                className="
-                  absolute
-                  -top-20
-                  -right-20
-                  w-60
-                  h-60
-                  rounded-full
-                  bg-cyan-500/15
-                  blur-[100px]
-                "
-              />
+      border
+      border-cyan-400/20
 
-              <div className="relative z-10">
+      bg-white/5
+      backdrop-blur-2xl
 
-                <p
-                  className="
-                    text-cyan-300
-                    text-sm
-                    uppercase
-                    tracking-[3px]
-                    font-semibold
-                  "
-                >
-                  Conference Theme
-                </p>
+      p-8
+      md:p-10
 
-                <h2
-                  className="
-                    mt-6
-                    text-4xl
-                    md:text-5xl
-                    font-black
-                    leading-tight
-                    text-white
-                  "
-                >
-                  Secure Intelligence
-                  <span
-                    className="
-                      block
-                      mt-3
-                      bg-gradient-to-r
-                      from-cyan-300
-                      via-sky-400
-                      to-blue-500
-                      bg-clip-text
-                      text-transparent
-                    "
-                  >
-                    for a Connected Future
-                  </span>
-                </h2>
+      transition-all
+      duration-500
 
-                <div className="mt-10 h-[2px] w-20 bg-gradient-to-r from-cyan-400 to-blue-500" />
+      hover:border-cyan-400/40
+      hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
+      hover:-translate-y-2
+    "
+  >
 
-                <p className="mt-8 text-slate-400 leading-8">
-                  Advancing secure, responsible, and intelligent technologies
-                  through interdisciplinary research and global collaboration.
-                </p>
+    {/* Hover Glow */}
+    <div
+      className="
+        absolute
+        inset-0
 
-              </div>
-            </div>
+        opacity-0
+        group-hover:opacity-100
 
-            {/* Introduction */}
-            <div
-              className="
-                rounded-[30px]
-                border
-                border-cyan-400/15
-                bg-white/5
-                backdrop-blur-2xl
-                p-8
-                md:p-10
-              "
-            >
+        transition
+        duration-500
 
-              <p className="text-slate-300 text-lg md:text-xl leading-8">
-                {/* <span className="text-cyan-300 font-semibold">
-                  CYCRAI 2027
-                </span>{" "} */}
-                First International Conference on Cybersecurity, Cryptography and Responsible AI (CYCRAI 2027) will be organized by
-                Department of  Computer Science and Engineering(Cyber Security), Institute of Engineering & Management Kolkata, 
-                under University of Engineering and Management Kolkata, with Technical Co-Sponsorship of the IEEE Kolkata Section 
-                and IEEE Computer Society SBC during 29th September to 30th September, 2027.
-              </p>
+        bg-gradient-to-br
+        from-cyan-500/10
+        via-transparent
+        to-blue-500/5
 
-              <p className="mt-6 text-slate-400 text-lg leading-8">
-                The event brings together researchers, professionals, and government
-                representatives to share their work, examine key challenges, and 
-                explore potential solutions. Keynote addresses, technical sessions, 
-                and networking activities are designed to encourage cross-disciplinary 
-                dialogue. Papers that are accepted and presented will be submitted for 
-                publication in the IEEE Xplore Digital Library.
-              </p>
+        pointer-events-none
+      "
+    />
 
-            </div>
+    {/* Content */}
+    <div className="relative z-10">
 
-          </motion.div>
+      {/* First Paragraph */}
+      <p
+        className="
+          text-slate-300
+          text-base
+          md:text-lg
+          leading-8
+        "
+      >
+        First International Conference on Cybersecurity, Cryptography and
+        Responsible AI (CYCRAI 2027) will be organized by Department of
+        Computer Science and Engineering(Cyber Security), Institute of
+        Engineering & Management Kolkata, under University of Engineering
+        and Management Kolkata, with Technical Co-Sponsorship of the IEEE
+        Kolkata Section and IEEE Computer Society SBC during 29th September
+        to 30th September, 2027.
+      </p>
+
+      {/* Second Paragraph */}
+      <p
+        className="
+          mt-6
+          text-slate-400
+          text-base
+          md:text-lg
+          leading-8
+        "
+      >
+        The event brings together researchers, professionals, and government
+        representatives to share their work, examine key challenges, and
+        explore potential solutions. Keynote addresses, technical sessions,
+        and networking activities are designed to encourage cross-disciplinary
+        dialogue. Papers that are accepted and presented will be submitted for
+        publication in the IEEE Xplore Digital Library.
+      </p>
+
+      {/* Bottom Accent */}
+      <div
+        className="
+          mt-8
+          h-[2px]
+          w-16
+
+          bg-gradient-to-r
+          from-cyan-400
+          to-blue-500
+
+          group-hover:w-28
+
+          transition-all
+          duration-500
+        "
+      />
+
+    </div>
+  </div>
+</motion.div>
 
           {/* =====================================================
               CONFERENCE HIGHLIGHTS
@@ -470,422 +457,9 @@ export default function AboutSection() {
         </div>
       </section>
 
-      {/* =========================================================
-          RESEARCH AREAS
-      ========================================================= */}
+      
 
-      <section
-        className="
-          relative
-          py-28
-          overflow-hidden
-          bg-gradient-to-b
-          from-[#020817]
-          via-[#071326]
-          to-[#020817]
-        "
-      >
-
-        {/* Background Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-        {/* Glows */}
-        <div className="absolute left-0 top-20 w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
-
-        <div className="absolute right-0 bottom-0 w-[450px] h-[450px] rounded-full bg-blue-600/10 blur-[170px]" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-
-          {/* Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-20"
-          >
-
-            <span
-              className="
-                inline-flex
-                px-5
-                py-2
-                rounded-full
-                border
-                border-cyan-400/30
-                bg-cyan-500/10
-                text-cyan-300
-                uppercase
-                tracking-[3px]
-                text-sm
-              "
-            >
-              Areas of Focus
-            </span>
-
-            <h2
-              className="
-                mt-7
-                text-5xl
-                md:text-6xl
-                font-black
-                text-white
-              "
-            >
-              Research at
-              <span
-                className="
-                  block
-                  bg-gradient-to-r
-                  from-cyan-300
-                  via-sky-400
-                  to-blue-500
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                CYCRAI 2027
-              </span>
-            </h2>
-
-            {/* <p
-              className="
-                mt-8
-                max-w-3xl
-                mx-auto
-                text-slate-400
-                text-lg
-                leading-8
-              "
-            >
-              Explore the interconnected research domains shaping the future
-              of secure, responsible, and intelligent digital societies.
-            </p> */}
-
-          </motion.div>
-
-          {/* Research Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
-
-            {researchAreas.map((area, index) => {
-              const Icon = area.icon;
-
-              return (
-                <motion.div
-                  key={area.number}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.55,
-                    delay: index * 0.08,
-                  }}
-                  whileHover={{ y: -8 }}
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[30px]
-                    border
-                    border-cyan-400/20
-                    bg-white/5
-                    backdrop-blur-2xl
-                    p-8
-                    md:p-10
-                    transition-all
-                    duration-500
-                    hover:border-cyan-400/40
-                    hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-                  "
-                >
-
-                  {/* Hover Glow */}
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      opacity-0
-                      group-hover:opacity-100
-                      transition
-                      duration-500
-                      bg-gradient-to-br
-                      from-cyan-500/10
-                      via-transparent
-                      to-blue-500/5
-                    "
-                  />
-
-                  <div className="relative z-10">
-
-                    {/* Number + Icon */}
-                    <div className="flex items-center justify-between">
-
-                      <span
-                        className="
-                          text-5xl
-                          font-black
-                          text-cyan-500/10
-                          group-hover:text-cyan-400/20
-                          transition-colors
-                        "
-                      >
-                        {area.number}
-                      </span>
-
-                      <div
-                        className="
-                          w-16
-                          h-16
-                          rounded-2xl
-                          bg-cyan-500/10
-                          border
-                          border-cyan-400/20
-                          flex
-                          items-center
-                          justify-center
-                          group-hover:bg-cyan-400/20
-                          transition-all
-                          duration-300
-                        "
-                      >
-                        <Icon
-                          size={30}
-                          className="
-                            text-cyan-300
-                            group-hover:text-cyan-200
-                            transition-colors
-                          "
-                        />
-                      </div>
-
-                    </div>
-
-                    {/* Title */}
-                    <h3
-                      className="
-                        mt-8
-                        text-2xl
-                        md:text-3xl
-                        font-bold
-                        text-white
-                        leading-tight
-                        group-hover:text-cyan-300
-                        transition-colors
-                        duration-300
-                      "
-                    >
-                      {area.title}
-                    </h3>
-
-                    {/* Accent */}
-                    <div
-                      className="
-                        mt-6
-                        h-[2px]
-                        w-16
-                        bg-gradient-to-r
-                        from-cyan-400
-                        to-blue-500
-                        group-hover:w-24
-                        transition-all
-                        duration-500
-                      "
-                    />
-
-                    {/* Description */}
-                    <p
-                      className="
-                        mt-6
-                        text-slate-400
-                        text-base
-                        md:text-lg
-                        leading-8
-                      "
-                    >
-                      {area.description}
-                    </p>
-
-                  </div>
-
-                </motion.div>
-              );
-            })}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* =========================================================
-          VISION SECTION
-      ========================================================= */}
-
-      <section
-        className="
-          relative
-          overflow-hidden
-          py-28
-          bg-[#020817]
-        "
-      >
-
-        {/* Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-        {/* Glow */}
-        <div className="absolute left-1/3 top-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[170px] rounded-full" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[35px]
-              border
-              border-cyan-400/20
-              bg-gradient-to-br
-              from-cyan-500/10
-              via-[#071326]
-              to-[#020817]
-              backdrop-blur-2xl
-              p-10
-              md:p-16
-            "
-          >
-
-            {/* Decorative Glow */}
-            <div
-              className="
-                absolute
-                -top-32
-                -right-32
-                w-96
-                h-96
-                rounded-full
-                bg-cyan-500/10
-                blur-[140px]
-              "
-            />
-
-            <div className="relative z-10 grid lg:grid-cols-[1fr_auto] gap-12 items-end">
-
-              <div>
-
-                <div className="flex items-center gap-4 mb-7">
-
-                  <span className="h-px w-16 bg-cyan-400" />
-
-                  <span
-                    className="
-                      text-cyan-300
-                      text-sm
-                      uppercase
-                      tracking-[4px]
-                      font-semibold
-                    "
-                  >
-                    The Vision
-                  </span>
-
-                </div>
-
-                <h2
-                  className="
-                    text-4xl
-                    md:text-6xl
-                    font-black
-                    text-white
-                    leading-tight
-                    max-w-4xl
-                  "
-                >
-                  Building a secure,
-                  <span
-                    className="
-                      bg-gradient-to-r
-                      from-cyan-300
-                      via-sky-400
-                      to-blue-500
-                      bg-clip-text
-                      text-transparent
-                    "
-                  >
-                    {" "}intelligent
-                  </span>
-                  {" "}and sustainable digital future.
-                </h2>
-
-                <p
-                  className="
-                    mt-8
-                    max-w-3xl
-                    text-lg
-                    text-slate-400
-                    leading-8
-                  "
-                >
-                  CYCRAI 2027 brings together diverse perspectives and
-                  disciplines to advance technologies that are secure,
-                  trustworthy, responsible, and capable of shaping the future
-                  of digital society.
-                </p>
-
-              </div>
-
-              {/* Year */}
-              <div className="text-right">
-
-                <div
-                  className="
-                    text-7xl
-                    md:text-9xl
-                    font-black
-                    text-white/[0.05]
-                    leading-none
-                  "
-                >
-                2027
-                </div>
-
-                <p
-                  className="
-                    text-cyan-400
-                    text-xs
-                    tracking-[4px]
-                    uppercase
-                    mt-3
-                  "
-                >
-                  International Conference
-                </p>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-
-        </div>
-      </section>
+    
       <Footer />
     </>
   );

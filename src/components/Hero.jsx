@@ -3,7 +3,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 import LogoStrip from "./LogoStrip";
-import heroBg from "../assets/image/bggg.png";
+import heroBg from "../assets/image/new_bg_2.png";
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -41,14 +41,14 @@ export default function Hero() {
   </div>
 
   {/* Hero Text */}
-  <div className="text-center mt-6">
+  <div className="text-center mt-2">
 
           <h1
   className="
-    text-5xl
-    sm:text-6xl
-    md:text-7xl
-    lg:text-8xl
+    text-4xl
+sm:text-4xl
+md:text-6xl
+lg:text-6xl
 
     font-black
 
@@ -79,19 +79,19 @@ export default function Hero() {
   </span>
 </h1>
 
-          <p
+<p
   className="
-    mt-3
+    mt-1
 
     text-white
 
-    text-lg
-    sm:text-xl
-    md:text-2xl
+    text-xs
+  sm:text-sm
+  md:text-base
 
-    font-medium
+    font-small
 
-    tracking-[0.18em]
+    tracking-[0.10em]
 
     uppercase
 
@@ -101,20 +101,19 @@ export default function Hero() {
   International Conference on
 </p>
 
-          <p
+  <p
   className="
-    mt-3
+    mt-1
 
     text-[#27D9F7]
 
-    text-sm
-    sm:text-base
-    md:text-lg
-    lg:text-xl
+    text-xs
+    sm:text-sm
+    md:text-base
 
-    font-semibold
+    font-small
 
-    tracking-[0.12em]
+    tracking-[0.10em]
 
     uppercase
 
@@ -125,7 +124,7 @@ export default function Hero() {
 </p>
 <div
   className="
-    mt-5
+    mt-1
 
     flex
     flex-col
@@ -200,7 +199,7 @@ export default function Hero() {
     </span>
   </div>
 </div>
-<div
+{/* <div
   className="
     mt-5
 
@@ -215,7 +214,7 @@ export default function Hero() {
     sm:gap-7
   "
 >
-  {/* Explore */}
+
 
   <button
     onClick={() => navigate("/about")}
@@ -249,7 +248,7 @@ export default function Hero() {
     EXPLORE MORE
   </button>
 
-  {/* Register */}
+
 
   <button
     onClick={() => navigate("/registration")}
@@ -281,6 +280,85 @@ export default function Hero() {
   >
     REGISTER NOW
   </button>
+</div> */}
+         {/* Conference Information */}
+<div
+  className="
+    mt-1
+    mx-auto
+    max-w-5xl
+    px-5
+    text-center
+  "
+>
+  {/* Organized By */}
+  <p
+    className="
+      text-white
+      text-sm
+      sm:text-base
+      md:text-lg
+      font-medium
+      leading-relaxed
+      tracking-wide
+      drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
+    "
+  >
+    Organized by{" "}
+    <span className="text-[#27D9F7] font-semibold">
+      Department of Computer Science and Engineering (Cyber Security)
+    </span>
+    <br />
+    Institute of Engineering & Management Kolkata, University of
+    Engineering and Management Kolkata
+  </p>
+
+  {/* IEEE Xplore */}
+  <p
+    className="
+      mt-1
+      text-white
+      text-sm
+      sm:text-base
+      md:text-lg
+      font-medium
+      leading-relaxed
+      drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
+    "
+  >
+    *(All accepted and presented papers will be published in{" "}
+    <span
+      className="
+        text-[#27D9F7]
+        font-bold
+        drop-shadow-[0_0_10px_rgba(39,217,247,0.4)]
+      "
+    >
+      IEEE Xplore
+    </span>{" "}
+    <span className="text-white/80">(Awaiting Approval))</span>
+  </p>
+
+  {/* Microsoft CMT */}
+  <p
+    className="
+      mt-1
+      mx-auto
+      max-w-4xl
+      text-white/90
+      text-xs
+      sm:text-sm
+      md:text-base
+      font-normal
+      leading-relaxed
+      drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
+    "
+  >
+    *The Microsoft CMT service will be used for managing the peer-reviewing
+    process of this conference. This service is provided for free by Microsoft
+    and they bear all expenses, including costs for Azure cloud services as
+    well as software development and support.
+  </p>
 </div>
           
         </div>

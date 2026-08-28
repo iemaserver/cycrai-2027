@@ -121,265 +121,15 @@ export default function Guidelines() {
               </span>
 
             </h1>
-
-           
-
-            <div className="mt-12 flex flex-wrap justify-center gap-5">
-
-              <button
-                className="group rounded-full bg-cyan-400 px-8 py-4 font-bold text-slate-900 transition-all hover:scale-105 hover:shadow-[0_0_35px_rgba(34,211,238,.35)]"
-              >
-
-                Download IEEE Template
-
-              </button>
-
-              <button
-                onClick={() => setShowSubmitPopup(true)}
-                className="rounded-full border border-cyan-400/40 bg-white/5 px-8 py-4 text-white backdrop-blur-xl transition hover:border-cyan-400 hover:bg-cyan-500/10"
-              >
-
-                Submit Paper
-
-              </button>
-
-            </div>
-
-          </motion.div>
-
-          {/* Quick Rules */}
-
-          <div className="mt-20 grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-
-            {quickRules.map((item,index)=>{
-
-              const Icon = item.icon;
-
-              return(
-
-                <motion.div
-                  key={item.title}
-                  initial={{opacity:0,y:30}}
-                  whileInView={{opacity:1,y:0}}
-                  viewport={{once:true}}
-                  transition={{
-                    duration:.6,
-                    delay:index*.08
-                  }}
-                  className="group rounded-[30px] border border-cyan-400/20 bg-white/5 backdrop-blur-2xl p-8 hover:border-cyan-400/40 hover:-translate-y-2 transition-all duration-500"
-                >
-
-                  <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-
-                    <Icon
-                      size={28}
-                      className="text-cyan-300"
-                    />
-
-                  </div>
-
-                  <h3 className="mt-7 text-2xl font-bold text-white">
-
-                    {item.title}
-
-                  </h3>
-
-                  <p className="mt-5 text-slate-400 leading-8">
-
-                    {item.desc}
-
-                  </p>
-
-                </motion.div>
-
-              )
-
-            })}
-
-          </div>
-
-        </div>
-
-      </section>
-            {/* =========================================
-              IMPORTANT DATES
-      ========================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#020817] via-[#071326] to-[#020817] overflow-hidden">
-
-        {/* Background Grid */}
-
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-        <div className="absolute left-0 top-20 w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
-
-        <div className="absolute right-0 bottom-0 w-[450px] h-[450px] rounded-full bg-blue-600/10 blur-[170px]" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .7 }}
-            className="text-center mb-20"
-          >
-
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-2 text-cyan-300 uppercase tracking-[3px] text-sm">
-
-              <CalendarDays size={16} />
-
-              Conference Schedule
-
-            </span>
-
-            <h2 className="mt-8 text-5xl md:text-6xl font-black text-white">
-
-              Important
-
-              <span className="block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-
-                Dates
-
-              </span>
-
-            </h2>
-
-            <p className="mt-8 max-w-3xl mx-auto text-lg leading-8 text-slate-400">
-
-              Please keep track of all conference milestones and ensure
-              your submission is completed before the deadlines.
-
-            </p>
-
-          </motion.div>
-
-          {/* Timeline */}
-
-          <div className="relative">
-
-            {/* Desktop Line */}
-
-            <div className="hidden lg:block absolute top-10 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-500/20 via-cyan-400 to-blue-500/20"></div>
-
-            <div className="grid lg:grid-cols-5 gap-10">
-
-              {timeline.map((item, index) => (
-
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: .55,
-                    delay: index * .1,
-                  }}
-                  className="relative text-center"
-                >
-
-                  <div className="mx-auto w-20 h-20 rounded-full border-4 border-cyan-400 bg-[#071326] flex items-center justify-center shadow-[0_0_30px_rgba(34,211,238,.15)]">
-
-                    <span className="text-cyan-300 font-black text-xl">
-
-                      {index + 1}
-
-                    </span>
-
-                  </div>
-
-                  <div className="mt-8 rounded-[28px] border border-cyan-400/20 bg-white/5 backdrop-blur-2xl p-6 hover:border-cyan-400/40 hover:-translate-y-2 transition-all duration-500">
-
-                    <h3 className="text-xl font-bold text-white">
-
-                      {item.title}
-
-                    </h3>
-
-                    <p className="mt-4 text-cyan-300 font-semibold">
-
-                      {item.date}
-
-                    </p>
-
-                  </div>
-
-                </motion.div>
-
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-            {/* =========================================
-              AUTHOR GUIDELINES
-      ========================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        {/* Background */}
-
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-        <div className="absolute left-0 top-40 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[160px]" />
-
-        <div className="absolute right-0 bottom-20 w-[400px] h-[400px] rounded-full bg-blue-600/10 blur-[160px]" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-
-          <motion.div
-            initial={{ opacity:0,y:30 }}
-            whileInView={{ opacity:1,y:0 }}
-            viewport={{ once:true }}
-            transition={{ duration:.7 }}
-            className="text-center mb-20"
-          >
-
-            <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-
-              Author Instructions
-
-            </span>
-
-            <h2 className="mt-8 text-5xl md:text-6xl font-black text-white">
-
-              Submission
-
-              <span className="block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-
-                Guidelines
-
-              </span>
-
-            </h2>
-
-            <p className="mt-8 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
+            <p className="mt-4 mb-4 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
 
               Authors should carefully review the following guidelines
               before preparing and submitting manuscripts.
 
             </p>
 
-          </motion.div>
 
+          </motion.div>
           <div className="grid lg:grid-cols-2 gap-8">
                         <motion.div
               initial={{opacity:0,x:-30}}
@@ -524,9 +274,13 @@ export default function Guidelines() {
 
           </div>
 
+    
+
         </div>
 
       </section>
+            
+            
             {/* =========================================
               SUBMISSION WORKFLOW
       ========================================= */}
