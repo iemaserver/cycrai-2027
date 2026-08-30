@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 import LogoStrip from "./LogoStrip";
 import heroBg from "../assets/image/new_bg_2.png";
+import bg_mobile from "../assets/image/bg_mobile.png";
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -14,20 +15,40 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden bg-[#010611]"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 flex items-end justify-center">
-        <img
-          src={heroBg}
-          alt="Background"
-          className="
-            w-full
-            h-full
-            object-cover
-            object-bottom
-            pointer-events-none
-            select-none
-          "
-        />
-      </div>
+      {/* Background Image */}
+<div className="absolute inset-0 flex items-end justify-center">
+  
+  {/* Desktop / Tablet Background */}
+  <img
+    src={heroBg}
+    alt="Background"
+    className="
+      hidden sm:block
+      w-full
+      h-full
+      object-cover
+      object-bottom
+      pointer-events-none
+      select-none
+    "
+  />
+
+  {/* Mobile Background */}
+  <img
+    src={bg_mobile}
+    alt="Mobile Background"
+    className="
+      block sm:hidden
+      w-full
+      h-full
+      object-cover
+      object-bottom
+      pointer-events-none
+      select-none
+    "
+  />
+
+</div>
 
       {/* Slight Overlay */}
       <div className="absolute inset-0 bg-black/20" />
@@ -343,13 +364,11 @@ lg:text-6xl
   <p
     className="
       mt-1
-      mx-auto
-      max-w-4xl
-      text-white/90
-      text-xs
-      sm:text-sm
-      md:text-base
-      font-normal
+      text-white
+      text-sm
+      sm:text-base
+      md:text-lg
+      font-medium
       leading-relaxed
       drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
     "

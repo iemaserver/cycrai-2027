@@ -23,7 +23,8 @@ export default function Footer() {
   const authorLinks = [
     { number: "01", name: "Call For Papers", href: "/call-for-papers" },
     { number: "02", name: "Guidelines & Policies", href: "/guidelines" },
-    { number: "03", name: "Tracks", href: "/tracks" },
+    {number: "03", name: "Review Process", href: "/review-process" },
+    { number: "04", name: "Tracks", href: "/tracks" },
   ];
 
   return (
