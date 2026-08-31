@@ -1,4 +1,3 @@
-
 import {
   FaMapMarkerAlt,
   FaEnvelope,
@@ -9,6 +8,10 @@ import {
 import logo from "../assets/image/cycrai_latest_logo.png";
 
 export default function Footer() {
+  // =========================================================
+  // QUICK LINKS
+  // =========================================================
+
   const quickLinks = [
     { number: "01", name: "Home", href: "/" },
     { number: "02", name: "About", href: "/about" },
@@ -20,151 +23,230 @@ export default function Footer() {
     { number: "08", name: "Venue", href: "/venue" },
   ];
 
+
+  // =========================================================
+  // AUTHOR LINKS
+  // =========================================================
+
   const authorLinks = [
-    { number: "01", name: "Call For Papers", href: "/call-for-papers" },
-    { number: "02", name: "Guidelines & Policies", href: "/guidelines" },
-    {number: "03", name: "Review Process", href: "/review-process" },
-    { number: "04", name: "Tracks", href: "/tracks" },
+    {
+      number: "01",
+      name: "Call For Papers",
+      href: "/call-for-papers",
+    },
+    {
+      number: "02",
+      name: "Guidelines & Policies",
+      href: "/guidelines",
+    },
+    {
+      number: "03",
+      name: "Review Process",
+      href: "/review-process",
+    },
+    {
+      number: "04",
+      name: "Tracks",
+      href: "/tracks",
+    },
   ];
 
+
+  // =========================================================
+  // BACK TO TOP
+  // =========================================================
+
+  const handleBackToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+
   return (
-    <footer className="relative overflow-hidden bg-[#020817] text-white border-t border-cyan-400/15">
+    <footer
+      className="
+        relative
+        overflow-hidden
+        border-t
+        border-[#1E3A5F]
+        bg-[#07152F]
+        text-white
+      "
+    >
 
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
+      {/* =========================================================
+          SUBTLE BACKGROUND
+      ========================================================= */}
 
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
 
-        <div className="absolute top-0 left-0 w-[350px] h-[350px] rounded-full bg-cyan-500/7 blur-[140px]" />
-
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-blue-600/7 blur-[140px]" />
+        {/* Left blue glow */}
 
         <div
           className="
             absolute
-            inset-0
-            opacity-[0.018]
-            bg-[linear-gradient(rgba(34,211,238,1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,1)_1px,transparent_1px)]
-            bg-[size:70px_70px]
+            -left-32
+            -top-32
+            h-[420px]
+            w-[420px]
+            rounded-full
+            bg-[#075DB8]/10
+            blur-[150px]
+          "
+        />
+
+        {/* Right blue glow */}
+
+        <div
+          className="
+            absolute
+            -bottom-40
+            -right-32
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#2563EB]/10
+            blur-[160px]
           "
         />
 
       </div>
 
 
-      {/* =====================================================
-          COMPACT CTA
-      ====================================================== */}
+     
 
-      <div className="relative border-b border-white/10">
-
-        <div
-          className="
-            max-w-7xl
-            mx-auto
-            px-5
-            sm:px-6
-            py-10
-            md:py-12
-            flex
-            flex-col
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-            gap-6
-          "
-        >
-
-          <div>
-
-            <div className="flex items-center gap-3 mb-3">
-
-              <span className="h-px w-8 bg-cyan-400" />
-
-              <span className="text-cyan-300 text-xs uppercase tracking-[3px] font-semibold">
-                CYCRAI 2027
-              </span>
-
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">
-              Shape the future of{" "}
-              <span className="text-cyan-400">
-                secure intelligence.
-              </span>
-            </h2>
-
-            <p className="mt-3 text-sm text-slate-500 max-w-2xl">
-              Join researchers, academicians, industry leaders and innovators
-              at CYCRAI 2027.
-            </p>
-
-          </div>
-
-
-          {/* Back To Top */}
 
           
 
-        </div>
 
-      </div>
-
-
-      {/* =====================================================
+      {/* =========================================================
           MAIN FOOTER
-      ====================================================== */}
+      ========================================================= */}
 
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 py-10 md:py-12">
+      <div
+        className="
+          relative
+          mx-auto
+          max-w-7xl
+          px-5
+          py-12
+          sm:px-6
+          sm:py-14
+          lg:px-8
+          lg:py-16
+        "
+      >
 
         <div
           className="
             grid
             grid-cols-1
+            gap-10
             sm:grid-cols-2
-            lg:grid-cols-[1.2fr_1fr_0.8fr_1fr]
-            gap-8
-            md:gap-10
+            lg:grid-cols-[1.35fr_1fr_0.9fr_1.15fr]
+            lg:gap-12
           "
         >
 
-          {/* =================================================
+          {/* =====================================================
               BRAND
-          ================================================== */}
+          ====================================================== */}
 
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div
+            className="
+              sm:col-span-2
+              lg:col-span-1
+            "
+          >
+
+            {/* Logo */}
 
             <img
               src={logo}
               alt="CYCRAI 2027"
               className="
                 h-14
-                sm:h-16
                 w-auto
                 object-contain
-                transition-transform
-                duration-300
-                hover:scale-105
+                sm:h-16
               "
             />
 
-            <p className="mt-4 max-w-sm text-sm text-slate-500 leading-6">
+
+            {/* Description */}
+
+            <p
+              className="
+                mt-5
+                max-w-sm
+                text-sm
+                font-medium
+                leading-7
+                text-[#CBD5E1]
+                sm:text-base
+              "
+            >
               International Conference on Cyber Security,
               Cryptography and Responsible AI.
             </p>
 
-            <div className="mt-5">
 
-              <p className="text-[10px] uppercase tracking-[3px] text-slate-600">
+            {/* Hosted By */}
+
+            <div className="mt-7">
+
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[2.5px]
+                  text-[#60A5FA]
+                "
+              >
                 Hosted by
               </p>
 
-              <p className="mt-1 text-sm text-white font-medium">
-                Department of Computer Science and Engineering(Cyber Security),<br/> Institute of Engineering and Management Kolkata,<br/> University of Engineering and Management Kolkata
+
+              <div
+                className="
+                  mt-3
+                  h-[2px]
+                  w-10
+                  bg-[#075DB8]
+                "
+              />
+
+
+              <p
+                className="
+                  mt-4
+                  max-w-sm
+                  text-sm
+                  font-bold
+                  leading-7
+                  text-white
+                "
+              >
+                Department of Computer Science and Engineering
+                (Cyber Security),
+                <br />
+                Institute of Engineering and Management Kolkata,
+                <br />
+                University of Engineering and Management Kolkata
               </p>
 
-              <p className="mt-1 text-xs text-slate-500">
+
+              <p
+                className="
+                  mt-2
+                  text-xs
+                  font-medium
+                  text-[#94A3B8]
+                "
+              >
                 New Town, Kolkata, India
               </p>
 
@@ -173,68 +255,25 @@ export default function Footer() {
           </div>
 
 
-          {/* =================================================
-              QUICK LINKS
-          ================================================== */}
+          {/* =====================================================
+              NAVIGATION
+          ====================================================== */}
 
           <div>
 
-            <div className="flex items-center gap-3 mb-4">
+            {/* Section Heading */}
 
-              <span className="h-px w-6 bg-cyan-400" />
+            <FooterHeading title="Navigation" />
 
-              <h3 className="text-xs uppercase tracking-[3px] text-cyan-300 font-semibold">
-                Navigation
-              </h3>
 
-            </div>
-
-            <nav className="grid grid-cols-1 gap-0">
+            <nav className="mt-5">
 
               {quickLinks.map((link) => (
 
-                <a
+                <FooterLink
                   key={link.number}
-                  href={link.href}
-                  className="
-                    group
-                    flex
-                    items-center
-                    justify-between
-                    py-2
-                    border-b
-                    border-white/5
-                    text-slate-500
-                    hover:text-white
-                    transition-colors
-                  "
-                >
-
-                  <div className="flex items-center gap-3">
-
-                    <span className="text-[9px] font-mono text-slate-700 group-hover:text-cyan-400">
-                      {link.number}
-                    </span>
-
-                    <span className="text-xs sm:text-sm">
-                      {link.name}
-                    </span>
-
-                  </div>
-
-                  <FaArrowRight
-                    className="
-                      text-[9px]
-                      opacity-0
-                      -translate-x-2
-                      group-hover:opacity-100
-                      group-hover:translate-x-0
-                      text-cyan-400
-                      transition-all
-                    "
-                  />
-
-                </a>
+                  link={link}
+                />
 
               ))}
 
@@ -243,68 +282,25 @@ export default function Footer() {
           </div>
 
 
-          {/* =================================================
+          {/* =====================================================
               AUTHORS
-          ================================================== */}
+          ====================================================== */}
 
           <div>
 
-            <div className="flex items-center gap-3 mb-4">
+            {/* Section Heading */}
 
-              <span className="h-px w-6 bg-cyan-400" />
+            <FooterHeading title="Authors" />
 
-              <h3 className="text-xs uppercase tracking-[3px] text-cyan-300 font-semibold">
-                Authors
-              </h3>
 
-            </div>
-
-            <nav className="border-t border-white/5">
+            <nav className="mt-5">
 
               {authorLinks.map((link) => (
 
-                <a
+                <FooterLink
                   key={link.number}
-                  href={link.href}
-                  className="
-                    group
-                    flex
-                    items-center
-                    justify-between
-                    py-2.5
-                    border-b
-                    border-white/5
-                    text-slate-500
-                    hover:text-white
-                    transition-colors
-                  "
-                >
-
-                  <div className="flex items-center gap-3">
-
-                    <span className="text-[9px] font-mono text-slate-700 group-hover:text-cyan-400">
-                      {link.number}
-                    </span>
-
-                    <span className="text-xs sm:text-sm">
-                      {link.name}
-                    </span>
-
-                  </div>
-
-                  <FaArrowRight
-                    className="
-                      text-[9px]
-                      opacity-0
-                      -translate-x-2
-                      group-hover:opacity-100
-                      group-hover:translate-x-0
-                      text-cyan-400
-                      transition-all
-                    "
-                  />
-
-                </a>
+                  link={link}
+                />
 
               ))}
 
@@ -313,83 +309,195 @@ export default function Footer() {
           </div>
 
 
-          {/* =================================================
+          {/* =====================================================
               CONTACT
-          ================================================== */}
+          ====================================================== */}
 
           <div>
 
-            <div className="flex items-center gap-3 mb-4">
+            {/* Section Heading */}
 
-              <span className="h-px w-6 bg-cyan-400" />
-
-              <h3 className="text-xs uppercase tracking-[3px] text-cyan-300 font-semibold">
-                Contact
-              </h3>
-
-            </div>
+            <FooterHeading title="Contact" />
 
 
             {/* Location */}
 
-            <div className="flex items-start gap-3 pb-4 border-b border-white/5">
+            <div
+              className="
+                mt-5
+                border-b
+                border-[#1E3A5F]
+                pb-5
+              "
+            >
 
-              <FaMapMarkerAlt className="mt-1 text-cyan-400 shrink-0 text-sm" />
+              <div
+                className="
+                  flex
+                  items-start
+                  gap-4
+                "
+              >
 
-              <div>
+                <div
+                  className="
+                    flex
+                    h-10
+                    w-10
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-[#0B2144]
+                    text-[#60A5FA]
+                  "
+                >
+                  <FaMapMarkerAlt size={15} />
+                </div>
 
-                <p className="text-xs sm:text-sm text-white font-medium">
-                  Department of Computer Science and Engineering(Cyber Security), Institute of Engineering & Management Kolkata, University of Engineering and Management Kolkata
-                </p>
+
+                <div>
+
+                  <p
+                    className="
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[2px]
+                      text-[#60A5FA]
+                    "
+                  >
+                    Address
+                  </p>
+
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      font-semibold
+                      leading-6
+                      text-white
+                    "
+                  >
+                    Department of Computer Science and
+                    Engineering (Cyber Security),
+                    <br />
+                    Institute of Engineering &amp; Management
+                    Kolkata,
+                    <br />
+                    University of Engineering and Management
+                    Kolkata
+                  </p>
+
+                </div>
 
               </div>
 
             </div>
-             {/* Conference Chair */}
-<div className="mt-5">
 
-  <div className="flex items-center gap-3 mb-4">
 
-    <span className="h-px w-6 bg-cyan-400" />
+            {/* =================================================
+                CONFERENCE CHAIR
+            ================================================== */}
 
-    <h3 className="text-xs uppercase tracking-[3px] text-cyan-300 font-semibold">
-      Conference Chair
-    </h3>
+            <div
+              className="
+                mt-6
+                border-b
+                border-[#1E3A5F]
+                pb-5
+              "
+            >
 
-  </div>
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[2px]
+                  text-[#60A5FA]
+                "
+              >
+                Conference Chair
+              </p>
 
-  <div className="border-t border-white/5 pt-3">
 
-    <p className="text-sm text-white font-semibold">
-      Prof. Dr. Maumita Chakraborty
-    </p>
+              <div
+                className="
+                  mt-3
+                  h-[2px]
+                  w-10
+                  bg-[#075DB8]
+                "
+              />
 
-    <p className="mt-2 text-xs sm:text-sm text-slate-500 leading-6">
-      Department of Computer Science and Engineering (Cyber Security), Institute of Engineering & Management Kolkata, University of Engineering and Management Kolkata
-    </p>
 
-  </div>
+              <p
+                className="
+                  mt-4
+                  text-sm
+                  font-bold
+                  text-white
+                "
+              >
+                Prof. Dr. Maumita Chakraborty
+              </p>
 
-</div>
 
-            {/* Email */}
+              <p
+                className="
+                  mt-2
+                  text-xs
+                  font-medium
+                  leading-6
+                  text-[#94A3B8]
+                  sm:text-sm
+                "
+              >
+                Department of Computer Science and Engineering
+                (Cyber Security), Institute of Engineering &
+                Management Kolkata, University of Engineering
+                and Management Kolkata
+              </p>
+
+            </div>
+
+
+            {/* =================================================
+                EMAIL
+            ================================================== */}
 
             <a
               href="mailto:cycrai@iem.edu.in"
               className="
+                mt-5
                 flex
                 items-center
-                gap-3
-                py-4
-                text-xs
-                sm:text-sm
-                text-slate-500
-                hover:text-cyan-300
+                gap-4
+                text-sm
+                font-semibold
+                text-[#CBD5E1]
                 transition-colors
+                duration-300
+                hover:text-[#93C5FD]
               "
             >
 
-              <FaEnvelope className="text-cyan-400 shrink-0" />
+              <div
+                className="
+                  flex
+                  h-10
+                  w-10
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-xl
+                  bg-[#0B2144]
+                  text-[#60A5FA]
+                "
+              >
+                <FaEnvelope size={15} />
+              </div>
 
               <span>
                 cycrai@iem.edu.in
@@ -402,39 +510,86 @@ export default function Footer() {
         </div>
 
 
-        {/* =====================================================
+        {/* =========================================================
             BOTTOM BAR
-        ====================================================== */}
+        ========================================================= */}
 
-        <div className="mt-8 pt-5 border-t border-white/10">
+        <div
+          className="
+            mt-12
+            border-t
+            border-[#1E3A5F]
+            pt-6
+          "
+        >
 
           <div
             className="
               flex
               flex-col
+              gap-4
               sm:flex-row
-              items-start
               sm:items-center
-              justify-between
-              gap-3
+              sm:justify-between
             "
           >
 
-            <p className="text-[11px] sm:text-xs text-slate-600">
+            {/* Copyright */}
+
+            <p
+              className="
+                text-[11px]
+                font-medium
+                text-[#64748B]
+                sm:text-xs
+              "
+            >
               © 2027 CYCRAI. All Rights Reserved.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 text-[11px] sm:text-xs text-slate-600">
 
-              <span>IEEE Conference</span>
+            {/* Conference Information */}
 
-              <span className="text-cyan-400/40">•</span>
+            <div
+              className="
+                flex
+                flex-wrap
+                items-center
+                gap-3
+                text-[11px]
+                font-medium
+                text-[#64748B]
+                sm:text-xs
+              "
+            >
 
-              <span>IEM Kolkata</span>
+              <span>
+                IEEE Conference
+              </span>
 
-              <span className="text-cyan-400/40">•</span>
+              <span
+                className="
+                  text-[#075DB8]
+                "
+              >
+                •
+              </span>
 
-              <span>India</span>
+              <span>
+                IEM Kolkata
+              </span>
+
+              <span
+                className="
+                  text-[#075DB8]
+                "
+              >
+                •
+              </span>
+
+              <span>
+                India
+              </span>
 
             </div>
 
@@ -445,5 +600,128 @@ export default function Footer() {
       </div>
 
     </footer>
+  );
+}
+
+
+/* =============================================================
+   FOOTER SECTION HEADING
+============================================================= */
+
+function FooterHeading({ title }) {
+  return (
+    <div
+      className="
+        flex
+        items-center
+        gap-3
+      "
+    >
+
+      <span
+        className="
+          h-[2px]
+          w-7
+          bg-[#60A5FA]
+        "
+      />
+
+      <h3
+        className="
+          text-[11px]
+          font-bold
+          uppercase
+          tracking-[2.5px]
+          text-[#93C5FD]
+          sm:text-xs
+        "
+      >
+        {title}
+      </h3>
+
+    </div>
+  );
+}
+
+
+/* =============================================================
+   FOOTER NAVIGATION LINK
+============================================================= */
+
+function FooterLink({ link }) {
+  return (
+    <a
+      href={link.href}
+      className="
+        group
+        flex
+        items-center
+        justify-between
+        border-b
+        border-[#1E3A5F]
+        py-3
+        text-[#94A3B8]
+        transition-colors
+        duration-300
+        hover:text-white
+      "
+    >
+
+      <div
+        className="
+          flex
+          items-center
+          gap-3
+        "
+      >
+
+        {/* Number */}
+
+        <span
+          className="
+            text-[9px]
+            font-bold
+            tracking-wider
+            text-[#475569]
+            transition-colors
+            duration-300
+            group-hover:text-[#60A5FA]
+          "
+        >
+          {link.number}
+        </span>
+
+
+        {/* Name */}
+
+        <span
+          className="
+            text-xs
+            font-semibold
+            sm:text-sm
+          "
+        >
+          {link.name}
+        </span>
+
+      </div>
+
+
+      {/* Arrow */}
+
+      <FaArrowRight
+        className="
+          text-[9px]
+          text-[#60A5FA]
+          opacity-0
+          -translate-x-2
+          transition-all
+          duration-300
+          group-hover:translate-x-0
+          group-hover:opacity-100
+        "
+      />
+
+    </a>
   );
 }

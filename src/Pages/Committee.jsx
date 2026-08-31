@@ -1,7 +1,7 @@
-
 // import { useState } from "react";
 // import { motion, AnimatePresence } from "framer-motion";
-// import MemberCard from "../components/MemberCard";
+
+// import CommitteeTabs from "../components/CommitteeTabs";
 // import { committeeData } from "../data/committeeData";
 // import Footer from "../components/Footer";
 
@@ -16,39 +16,214 @@
 //     committeeData[activeCommittee] || committees[0]?.[1];
 
 //   return (
-//     <main className="min-h-screen overflow-hidden bg-[#020817] text-white">
+//     <main className="min-h-screen overflow-hidden bg-[#F7FAFF] text-[#172554]">
 
 //       {/* =========================================================
-//           HERO SECTION
+//           HERO
 //       ========================================================= */}
-//       <section className="relative overflow-hidden bg-[#020817]">
 
-//         {/* Background Grid */}
-//         <div
-//           className="pointer-events-none absolute inset-0 opacity-[0.08]"
-//           style={{
-//             backgroundImage:
-//               "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-//             backgroundSize: "60px 60px",
-//           }}
-//         />
+//       <section
+//         className="
+//           relative
+//           overflow-hidden
+//           bg-[#07152F]
+//           px-5
+//           pb-16
+//           pt-12
+//           sm:px-6
+//           sm:pb-20
+//           sm:pt-16
+//           lg:px-8
+//           lg:pb-24
+//           lg:pt-20
+//         "
+//       >
 
-//         {/* Cyan Glow */}
+//         {/* Soft Background Glow */}
+
 //         <div
 //           className="
 //             pointer-events-none
 //             absolute
 //             -left-40
 //             -top-40
-//             h-[500px]
-//             w-[500px]
+//             h-[450px]
+//             w-[450px]
 //             rounded-full
-//             bg-cyan-500/20
-//             blur-[160px]
+//             bg-blue-500/10
+//             blur-[140px]
 //           "
 //         />
 
-//         {/* Blue Glow */}
+//         <div
+//           className="
+//             pointer-events-none
+//             absolute
+//             -bottom-48
+//             -right-40
+//             h-[500px]
+//             w-[500px]
+//             rounded-full
+//             bg-sky-400/10
+//             blur-[150px]
+//           "
+//         />
+
+
+//         {/* =====================================================
+//             HERO CONTENT
+//         ====================================================== */}
+
+//         <div
+//           className="
+//             relative
+//             z-10
+//             mx-auto
+//             max-w-7xl
+//           "
+//         >
+
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               y: 30,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               y: 0,
+//             }}
+//             transition={{
+//               duration: 0.7,
+//             }}
+//             className="text-center"
+//           >
+
+//             {/* Heading */}
+
+//             <motion.h1
+//               initial={{
+//                 opacity: 0,
+//                 y: 20,
+//               }}
+//               animate={{
+//                 opacity: 1,
+//                 y: 0,
+//               }}
+//               transition={{
+//                 delay: 0.15,
+//                 duration: 0.7,
+//               }}
+//               className="
+//                 text-5xl
+//                 font-black
+//                 leading-tight
+//                 tracking-tight
+//                 text-white
+//                 sm:text-6xl
+//                 md:text-7xl
+//                 lg:text-8xl
+//               "
+//             >
+//               Conference
+
+//               <span
+//                 className="
+//                   block
+//                   bg-gradient-to-r
+//                   from-[#93C5FD]
+//                   via-[#60A5FA]
+//                   to-[#BFDBFE]
+//                   bg-clip-text
+//                   pb-3
+//                   text-transparent
+//                 "
+//               >
+//                 Committee
+//               </span>
+
+//             </motion.h1>
+
+//           </motion.div>
+
+
+//           {/* =====================================================
+//               COMMITTEE TABS
+//           ====================================================== */}
+
+//           <motion.div
+//             initial={{
+//               opacity: 0,
+//               y: 20,
+//             }}
+//             animate={{
+//               opacity: 1,
+//               y: 0,
+//             }}
+//             transition={{
+//               delay: 0.35,
+//               duration: 0.6,
+//             }}
+//             className="
+//               relative
+//               z-20
+//               mt-10
+//               md:mt-12
+//             "
+//           >
+
+//             <CommitteeTabs
+//               activeCommittee={activeCommittee}
+//               setActiveCommittee={setActiveCommittee}
+//             />
+
+//           </motion.div>
+
+//         </div>
+
+//       </section>
+
+
+//       {/* =========================================================
+//           ACTIVE COMMITTEE CONTENT
+//       ========================================================= */}
+
+//       <section
+//         className="
+//           relative
+//           overflow-hidden
+//           bg-gradient-to-b
+//           from-white
+//           via-[#F8FBFF]
+//           to-[#F1F6FD]
+//           px-4
+//           pb-24
+//           pt-12
+//           sm:px-6
+//           sm:pt-14
+//           lg:px-8
+//           lg:pb-28
+//           lg:pt-16
+//         "
+//       >
+
+//         {/* =====================================================
+//             SOFT BACKGROUND EFFECTS
+//         ====================================================== */}
+
+//         <div
+//           className="
+//             pointer-events-none
+//             absolute
+//             -left-40
+//             top-20
+//             h-[450px]
+//             w-[450px]
+//             rounded-full
+//             bg-[#BFDBFE]/20
+//             blur-[140px]
+//           "
+//         />
+
 //         <div
 //           className="
 //             pointer-events-none
@@ -58,417 +233,25 @@
 //             h-[500px]
 //             w-[500px]
 //             rounded-full
-//             bg-blue-600/20
-//             blur-[170px]
+//             bg-[#DBEAFE]/30
+//             blur-[140px]
 //           "
 //         />
+
+
+//         {/* =====================================================
+//             MAIN CONTENT
+//         ====================================================== */}
 
 //         <div
 //           className="
 //             relative
+//             z-10
 //             mx-auto
 //             max-w-7xl
-//             px-6
-//             pb-20
-//             pt-6
-//             md:pb-24
 //           "
 //         >
 
-//           {/* =====================================================
-//               HERO CONTENT
-//           ===================================================== */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.7 }}
-//             className="text-center"
-//           >
-
-//             {/* Badge */}
-//             <span
-//               className="
-//                 inline-flex
-//                 items-center
-//                 rounded-full
-//                 border
-//                 border-cyan-400/30
-//                 bg-cyan-500/10
-//                 px-5
-//                 py-2
-//                 text-xs
-//                 uppercase
-//                 tracking-[3px]
-//                 text-cyan-300
-//                 backdrop-blur-xl
-//                 md:text-sm
-//               "
-//             >
-//               Conference Committee
-//             </span>
-
-
-//             {/* Main Heading */}
-//             <motion.h1
-//               initial={{ opacity: 0, y: 25 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               transition={{
-//                 delay: 0.15,
-//                 duration: 0.7,
-//               }}
-//               className="
-//                 mt-7
-//                 text-5xl
-//                 font-black
-//                 leading-[1.1]
-//                 md:text-7xl
-//               "
-//             >
-//               Conference
-
-//               <span
-//                 className="
-//                   block
-//                   bg-gradient-to-r
-//                   from-cyan-300
-//                   via-sky-400
-//                   to-blue-500
-//                   bg-clip-text
-//                   pb-3
-//                   text-transparent
-//                 "
-//               >
-//                 Committee
-//               </span>
-//             </motion.h1>
-
-
-//             {/* Accent Line */}
-//             <motion.div
-//               initial={{ width: 0 }}
-//               animate={{ width: 140 }}
-//               transition={{
-//                 delay: 0.4,
-//                 duration: 0.8,
-//               }}
-//               className="
-//                 mx-auto
-//                 mt-8
-//                 h-1
-//                 rounded-full
-//                 bg-gradient-to-r
-//                 from-cyan-400
-//                 via-sky-500
-//                 to-blue-600
-//               "
-//             />
-
-
-//             {/* =====================================================
-//                 COMMITTEE DIRECTORY
-//                 MOVED INSIDE HERO AFTER ACCENT LINE
-//             ===================================================== */}
-//             <div
-//               className="
-//                 mt-12
-//                 text-left
-//                 md:mt-14
-//               "
-//             >
-
-//               {/* ===================================================
-//                   DIRECTORY HEADER
-//               =================================================== */}
-//               <div
-//                 className="
-//                   mb-6
-//                   flex
-//                   items-center
-//                   justify-between
-//                   gap-4
-//                 "
-//               >
-
-//                 <div>
-
-//                   <p
-//                     className="
-//                       text-[9px]
-//                       font-semibold
-//                       uppercase
-//                       tracking-[4px]
-//                       text-cyan-400
-//                     "
-//                   >
-//                     Conference
-//                   </p>
-
-//                   <h2
-//                     className="
-//                       mt-1.5
-//                       text-xl
-//                       font-black
-//                       tracking-tight
-//                       text-white
-//                       md:text-2xl
-//                     "
-//                   >
-//                     Committee Directory
-//                   </h2>
-
-//                 </div>
-
-
-//                 {/* Committee Count */}
-//                 <div
-//                   className="
-//                     rounded-full
-//                     border
-//                     border-cyan-400/20
-//                     bg-cyan-500/5
-//                     px-3
-//                     py-1.5
-//                     text-[9px]
-//                     font-medium
-//                     text-cyan-300
-//                   "
-//                 >
-//                   {committees.length} Committees
-//                 </div>
-
-//               </div>
-
-
-//               {/* ===================================================
-//                   ALL 7 COMMITTEES
-//               =================================================== */}
-//               <div className="space-y-2.5">
-
-//                 {committees.map(([key, committee], index) => {
-
-//                   const isActive = activeCommittee === key;
-
-//                   return (
-//                     <motion.button
-//                       key={key}
-//                       type="button"
-//                       onClick={() => setActiveCommittee(key)}
-//                       whileHover={{
-//                         x: isActive ? 0 : 3,
-//                       }}
-//                       whileTap={{
-//                         scale: 0.99,
-//                       }}
-//                       transition={{
-//                         duration: 0.2,
-//                       }}
-//                       className={`
-//                         group
-//                         relative
-//                         flex
-//                         min-h-[64px]
-//                         w-full
-//                         items-center
-//                         overflow-hidden
-//                         rounded-xl
-//                         border
-//                         px-4
-//                         py-3
-//                         text-left
-//                         transition-all
-//                         duration-300
-
-//                         ${
-//                           isActive
-//                             ? `
-//                               border-cyan-400/50
-//                               bg-gradient-to-r
-//                               from-cyan-500
-//                               via-sky-500
-//                               to-blue-600
-//                               shadow-[0_0_30px_rgba(34,211,238,0.14)]
-//                             `
-//                             : `
-//                               border-white/[0.08]
-//                               bg-[#071326]/75
-//                               hover:border-cyan-400/25
-//                               hover:bg-[#0a192d]
-//                             `
-//                         }
-//                       `}
-//                     >
-
-//                       {/* Active Left Indicator */}
-//                       <motion.div
-//                         initial={false}
-//                         animate={{
-//                           opacity: isActive ? 1 : 0,
-//                           scaleY: isActive ? 1 : 0,
-//                         }}
-//                         transition={{
-//                           duration: 0.25,
-//                         }}
-//                         className="
-//                           absolute
-//                           left-0
-//                           top-0
-//                           h-full
-//                           w-[3px]
-//                           origin-center
-//                           bg-white/80
-//                         "
-//                       />
-
-
-//                       {/* Number */}
-//                       <span
-//                         className={`
-//                           mr-4
-//                           shrink-0
-//                           text-[11px]
-//                           font-bold
-//                           tracking-wide
-//                           transition-colors
-//                           duration-300
-
-//                           ${
-//                             isActive
-//                               ? "text-white/90"
-//                               : "text-cyan-400/60 group-hover:text-cyan-300"
-//                           }
-//                         `}
-//                       >
-//                         {String(index + 1).padStart(2, "0")}.
-//                       </span>
-
-
-//                       {/* Committee Name */}
-//                       <span
-//                         className={`
-//                           min-w-0
-//                           flex-1
-//                           text-sm
-//                           font-semibold
-//                           leading-snug
-//                           transition-colors
-//                           duration-300
-//                           md:text-[15px]
-
-//                           ${
-//                             isActive
-//                               ? "text-white"
-//                               : "text-slate-300 group-hover:text-white"
-//                           }
-//                         `}
-//                       >
-//                         {committee.title}
-//                       </span>
-
-
-//                       {/* Arrow */}
-//                       <span
-//                         className={`
-//                           ml-3
-//                           shrink-0
-//                           text-sm
-//                           transition-all
-//                           duration-300
-
-//                           ${
-//                             isActive
-//                               ? "translate-x-0 text-white opacity-100"
-//                               : "-translate-x-1 text-slate-600 opacity-0 group-hover:translate-x-0 group-hover:text-cyan-400 group-hover:opacity-100"
-//                           }
-//                         `}
-//                       >
-//                         →
-//                       </span>
-
-//                     </motion.button>
-//                   );
-//                 })}
-
-//               </div>
-
-//             </div>
-
-//           </motion.div>
-
-//         </div>
-//       </section>
-
-
-//       {/* =========================================================
-//           ACTIVE COMMITTEE CONTENT
-//       ========================================================= */}
-//       <section
-//         className="
-//           relative
-//           overflow-hidden
-//           bg-gradient-to-b
-//           from-[#020817]
-//           via-[#071326]
-//           to-[#020817]
-//           pb-24
-//         "
-//       >
-
-//         {/* Background Grid */}
-//         <div
-//           className="pointer-events-none absolute inset-0 opacity-[0.035]"
-//           style={{
-//             backgroundImage:
-//               "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-//             backgroundSize: "70px 70px",
-//           }}
-//         />
-
-
-//         {/* Cyan Glow */}
-//         <div
-//           className="
-//             pointer-events-none
-//             absolute
-//             left-0
-//             top-20
-//             h-[450px]
-//             w-[450px]
-//             rounded-full
-//             bg-cyan-500/10
-//             blur-[170px]
-//           "
-//         />
-
-
-//         {/* Blue Glow */}
-//         <div
-//           className="
-//             pointer-events-none
-//             absolute
-//             bottom-0
-//             right-0
-//             h-[450px]
-//             w-[450px]
-//             rounded-full
-//             bg-blue-600/10
-//             blur-[170px]
-//           "
-//         />
-
-
-//         <div
-//           className="
-//             relative
-//             mx-auto
-//             max-w-7xl
-//             px-4
-//             md:px-6
-//           "
-//         >
-
-//           {/* =====================================================
-//               ACTIVE COMMITTEE
-//           ===================================================== */}
 //           <AnimatePresence mode="wait">
 
 //             <motion.div
@@ -488,21 +271,29 @@
 //               transition={{
 //                 duration: 0.4,
 //               }}
-//               className="pt-16 md:pt-20"
+//               className="pt-2 md:pt-4"
 //             >
 
+
 //               {/* =================================================
-//                   ACTIVE COMMITTEE TITLE
+//                   COMMITTEE TITLE
 //               ================================================= */}
-//               <div className="mb-12 text-center">
+
+//               <div
+//                 className="
+//                   mb-10
+//                   text-center
+//                   md:mb-14
+//                 "
+//               >
 
 //                 <p
 //                   className="
-//                     text-[10px]
+//                     text-xs
+//                     font-bold
 //                     uppercase
-//                     tracking-[3px]
-//                     text-cyan-400
-//                     md:text-xs
+//                     tracking-[2.5px]
+//                     text-[#075DB8]
 //                   "
 //                 >
 //                   Selected Committee
@@ -511,31 +302,18 @@
 //                 <h2
 //                   className="
 //                     mx-auto
-//                     mt-3
+//                     mt-4
 //                     max-w-5xl
 //                     text-3xl
 //                     font-black
 //                     leading-tight
-//                     text-white
+//                     text-[#172554]
+//                     sm:text-4xl
 //                     md:text-5xl
 //                   "
 //                 >
 //                   {currentCommittee?.title}
 //                 </h2>
-
-//                 <div
-//                   className="
-//                     mx-auto
-//                     mt-5
-//                     h-1
-//                     w-24
-//                     rounded-full
-//                     bg-gradient-to-r
-//                     from-cyan-400
-//                     via-sky-500
-//                     to-blue-600
-//                   "
-//                 />
 
 //               </div>
 
@@ -543,7 +321,8 @@
 //               {/* =================================================
 //                   COMMITTEE SECTIONS
 //               ================================================= */}
-//               <div className="space-y-12 md:space-y-14">
+
+//               <div className="space-y-10 md:space-y-12">
 
 //                 {currentCommittee?.sections?.map(
 //                   (section, sectionIndex) => (
@@ -570,37 +349,23 @@
 //                       {/* =================================================
 //                           SECTION HEADER
 //                       ================================================= */}
+
 //                       <div
 //                         className="
-//                           relative
 //                           mb-6
 //                           overflow-hidden
-//                           rounded-2xl
+//                           rounded-[16px]
 //                           border
-//                           border-cyan-400/15
-//                           bg-white/[0.035]
-//                           px-5
-//                           py-4
-//                           backdrop-blur-xl
-//                           md:px-6
-//                           md:py-5
+//                           border-[#DCE3EB]
+//                           border-t-4
+//                           border-t-[#075DB8]
+//                           bg-white
+//                           px-6
+//                           py-6
+//                           md:px-8
+//                           md:py-7
 //                         "
 //                       >
-
-//                         {/* Top Accent */}
-//                         <div
-//                           className="
-//                             absolute
-//                             left-0
-//                             right-0
-//                             top-0
-//                             h-[2px]
-//                             bg-gradient-to-r
-//                             from-cyan-400
-//                             via-sky-500
-//                             to-blue-600
-//                           "
-//                         />
 
 //                         <div
 //                           className="
@@ -612,31 +377,34 @@
 //                         >
 
 //                           {/* Section Information */}
+
 //                           <div
 //                             className="
 //                               flex
 //                               min-w-0
 //                               items-center
-//                               gap-3
+//                               gap-4
 //                             "
 //                           >
 
-//                             {/* Section Number */}
+//                             {/* Number */}
+
 //                             <div
 //                               className="
 //                                 flex
-//                                 h-9
-//                                 w-9
+//                                 h-11
+//                                 w-11
 //                                 shrink-0
 //                                 items-center
 //                                 justify-center
-//                                 rounded-lg
-//                                 border
-//                                 border-cyan-400/20
-//                                 bg-cyan-500/10
-//                                 text-xs
+//                                 rounded-xl
+//                                 bg-[#E8F1FF]
+//                                 text-sm
 //                                 font-bold
-//                                 text-cyan-300
+//                                 text-[#075DB8]
+//                                 md:h-12
+//                                 md:w-12
+//                                 md:text-base
 //                               "
 //                             >
 //                               {String(sectionIndex + 1).padStart(
@@ -645,14 +413,19 @@
 //                               )}
 //                             </div>
 
+
+//                             {/* Title */}
+
 //                             <div className="min-w-0">
 
 //                               <p
 //                                 className="
-//                                   text-[8px]
+//                                   text-[9px]
+//                                   font-bold
 //                                   uppercase
 //                                   tracking-[2px]
-//                                   text-cyan-400/60
+//                                   text-[#64748B]
+//                                   md:text-xs
 //                                 "
 //                               >
 //                                 Committee Section
@@ -660,12 +433,12 @@
 
 //                               <h3
 //                                 className="
-//                                   mt-0.5
+//                                   mt-1
 //                                   text-lg
 //                                   font-bold
 //                                   leading-tight
-//                                   text-white
-//                                   md:text-xl
+//                                   text-[#172554]
+//                                   md:text-2xl
 //                                 "
 //                               >
 //                                 {section.title}
@@ -676,29 +449,7 @@
 //                           </div>
 
 
-//                           {/* Member Count */}
-//                           <div
-//                             className="
-//                               shrink-0
-//                               rounded-full
-//                               border
-//                               border-cyan-400/20
-//                               bg-cyan-500/10
-//                               px-3
-//                               py-1
-//                               text-[10px]
-//                               font-semibold
-//                               text-cyan-300
-//                               md:px-4
-//                               md:py-1.5
-//                               md:text-xs
-//                             "
-//                           >
-//                             {section.members?.length || 0}{" "}
-//                             {section.members?.length === 1
-//                               ? "Member"
-//                               : "Members"}
-//                           </div>
+                          
 
 //                         </div>
 
@@ -708,41 +459,27 @@
 //                       {/* =================================================
 //                           MEMBER CARDS
 //                       ================================================= */}
+
 //                       <motion.div
 //                         layout
 //                         className="
 //                           grid
 //                           grid-cols-1
-//                           gap-4
-//                           md:grid-cols-2
-//                           md:gap-5
+//                           gap-5
+//                           sm:grid-cols-2
+//                           lg:grid-cols-3
+//                           xl:grid-cols-4
 //                         "
 //                       >
 
 //                         {section.members?.map(
 //                           (member, memberIndex) => (
 
-//                             <motion.div
+//                             <MemberBox
 //                               key={`${member.name}-${memberIndex}`}
-//                               initial={{
-//                                 opacity: 0,
-//                                 y: 15,
-//                               }}
-//                               whileInView={{
-//                                 opacity: 1,
-//                                 y: 0,
-//                               }}
-//                               viewport={{
-//                                 once: true,
-//                                 amount: 0.05,
-//                               }}
-//                               transition={{
-//                                 delay: memberIndex * 0.03,
-//                                 duration: 0.3,
-//                               }}
-//                             >
-//                               <MemberCard member={member} />
-//                             </motion.div>
+//                               member={member}
+//                               index={memberIndex}
+//                             />
 
 //                           )
 //                         )}
@@ -761,12 +498,14 @@
 //           </AnimatePresence>
 
 //         </div>
+
 //       </section>
 
 
 //       {/* =========================================================
 //           FOOTER
 //       ========================================================= */}
+
 //       <Footer />
 
 //     </main>
@@ -774,92 +513,348 @@
 // }
 
 
-import { useState } from "react";
+// /* =========================================================
+//    MEMBER BOX
+//    Matches the supplied reference image
+// ========================================================= */
+
+// function MemberBox({
+//   member,
+//   index = 0,
+// }) {
+//   return (
+//     <motion.div
+//       initial={{
+//         opacity: 0,
+//         y: 18,
+//       }}
+//       whileInView={{
+//         opacity: 1,
+//         y: 0,
+//       }}
+//       viewport={{
+//         once: true,
+//         amount: 0.05,
+//       }}
+//       transition={{
+//         duration: 0.4,
+//         delay: index * 0.03,
+//       }}
+//       className="
+//         group
+//         relative
+//         overflow-hidden
+//         rounded-[12px]
+//         border
+//         border-[#DCE3EB]
+//         border-t-4
+//         border-t-[#075DB8]
+//         bg-white
+//       "
+//     >
+
+//       {/* =====================================================
+//           MEMBER CONTENT
+//       ====================================================== */}
+
+//       <div
+//         className="
+//           flex
+//           min-h-[190px]
+//           flex-col
+//           items-center
+//           justify-center
+//           px-6
+//           py-8
+//           text-center
+//         "
+//       >
+
+//         {/* =================================================
+//             OPTIONAL MEMBER IMAGE
+//         ================================================== */}
+
+//         {member.image && (
+//           <div
+//             className="
+//               mb-5
+//               h-20
+//               w-20
+//               overflow-hidden
+//               rounded-full
+//               border-2
+//               border-[#E8F1FF]
+//               bg-[#F5F9FF]
+//             "
+//           >
+//             <img
+//               src={member.image}
+//               alt={member.name}
+//               className="
+//                 h-full
+//                 w-full
+//                 object-cover
+//               "
+//             />
+//           </div>
+//         )}
+
+
+//         {/* =================================================
+//             MEMBER NAME
+//         ================================================== */}
+
+//         <h3
+//           className="
+//             max-w-full
+//             text-lg
+//             font-black
+//             uppercase
+//             leading-7
+//             tracking-[-0.2px]
+//             text-[#075DB8]
+//             sm:text-xl
+//           "
+//         >
+//           {member.name}
+//         </h3>
+
+
+//         {/* =================================================
+//             ORANGE ACCENT LINE
+//         ================================================== */}
+
+//         <div
+//           className="
+//             mt-5
+//             h-[2px]
+//             w-10
+//             bg-[#F59E0B]
+//           "
+//         />
+
+
+//         {/* =================================================
+//             OPTIONAL DESIGNATION
+//         ================================================== */}
+
+//         {member.designation && (
+//           <p
+//             className="
+//               mt-4
+//               text-sm
+//               font-semibold
+//               leading-6
+//               text-[#475569]
+//             "
+//           >
+//             {member.designation}
+//           </p>
+//         )}
+
+
+//         {/* =================================================
+//             OPTIONAL AFFILIATION
+//         ================================================== */}
+
+//         {member.affiliation && (
+//           <p
+//             className="
+//               mt-1
+//               text-xs
+//               font-medium
+//               leading-5
+//               text-[#64748B]
+//             "
+//           >
+//             {member.affiliation}
+//           </p>
+//         )}
+
+//       </div>
+
+//     </motion.div>
+//   );
+// }
+
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import CommitteeTabs from "../components/CommitteeTabs";
-import MemberCard from "../components/MemberCard";
+import { useSearchParams } from "react-router-dom";
+
 import { committeeData } from "../data/committeeData";
 import Footer from "../components/Footer";
 
+
+// =============================================================
+// COMMITTEE PAGE
+// =============================================================
+
 export default function Committee() {
+  // =========================================================
+  // URL SEARCH PARAMETERS
+  // =========================================================
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+
+  // =========================================================
+  // ALL COMMITTEES
+  // =========================================================
+
   const committees = Object.entries(committeeData);
 
-  const [activeCommittee, setActiveCommittee] = useState(
-    committees[0]?.[0] || "organizing"
-  );
+
+  // =========================================================
+  // GET ACTIVE COMMITTEE FROM URL
+  // =========================================================
+
+  const requestedCommittee = searchParams.get("committee");
+
+
+  // =========================================================
+  // FALLBACK TO FIRST COMMITTEE
+  // =========================================================
+
+  const activeCommittee =
+    committeeData[requestedCommittee]
+      ? requestedCommittee
+      : committees[0]?.[0] || "organizing";
+
+
+  // =========================================================
+  // CURRENT COMMITTEE DATA
+  // =========================================================
 
   const currentCommittee =
-    committeeData[activeCommittee] || committees[0]?.[1];
+    committeeData[activeCommittee] ||
+    committees[0]?.[1];
+
+
+  // =========================================================
+  // SET DEFAULT COMMITTEE IN URL
+  // =========================================================
+
+  useEffect(() => {
+    if (!requestedCommittee) {
+      setSearchParams(
+        {
+          committee: activeCommittee,
+        },
+        {
+          replace: true,
+        }
+      );
+    }
+  }, [
+    requestedCommittee,
+    activeCommittee,
+    setSearchParams,
+  ]);
+
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#020817] text-white">
+    <main
+      className="
+        min-h-screen
+        overflow-hidden
+        bg-[#F7FAFF]
+        text-[#172554]
+      "
+    >
 
-      {/* =========================================================
-          HERO
-      ========================================================= */}
-      <section className="relative overflow-hidden bg-[#020817]">
+      {/* =====================================================
+          HERO SECTION
+      ====================================================== */}
 
-        {/* GRID */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
+      <section
+        className="
+          relative
+          overflow-hidden
 
-        {/* CYAN GLOW */}
+          bg-[#07152F]
+
+          px-5
+          pb-16
+          pt-12
+
+          sm:px-6
+          sm:pb-20
+          sm:pt-16
+
+          lg:px-8
+          lg:pb-24
+          lg:pt-20
+        "
+      >
+
+        {/* ===================================================
+            BACKGROUND GLOW - LEFT
+        ==================================================== */}
+
         <div
           className="
             pointer-events-none
+
             absolute
+
             -left-40
             -top-40
-            h-[500px]
-            w-[500px]
+
+            h-[450px]
+            w-[450px]
+
             rounded-full
-            bg-cyan-500/20
-            blur-[160px]
+
+            bg-blue-500/10
+
+            blur-[140px]
           "
         />
 
-        {/* BLUE GLOW */}
+
+        {/* ===================================================
+            BACKGROUND GLOW - RIGHT
+        ==================================================== */}
+
         <div
           className="
             pointer-events-none
+
             absolute
-            -bottom-40
+
+            -bottom-48
             -right-40
+
             h-[500px]
             w-[500px]
+
             rounded-full
-            bg-blue-600/20
-            blur-[170px]
+
+            bg-sky-400/10
+
+            blur-[150px]
           "
         />
+
+
+        {/* ===================================================
+            HERO CONTENT
+        ==================================================== */}
 
         <div
           className="
             relative
+            z-10
+
             mx-auto
             max-w-7xl
-            px-5
-            pb-10
-            pt-8
-            md:px-6
-            md:pb-14
-            md:pt-10
           "
         >
 
-          {/* =====================================================
-              HERO CONTENT
-          ===================================================== */}
           <motion.div
             initial={{
               opacity: 0,
-              y: 25,
+              y: 30,
             }}
             animate={{
               opacity: 1,
@@ -868,35 +863,15 @@ export default function Committee() {
             transition={{
               duration: 0.7,
             }}
-            className="text-center"
+            className="
+              text-center
+            "
           >
 
-            {/* BADGE */}
-            <span
-              className="
-                inline-flex
-                items-center
-                rounded-full
-                border
-                border-cyan-400/30
-                bg-cyan-500/10
-                px-4
-                py-1.5
-                text-[10px]
-                uppercase
-                tracking-[3px]
-                text-cyan-300
-                backdrop-blur-xl
-                md:px-5
-                md:py-2
-                md:text-sm
-              "
-            >
-              Conference Committee
-            </span>
+            {/* =================================================
+                MAIN HEADING
+            ================================================== */}
 
-
-            {/* TITLE */}
             <motion.h1
               initial={{
                 opacity: 0,
@@ -911,224 +886,315 @@ export default function Committee() {
                 duration: 0.7,
               }}
               className="
-                mt-6
-                text-4xl
+                text-5xl
                 font-black
-                leading-[1.1]
-                md:mt-7
+                leading-tight
+                tracking-tight
+                text-white
+
+                sm:text-6xl
                 md:text-7xl
+                lg:text-8xl
               "
             >
+
               Conference
 
               <span
                 className="
                   block
+
                   bg-gradient-to-r
-                  from-cyan-300
-                  via-sky-400
-                  to-blue-500
+                  from-[#93C5FD]
+                  via-[#60A5FA]
+                  to-[#BFDBFE]
+
                   bg-clip-text
-                  pb-2
+
+                  pb-3
+
                   text-transparent
                 "
               >
                 Committee
               </span>
+
             </motion.h1>
 
 
-            {/* ACCENT LINE */}
-            <motion.div
-              initial={{
-                width: 0,
-              }}
-              animate={{
-                width: 140,
-              }}
-              transition={{
-                delay: 0.4,
-                duration: 0.8,
-              }}
-              className="
-                mx-auto
-                mt-7
-                h-1
-                rounded-full
-                bg-gradient-to-r
-                from-cyan-400
-                via-sky-500
-                to-blue-600
-              "
-            />
-
-          </motion.div>
-
-
-          {/* =====================================================
-              7 COMMITTEE NAVIGATION
-          ===================================================== */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 0.45,
-              duration: 0.6,
-            }}
-            className="mt-10 md:mt-12"
-          >
-
-            <CommitteeTabs
-              activeCommittee={activeCommittee}
-              setActiveCommittee={setActiveCommittee}
-            />
-
-          </motion.div>
-
-        </div>
-      </section>
-
-
-      {/* =========================================================
-          ACTIVE COMMITTEE CONTENT
-      ========================================================= */}
-      <section
-        className="
-          relative
-          overflow-hidden
-          bg-gradient-to-b
-          from-[#020817]
-          via-[#071326]
-          to-[#020817]
-          pb-24
-        "
-      >
-
-        {/* GRID */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-        {/* CYAN GLOW */}
-        <div
-          className="
-            pointer-events-none
-            absolute
-            left-0
-            top-20
-            h-[450px]
-            w-[450px]
-            rounded-full
-            bg-cyan-500/10
-            blur-[170px]
-          "
-        />
-
-        {/* BLUE GLOW */}
-        <div
-          className="
-            pointer-events-none
-            absolute
-            bottom-0
-            right-0
-            h-[450px]
-            w-[450px]
-            rounded-full
-            bg-blue-600/10
-            blur-[170px]
-          "
-        />
-
-
-        <div
-          className="
-            relative
-            mx-auto
-            max-w-7xl
-            px-4
-            md:px-6
-          "
-        >
-
-          {/* =====================================================
-              CURRENT COMMITTEE
-          ===================================================== */}
-          <AnimatePresence mode="wait">
+            {/* =================================================
+                CURRENT COMMITTEE LABEL
+            ================================================== */}
 
             <motion.div
-              key={activeCommittee}
               initial={{
                 opacity: 0,
-                y: 20,
+                y: 15,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
               }}
+              transition={{
+                delay: 0.3,
+                duration: 0.6,
+              }}
+              className="
+                mx-auto
+                mt-8
+                max-w-3xl
+              "
+            >
+
+              <div
+                className="
+                  inline-flex
+                  max-w-full
+
+                  items-center
+                  gap-3
+
+                  rounded-full
+
+                  border
+                  border-[#315783]
+
+                  bg-[#0B2144]
+
+                  px-5
+                  py-3
+
+                  text-left
+                "
+              >
+
+                {/* STATUS DOT */}
+
+                <span
+                  className="
+                    h-2
+                    w-2
+                    shrink-0
+
+                    rounded-full
+
+                    bg-[#60A5FA]
+
+                    shadow-[0_0_10px_rgba(96,165,250,0.6)]
+                  "
+                />
+
+
+                {/* COMMITTEE NAME */}
+
+                <span
+                  className="
+                    text-xs
+                    font-semibold
+                    leading-5
+                    text-[#BFDBFE]
+
+                    sm:text-sm
+                  "
+                >
+                  {currentCommittee?.title}
+                </span>
+
+              </div>
+
+            </motion.div>
+
+          </motion.div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          COMMITTEE CONTENT
+      ====================================================== */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+
+          bg-gradient-to-b
+          from-white
+          via-[#F8FBFF]
+          to-[#F1F6FD]
+
+          px-4
+
+          pb-24
+          pt-12
+
+          sm:px-6
+          sm:pt-14
+
+          lg:px-8
+          lg:pb-28
+          lg:pt-16
+        "
+      >
+
+        {/* ===================================================
+            BACKGROUND GLOW - LEFT
+        ==================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+
+            absolute
+
+            -left-40
+            top-20
+
+            h-[450px]
+            w-[450px]
+
+            rounded-full
+
+            bg-[#BFDBFE]/20
+
+            blur-[140px]
+          "
+        />
+
+
+        {/* ===================================================
+            BACKGROUND GLOW - RIGHT
+        ==================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+
+            absolute
+
+            -bottom-40
+            -right-40
+
+            h-[500px]
+            w-[500px]
+
+            rounded-full
+
+            bg-[#DBEAFE]/30
+
+            blur-[140px]
+          "
+        />
+
+
+        {/* ===================================================
+            MAIN CONTENT WRAPPER
+        ==================================================== */}
+
+        <div
+          className="
+            relative
+            z-10
+
+            mx-auto
+            max-w-7xl
+          "
+        >
+
+          <AnimatePresence mode="wait">
+
+            <motion.div
+              key={activeCommittee}
+
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+
               exit={{
                 opacity: 0,
                 y: -15,
               }}
+
               transition={{
                 duration: 0.4,
               }}
-              className="pt-10 md:pt-16"
+
+              className="
+                pt-2
+                md:pt-4
+              "
             >
 
               {/* =================================================
                   COMMITTEE TITLE
-              ================================================= */}
-              <div className="mb-10 text-center md:mb-12">
+              ================================================== */}
+
+              <div
+                className="
+                  mb-10
+                  text-center
+
+                  md:mb-14
+                "
+              >
 
                 <p
                   className="
-                    text-[9px]
+                    text-xs
+                    font-bold
                     uppercase
-                    tracking-[3px]
-                    text-cyan-400
-                    md:text-xs
+
+                    tracking-[2.5px]
+
+                    text-[#075DB8]
                   "
                 >
                   Selected Committee
                 </p>
 
+
                 <h2
                   className="
                     mx-auto
-                    mt-3
+
+                    mt-4
+
                     max-w-5xl
-                    text-2xl
+
+                    text-3xl
                     font-black
                     leading-tight
-                    text-white
+
+                    text-[#172554]
+
+                    sm:text-4xl
                     md:text-5xl
                   "
                 >
                   {currentCommittee?.title}
                 </h2>
 
+
+                {/* SMALL BLUE ACCENT */}
+
                 <div
                   className="
                     mx-auto
+
                     mt-5
-                    h-1
-                    w-24
-                    rounded-full
-                    bg-gradient-to-r
-                    from-cyan-400
-                    via-sky-500
-                    to-blue-600
+
+                    h-[2px]
+                    w-12
+
+                    bg-[#075DB8]
                   "
                 />
 
@@ -1136,164 +1202,161 @@ export default function Committee() {
 
 
               {/* =================================================
-                  SECTIONS
-              ================================================= */}
-              <div className="space-y-10 md:space-y-14">
+                  COMMITTEE SECTIONS
+              ================================================== */}
+
+              <div
+                className="
+                  space-y-10
+
+                  md:space-y-12
+                "
+              >
 
                 {currentCommittee?.sections?.map(
                   (section, sectionIndex) => (
 
                     <motion.div
                       key={`${activeCommittee}-${sectionIndex}`}
+
                       initial={{
                         opacity: 0,
                         y: 20,
                       }}
+
                       whileInView={{
                         opacity: 1,
                         y: 0,
                       }}
+
                       viewport={{
                         once: true,
                         amount: 0.05,
                       }}
+
                       transition={{
                         duration: 0.45,
                       }}
                     >
 
-                      {/* SECTION HEADER */}
+                      {/* =================================================
+                          SECTION HEADER
+                      ================================================== */}
+
                       <div
                         className="
-                          relative
-                          mb-5
+                          mb-6
+
                           overflow-hidden
-                          rounded-2xl
+
+                          rounded-[16px]
+
                           border
-                          border-cyan-400/15
-                          bg-white/[0.035]
-                          px-4
-                          py-4
-                          backdrop-blur-xl
-                          md:mb-6
-                          md:px-6
-                          md:py-5
+                          border-[#DCE3EB]
+
+                          border-t-4
+                          border-t-[#075DB8]
+
+                          bg-white
+
+                          px-6
+                          py-6
+
+                          shadow-[0_5px_20px_rgba(15,23,42,0.03)]
+
+                          md:px-8
+                          md:py-7
                         "
                       >
-
-                        {/* TOP ACCENT */}
-                        <div
-                          className="
-                            absolute
-                            left-0
-                            right-0
-                            top-0
-                            h-[2px]
-                            bg-gradient-to-r
-                            from-cyan-400
-                            via-sky-500
-                            to-blue-600
-                          "
-                        />
 
                         <div
                           className="
                             flex
                             items-center
-                            justify-between
-                            gap-3
+
+                            gap-4
                           "
                         >
 
-                          {/* SECTION INFO */}
+                          {/* =================================================
+                              SECTION NUMBER
+                          ================================================== */}
+
                           <div
                             className="
                               flex
-                              min-w-0
+
+                              h-11
+                              w-11
+
+                              shrink-0
+
                               items-center
-                              gap-3
+                              justify-center
+
+                              rounded-xl
+
+                              bg-[#E8F1FF]
+
+                              text-sm
+                              font-bold
+
+                              text-[#075DB8]
+
+                              md:h-12
+                              md:w-12
+                              md:text-base
                             "
                           >
-
-                            <div
-                              className="
-                                flex
-                                h-8
-                                w-8
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-lg
-                                border
-                                border-cyan-400/20
-                                bg-cyan-500/10
-                                text-[10px]
-                                font-bold
-                                text-cyan-300
-                                md:h-9
-                                md:w-9
-                                md:text-xs
-                              "
-                            >
-                              {String(
-                                sectionIndex + 1
-                              ).padStart(2, "0")}
-                            </div>
-
-
-                            <div className="min-w-0">
-
-                              <p
-                                className="
-                                  text-[7px]
-                                  uppercase
-                                  tracking-[2px]
-                                  text-cyan-400/60
-                                "
-                              >
-                                Committee Section
-                              </p>
-
-                              <h3
-                                className="
-                                  mt-0.5
-                                  text-base
-                                  font-bold
-                                  leading-tight
-                                  text-white
-                                  md:text-xl
-                                "
-                              >
-                                {section.title}
-                              </h3>
-
-                            </div>
-
+                            {String(
+                              sectionIndex + 1
+                            ).padStart(2, "0")}
                           </div>
 
 
-                          {/* MEMBER COUNT */}
+                          {/* =================================================
+                              SECTION TITLE
+                          ================================================== */}
+
                           <div
                             className="
-                              shrink-0
-                              rounded-full
-                              border
-                              border-cyan-400/20
-                              bg-cyan-500/10
-                              px-2.5
-                              py-1
-                              text-[9px]
-                              font-semibold
-                              text-cyan-300
-                              md:px-4
-                              md:py-1.5
-                              md:text-xs
+                              min-w-0
                             "
                           >
-                            {section.members?.length || 0}{" "}
-                            {section.members?.length === 1
-                              ? "Member"
-                              : "Members"}
+
+                            <p
+                              className="
+                                text-[9px]
+                                font-bold
+                                uppercase
+
+                                tracking-[2px]
+
+                                text-[#64748B]
+
+                                md:text-xs
+                              "
+                            >
+                              Committee Section
+                            </p>
+
+
+                            <h3
+                              className="
+                                mt-1
+
+                                text-lg
+                                font-bold
+                                leading-tight
+
+                                text-[#172554]
+
+                                md:text-2xl
+                              "
+                            >
+                              {section.title}
+                            </h3>
+
                           </div>
 
                         </div>
@@ -1302,46 +1365,32 @@ export default function Committee() {
 
 
                       {/* =================================================
-                          MEMBER CARDS
-                      ================================================= */}
+                          MEMBER GRID
+                      ================================================== */}
+
                       <motion.div
                         layout
+
                         className="
                           grid
                           grid-cols-1
-                          gap-4
-                          md:grid-cols-2
-                          md:gap-5
+
+                          gap-5
+
+                          sm:grid-cols-2
+                          lg:grid-cols-3
+                          xl:grid-cols-4
                         "
                       >
 
                         {section.members?.map(
                           (member, memberIndex) => (
 
-                            <motion.div
+                            <MemberBox
                               key={`${member.name}-${memberIndex}`}
-                              initial={{
-                                opacity: 0,
-                                y: 15,
-                              }}
-                              whileInView={{
-                                opacity: 1,
-                                y: 0,
-                              }}
-                              viewport={{
-                                once: true,
-                                amount: 0.05,
-                              }}
-                              transition={{
-                                delay:
-                                  memberIndex * 0.03,
-                                duration: 0.3,
-                              }}
-                            >
-                              <MemberCard
-                                member={member}
-                              />
-                            </motion.div>
+                              member={member}
+                              index={memberIndex}
+                            />
 
                           )
                         )}
@@ -1360,14 +1409,253 @@ export default function Committee() {
           </AnimatePresence>
 
         </div>
+
       </section>
 
 
-      {/* =========================================================
+      {/* =====================================================
           FOOTER
-      ========================================================= */}
+      ====================================================== */}
+
       <Footer />
 
     </main>
+  );
+}
+
+
+// =============================================================
+// MEMBER BOX
+// =============================================================
+
+function MemberBox({
+  member,
+  index = 0,
+}) {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 18,
+      }}
+
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+
+      viewport={{
+        once: true,
+        amount: 0.05,
+      }}
+
+      transition={{
+        duration: 0.4,
+        delay: index * 0.03,
+      }}
+
+      whileHover={{
+        y: -4,
+      }}
+
+      className="
+        group
+
+        relative
+
+        overflow-hidden
+
+        rounded-[12px]
+
+        border
+        border-[#DCE3EB]
+
+        border-t-4
+        border-t-[#075DB8]
+
+        bg-white
+
+        shadow-[0_5px_18px_rgba(15,23,42,0.03)]
+
+        transition-all
+        duration-300
+
+        hover:border-[#BFDBFE]
+
+        hover:shadow-[0_12px_30px_rgba(7,93,184,0.10)]
+      "
+    >
+
+      {/* =====================================================
+          MEMBER CONTENT
+      ====================================================== */}
+
+      <div
+        className="
+          flex
+
+          min-h-[190px]
+
+          flex-col
+          items-center
+          justify-center
+
+          px-6
+          py-8
+
+          text-center
+        "
+      >
+
+        {/* =================================================
+            OPTIONAL MEMBER IMAGE
+        ================================================== */}
+
+        {member.image && (
+          <div
+            className="
+              mb-5
+
+              h-20
+              w-20
+
+              overflow-hidden
+
+              rounded-full
+
+              border-2
+              border-[#E8F1FF]
+
+              bg-[#F5F9FF]
+            "
+          >
+
+            <img
+              src={member.image}
+              alt={member.name}
+              className="
+                h-full
+                w-full
+
+                object-cover
+              "
+            />
+
+          </div>
+        )}
+
+
+        {/* =================================================
+            MEMBER NAME
+        ================================================== */}
+
+        <h3
+          className="
+            max-w-full
+
+            text-lg
+            font-black
+            uppercase
+            leading-7
+
+            tracking-[-0.2px]
+
+            text-[#075DB8]
+
+            transition-colors
+            duration-300
+
+            group-hover:text-[#064F9C]
+
+            sm:text-xl
+          "
+        >
+          {member.name}
+        </h3>
+
+
+        {/* =================================================
+            ORANGE ACCENT
+        ================================================== */}
+
+        <div
+          className="
+            mt-5
+
+            h-[2px]
+            w-10
+
+            bg-[#F59E0B]
+          "
+        />
+
+
+        {/* =================================================
+            DESIGNATION
+        ================================================== */}
+
+        {member.designation && (
+          <p
+            className="
+              mt-4
+
+              text-sm
+              font-semibold
+              leading-6
+
+              text-[#475569]
+            "
+          >
+            {member.designation}
+          </p>
+        )}
+
+
+        {/* =================================================
+            POSITION
+        ================================================== */}
+
+        {member.position && (
+          <p
+            className="
+              mt-2
+
+              text-xs
+              font-bold
+              uppercase
+
+              tracking-[1px]
+
+              text-[#64748B]
+            "
+          >
+            {member.position}
+          </p>
+        )}
+
+
+        {/* =================================================
+            AFFILIATION
+        ================================================== */}
+
+        {member.affiliation && (
+          <p
+            className="
+              mt-1
+
+              text-xs
+              font-medium
+              leading-5
+
+              text-[#64748B]
+            "
+          >
+            {member.affiliation}
+          </p>
+        )}
+
+      </div>
+
+    </motion.div>
   );
 }

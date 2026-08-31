@@ -8,7 +8,6 @@ import {
 import Footer from "../components/Footer";
 
 export default function Registration() {
-
   // =========================================================
   // EARLY BIRD FEES
   // =========================================================
@@ -69,12 +68,17 @@ export default function Registration() {
   // FEE TABLE
   // =========================================================
 
-  const FeeTable = ({ title, fees, delay = 0 }) => {
+  const FeeTable = ({
+    title,
+    fees,
+    delay = 0,
+    early = false,
+  }) => {
     return (
       <motion.div
         initial={{
           opacity: 0,
-          y: 40,
+          y: 25,
         }}
         whileInView={{
           opacity: 1,
@@ -84,119 +88,117 @@ export default function Registration() {
           once: true,
         }}
         transition={{
-          duration: 0.7,
+          duration: 0.6,
           delay,
         }}
         className="
-          relative
           overflow-hidden
-          rounded-[30px]
+          rounded-[16px]
           border
-          border-cyan-400/20
-          bg-white/5
-          backdrop-blur-2xl
-          shadow-[0_0_40px_rgba(34,211,238,0.06)]
+          border-[#DCE3EB]
+          border-t-4
+          border-t-[#075DB8]
+          bg-white
         "
       >
-
-        {/* Glow */}
-
-        <div
-          className="
-            absolute
-            -top-24
-            right-0
-            h-48
-            w-48
-            rounded-full
-            bg-cyan-500/10
-            blur-[100px]
-          "
-        />
-
-        {/* Table Title */}
+        {/* =====================================================
+            TABLE TITLE
+        ====================================================== */}
 
         <div
           className="
-            relative
-            z-10
-            flex
-            items-center
-            gap-4
-            px-6
-            md:px-8
+            px-7
+            pb-5
             pt-8
-            pb-6
-            border-b
-            border-cyan-400/10
+            sm:px-9
+            sm:pt-9
+            md:px-12
           "
         >
+          <div className="flex flex-wrap items-center gap-3">
 
-          <div
-            className="
-              w-12
-              h-12
-              rounded-xl
-              bg-cyan-500/10
-              border
-              border-cyan-400/20
-              flex
-              items-center
-              justify-center
-              flex-shrink-0
-            "
-          >
-            <CreditCard
-              size={23}
-              className="text-cyan-300"
-            />
-          </div>
-
-          <div>
-
-            <h3
+            <h2
               className="
-                text-xl
-                md:text-2xl
-                font-bold
-                text-white
+                text-2xl
+                font-black
+                uppercase
+                tracking-[1px]
+                text-[#075DB8]
+                sm:text-3xl
               "
             >
               {title}
-            </h3>
+            </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
-              Registration fee structure
-            </p>
+            {early && (
+              <span
+                className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  rounded-full
+                  bg-[#EFF6FF]
+                  px-3
+                  py-1.5
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[1.5px]
+                  text-[#075DB8]
+                "
+              >
+                <Sparkles size={12} />
+                Early Bird
+              </span>
+            )}
 
           </div>
 
+          <div
+            className="
+              mt-4
+              h-[2px]
+              w-full
+              bg-[#E2E8F0]
+            "
+          />
         </div>
 
 
-        {/* Table */}
+        {/* =====================================================
+            TABLE
+        ====================================================== */}
 
-        <div className="overflow-x-auto">
+        <div
+          className="
+            overflow-x-auto
+            px-7
+            pb-8
+            sm:px-9
+            md:px-12
+          "
+        >
 
-          <div className="min-w-[760px]">
+          <div className="min-w-[700px]">
 
-            {/* Header */}
+            {/* =================================================
+                BLUE TABLE HEADER
+            ================================================== */}
 
             <div
               className="
                 grid
                 grid-cols-[2fr_1fr_1fr]
-                bg-gradient-to-r
-                from-cyan-500/80
-                via-sky-500/80
-                to-blue-600/80
-                text-white
-                uppercase
+                bg-[#075DB8]
+                px-5
+                py-4
                 text-sm
                 font-bold
+                uppercase
                 tracking-wide
-                px-6
-                py-4
+                text-white
+                sm:px-5
+                sm:text-base
               "
             >
 
@@ -215,9 +217,11 @@ export default function Registration() {
             </div>
 
 
-            {/* Rows */}
+            {/* =================================================
+                TABLE ROWS
+            ================================================== */}
 
-            <div className="divide-y divide-cyan-400/10">
+            <div>
 
               {fees.map((fee, index) => (
 
@@ -233,54 +237,60 @@ export default function Registration() {
                     once: true,
                   }}
                   transition={{
-                    duration: 0.4,
-                    delay: index * 0.05,
+                    duration: 0.35,
+                    delay: index * 0.04,
                   }}
                   className="
-                    group
                     grid
                     grid-cols-[2fr_1fr_1fr]
                     items-center
-                    px-6
-                    py-6
-                    transition-all
-                    duration-300
-                    hover:bg-cyan-400/[0.04]
+                    border-b
+                    border-[#E2E8F0]
+                    px-5
+                    py-5
                   "
                 >
 
+                  {/* CATEGORY */}
+
                   <span
                     className="
-                      text-slate-300
+                      pr-6
+                      text-base
+                      font-medium
                       leading-7
-                      group-hover:text-white
-                      transition-colors
+                      text-[#334155]
+                      sm:text-lg
                     "
                   >
                     {fee.category}
                   </span>
 
 
+                  {/* IEEE */}
+
                   <span
                     className="
                       text-center
+                      text-base
                       font-bold
-                      text-white
-                      group-hover:text-cyan-300
-                      transition-colors
+                      text-[#172554]
+                      sm:text-lg
                     "
                   >
                     {fee.ieee}
                   </span>
 
 
+                  {/* NON IEEE */}
+
                   <span
                     className="
                       text-center
+                      text-base
                       font-bold
-                      text-white
-                      group-hover:text-cyan-300
-                      transition-colors
+                      text-[#172554]
+                      sm:text-lg
                     "
                   >
                     {fee.nonIeee}
@@ -303,7 +313,6 @@ export default function Registration() {
 
   return (
     <>
-
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
@@ -311,152 +320,129 @@ export default function Registration() {
       <section
         className="
           relative
-          min-h-[75vh]
           overflow-hidden
-          bg-[#020817]
-          pt-6
-          pb-24
+          bg-[#07152F]
+          px-5
+          pb-20
+          pt-14
+          sm:px-6
+          sm:pb-24
+          sm:pt-16
+          lg:px-8
+          lg:pb-28
+          lg:pt-20
         "
       >
 
-        {/* Background Grid */}
+        {/* Soft background glow */}
 
         <div
           className="
+            pointer-events-none
             absolute
-            inset-0
-            opacity-[0.08]
-          "
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-
-        {/* Cyan Glow */}
-
-        <div
-          className="
-            absolute
+            -left-40
             -top-40
-            left-0
-            w-[500px]
-            h-[500px]
-            bg-cyan-500/20
-            blur-[160px]
+            h-[450px]
+            w-[450px]
             rounded-full
+            bg-blue-500/10
+            blur-[140px]
           "
         />
 
         <div
           className="
+            pointer-events-none
             absolute
-            bottom-0
-            right-0
-            w-[500px]
+            -bottom-48
+            -right-40
             h-[500px]
-            bg-blue-600/20
-            blur-[170px]
+            w-[500px]
             rounded-full
+            bg-sky-400/10
+            blur-[150px]
           "
         />
 
 
-        {/* Content */}
+        {/* Hero Content */}
 
         <div
           className="
             relative
-            max-w-7xl
+            z-10
             mx-auto
-            px-6
+            max-w-5xl
+            text-center
           "
         >
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 40,
+              y: 30,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              duration: 0.8,
+              duration: 0.7,
             }}
-            className="text-center"
           >
 
-            {/* Badge */}
-
-            <span
+            <h1
               className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-cyan-400/30
-                bg-cyan-500/10
-                px-5
-                py-2
-                text-cyan-300
-                text-sm
-                tracking-[3px]
-                uppercase
+                text-5xl
+                font-black
+                leading-tight
+                tracking-tight
+                text-white
+                sm:text-6xl
+                md:text-7xl
+                lg:text-8xl
               "
             >
+              Conference
 
-              <Sparkles size={16} />
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-[#93C5FD]
+                  via-[#60A5FA]
+                  to-[#BFDBFE]
+                  bg-clip-text
+                  pb-3
+                  text-transparent
+                "
+              >
+                Registration
+              </span>
+            </h1>
 
-              CYCRAI 2027
-
-            </span>
-
-
-            {/* Heading */}
-
-            <h1
-  className="
-    mt-8
-    text-5xl
-    md:text-7xl
-    font-black
-    leading-[1.1]
-    text-white
-    overflow-visible
-  "
->
-  Conference
-
-  <span
-    className="
-      block
-      pb-3
-      bg-gradient-to-r
-      from-cyan-300
-      via-sky-400
-      to-blue-500
-      bg-clip-text
-      text-transparent
-    "
-  >
-    Registration
-  </span>
-</h1>
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-sm
+                font-medium
+                leading-7
+                tracking-wide
+                text-blue-100/80
+                sm:text-base
+                md:text-lg
+              "
+            >
+              Registration categories and fee structure for
+              CYCRAI 2027.
+            </p>
 
 
-            {/* Description */}
+            {/* Scroll Button */}
 
-            
-
-
-            {/* Registration Button */}
-
-            <div className="mt-12 flex justify-center">
+            <div className="mt-10 flex justify-center">
 
               <button
                 onClick={() =>
@@ -467,63 +453,34 @@ export default function Registration() {
                     })
                 }
                 className="
-                  group
                   inline-flex
                   items-center
                   gap-3
                   rounded-full
-                  bg-cyan-400
-                  px-9
+                  bg-[#075DB8]
+                  px-8
                   py-4
                   font-bold
-                  text-slate-950
-                  transition-all
+                  text-white
+                  transition-colors
                   duration-300
-                  hover:scale-105
-                  hover:shadow-[0_0_40px_rgba(34,211,238,.45)]
+                  hover:bg-[#064F9C]
                 "
               >
+                View Registration Fees
 
-                Register Now
-
-                <ArrowRight
-                  size={20}
-                  className="
-                    transition-transform
-                    group-hover:translate-x-1
-                  "
-                />
+                <ArrowRight size={20} />
 
               </button>
-             
+
             </div>
-            
-           <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: 160 }}
-              transition={{
-                delay: 0.4,
-                duration: 0.8,
-              }}
-              className="
-                mx-auto
-                mt-14
-                h-1
-                rounded-full
-                bg-gradient-to-r
-                from-cyan-400
-                via-sky-500
-                to-blue-600
-              "
-            />
+
           </motion.div>
-          
-        
+
         </div>
-        
 
       </section>
-      
+
 
       {/* =========================================================
           REGISTRATION FEES
@@ -533,57 +490,47 @@ export default function Registration() {
         id="fees"
         className="
           relative
-          pt-6 pb-28
-          bg-gradient-to-b
-          from-[#020817]
-          via-[#071326]
-          to-[#020817]
           overflow-hidden
-          
+          bg-gradient-to-b
+          from-white
+          via-[#F8FBFF]
+          to-[#F1F6FD]
+          px-5
+          py-16
+          sm:px-6
+          sm:py-20
+          lg:px-8
+          lg:py-24
         "
       >
 
-        {/* Background Grid */}
+        {/* Background Glows */}
 
         <div
           className="
+            pointer-events-none
             absolute
-            inset-0
-            opacity-[0.04]
-          "
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-
-        {/* Glows */}
-
-        <div
-          className="
-            absolute
-            left-0
-            top-0
-            w-[450px]
+            -left-40
+            top-20
             h-[450px]
+            w-[450px]
             rounded-full
-            bg-cyan-500/10
-            blur-[170px]
+            bg-[#BFDBFE]/20
+            blur-[140px]
           "
         />
 
         <div
           className="
+            pointer-events-none
             absolute
-            right-0
-            bottom-0
-            w-[450px]
-            h-[450px]
+            -bottom-40
+            -right-40
+            h-[500px]
+            w-[500px]
             rounded-full
-            bg-blue-600/10
-            blur-[170px]
+            bg-[#DBEAFE]/30
+            blur-[150px]
           "
         />
 
@@ -591,97 +538,25 @@ export default function Registration() {
         <div
           className="
             relative
-            max-w-7xl
+            z-10
             mx-auto
-            px-6
+            max-w-7xl
           "
         >
 
-          {/* Section Heading */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.7,
-            }}
-            className="
-              text-center
-              mb-20
-            "
-          >
-
-            <span
-              className="
-                inline-flex
-                px-5
-                py-2
-                rounded-full
-                bg-cyan-500/10
-                border
-                border-cyan-400/30
-                text-cyan-300
-                uppercase
-                tracking-[3px]
-                text-sm
-              "
-            >
-              Registration Fees
-            </span>
-
-
-            <h2
-              className="
-                mt-8
-                text-5xl
-                md:text-6xl
-                font-black
-                text-white
-              "
-            >
-
-              Registration
-
-              <span
-                className="
-                  block
-                  mt-2
-                  bg-gradient-to-r
-                  from-cyan-300
-                  via-sky-400
-                  to-blue-500
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Fee Structure
-              </span>
-
-            </h2>
-
-
-
-          </motion.div>
+          
 
 
           {/* =====================================================
               FEE TABLES
-          ===================================================== */}
+          ====================================================== */}
 
           <div className="space-y-10">
 
             <FeeTable
               title="Early Bird Registration Fees"
               fees={earlyBirdFees}
+              early={true}
             />
 
             <FeeTable
@@ -693,12 +568,14 @@ export default function Registration() {
           </div>
 
 
-          {/* Bottom Registration Button */}
+          {/* =====================================================
+              INFORMATION BOX
+          ====================================================== */}
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 30,
+              y: 25,
             }}
             whileInView={{
               opacity: 1,
@@ -708,10 +585,107 @@ export default function Registration() {
               once: true,
             }}
             transition={{
-              duration: 0.7,
+              duration: 0.6,
+            }}
+            className="mt-10"
+          >
+
+            <div
+              className="
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
+                p-7
+                sm:p-9
+              "
+            >
+
+              <div
+                className="
+                  flex
+                  flex-col
+                  gap-5
+                  sm:flex-row
+                  sm:items-center
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    h-14
+                    w-14
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    bg-[#E8F1FF]
+                    text-[#075DB8]
+                  "
+                >
+                  <Sparkles size={25} />
+                </div>
+
+                <div>
+
+                  <h3
+                    className="
+                      text-xl
+                      font-bold
+                      text-[#172554]
+                      sm:text-2xl
+                    "
+                  >
+                    Choose the appropriate registration category
+                  </h3>
+
+                  <p
+                    className="
+                      mt-2
+                      text-base
+                      font-semibold
+                      leading-7
+                      text-[#334155]
+                    "
+                  >
+                    Registration fees differ according to author
+                    category and IEEE membership status.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
+
+
+          {/* =====================================================
+              REGISTRATION BUTTON
+          ====================================================== */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
             }}
             className="
-              mt-16
+              mt-12
               flex
               justify-center
             "
@@ -719,33 +693,27 @@ export default function Registration() {
 
             <button
               className="
-                group
                 inline-flex
                 items-center
                 gap-3
                 rounded-full
-                bg-cyan-400
-                px-10
-                py-5
-                text-lg
+                bg-[#075DB8]
+                px-9
+                py-4
+                text-base
                 font-bold
-                text-slate-900
-                transition-all
+                text-white
+                transition-colors
                 duration-300
-                hover:scale-105
-                hover:shadow-[0_0_40px_rgba(34,211,238,.35)]
+                hover:bg-[#064F9C]
+                sm:px-10
+                sm:py-5
+                sm:text-lg
               "
             >
-
               Proceed to Registration
 
-              <ArrowRight
-                size={21}
-                className="
-                  transition-transform
-                  group-hover:translate-x-1
-                "
-              />
+              <ArrowRight size={21} />
 
             </button>
 
@@ -761,7 +729,6 @@ export default function Registration() {
       ========================================================= */}
 
       <Footer />
-
     </>
   );
 }

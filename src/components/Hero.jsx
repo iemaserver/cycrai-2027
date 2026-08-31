@@ -3,8 +3,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 import LogoStrip from "./LogoStrip";
-import heroBg from "../assets/image/new_bg_2.png";
-import bg_mobile from "../assets/image/bg_mobile.png";
+import heroBg from "../assets/image/4K Planet Earth Spinning in Space  Free HD Videos - No Copyright - Free HD videos - no copyright (1080p, h264).mp4";
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -12,376 +11,495 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[#010611]"
+      className="
+        relative
+        min-h-screen
+        overflow-hidden
+        bg-[#010611]
+      "
     >
-      {/* Background Image */}
-      {/* Background Image */}
-<div className="absolute inset-0 flex items-end justify-center">
-  
-  {/* Desktop / Tablet Background */}
-  <img
-    src={heroBg}
-    alt="Background"
-    className="
-      hidden sm:block
-      w-full
-      h-full
-      object-cover
-      object-bottom
-      pointer-events-none
-      select-none
-    "
-  />
 
-  {/* Mobile Background */}
-  <img
-    src={bg_mobile}
-    alt="Mobile Background"
-    className="
-      block sm:hidden
-      w-full
-      h-full
-      object-cover
-      object-bottom
-      pointer-events-none
-      select-none
-    "
-  />
+      {/* =========================================================
+          BACKGROUND VIDEO
+      ========================================================= */}
 
-</div>
+      <div
+        className="
+          absolute
+          inset-0
+          overflow-hidden
+          z-0
+        "
+      >
+        <video
+          src={heroBg}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="
+            absolute
+            inset-0
+            w-full
+            h-full
+            object-cover
+            object-center
+            pointer-events-none
+            select-none
+          "
+        />
+      </div>
 
-      {/* Slight Overlay */}
-      <div className="absolute inset-0 bg-black/20" />
 
-      {/* Content */}
-      <div className="relative z-10 w-full">
+      {/* =========================================================
+          CONTENT
+      ========================================================= */}
 
-  {/* Logo Strip at Top */}
-  <div className="w-full">
-    <LogoStrip />
-  </div>
+      <div
+        className="
+          relative
+          z-10
+          w-full
+          min-h-screen
+          flex
+          flex-col
+        "
+      >
 
-  {/* Hero Text */}
-  <div className="text-center mt-2">
+        {/* =======================================================
+            LOGO STRIP
+        ======================================================= */}
+
+        <div className="w-full mt-6">
+          <LogoStrip />
+        </div>
+
+
+        {/* =======================================================
+            HERO TEXT
+        ======================================================= */}
+
+        <div
+          className="
+            flex-1
+            text-center
+            mt-2
+            px-4
+          "
+        >
+
+          {/* =====================================================
+              CONFERENCE NAME
+          ===================================================== */}
+
+          <p
+            className="
+              mt-1
+
+              text-base
+              sm:text-lg
+              md:text-xl
+              lg:text-2xl
+
+              font-semibold
+
+              leading-relaxed
+
+              tracking-wide
+
+              text-white
+
+              drop-shadow-[0_3px_12px_rgba(0,0,0,0.85)]
+            "
+          >
+            International Conference on
+          </p>
+
+
+          <p
+            className="
+              mt-1
+
+              text-base
+              sm:text-lg
+              md:text-xl
+              lg:text-2xl
+
+              font-semibold
+
+              leading-relaxed
+
+              tracking-wide
+
+              text-[#27D9F7]
+
+              drop-shadow-[0_0_15px_rgba(20,210,245,0.45)]
+            "
+          >
+            Cyber Security, Cryptography and Responsible AI
+          </p>
+
+
+          {/* =====================================================
+              CYCRAI 2027
+          ===================================================== */}
 
           <h1
-  className="
-    text-4xl
-sm:text-4xl
-md:text-6xl
-lg:text-6xl
+            className="
+              mt-2
 
-    font-black
+              text-4xl
+              sm:text-6xl
+              md:text-8xl
+              lg:text-8xl
 
-    tracking-[0.04em]
-
-    leading-none
+              font-black
 
-    text-white
+              tracking-[0.04em]
 
-    drop-shadow-[0_0_25px_rgba(255,255,255,0.15)]
-  "
->
-  CYCRAI{" "}
-  <span
-    className="
-      bg-gradient-to-r
-      from-[#20E0FF]
-      via-[#19BDF2]
-      to-[#315CFF]
+              leading-none
 
-      bg-clip-text
-      text-transparent
+              text-white
 
-      drop-shadow-[0_0_25px_rgba(20,190,255,0.35)]
-    "
-  >
-    2027
-  </span>
-</h1>
-
-<p
-  className="
-    mt-1
-
-    text-white
-
-    text-xs
-  sm:text-sm
-  md:text-base
-
-    font-small
-
-    tracking-[0.10em]
+              drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]
+            "
+          >
+            CYCRAI{" "}
 
-    uppercase
-
-    drop-shadow-[0_3px_12px_rgba(0,0,0,0.6)]
-  "
->
-  International Conference on
-</p>
-
-  <p
-  className="
-    mt-1
-
-    text-[#27D9F7]
-
-    text-xs
-    sm:text-sm
-    md:text-base
-
-    font-small
-
-    tracking-[0.10em]
-
-    uppercase
-
-    drop-shadow-[0_0_15px_rgba(20,210,245,0.35)]
-  "
->
-  Cyber Security, Cryptography and Responsible AI
-</p>
-<div
-  className="
-    mt-1
-
-    flex
-    flex-col
-    sm:flex-row
-
-    items-center
-    justify-center
+            <span
+              className="
+                bg-gradient-to-r
+                from-[#20E0FF]
+                via-[#19BDF2]
+                to-[#315CFF]
 
-    gap-4
-    sm:gap-8
+                bg-clip-text
+                text-transparent
 
-    text-white
-  "
->
-  <div className="flex items-center gap-3">
-    <FaCalendarAlt
-      className="
-        text-[#16D8F5]
-        text-lg
+                drop-shadow-[0_0_25px_rgba(20,190,255,0.4)]
+              "
+            >
+              2027
+            </span>
+          </h1>
 
-        drop-shadow-[0_0_8px_rgba(22,216,245,0.8)]
-      "
-    />
 
-    <span
-      className="
-        text-sm
-        md:text-base
+          {/* =====================================================
+              DATE & LOCATION
+          ===================================================== */}
 
-        font-medium
+          <div
+            className="
+              mt-4
 
-        tracking-wide
-      "
-    >
-      29 – 30 SEPTEMBER 2027
-    </span>
-  </div>
+              flex
+              flex-col
+              sm:flex-row
 
-  <div
-    className="
-      hidden
-      sm:block
+              items-center
+              justify-center
 
-      h-6
-      w-px
+              gap-4
+              sm:gap-8
 
-      bg-cyan-400/40
-    "
-  />
+              text-white
+            "
+          >
 
-  <div className="flex items-center gap-3">
-    <FaLocationDot
-      className="
-        text-[#16D8F5]
-        text-lg
+            {/* =================================================
+                DATE
+            ================================================== */}
 
-        drop-shadow-[0_0_8px_rgba(22,216,245,0.8)]
-      "
-    />
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+              "
+            >
 
-    <span
-      className="
-        text-sm
-        md:text-base
+              <FaCalendarAlt
+                className="
+                  text-[#16D8F5]
+                  text-lg
 
-        font-medium
+                  drop-shadow-[0_0_8px_rgba(22,216,245,0.8)]
+                "
+              />
 
-        tracking-wide
-      "
-    >
-      NEW TOWN, KOLKATA, INDIA
-    </span>
-  </div>
-</div>
-{/* <div
-  className="
-    mt-5
-
-    flex
-    flex-col
-    sm:flex-row
-
-    justify-center
-    items-center
-
-    gap-4
-    sm:gap-7
-  "
->
-
-
-  <button
-    onClick={() => navigate("/about")}
-    className="
-      w-[190px]
-      h-[50px]
-
-      rounded-lg
-
-      border
-      border-cyan-400
-
-      bg-[#021426]/70
-
-      text-[#29D8F5]
-
-      font-semibold
-
-      tracking-wide
-
-      transition-all
-      duration-300
-
-      hover:bg-cyan-400/10
-
-      hover:shadow-[0_0_25px_rgba(20,210,245,0.3)]
-
-      hover:-translate-y-1
-    "
-  >
-    EXPLORE MORE
-  </button>
-
-
-
-  <button
-    onClick={() => navigate("/registration")}
-    className="
-      w-[190px]
-      h-[50px]
-
-      rounded-lg
-
-      bg-gradient-to-r
-      from-[#16CFF2]
-      to-[#3158F5]
-
-      text-white
-
-      font-bold
-
-      tracking-wide
-
-      shadow-[0_8px_25px_rgba(30,100,245,0.3)]
-
-      transition-all
-      duration-300
-
-      hover:-translate-y-1
-
-      hover:shadow-[0_10px_35px_rgba(30,120,245,0.5)]
-    "
-  >
-    REGISTER NOW
-  </button>
-</div> */}
-         {/* Conference Information */}
-<div
-  className="
-    mt-1
-    mx-auto
-    max-w-5xl
-    px-5
-    text-center
-  "
->
-  {/* Organized By */}
-  <p
-    className="
-      text-white
-      text-sm
-      sm:text-base
-      md:text-lg
-      font-medium
-      leading-relaxed
-      tracking-wide
-      drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
-    "
-  >
-    Organized by{" "}
-    <span className="text-[#27D9F7] font-semibold">
-      Department of Computer Science and Engineering (Cyber Security)
-    </span>
-    <br />
-    Institute of Engineering & Management Kolkata, University of
-    Engineering and Management Kolkata
-  </p>
-
-  {/* IEEE Xplore */}
-  <p
-    className="
-      mt-1
-      text-white
-      text-sm
-      sm:text-base
-      md:text-lg
-      font-medium
-      leading-relaxed
-      drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
-    "
-  >
-    *(All accepted and presented papers will be published in{" "}
-    <span
-      className="
-        text-[#27D9F7]
-        font-bold
-        drop-shadow-[0_0_10px_rgba(39,217,247,0.4)]
-      "
-    >
-      IEEE Xplore
-    </span>{" "}
-    <span className="text-white/80">(Awaiting Approval))</span>
-  </p>
-
-  {/* Microsoft CMT */}
-  <p
-    className="
-      mt-1
-      text-white
-      text-sm
-      sm:text-base
-      md:text-lg
-      font-medium
-      leading-relaxed
-      drop-shadow-[0_3px_12px_rgba(0,0,0,0.8)]
-    "
-  >
-    *The Microsoft CMT service will be used for managing the peer-reviewing
-    process of this conference. This service is provided for free by Microsoft
-    and they bear all expenses, including costs for Azure cloud services as
-    well as software development and support.
-  </p>
-</div>
-          
+              <span
+                className="
+                  text-sm
+                  md:text-base
+
+                  font-medium
+
+                  tracking-wide
+
+                  drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]
+                "
+              >
+                29 – 30 SEPTEMBER 2027
+              </span>
+
+            </div>
+
+
+            {/* =================================================
+                DIVIDER
+            ================================================== */}
+
+            <div
+              className="
+                hidden
+                sm:block
+
+                h-6
+                w-px
+
+                bg-white/50
+              "
+            />
+
+
+            {/* =================================================
+                LOCATION
+            ================================================== */}
+
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+              "
+            >
+
+              <FaLocationDot
+                className="
+                  text-[#16D8F5]
+                  text-lg
+
+                  drop-shadow-[0_0_8px_rgba(22,216,245,0.8)]
+                "
+              />
+
+              <span
+                className="
+                  text-sm
+                  md:text-base
+
+                  font-medium
+
+                  tracking-wide
+
+                  drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]
+                "
+              >
+                NEW TOWN, KOLKATA, INDIA
+              </span>
+
+            </div>
+
+          </div>
+
+
+          {/* =====================================================
+              CONFERENCE INFORMATION
+          ===================================================== */}
+
+          <div
+            className="
+              mt-5
+
+              mx-auto
+
+              max-w-5xl
+
+              px-4
+              sm:px-5
+
+              text-center
+            "
+          >
+
+            {/* ===================================================
+                ORGANIZED BY
+            =================================================== */}
+
+            <p
+              className="
+                text-base
+                sm:text-lg
+                md:text-xl
+                lg:text-2xl
+
+                font-extrabold
+
+                leading-relaxed
+
+                tracking-wide
+
+                text-white
+
+                drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]
+              "
+            >
+
+              {/* ORGANIZED BY */}
+
+              <span
+                className="
+                  font-extrabold
+                  text-white
+                "
+              >
+                Organized by{" "}
+              </span>
+
+
+              {/* DEPARTMENT */}
+
+              <span
+                className="
+                  font-extrabold
+
+                  text-[#F4C95D]
+
+                  drop-shadow-[0_2px_8px_rgba(244,201,93,0.25)]
+                "
+              >
+                Department of Computer Science and Engineering
+                (Cyber Security)
+              </span>
+
+
+              <br />
+
+
+              {/* INSTITUTE */}
+
+              <span
+                className="
+                  font-extrabold
+
+                  text-[#F4C95D]
+
+                  drop-shadow-[0_2px_8px_rgba(244,201,93,0.25)]
+                "
+              >
+                Institute of Engineering &amp; Management Kolkata,
+                University of Engineering and Management Kolkata
+              </span>
+
+            </p>
+
+
+            {/* ===================================================
+                IEEE XPLORE
+            =================================================== */}
+
+            <p
+              className="
+                mt-3
+
+                text-white
+
+                text-sm
+                sm:text-base
+                md:text-lg
+
+                font-medium
+
+                leading-relaxed
+
+                drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]
+              "
+            >
+
+              *(All accepted and presented papers will be published in{" "}
+
+              <span
+                className="
+                  text-[#F4C95D]
+
+                  font-bold
+
+                  drop-shadow-[0_2px_8px_rgba(244,201,93,0.2)]
+                "
+              >
+                IEEE Xplore
+              </span>{" "}
+
+              <span
+                className="
+                  text-white/90
+                "
+              >
+                (Awaiting Approval)
+              </span>
+              )
+
+            </p>
+
+          </div>
+
         </div>
+
+
+        {/* =======================================================
+            MICROSOFT CMT NOTICE
+            BOTTOM OF SCREEN
+        ======================================================= */}
+
+        <div
+          className="
+            absolute
+
+            bottom-3
+            sm:bottom-4
+
+            left-0
+            right-0
+
+            z-20
+
+            mx-auto
+
+            max-w-5xl
+
+            px-5
+
+            text-center
+          "
+        >
+
+          <p
+            className="
+              text-white
+
+              text-[10px]
+              sm:text-xs
+              md:text-sm
+
+              font-medium
+
+              leading-relaxed
+
+              drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]
+            "
+          >
+            *The Microsoft CMT service will be used for managing the
+            peer-reviewing process of this conference. This service is
+            provided for free by Microsoft and they bear all expenses,
+            including costs for Azure cloud services as well as software
+            development and support.
+          </p>
+
+        </div>
+
       </div>
+
     </section>
   );
 }

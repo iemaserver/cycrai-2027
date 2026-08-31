@@ -1,7 +1,5 @@
-
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   ShieldCheck,
   FileText,
   CalendarDays,
@@ -11,7 +9,6 @@ import {
   Upload,
   SearchCheck,
   Presentation,
-  Copyright,
   Users,
   LockKeyhole,
   Database,
@@ -29,6 +26,8 @@ import {
 } from "lucide-react";
 
 import Footer from "../components/Footer";
+
+const BLUE = "#075DB8";
 
 export default function Guidelines() {
   const technicalTracks = [
@@ -93,23 +92,6 @@ export default function Guidelines() {
     },
   ];
 
-  const manuscriptChecklist = [
-    "Current IEEE two-column A4 conference template",
-    "Four to six pages including references",
-    "English language",
-    "Abstract not exceeding 250 words",
-    "Three to six keywords",
-    "Single readable, unencrypted, text-searchable PDF",
-    "No author names or affiliations",
-    "No acknowledgements or identifying funding statements",
-    "No page numbers, headers or footers",
-    "Figures and tables numbered, captioned and cited",
-    "Complete and verifiable IEEE-style references",
-    "Overall similarity below 15%",
-    "No single source above 5% similarity",
-    "Scholarly prose written by the listed human authors",
-  ];
-
   const doubleBlindRules = [
     "Remove author names and photographs.",
     "Remove affiliations, postal addresses, emails and telephone numbers.",
@@ -134,6 +116,20 @@ export default function Guidelines() {
     "Survey-only papers and tutorial restatements are not accepted.",
     "Implementation reports without technical contribution are not accepted.",
     "Authors are responsible for originality, accuracy and integrity.",
+  ];
+
+  const manuscriptRules = [
+    "Use the current IEEE Standard two-column conference template for A4 paper.",
+    "Do not alter margins, font sizes, line spacing or column widths.",
+    "Body text is 10-point, single-spaced and two columns.",
+    "Review manuscript must be four to six pages including references.",
+    "Manuscripts must be written in English.",
+    "Abstract must not exceed 250 words.",
+    "Supply three to six keywords.",
+    "Every figure and table must be numbered, captioned and cited.",
+    "References must be complete, accurate, independently verifiable and in IEEE style.",
+    "Upload a single readable, unencrypted, text-searchable PDF.",
+    "No author-inserted page numbers, headers, footers, watermarks, tracked changes, comments or annotations.",
   ];
 
   const aiPolicy = [
@@ -236,7 +232,8 @@ export default function Guidelines() {
     },
     {
       title: "Become an IEEE Conference Author",
-      link: "https://conferences.ieeeauthorcenter.ieee.org/become-an-ieee-conference-author/",
+      link:
+        "https://conferences.ieeeauthorcenter.ieee.org/become-an-ieee-conference-author/",
     },
     {
       title: "Author Ethics",
@@ -248,7 +245,8 @@ export default function Guidelines() {
     },
     {
       title: "Understand Peer Review",
-      link: "https://conferences.ieeeauthorcenter.ieee.org/understand-peer-review/",
+      link:
+        "https://conferences.ieeeauthorcenter.ieee.org/understand-peer-review/",
     },
     {
       title: "Get Published",
@@ -266,271 +264,157 @@ export default function Guidelines() {
 
   return (
     <>
-      {/* =========================================================
-          HERO
-      ========================================================= */}
+      {/* HERO */}
 
-      <section className="relative overflow-hidden bg-[#020817] min-h-screen pt-6 pb-24">
+      <section className="relative overflow-hidden bg-[#07152F]">
+        <div className="pointer-events-none absolute -left-32 -top-32 h-[450px] w-[450px] rounded-full bg-[#075DB8]/20 blur-[140px]" />
 
-        {/* Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "65px 65px",
-          }}
-        />
+        <div className="pointer-events-none absolute -bottom-40 -right-32 h-[500px] w-[500px] rounded-full bg-[#60A5FA]/15 blur-[150px]" />
 
-        {/* Glows */}
-        <div className="absolute -top-40 left-0 w-[500px] h-[500px] rounded-full bg-cyan-500/20 blur-[170px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-500/20 blur-[170px]" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-
-          {/* Hero Heading */}
+        <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-16 lg:px-8 lg:pb-28 lg:pt-20">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ duration: 0.7 }}
+            className="mx-auto max-w-5xl text-center"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-2 uppercase tracking-[3px] text-sm text-cyan-300">
-              <Sparkles size={16} />
-              CYCRAI 2027
-            </span>
-
-            <h1 className="mt-8 text-5xl md:text-7xl font-black leading-tight text-white">
+            <h1 className="text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
               Guidelines
-              <span className="block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-                & Policies
+              <span className="block bg-gradient-to-r from-[#93C5FD] via-[#60A5FA] to-[#BFDBFE] bg-clip-text pb-3 text-transparent">
+                &amp; Policies
               </span>
             </h1>
+
+            <p className="mx-auto mt-6 max-w-3xl text-base font-semibold leading-8 tracking-wide text-blue-100/90 sm:text-lg md:text-xl">
+              Submission, review, publication and research-integrity
+              requirements for CYCRAI 2027
+            </p>
           </motion.div>
-
-          {/* =====================================================
-              IMPORTANT NOTICE
-          ===================================================== */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mt-16"
-          >
-            <div
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-[30px]
-                border
-                border-cyan-400/20
-                bg-white/5
-                backdrop-blur-2xl
-                p-8
-                md:p-10
-                transition-all
-                duration-500
-                hover:border-cyan-400/40
-                hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-                hover:-translate-y-2
-              "
-            >
-              <div
-                className="
-                  absolute
-                  inset-0
-                  opacity-0
-                  group-hover:opacity-100
-                  transition
-                  duration-500
-                  bg-gradient-to-br
-                  from-cyan-500/10
-                  via-transparent
-                  to-blue-500/5
-                "
-              />
-
-              <div className="relative z-10 flex flex-col md:flex-row gap-6">
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                  <AlertTriangle className="text-cyan-300" size={26} />
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    Important Submission Notice
-                  </h3>
-
-                  <p className="mt-4 text-slate-400 leading-8">
-                    Read this page in full before preparing a manuscript.
-                    Submission constitutes confirmation by every listed author
-                    that these guidelines have been read and accepted.
-                    Mandatory requirements are enforced by administrative
-                    rejection without external review.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* =====================================================
-              SCOPE & PRECEDENCE
-          ===================================================== */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16"
-          >
-            <SectionHeading
-              icon={Scale}
-              label="Section 01"
-              title="Scope & Precedence"
-            />
-
-            <div className="grid lg:grid-cols-2 gap-8">
-
-              <InfoCard
-                icon={BookOpen}
-                title="What These Guidelines Cover"
-              >
-                <p>
-                  These guidelines govern the preparation, submission, review,
-                  revision, presentation and publication of every manuscript
-                  submitted to CYCRAI 2027.
-                </p>
-
-                <p>
-                  They apply to main technical tracks, special sessions,
-                  posters and work-in-progress categories.
-                </p>
-              </InfoCard>
-
-              <InfoCard
-                icon={Scale}
-                title="IEEE & CYCRAI Requirements"
-              >
-                <p>
-                  IEEE publication policy sets the minimum standard for
-                  publication. CYCRAI 2027 imposes additional requirements
-                  for submission.
-                </p>
-
-                <p>
-                  Where a binding IEEE requirement cannot be reconciled with
-                  a CYCRAI requirement, the IEEE requirement governs
-                  eligibility for publication in IEEE Xplore.
-                </p>
-              </InfoCard>
-
-            </div>
-          </motion.div>
-
-          {/* =====================================================
-              TECHNICAL TRACKS
-          ===================================================== */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-24"
-          >
-            <SectionHeading
-              icon={BrainCircuit}
-              label="Section 02"
-              title="Technical Tracks"
-              description="Submit to the single track that best represents the principal contribution."
-            />
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {technicalTracks.map((track, index) => {
-                const Icon = track.icon;
-
-                return (
-                  <motion.div
-                    key={track.number}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.55,
-                      delay: index * 0.08,
-                    }}
-                    whileHover={{ y: -8 }}
-                    className="
-                      group
-                      relative
-                      overflow-hidden
-                      rounded-[30px]
-                      border
-                      border-cyan-400/20
-                      bg-white/5
-                      backdrop-blur-2xl
-                      p-8
-                      transition-all
-                      duration-500
-                      hover:border-cyan-400/40
-                      hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-                    "
-                  >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/5" />
-
-                    <div className="relative z-10">
-                      <div className="flex justify-between items-center">
-                        <span className="text-5xl font-black text-cyan-500/10 group-hover:text-cyan-400/20 transition">
-                          {track.number}
-                        </span>
-
-                        <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                          <Icon className="text-cyan-300" size={30} />
-                        </div>
-                      </div>
-
-                      <h3 className="mt-8 text-2xl md:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-                        {track.title}
-                      </h3>
-
-                      <div className="mt-6 h-[2px] w-16 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-24 transition-all duration-500" />
-
-                      <p className="mt-6 text-slate-400 leading-8">
-                        Topic lists on the Call for Papers page are indicative
-                        rather than exhaustive. Interdisciplinary work spanning
-                        security, cryptography and machine learning is expressly
-                        welcome.
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-
         </div>
       </section>
 
-      {/* =========================================================
-          ORIGINALITY + MANUSCRIPT
-      ========================================================= */}
+      {/* CONTENT */}
 
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
+      <main className="relative overflow-hidden bg-gradient-to-b from-white via-[#F8FBFF] to-[#F1F6FD] px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="pointer-events-none absolute left-0 top-20 h-[450px] w-[450px] rounded-full bg-[#BFDBFE]/20 blur-[130px]" />
 
-        <Background />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-[#DBEAFE]/30 blur-[140px]" />
 
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative z-10 mx-auto max-w-7xl">
+          {/* IMPORTANT NOTICE */}
+
+          <SimpleBox blueTop={false} className="mx-auto max-w-6xl bg-[#F8FBFF]">
+            <div className="flex items-start gap-5">
+              <IconBox danger>
+                <AlertTriangle size={23} />
+              </IconBox>
+
+              <div>
+                <Eyebrow>Important Notice</Eyebrow>
+
+                <h2 className="mt-1 text-2xl font-bold text-[#172554] sm:text-3xl">
+                  Read Before Submission
+                </h2>
+
+                <p className="mt-4 text-lg font-semibold leading-8 text-[#334155]">
+                  Read this page in full before preparing a manuscript.
+                  Submission constitutes confirmation by every listed author
+                  that these guidelines have been read and accepted.
+                  Mandatory requirements are enforced by administrative
+                  rejection without external review.
+                </p>
+              </div>
+            </div>
+          </SimpleBox>
+
+          {/* SECTION 01 */}
 
           <SectionHeading
-            icon={ShieldCheck}
-            label="Sections 03–04"
-            title="Originality & Manuscript Preparation"
-            description="Every manuscript must satisfy the originality, formatting and file requirements before submission."
+            icon={Scale}
+            label="Section 01"
+            title="Scope & Precedence"
+            description="These requirements govern manuscript preparation, submission, review, revision, presentation and publication."
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <InfoCard icon={BookOpen} title="What These Guidelines Cover">
+              <p>
+                These guidelines govern the preparation, submission, review,
+                revision, presentation and publication of every manuscript
+                submitted to CYCRAI 2027.
+              </p>
 
+              <p>
+                They apply to main technical tracks, special sessions,
+                posters and work-in-progress categories.
+              </p>
+            </InfoCard>
+
+            <InfoCard icon={Scale} title="IEEE & CYCRAI Requirements">
+              <p>
+                IEEE publication policy sets the minimum standard for
+                publication. CYCRAI 2027 imposes additional requirements for
+                submission.
+              </p>
+
+              <p>
+                Where a binding IEEE requirement cannot be reconciled with a
+                CYCRAI requirement, the IEEE requirement governs eligibility
+                for publication in IEEE Xplore.
+              </p>
+            </InfoCard>
+          </div>
+
+          {/* SECTION 02 */}
+
+          <SectionHeading
+            icon={BrainCircuit}
+            label="Section 02"
+            title="Technical Tracks"
+            description="Submit to the single track that best represents the principal contribution."
+          />
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {technicalTracks.map((track, index) => {
+              const Icon = track.icon;
+
+              return (
+                <Card key={track.number} delay={index * 0.07}>
+                  <div className="flex items-center justify-between">
+                    <span className="text-5xl font-black text-[#DBEAFE]">
+                      {track.number}
+                    </span>
+
+                    <IconBox>
+                      <Icon size={27} />
+                    </IconBox>
+                  </div>
+
+                  <h3 className="mt-7 text-2xl font-bold text-[#172554] md:text-3xl">
+                    {track.title}
+                  </h3>
+
+                  <p className="mt-5 text-lg font-semibold leading-8 text-[#334155]">
+                    Topic lists on the Call for Papers page are indicative
+                    rather than exhaustive. Interdisciplinary work spanning
+                    security, cryptography and machine learning is expressly
+                    welcome.
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* SECTIONS 03-04 */}
+
+          <SectionHeading
+            icon={FileText}
+            label="Sections 03–04"
+            title="Originality & Manuscript Preparation"
+            description="Every manuscript must satisfy originality, formatting and file requirements before submission."
+          />
+
+          <div className="grid gap-8 lg:grid-cols-2">
             <PolicyCard
               icon={ShieldCheck}
               title="Originality & Exclusive Submission"
@@ -540,34 +424,11 @@ export default function Guidelines() {
             <PolicyCard
               icon={FileText}
               title="Manuscript Preparation"
-              items={[
-                "Use the current IEEE Standard two-column conference template for A4 paper.",
-                "Do not alter margins, font sizes, line spacing or column widths.",
-                "Body text is 10-point, single-spaced and two columns.",
-                "Review manuscript must be four to six pages including references.",
-                "Manuscripts must be written in English.",
-                "Abstract must not exceed 250 words.",
-                "Supply three to six keywords.",
-                "Every figure and table must be numbered, captioned and cited.",
-                "References must be complete, accurate, independently verifiable and in IEEE style.",
-                "Upload a single readable, unencrypted, text-searchable PDF.",
-                "No author-inserted page numbers, headers, footers, watermarks, tracked changes, comments or annotations.",
-              ]}
+              items={manuscriptRules}
             />
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          DOUBLE BLIND + SIMILARITY
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTIONS 05-06 */}
 
           <SectionHeading
             icon={Eye}
@@ -576,29 +437,25 @@ export default function Guidelines() {
             description="CYCRAI 2027 uses strict double-blind review and mandatory similarity screening."
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-2">
             <PolicyCard
               icon={Eye}
               title="Double-Blind Review"
               items={doubleBlindRules}
             />
 
-            <InfoCard
-              icon={SearchCheck}
-              title="Similarity & Plagiarism"
-            >
+            <InfoCard icon={SearchCheck} title="Similarity & Plagiarism">
               <p>
                 Every submission is screened before review, and every accepted
                 camera-ready manuscript is screened again using IEEE CrossCheck.
               </p>
 
-              <div className="mt-6 grid sm:grid-cols-2 gap-4">
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 <MetricCard value="< 15%" label="Overall Similarity" />
                 <MetricCard value="≤ 5%" label="Single Source" />
               </div>
 
-              <div className="mt-6 space-y-4 text-slate-400 leading-8">
+              <div className="mt-8 space-y-5">
                 <p>
                   Similarity is a screening indicator, not a finding. A
                   manuscript below the threshold may still be rejected where
@@ -619,20 +476,9 @@ export default function Guidelines() {
                 </p>
               </div>
             </InfoCard>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          GENERATIVE AI
-      ========================================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTION 07 */}
 
           <SectionHeading
             icon={Bot}
@@ -641,8 +487,7 @@ export default function Guidelines() {
             description="CYCRAI 2027 applies a conference-specific human-authorship requirement."
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-2">
             <PolicyCard
               icon={UserCheck}
               title="Human Authorship"
@@ -666,20 +511,9 @@ export default function Guidelines() {
               title="AI Research & Screening"
               items={aiPolicy.slice(11)}
             />
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          SUBMISSION
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTION 08 */}
 
           <SectionHeading
             icon={Upload}
@@ -688,77 +522,47 @@ export default function Guidelines() {
             description="All manuscripts are submitted through Microsoft CMT."
           />
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {submissionSteps.map((step, index) => {
               const Icon = step.icon;
 
               return (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 35 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.55,
-                    delay: index * 0.07,
-                  }}
-                  whileHover={{ y: -8 }}
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[30px]
-                    border
-                    border-cyan-400/20
-                    bg-white/5
-                    backdrop-blur-2xl
-                    p-8
-                    transition-all
-                    duration-500
-                    hover:border-cyan-400/40
-                    hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-                  "
-                >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/5" />
+                <Card key={step.number} delay={index * 0.06}>
+                  <div className="flex items-center justify-between">
+                    <IconBox>
+                      <Icon size={23} />
+                    </IconBox>
 
-                  <div className="relative z-10">
-
-                    <div className="flex justify-between">
-                      <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                        <Icon size={26} className="text-cyan-300" />
-                      </div>
-
-                      <span className="text-5xl font-black text-cyan-500/10">
-                        {step.number}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-7 text-2xl font-bold text-white group-hover:text-cyan-300 transition">
-                      {step.title}
-                    </h3>
-
-                    <p className="mt-5 text-slate-400 leading-8">
-                      {step.desc}
-                    </p>
-
+                    <span className="text-4xl font-black text-[#DBEAFE]">
+                      {step.number}
+                    </span>
                   </div>
-                </motion.div>
+
+                  <h3 className="mt-7 text-2xl font-bold text-[#172554]">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-4 text-lg font-semibold leading-8 text-[#334155]">
+                    {step.desc}
+                  </p>
+                </Card>
               );
             })}
-
           </div>
 
-          {/* CMT Rules */}
-          <div className="grid lg:grid-cols-2 gap-8 mt-16">
-
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <InfoCard icon={Upload} title="Microsoft CMT Requirements">
               <ul className="space-y-4">
                 <li>• Submissions by email or other routes are discarded.</li>
                 <li>• The submitting author must hold a CMT account.</li>
-                <li>• Supply title, abstract, keywords and complete author metadata.</li>
+                <li>
+                  • Supply title, abstract, keywords and complete author
+                  metadata.
+                </li>
                 <li>• The submitting author acts as corresponding author.</li>
-                <li>• Author list and order are final at the submission deadline.</li>
+                <li>
+                  • Author list and order are final at the submission deadline.
+                </li>
                 <li>• Revisions may be made before the deadline.</li>
                 <li>• Deadlines close at 23:59 Anywhere on Earth (AoE).</li>
               </ul>
@@ -772,25 +576,47 @@ export default function Guidelines() {
                 <li>• Rejection</li>
               </ul>
 
-              <p className="mt-6">
+              <p>
                 There is no rebuttal stage. Reviewer identities are never
                 disclosed and reviewing material remains confidential.
               </p>
             </InfoCard>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          CAMERA READY
-      ========================================================= */}
+          {/* SECTION 09 */}
 
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
+          <SectionHeading
+            icon={SearchCheck}
+            label="Section 09"
+            title="Review Criteria"
+            description="Reviewers evaluate manuscripts against scientific, technical and presentation standards."
+          />
 
-        <Background />
+          <SimpleBox>
+            <div className="grid gap-x-12 gap-y-5 md:grid-cols-2">
+              {reviewCriteria.map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.04 }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2
+                    size={20}
+                    className="mt-1 shrink-0 text-[#075DB8]"
+                  />
 
-        <div className="relative max-w-7xl mx-auto px-6">
+                  <span className="text-lg font-semibold leading-7 text-[#334155]">
+                    {item}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </SimpleBox>
+
+          {/* SECTION 10 */}
 
           <SectionHeading
             icon={ClipboardCheck}
@@ -799,53 +625,31 @@ export default function Guidelines() {
             description="Acceptance alone does not secure publication. Every camera-ready requirement must be completed."
           />
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-            {cameraReadySteps.map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.05,
-                }}
-                whileHover={{ y: -6 }}
-                className="
-                  group
-                  rounded-[26px]
-                  border
-                  border-cyan-400/20
-                  bg-white/5
-                  backdrop-blur-xl
-                  p-6
-                  transition-all
-                  duration-500
-                  hover:border-cyan-400/40
-                  hover:shadow-[0_0_30px_rgba(34,211,238,.10)]
-                "
-              >
-                <div className="flex items-center gap-4">
-
-                  <div className="w-11 h-11 shrink-0 rounded-full bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 font-black">
+          <SimpleBox>
+            <div className="grid gap-x-12 gap-y-6 md:grid-cols-2 xl:grid-cols-3">
+              {cameraReadySteps.map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.04 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E8F1FF] text-sm font-bold text-[#075DB8]">
                     {index + 1}
                   </div>
 
-                  <p className="text-slate-300 leading-7">
+                  <p className="text-lg font-semibold leading-7 text-[#334155]">
                     {item}
                   </p>
+                </motion.div>
+              ))}
+            </div>
+          </SimpleBox>
 
-                </div>
-              </motion.div>
-            ))}
-
-          </div>
-
-          <div className="mt-16 rounded-[35px] border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-2xl p-10 md:p-14">
-
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-
+          <div className="mt-10 rounded-[16px] border border-[#BFDBFE] bg-[#F8FBFF] p-8 sm:p-10">
+            <div className="grid gap-8 text-center md:grid-cols-3">
               <MetricCard
                 value="6"
                 label="Standard Camera-Ready Pages"
@@ -860,28 +664,16 @@ export default function Guidelines() {
                 value="₹1000"
                 label="Per Additional Page"
               />
-
             </div>
 
-            <p className="mt-10 text-center text-slate-400 leading-8 max-w-4xl mx-auto">
+            <p className="mx-auto mt-8 max-w-4xl text-center text-lg font-semibold leading-8 text-[#334155]">
               The camera-ready manuscript may run to six pages, with up to
               two additional pages permitted on payment of ₹1000 per
               additional page. The absolute maximum is eight pages.
             </p>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          REGISTRATION + PRESENTATION
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTION 11 */}
 
           <SectionHeading
             icon={Presentation}
@@ -890,8 +682,7 @@ export default function Guidelines() {
             description="Accepted papers must satisfy registration and presentation requirements."
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-2">
             <InfoCard icon={Users} title="Registration & Presentation">
               <ul className="space-y-5">
                 <li>• At least one author must complete full author registration.</li>
@@ -899,8 +690,14 @@ export default function Guidelines() {
                 <li>• Valid membership/student proof is required where applicable.</li>
                 <li>• Presentation is mandatory.</li>
                 <li>• At least one author must present the paper.</li>
-                <li>• Registered but unpresented papers are excluded from IEEE Xplore proceedings.</li>
-                <li>• Remote presentation may be requested at least fourteen days before the conference.</li>
+                <li>
+                  • Registered but unpresented papers are excluded from IEEE
+                  Xplore proceedings.
+                </li>
+                <li>
+                  • Remote presentation may be requested at least fourteen days
+                  before the conference.
+                </li>
                 <li>• Registration fees are non-refundable.</li>
               </ul>
             </InfoCard>
@@ -910,39 +707,28 @@ export default function Guidelines() {
                 <li>• Withdrawal before acceptance may be made through CMT.</li>
                 <li>• Withdrawal after acceptance requires a written request.</li>
                 <li>• Agreement of all co-authors is required after acceptance.</li>
-                <li>• Withdrawal to submit substantially the same work elsewhere may be treated as abuse of peer review.</li>
+                <li>
+                  • Withdrawal to submit substantially the same work elsewhere
+                  may be treated as abuse of peer review.
+                </li>
               </ul>
             </InfoCard>
-
           </div>
 
-          <div className="mt-12 rounded-[35px] border border-cyan-400/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-2xl p-10 md:p-14 text-center">
-
-            <h3 className="text-3xl md:text-4xl font-black text-white">
+          <div className="mt-10 rounded-[16px] bg-[#07152F] p-9 text-center sm:p-12">
+            <h3 className="text-3xl font-black text-white md:text-4xl">
               IEEE Xplore Submission
             </h3>
 
-            <p className="mt-6 max-w-4xl mx-auto text-slate-400 text-lg leading-8">
+            <p className="mx-auto mt-5 max-w-4xl text-lg font-semibold leading-8 text-blue-100/80">
               All accepted papers that are registered and presented will be
               submitted for inclusion in the IEEE Xplore Digital Library,
               subject to IEEE Xplore's scope and quality requirements.
               Acceptance by CYCRAI 2027 does not by itself guarantee inclusion.
             </p>
-
           </div>
 
-        </div>
-      </section>
-
-      {/* =========================================================
-          AUTHORSHIP + CONFLICT
-      ========================================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTIONS 13-15 */}
 
           <SectionHeading
             icon={UserCheck}
@@ -950,8 +736,7 @@ export default function Guidelines() {
             title="Authorship, Conflicts & Confidentiality"
           />
 
-          <div className="grid lg:grid-cols-3 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-3">
             <InfoCard icon={UserCheck} title="Authorship">
               <p>
                 Every listed author must have made a substantive intellectual
@@ -975,9 +760,10 @@ export default function Guidelines() {
               </p>
 
               <p>
-                Conflicts include employment at the same institution,
-                recent collaboration, supervision, close personal relationships,
-                material financial interests and direct professional competition.
+                Conflicts include employment at the same institution, recent
+                collaboration, supervision, close personal relationships,
+                material financial interests and direct professional
+                competition.
               </p>
             </InfoCard>
 
@@ -993,20 +779,9 @@ export default function Guidelines() {
                 or transmit manuscripts to public generative services.
               </p>
             </InfoCard>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          RESEARCH INTEGRITY
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTIONS 16-18 */}
 
           <SectionHeading
             icon={AlertTriangle}
@@ -1015,8 +790,7 @@ export default function Guidelines() {
             description="Technical quality must be accompanied by responsible and ethical research practice."
           />
 
-          <div className="grid lg:grid-cols-3 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-3">
             <PolicyCard
               icon={Database}
               title="Data & Result Integrity"
@@ -1054,20 +828,9 @@ export default function Guidelines() {
                 "Do not disclose unnecessary credentials or personal information.",
               ]}
             />
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          HUMAN PARTICIPANTS + AI RESEARCH
-      ========================================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTIONS 19-22 */}
 
           <SectionHeading
             icon={HeartHandshake}
@@ -1075,8 +838,7 @@ export default function Guidelines() {
             title="Ethics, AI Reporting & Reproducibility"
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-2">
             <InfoCard icon={HeartHandshake} title="Human Participants & Privacy">
               <p>
                 Research involving human participants, behavioural experiments,
@@ -1137,20 +899,9 @@ export default function Guidelines() {
                 supplementary documentation.
               </p>
             </InfoCard>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          MISCONDUCT + SANCTIONS
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTIONS 23-24 */}
 
           <SectionHeading
             icon={AlertTriangle}
@@ -1159,8 +910,7 @@ export default function Guidelines() {
             description="Credible allegations are investigated before a determination is made."
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-2">
             <PolicyCard
               icon={AlertTriangle}
               title="Serious Integrity Concerns"
@@ -1182,24 +932,11 @@ export default function Guidelines() {
                 future editions of CYCRAI.
               </p>
 
-              <p>
-                Registration fees are not refunded in these circumstances.
-              </p>
+              <p>Registration fees are not refunded in these circumstances.</p>
             </InfoCard>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          CONFERENCE CONDUCT
-      ========================================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTIONS 25-26 */}
 
           <SectionHeading
             icon={Users}
@@ -1207,8 +944,7 @@ export default function Guidelines() {
             title="Conference Conduct & Interpretation"
           />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 lg:grid-cols-2">
             <InfoCard icon={Users} title="Conference Conduct">
               <p>
                 CYCRAI 2027 is committed to an environment in which every
@@ -1225,7 +961,7 @@ export default function Guidelines() {
               <p>
                 Concerns may be raised confidentially with a member of the
                 Organising Committee or by writing to{" "}
-                <span className="text-cyan-300 font-semibold">
+                <span className="font-bold text-[#075DB8]">
                   cycrai@iem.edu.in
                 </span>
                 .
@@ -1250,20 +986,9 @@ export default function Guidelines() {
                 the relevant time governs.
               </p>
             </InfoCard>
-
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          IMPORTANT DATES
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-6xl mx-auto px-6">
+          {/* SECTION 27 */}
 
           <SectionHeading
             icon={CalendarDays}
@@ -1272,62 +997,34 @@ export default function Guidelines() {
             description="All deadlines close at 23:59 Anywhere on Earth (AoE)."
           />
 
-          <div className="overflow-hidden rounded-[30px] border border-cyan-400/20 bg-white/5 backdrop-blur-2xl">
-
+          <SimpleBox>
             {importantDates.map(([milestone, date], index) => (
               <motion.div
                 key={milestone}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="
-                  group
-                  flex
-                  flex-col
-                  sm:flex-row
-                  sm:items-center
-                  sm:justify-between
-                  gap-3
-                  p-6
-                  md:px-8
-                  border-b
-                  border-white/5
-                  last:border-b-0
-                  hover:bg-cyan-500/5
-                  transition-all
-                "
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="flex flex-col gap-3 border-b border-[#E2E8F0] px-4 py-6 last:border-b-0 sm:flex-row sm:items-center sm:justify-between sm:px-6"
               >
                 <div className="flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-cyan-300 font-bold">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E8F1FF] text-sm font-bold text-[#075DB8]">
                     {String(index + 1).padStart(2, "0")}
-                  </span>
+                  </div>
 
-                  <span className="text-slate-300 font-medium">
+                  <span className="text-lg font-semibold text-[#334155]">
                     {milestone}
                   </span>
                 </div>
 
-                <span className="text-cyan-300 font-semibold">
+                <span className="text-lg font-bold text-[#075DB8] sm:text-right">
                   {date}
                 </span>
               </motion.div>
             ))}
+          </SimpleBox>
 
-          </div>
-
-        </div>
-      </section>
-
-      {/* =========================================================
-          CHECKLIST
-      ========================================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTION 28 */}
 
           <SectionHeading
             icon={ClipboardCheck}
@@ -1336,57 +1033,31 @@ export default function Guidelines() {
             description="Use this checklist before uploading your manuscript."
           />
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <SimpleBox>
+            <div className="grid gap-x-12 gap-y-5 md:grid-cols-2">
+              {checklist.map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.025 }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2
+                    size={20}
+                    className="mt-1 shrink-0 text-[#075DB8]"
+                  />
 
-            {checklist.map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.035,
-                }}
-                className="
-                  group
-                  flex
-                  items-start
-                  gap-4
-                  rounded-2xl
-                  border
-                  border-cyan-400/10
-                  bg-cyan-500/5
-                  p-5
-                  hover:border-cyan-400/30
-                  hover:bg-cyan-500/10
-                  transition-all
-                "
-              >
-                <CheckCircle2
-                  size={22}
-                  className="mt-1 shrink-0 text-cyan-400 group-hover:text-cyan-300"
-                />
+                  <span className="text-lg font-semibold leading-7 text-[#334155]">
+                    {item}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </SimpleBox>
 
-                <span className="text-slate-300 leading-7">
-                  {item}
-                </span>
-              </motion.div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          AUTHOR DECLARATION
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-6xl mx-auto px-6">
+          {/* SECTION 29 */}
 
           <SectionHeading
             icon={UserCheck}
@@ -1394,76 +1065,38 @@ export default function Guidelines() {
             title="Author Declaration"
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ y: -6 }}
-            className="
-              group
-              relative
-              overflow-hidden
-              rounded-[35px]
-              border
-              border-cyan-400/20
-              bg-gradient-to-br
-              from-cyan-500/10
-              via-[#071326]
-              to-[#020817]
-              backdrop-blur-2xl
-              p-8
-              md:p-14
-              transition-all
-              duration-500
-              hover:border-cyan-400/40
-              hover:shadow-[0_0_45px_rgba(34,211,238,.12)]
-            "
-          >
+          <Card className="mx-auto max-w-6xl">
+            <div className="flex items-center gap-4">
+              <IconBox>
+                <UserCheck size={26} />
+              </IconBox>
 
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 to-transparent" />
+              <div>
+                <Eyebrow>Corresponding Author</Eyebrow>
 
-            <div className="relative z-10">
-
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                  <UserCheck className="text-cyan-300" />
-                </div>
-
-                <h3 className="text-2xl md:text-3xl font-bold text-white">
-                  Corresponding Author Confirmation
+                <h3 className="mt-1 text-2xl font-bold text-[#172554] md:text-3xl">
+                  Author Confirmation
                 </h3>
               </div>
-
-              <p className="text-slate-400 text-lg leading-9">
-                By submitting a manuscript to CYCRAI 2027, the corresponding
-                author confirms on behalf of all listed authors that the work
-                is original and is neither published nor under review elsewhere;
-                every named author has contributed substantively, has approved
-                the submitted version, and no other person qualifies for
-                authorship; the manuscript meets the format, length and
-                anonymity requirements; similarity thresholds are met; the
-                scholarly prose complies with the human-authorship requirement;
-                references and reported results are accurate; applicable ethical
-                and research-integrity requirements have been observed; conflicts
-                of interest have been disclosed; and the authors accept the
-                registration, presentation and no-show provisions.
-              </p>
-
             </div>
-          </motion.div>
 
-        </div>
-      </section>
+            <p className="mt-8 text-lg font-semibold leading-8 text-[#334155]">
+              By submitting a manuscript to CYCRAI 2027, the corresponding
+              author confirms on behalf of all listed authors that the work is
+              original and is neither published nor under review elsewhere;
+              every named author has contributed substantively, has approved
+              the submitted version, and no other person qualifies for
+              authorship; the manuscript meets the format, length and anonymity
+              requirements; similarity thresholds are met; the scholarly prose
+              complies with the human-authorship requirement; references and
+              reported results are accurate; applicable ethical and
+              research-integrity requirements have been observed; conflicts of
+              interest have been disclosed; and the authors accept the
+              registration, presentation and no-show provisions.
+            </p>
+          </Card>
 
-      {/* =========================================================
-          IEEE AUTHOR RESOURCES
-      ========================================================= */}
-
-      <section className="relative py-28 bg-gradient-to-b from-[#071326] via-[#020817] to-[#071326] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+          {/* SECTION 30 */}
 
           <SectionHeading
             icon={ExternalLink}
@@ -1472,144 +1105,83 @@ export default function Guidelines() {
             description="Useful resources for preparing, reviewing and publishing your manuscript."
           />
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {ieeeResources.map((item, index) => (
               <motion.a
                 key={item.title}
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.06,
-                }}
-                whileHover={{ y: -8 }}
-                className="
-                  group
-                  rounded-[30px]
-                  border
-                  border-cyan-400/20
-                  bg-white/5
-                  backdrop-blur-xl
-                  p-7
-                  transition-all
-                  duration-500
-                  hover:border-cyan-400/40
-                  hover:shadow-[0_0_40px_rgba(34,211,238,.12)]
-                "
+                transition={{ duration: 0.45, delay: index * 0.05 }}
+                className="rounded-[16px] border border-[#DCE3EB] border-t-4 border-t-[#075DB8] bg-white p-7"
               >
+                <div className="flex items-center justify-between">
+                  <IconBox light>
+                    <BookOpen size={22} />
+                  </IconBox>
 
-                <div className="flex items-start justify-between gap-4">
-
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                    <BookOpen size={22} className="text-cyan-300" />
-                  </div>
-
-                  <ExternalLink
-                    size={18}
-                    className="text-slate-600 group-hover:text-cyan-300 transition"
-                  />
-
+                  <ExternalLink size={18} className="text-[#94A3B8]" />
                 </div>
 
-                <h3 className="mt-6 text-xl font-bold text-white group-hover:text-cyan-300 transition">
+                <h3 className="mt-6 text-xl font-bold text-[#172554]">
                   {item.title}
                 </h3>
 
-                <p className="mt-5 text-slate-400 text-sm">
+                <p className="mt-4 text-sm font-bold text-[#075DB8]">
                   Open IEEE Resource →
                 </p>
-
               </motion.a>
             ))}
-
           </div>
 
-        </div>
-      </section>
+          {/* CONTACT */}
 
-      {/* =========================================================
-          ENQUIRIES + CMT
-      ========================================================= */}
-
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-
-        <Background />
-
-        <div className="relative max-w-5xl mx-auto px-6">
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[40px]
-              border
-              border-cyan-400/20
-              bg-gradient-to-r
-              from-cyan-500/10
-              to-blue-500/10
-              backdrop-blur-2xl
-              p-10
-              md:p-16
-              text-center
-            "
-          >
-
-            <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-cyan-500/10 blur-[140px]" />
-
-            <div className="relative z-10">
-
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                <Mail className="text-cyan-300" size={28} />
+          <section className="mt-28">
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mx-auto max-w-5xl rounded-[16px] bg-[#07152F] p-9 text-center sm:p-12 md:p-16"
+            >
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-blue-200">
+                <Mail size={26} />
               </div>
 
-              <h2 className="mt-8 text-4xl md:text-5xl font-black text-white">
+              <Eyebrow light>Contact</Eyebrow>
+
+              <h2 className="mt-2 text-4xl font-black text-white md:text-5xl">
                 Enquiries
               </h2>
 
               <a
                 href="mailto:cycrai@iem.edu.in"
-                className="inline-flex items-center gap-3 mt-6 text-cyan-300 text-xl font-semibold hover:text-cyan-200 transition"
+                className="mt-6 inline-flex items-center gap-3 text-xl font-bold text-[#93C5FD]"
               >
                 <Mail size={20} />
                 cycrai@iem.edu.in
               </a>
 
-              <p className="mt-6 max-w-3xl mx-auto text-slate-400 leading-8">
+              <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-blue-100/75">
                 Quote the CMT paper identifier where one exists. Enquiries
                 about the scientific judgement of reviewers will not be
                 answered. Confidential publication-ethics concerns should be
                 addressed directly to the Conference Chairs.
               </p>
+            </motion.div>
 
-            </div>
-          </motion.div>
-
-          {/* CMT Notice */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-10 text-center"
-          >
-            <p className="text-slate-500 text-sm leading-7">
+            <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-7 text-[#64748B]">
               The Microsoft CMT service is used for managing the peer-review
               process for this conference. This service is provided free of
               charge by Microsoft, which bears all expenses, including costs
               for Azure cloud services as well as software development and
               support.
             </p>
-          </motion.div>
-
+          </section>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </>
@@ -1621,26 +1193,6 @@ export default function Guidelines() {
    REUSABLE COMPONENTS
 ========================================================= */
 
-function Background() {
-  return (
-    <>
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-          backgroundSize: "70px 70px",
-        }}
-      />
-
-      <div className="absolute left-0 top-20 w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
-
-      <div className="absolute right-0 bottom-0 w-[450px] h-[450px] rounded-full bg-blue-500/10 blur-[170px]" />
-    </>
-  );
-}
-
-
 function SectionHeading({
   icon: Icon,
   label,
@@ -1649,28 +1201,84 @@ function SectionHeading({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 25 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.65 }}
-      className="text-center mb-16"
+      className="mb-14 mt-28 text-center"
     >
+      <div className="flex items-center justify-center gap-3">
+        <Icon size={20} className="text-[#075DB8]" />
 
-      <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-        <Icon size={15} />
-        {label}
-      </span>
+        <span className="text-xs font-bold uppercase tracking-[2px] text-[#075DB8]">
+          {label}
+        </span>
+      </div>
 
-      <h2 className="mt-7 text-4xl md:text-6xl font-black text-white leading-tight">
+      <h2 className="mt-4 text-4xl font-black leading-tight text-[#172554] sm:text-5xl md:text-6xl">
         {title}
       </h2>
 
       {description && (
-        <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-slate-400">
+        <p className="mx-auto mt-5 max-w-3xl text-lg font-semibold leading-8 text-[#334155]">
           {description}
         </p>
       )}
+    </motion.div>
+  );
+}
 
+
+function Card({
+  children,
+  className = "",
+  delay = 0,
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.55, delay }}
+      className={`
+        rounded-[16px]
+        border
+        border-[#DCE3EB]
+        border-t-4
+        border-t-[#075DB8]
+        bg-white
+        p-7
+        sm:p-9
+        ${className}
+      `}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+
+function SimpleBox({
+  children,
+  className = "",
+  blueTop = true,
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.55 }}
+      className={`
+        rounded-[16px]
+        border
+        border-[#DCE3EB]
+        ${blueTop ? "border-t-4 border-t-[#075DB8]" : ""}
+        bg-white
+        ${className}
+      `}
+    >
+      {children}
     </motion.div>
   );
 }
@@ -1682,49 +1290,19 @@ function InfoCard({
   children,
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -8 }}
-      className="
-        group
-        relative
-        overflow-hidden
-        rounded-[30px]
-        border
-        border-cyan-400/20
-        bg-white/5
-        backdrop-blur-2xl
-        p-8
-        md:p-10
-        transition-all
-        duration-500
-        hover:border-cyan-400/40
-        hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-      "
-    >
+    <Card>
+      <IconBox>
+        <Icon size={26} />
+      </IconBox>
 
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/5" />
+      <h3 className="mt-7 text-2xl font-bold text-[#172554] md:text-3xl">
+        {title}
+      </h3>
 
-      <div className="relative z-10">
-
-        <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-          <Icon size={26} className="text-cyan-300" />
-        </div>
-
-        <h3 className="mt-7 text-2xl md:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-          {title}
-        </h3>
-
-        <div className="mt-5 h-[2px] w-16 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-24 transition-all duration-500" />
-
-        <div className="mt-6 space-y-5 text-slate-400 leading-8">
-          {children}
-        </div>
-
+      <div className="mt-6 space-y-5 text-lg font-semibold leading-8 text-[#334155]">
+        {children}
       </div>
-    </motion.div>
+    </Card>
   );
 }
 
@@ -1735,60 +1313,25 @@ function PolicyCard({
   items,
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -8 }}
-      className="
-        group
-        relative
-        overflow-hidden
-        rounded-[30px]
-        border
-        border-cyan-400/20
-        bg-white/5
-        backdrop-blur-2xl
-        p-8
-        md:p-10
-        transition-all
-        duration-500
-        hover:border-cyan-400/40
-        hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-      "
-    >
+    <Card>
+      <IconBox>
+        <Icon size={26} />
+      </IconBox>
 
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/5" />
+      <h3 className="mt-7 text-2xl font-bold text-[#172554] md:text-3xl">
+        {title}
+      </h3>
 
-      <div className="relative z-10">
+      <ul className="mt-7 space-y-4 text-lg font-semibold leading-7 text-[#334155]">
+        {items.map((item, index) => (
+          <li key={index} className="flex items-start gap-3">
+            <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#075DB8]" />
 
-        <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-          <Icon size={26} className="text-cyan-300" />
-        </div>
-
-        <h3 className="mt-7 text-2xl md:text-3xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-          {title}
-        </h3>
-
-        <div className="mt-5 h-[2px] w-16 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-24 transition-all duration-500" />
-
-        <ul className="mt-7 space-y-4 text-slate-400 leading-7">
-
-          {items.map((item, index) => (
-            <li
-              key={index}
-              className="flex items-start gap-3"
-            >
-              <span className="mt-2 w-1.5 h-1.5 shrink-0 rounded-full bg-cyan-400" />
-
-              <span>{item}</span>
-            </li>
-          ))}
-
-        </ul>
-
-      </div>
-    </motion.div>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </Card>
   );
 }
 
@@ -1798,16 +1341,65 @@ function MetricCard({
   label,
 }) {
   return (
-    <div className="rounded-2xl border border-cyan-400/15 bg-cyan-500/5 p-6">
-
-      <div className="text-3xl md:text-4xl font-black text-cyan-300">
+    <div className="rounded-2xl border border-[#BFDBFE] bg-white p-6">
+      <div className="text-3xl font-black text-[#075DB8] md:text-4xl">
         {value}
       </div>
 
-      <p className="mt-2 text-sm text-slate-500">
+      <p className="mt-2 text-sm font-semibold leading-6 text-[#334155]">
         {label}
       </p>
-
     </div>
+  );
+}
+
+
+function IconBox({
+  children,
+  light = false,
+  danger = false,
+}) {
+  return (
+    <div
+      className={`
+        flex
+        h-14
+        w-14
+        shrink-0
+        items-center
+        justify-center
+        rounded-2xl
+        ${light ? "bg-[#E8F1FF] text-[#075DB8]" : ""}
+        ${danger ? "bg-[#075DB8] text-white" : ""}
+        ${
+          !light && !danger
+            ? "bg-[#075DB8] text-white"
+            : ""
+        }
+      `}
+    >
+      {children}
+    </div>
+  );
+}
+
+
+function Eyebrow({
+  children,
+  light = false,
+}) {
+  return (
+    <p
+      className={`
+        mt-6
+        text-xs
+        font-bold
+        uppercase
+        tracking-[2px]
+        ${light ? "text-blue-200/70" : "text-[#075DB8]"}
+      `}
+    >
+      {children}
+    </p>
   );
 }

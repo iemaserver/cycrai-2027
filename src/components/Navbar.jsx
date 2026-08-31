@@ -1,2648 +1,6 @@
 // import { useEffect, useRef, useState } from "react";
-// import logo from "../assets/image/cycrai_latest_logo.png";
 // import { Link, useLocation } from "react-router-dom";
-// import { ChevronDown } from "lucide-react";
 
-// export default function Navbar() {
-//   const [scrolled, setScrolled] = useState(false);
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const [authorsOpen, setAuthorsOpen] = useState(false);
-//   const [mobileAuthorsOpen, setMobileAuthorsOpen] = useState(false);
-
-//   const location = useLocation();
-
-//   const authorsRef = useRef(null);
-
-//   // =========================================================
-//   // NAVBAR SCROLL EFFECT
-//   // =========================================================
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 50);
-//     };
-
-//     handleScroll();
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   // =========================================================
-//   // CLOSE MENUS WHEN ROUTE CHANGES
-//   // =========================================================
-
-//   useEffect(() => {
-//     setMenuOpen(false);
-//     setAuthorsOpen(false);
-//     setMobileAuthorsOpen(false);
-
-//     window.scrollTo(0, 0);
-//   }, [location.pathname]);
-
-//   // =========================================================
-//   // CLOSE DESKTOP DROPDOWN WHEN CLICKING OUTSIDE
-//   // =========================================================
-
-//   useEffect(() => {
-//     const handleClickOutside = (event) => {
-//       if (
-//         authorsRef.current &&
-//         !authorsRef.current.contains(event.target)
-//       ) {
-//         setAuthorsOpen(false);
-//       }
-//     };
-
-//     document.addEventListener("mousedown", handleClickOutside);
-
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     };
-//   }, []);
-
-//   // =========================================================
-//   // CLOSE DROPDOWN WITH ESCAPE KEY
-//   // =========================================================
-
-//   useEffect(() => {
-//     const handleEscape = (event) => {
-//       if (event.key === "Escape") {
-//         setAuthorsOpen(false);
-//         setMobileAuthorsOpen(false);
-//       }
-//     };
-
-//     document.addEventListener("keydown", handleEscape);
-
-//     return () => {
-//       document.removeEventListener("keydown", handleEscape);
-//     };
-//   }, []);
-
-//   // =========================================================
-//   // MAIN NAVIGATION ITEMS
-//   // =========================================================
-
-//   const navItems = [
-//     {
-//       name: "Home",
-//       path: "/",
-//     },
-//     {
-//       name: "About",
-//       path: "/about",
-//     },
-//     {
-//       name: "Committee",
-//       path: "/committee",
-//     },
-//     {
-//       name: "Program",
-//       path: "/speakers",
-//     },
-//     {
-//       name: "Important Dates",
-//       path: "/important-dates",
-//     },
-//     {
-//       name: "Venue",
-//       path: "/venue",
-//     },
-//   ];
-
-//   // =========================================================
-//   // AUTHORS DROPDOWN ITEMS
-//   // =========================================================
-
-//   const authorItems = [
-//     {
-//       name: "Call For Papers",
-//       path: "/call-for-papers",
-//     },
-//     {
-//       name: "Guidelines & Policies",
-//       path: "/guidelines",
-//     },
-//     {
-//       name: "Tracks",
-//       path: "/tracks",
-//     },
-//   ];
-
-//   // =========================================================
-//   // ACTIVE ROUTE
-//   // =========================================================
-
-//   const isActive = (path) => {
-//     if (path === "/") {
-//       return location.pathname === "/";
-//     }
-
-//     return location.pathname === path;
-//   };
-
-//   // =========================================================
-//   // AUTHORS ACTIVE STATE
-//   // =========================================================
-
-//   const isAuthorsActive = authorItems.some(
-//     (item) => location.pathname === item.path
-//   );
-
-//   // =========================================================
-//   // NAVIGATION HANDLER
-//   // =========================================================
-
-//   const handleNavigation = () => {
-//     setMenuOpen(false);
-//     setAuthorsOpen(false);
-//     setMobileAuthorsOpen(false);
-
-//     window.scrollTo(0, 0);
-//   };
-
-//   // =========================================================
-//   // RENDER
-//   // =========================================================
-
-//   return (
-//     <header className="fixed top-0 left-0 w-full z-50">
-
-//       <div
-//         className={`
-//           mx-auto
-//           transition-all
-//           duration-700
-//           ease-[cubic-bezier(0.22,1,0.36,1)]
-//           ${scrolled ? "max-w-[1280px]" : "max-w-[1500px]"}
-//           px-4 md:px-8 lg:px-12
-//         `}
-//       >
-
-//         {/* =====================================================
-//             NAVBAR
-//         ====================================================== */}
-
-//         <div
-//           className={`
-//             mt-3 md:mt-7
-//             flex
-//             items-center
-//             justify-between
-//             rounded-2xl
-//             transition-all
-//             duration-500
-
-//             ${
-//               scrolled
-//                 ? `
-//                   bg-[#051024]/70
-//                   backdrop-blur-xl
-//                   px-4 md:px-8
-//                   py-3
-//                   shadow-[0_15px_40px_rgba(0,0,0,0.25)]
-//                   border
-//                   border-cyan-400/20
-//                 `
-//                 : `
-//                   bg-[#051024]/85
-//                   backdrop-blur-md
-//                   px-4 md:px-8
-//                   py-3 md:py-4
-//                   shadow-2xl
-//                   border
-//                   border-cyan-400/20
-//                 `
-//             }
-//           `}
-//         >
-
-//           {/* ===================================================
-//               LOGO
-//           =================================================== */}
-
-//           <div className="relative flex items-center flex-shrink-0">
-
-//             <Link
-//               to="/"
-//               onClick={handleNavigation}
-//             >
-//               <img
-//                 src={logo}
-//                 alt="CYCRAI 2027"
-//                 className={`
-//                   w-auto
-//                   object-contain
-//                   transition-all
-//                   duration-700
-
-//                   ${
-//                     scrolled
-//                       ? "h-14 md:h-16 -my-3"
-//                       : "h-16 md:h-20 -my-4"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-//           </div>
-
-
-//           {/* ===================================================
-//               DESKTOP NAVIGATION
-//           =================================================== */}
-
-//           <nav className="hidden lg:flex items-center gap-5 xl:gap-6 2xl:gap-8">
-
-//             {/* =================================================
-//                 HOME
-//             ================================================= */}
-
-//             <Link
-//               to="/"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               Home
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-
-//             {/* =================================================
-//                 ABOUT
-//             ================================================= */}
-
-//             <Link
-//               to="/about"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/about")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               About
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/about")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-
-//             {/* =================================================
-//                 AUTHORS DROPDOWN
-//             ================================================= */}
-
-//             <div
-//               ref={authorsRef}
-//               className="relative"
-//             >
-
-//               <button
-//                 type="button"
-//                 onClick={() => setAuthorsOpen(!authorsOpen)}
-//                 aria-expanded={authorsOpen}
-//                 aria-haspopup="true"
-//                 className={`
-//                   relative
-//                   flex
-//                   items-center
-//                   gap-1.5
-//                   text-[13px]
-//                   xl:text-[14px]
-//                   2xl:text-[15px]
-//                   font-medium
-//                   tracking-wide
-//                   whitespace-nowrap
-//                   transition-all
-//                   duration-300
-//                   group
-
-//                   ${
-//                     isAuthorsActive || authorsOpen
-//                       ? "text-[#12B8E8]"
-//                       : "text-white hover:text-[#12B8E8]"
-//                   }
-//                 `}
-//               >
-
-//                 <span>Authors</span>
-
-//                 <ChevronDown
-//                   size={17}
-//                   strokeWidth={2}
-//                   className={`
-//                     transition-transform
-//                     duration-300
-
-//                     ${
-//                       authorsOpen
-//                         ? "rotate-180"
-//                         : "rotate-0"
-//                     }
-//                   `}
-//                 />
-
-//                 <span
-//                   className={`
-//                     absolute
-//                     -bottom-2
-//                     left-0
-//                     h-[2px]
-//                     rounded-full
-//                     bg-gradient-to-r
-//                     from-[#12B8E8]
-//                     to-[#2D6CF2]
-//                     transition-all
-//                     duration-300
-
-//                     ${
-//                       isAuthorsActive || authorsOpen
-//                         ? "w-full"
-//                         : "w-0 group-hover:w-full"
-//                     }
-//                   `}
-//                 />
-
-//               </button>
-
-
-//               {/* Authors Dropdown */}
-
-//               {authorsOpen && (
-//                 <div
-//                   className="
-//                     absolute
-//                     top-full
-//                     left-1/2
-//                     -translate-x-1/2
-//                     mt-5
-//                     w-[270px]
-//                     rounded-2xl
-//                     border
-//                     border-cyan-400/20
-//                     bg-[#051024]/95
-//                     backdrop-blur-2xl
-//                     shadow-[0_20px_50px_rgba(0,0,0,0.45)]
-//                     overflow-hidden
-//                     z-[100]
-//                   "
-//                 >
-
-//                   <div className="relative py-2">
-
-//                     {authorItems.map((item, index) => (
-
-//                       <Link
-//                         key={item.name}
-//                         to={item.path}
-//                         onClick={handleNavigation}
-//                         className={`
-//                           group
-//                           flex
-//                           items-center
-//                           gap-3
-//                           px-5
-//                           py-4
-//                           text-[15px]
-//                           font-medium
-//                           transition-all
-//                           duration-300
-
-//                           ${
-//                             isActive(item.path)
-//                               ? "text-[#12B8E8] bg-cyan-400/10"
-//                               : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                           }
-
-//                           ${
-//                             index !== authorItems.length - 1
-//                               ? "border-b border-white/5"
-//                               : ""
-//                           }
-//                         `}
-//                       >
-
-//                         <span
-//                           className="
-//                             flex
-//                             items-center
-//                             justify-center
-//                             w-7
-//                             h-7
-//                             rounded-lg
-//                             text-xs
-//                             font-bold
-//                             bg-cyan-500/10
-//                             border
-//                             border-cyan-400/20
-//                             text-cyan-300
-//                           "
-//                         >
-//                           {String(index + 1).padStart(2, "0")}
-//                         </span>
-
-//                         <span>
-//                           {item.name}
-//                         </span>
-
-//                       </Link>
-
-//                     ))}
-
-//                   </div>
-
-//                 </div>
-//               )}
-
-//             </div>
-
-
-//             {/* =================================================
-//                 REGISTRATION
-//             ================================================= */}
-
-//             <Link
-//               to="/registration"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/registration")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               Registration
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/registration")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-
-//             {/* =================================================
-//                 COMMITTEE
-//             ================================================= */}
-
-//             <Link
-//               to="/committee"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/committee")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               Committee
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/committee")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-
-//             {/* =================================================
-//                 PROGRAM
-//             ================================================= */}
-
-//             <Link
-//               to="/speakers"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/speakers")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               Program
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/speakers")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-
-//             {/* =================================================
-//                 IMPORTANT DATES
-//             ================================================= */}
-
-//             <Link
-//               to="/important-dates"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/important-dates")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               Important Dates
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/important-dates")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-
-//             {/* =================================================
-//                 VENUE
-//             ================================================= */}
-
-//             <Link
-//               to="/venue"
-//               onClick={handleNavigation}
-//               className={`
-//                 relative
-//                 text-[13px]
-//                 xl:text-[14px]
-//                 2xl:text-[15px]
-//                 font-medium
-//                 tracking-wide
-//                 whitespace-nowrap
-//                 transition-all
-//                 duration-300
-//                 group
-
-//                 ${
-//                   isActive("/venue")
-//                     ? "text-[#12B8E8]"
-//                     : "text-white hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               Venue
-
-//               <span
-//                 className={`
-//                   absolute
-//                   -bottom-2
-//                   left-0
-//                   h-[2px]
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-//                   rounded-full
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isActive("/venue")
-//                       ? "w-full"
-//                       : "w-0 group-hover:w-full"
-//                   }
-//                 `}
-//               />
-//             </Link>
-
-//           </nav>
-
-
-//           {/* ===================================================
-//               DESKTOP CONTACT BUTTON
-//           =================================================== */}
-
-//           <Link
-//             to="/contact"
-//             onClick={handleNavigation}
-//             className={`
-//               hidden
-//               lg:flex
-//               items-center
-//               justify-center
-//               rounded-full
-//               bg-gradient-to-r
-//               from-[#12B8E8]
-//               via-[#18AEEF]
-//               to-[#2D6CF2]
-//               text-white
-//               font-semibold
-//               tracking-wide
-//               text-[12px]
-//               xl:text-[13px]
-//               2xl:text-[14px]
-//               shadow-[0_8px_25px_rgba(37,108,242,0.35)]
-//               transition-all
-//               duration-300
-//               hover:scale-105
-//               hover:shadow-[0_12px_35px_rgba(37,108,242,0.55)]
-//               hover:brightness-110
-//               flex-shrink-0
-
-//               ${scrolled ? "px-6 py-3" : "px-7 py-3.5"}
-//             `}
-//           >
-//             CONTACT US
-//           </Link>
-
-
-//           {/* ===================================================
-//               MOBILE MENU BUTTON
-//           =================================================== */}
-
-//           <button
-//             onClick={() => {
-//               setMenuOpen(!menuOpen);
-//               setAuthorsOpen(false);
-//             }}
-//             className="
-//               lg:hidden
-//               text-white
-//               flex
-//               items-center
-//               justify-center
-//               min-w-[40px]
-//               min-h-[40px]
-//               flex-shrink-0
-//               rounded-xl
-//               hover:bg-white/5
-//               transition-all
-//             "
-//             aria-label="Toggle navigation menu"
-//             aria-expanded={menuOpen}
-//           >
-
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               className="h-7 w-7"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth={2}
-//                 d={
-//                   menuOpen
-//                     ? "M6 18L18 6M6 6l12 12"
-//                     : "M4 6h16M4 12h16M4 18h16"
-//                 }
-//               />
-
-//             </svg>
-
-//           </button>
-
-//         </div>
-
-
-//         {/* =====================================================
-//             MOBILE DROPDOWN
-//         ====================================================== */}
-
-//         {menuOpen && (
-
-//           <div
-//             className="
-//               lg:hidden
-//               mt-2
-//               rounded-2xl
-//               bg-[#051024]/95
-//               backdrop-blur-xl
-//               border
-//               border-cyan-400/20
-//               shadow-2xl
-//               overflow-hidden
-//             "
-//           >
-
-//             {/* =================================================
-//                 HOME
-//             ================================================= */}
-
-//             <Link
-//               to="/"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               Home
-//             </Link>
-
-
-//             {/* =================================================
-//                 ABOUT
-//             ================================================= */}
-
-//             <Link
-//               to="/about"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/about")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               About
-//             </Link>
-
-
-//             {/* =================================================
-//                 MOBILE AUTHORS DROPDOWN
-//             ================================================= */}
-
-//             <div className="border-b border-white/10">
-
-//               <button
-//                 type="button"
-//                 onClick={() =>
-//                   setMobileAuthorsOpen(!mobileAuthorsOpen)
-//                 }
-//                 className={`
-//                   w-full
-//                   flex
-//                   items-center
-//                   justify-between
-//                   px-6
-//                   py-4
-//                   text-left
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isAuthorsActive
-//                       ? "text-[#12B8E8] bg-cyan-400/5"
-//                       : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                   }
-//                 `}
-//               >
-
-//                 <span className="font-medium">
-//                   Authors
-//                 </span>
-
-//                 <ChevronDown
-//                   size={20}
-//                   className={`
-//                     transition-transform
-//                     duration-300
-
-//                     ${
-//                       mobileAuthorsOpen
-//                         ? "rotate-180"
-//                         : ""
-//                     }
-//                   `}
-//                 />
-
-//               </button>
-
-
-//               {/* Authors Submenu */}
-
-//               {mobileAuthorsOpen && (
-
-//                 <div
-//                   className="
-//                     bg-[#020817]/70
-//                     border-t
-//                     border-cyan-400/10
-//                   "
-//                 >
-
-//                   {authorItems.map((item, index) => (
-
-//                     <Link
-//                       key={item.name}
-//                       to={item.path}
-//                       onClick={handleNavigation}
-//                       className={`
-//                         flex
-//                         items-center
-//                         gap-3
-//                         px-8
-//                         py-4
-//                         text-sm
-//                         border-b
-//                         border-white/5
-//                         transition-all
-//                         duration-300
-
-//                         ${
-//                           isActive(item.path)
-//                             ? "text-[#12B8E8] bg-cyan-400/5"
-//                             : "text-slate-300 hover:text-[#12B8E8] hover:bg-white/5"
-//                         }
-//                       `}
-//                     >
-
-//                       <span
-//                         className="
-//                           flex
-//                           items-center
-//                           justify-center
-//                           w-7
-//                           h-7
-//                           rounded-lg
-//                           bg-cyan-500/10
-//                           border
-//                           border-cyan-400/20
-//                           text-xs
-//                           font-bold
-//                           text-cyan-300
-//                         "
-//                       >
-//                         {String(index + 1).padStart(2, "0")}
-//                       </span>
-
-//                       <span>
-//                         {item.name}
-//                       </span>
-
-//                     </Link>
-
-//                   ))}
-
-//                 </div>
-
-//               )}
-
-//             </div>
-
-
-//             {/* =================================================
-//                 REGISTRATION
-//             ================================================= */}
-
-//             <Link
-//               to="/registration"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/registration")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               Registration
-//             </Link>
-
-
-//             {/* =================================================
-//                 COMMITTEE
-//             ================================================= */}
-
-//             <Link
-//               to="/committee"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/committee")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               Committee
-//             </Link>
-
-
-//             {/* =================================================
-//                 PROGRAM
-//             ================================================= */}
-
-//             <Link
-//               to="/speakers"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/speakers")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               Program
-//             </Link>
-
-
-//             {/* =================================================
-//                 IMPORTANT DATES
-//             ================================================= */}
-
-//             <Link
-//               to="/important-dates"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/important-dates")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               Important Dates
-//             </Link>
-
-
-//             {/* =================================================
-//                 VENUE
-//             ================================================= */}
-
-//             <Link
-//               to="/venue"
-//               onClick={handleNavigation}
-//               className={`
-//                 block
-//                 w-full
-//                 text-left
-//                 px-6
-//                 py-4
-//                 border-b
-//                 border-white/10
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isActive("/venue")
-//                     ? "text-[#12B8E8] bg-cyan-400/5"
-//                     : "text-white hover:text-[#12B8E8] hover:bg-white/5"
-//                 }
-//               `}
-//             >
-//               Venue
-//             </Link>
-
-
-//             {/* =================================================
-//                 MOBILE CONTACT
-//             ================================================= */}
-
-//             <Link
-//               to="/contact"
-//               onClick={handleNavigation}
-//               className="
-//                 block
-//                 w-full
-//                 py-4
-//                 text-center
-//                 font-semibold
-//                 text-white
-//                 bg-gradient-to-r
-//                 from-[#12B8E8]
-//                 via-[#18AEEF]
-//                 to-[#2D6CF2]
-//                 hover:brightness-110
-//                 transition-all
-//                 duration-300
-//               "
-//             >
-//               CONTACT US
-//             </Link>
-
-//           </div>
-
-//         )}
-
-//       </div>
-
-//     </header>
-//   );
-// }
-
-
-// import { useEffect, useRef, useState } from "react";
-// import { Link, useLocation } from "react-router-dom";
-// import { ChevronDown } from "lucide-react";
-
-// export default function Navbar() {
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const [authorsOpen, setAuthorsOpen] = useState(false);
-//   const [mobileAuthorsOpen, setMobileAuthorsOpen] = useState(false);
-
-//   const location = useLocation();
-//   const authorsRef = useRef(null);
-//   const mobileMenuRef = useRef(null);
-
-//   // =========================================================
-//   // MAIN NAVIGATION ITEMS
-//   // =========================================================
-
-//   const navItems = [
-//     {
-//       name: "Home",
-//       path: "/",
-//     },
-//     {
-//       name: "About",
-//       path: "/about",
-//     },
-//     {
-//       name: "Registration",
-//       path: "/registration",
-//     },
-//     {
-//       name: "Committee",
-//       path: "/committee",
-//     },
-//     {
-//       name: "Program",
-//       path: "/speakers",
-//     },
-//     {
-//       name: "Important Dates",
-//       path: "/important-dates",
-//     },
-//     {
-//       name: "Venue",
-//       path: "/venue",
-//     },
-//   ];
-
-//   // =========================================================
-//   // AUTHORS DROPDOWN
-//   // =========================================================
-
-//   const authorItems = [
-//     {
-//       name: "Call For Papers",
-//       path: "/call-for-papers",
-//     },
-//     {
-//       name: "Guidelines & Policies",
-//       path: "/guidelines",
-//     },
-//     {
-//       name: "Tracks",
-//       path: "/tracks",
-//     },
-//   ];
-
-//   // =========================================================
-//   // ACTIVE ROUTE
-//   // =========================================================
-
-//   const isActive = (path) => {
-//     if (path === "/") {
-//       return location.pathname === "/";
-//     }
-
-//     return location.pathname === path;
-//   };
-
-//   // =========================================================
-//   // AUTHORS ACTIVE STATE
-//   // =========================================================
-
-//   const isAuthorsActive = authorItems.some(
-//     (item) => location.pathname === item.path
-//   );
-
-//   // =========================================================
-//   // NAVIGATION HANDLER
-//   // =========================================================
-
-//   const handleNavigation = () => {
-//     setMenuOpen(false);
-//     setAuthorsOpen(false);
-//     setMobileAuthorsOpen(false);
-
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-//   };
-
-//   // =========================================================
-//   // CLOSE DESKTOP AUTHORS DROPDOWN WHEN CLICKING OUTSIDE
-//   // =========================================================
-
-//   useEffect(() => {
-//     const handleClickOutside = (event) => {
-//       if (
-//         authorsRef.current &&
-//         !authorsRef.current.contains(event.target)
-//       ) {
-//         setAuthorsOpen(false);
-//       }
-//     };
-
-//     document.addEventListener("mousedown", handleClickOutside);
-
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     };
-//   }, []);
-
-//   // =========================================================
-//   // ESCAPE KEY
-//   // =========================================================
-
-//   useEffect(() => {
-//     const handleEscape = (event) => {
-//       if (event.key === "Escape") {
-//         setMenuOpen(false);
-//         setAuthorsOpen(false);
-//         setMobileAuthorsOpen(false);
-//       }
-//     };
-
-//     document.addEventListener("keydown", handleEscape);
-
-//     return () => {
-//       document.removeEventListener("keydown", handleEscape);
-//     };
-//   }, []);
-
-//   // =========================================================
-//   // CLOSE MOBILE MENU WHEN ROUTE CHANGES
-//   // =========================================================
-
-//   useEffect(() => {
-//     setMenuOpen(false);
-//     setAuthorsOpen(false);
-//     setMobileAuthorsOpen(false);
-
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-//   }, [location.pathname]);
-
-//   // =========================================================
-//   // PREVENT BACKGROUND SCROLL WHEN MOBILE MENU IS OPEN
-//   // =========================================================
-
-//   useEffect(() => {
-//     if (menuOpen) {
-//       document.body.style.overflow = "hidden";
-//     } else {
-//       document.body.style.overflow = "";
-//     }
-
-//     return () => {
-//       document.body.style.overflow = "";
-//     };
-//   }, [menuOpen]);
-
-//   // =========================================================
-//   // DESKTOP NAVIGATION ITEM
-//   // =========================================================
-
-//   const DesktopNavItem = ({ item }) => {
-//     const active = isActive(item.path);
-
-//     return (
-//       <Link
-//         to={item.path}
-//         onClick={handleNavigation}
-//         className={`
-//           group
-//           relative
-//           flex
-//           items-center
-
-//           px-6
-//           py-4
-
-//           text-[15px]
-//           xl:text-[16px]
-
-//           font-medium
-//           tracking-wide
-
-//           transition-all
-//           duration-300
-
-//           overflow-hidden
-
-//           ${
-//             active
-//               ? "text-[#12B8E8]"
-//               : "text-white/90 hover:text-[#12B8E8]"
-//           }
-//         `}
-//       >
-//         {/* Hover background */}
-
-//         <span
-//           className={`
-//             absolute
-//             inset-0
-
-//             bg-gradient-to-r
-//             from-[#12B8E8]/10
-//             via-[#12B8E8]/5
-//             to-transparent
-
-//             transition-opacity
-//             duration-300
-
-//             ${
-//               active
-//                 ? "opacity-100"
-//                 : "opacity-0 group-hover:opacity-100"
-//             }
-//           `}
-//         />
-
-//         {/* Active left indicator */}
-
-//         <span
-//           className={`
-//             absolute
-//             left-0
-//             top-1/2
-//             -translate-y-1/2
-
-//             w-[4px]
-
-//             rounded-r-full
-
-//             bg-gradient-to-b
-//             from-[#12B8E8]
-//             to-[#2D6CF2]
-
-//             shadow-[0_0_15px_rgba(18,184,232,0.8)]
-
-//             transition-all
-//             duration-300
-
-//             ${
-//               active
-//                 ? "h-14 opacity-100"
-//                 : "h-0 opacity-0 group-hover:h-10 group-hover:opacity-100"
-//             }
-//           `}
-//         />
-
-//         {/* Text */}
-
-//         <span className="relative z-10">
-//           {item.name}
-//         </span>
-//       </Link>
-//     );
-//   };
-
-//   // =========================================================
-//   // RENDER
-//   // =========================================================
-
-//   return (
-//     <>
-//       {/* =====================================================
-//           DESKTOP FLOATING NAVBAR
-//       ====================================================== */}
-
-//       <aside
-//         className="
-//           hidden
-//           lg:flex
-
-//           fixed
-//           left-7
-//           xl:left-9
-//           top-1/2
-//           -translate-y-1/2
-
-//           z-[100]
-
-//           w-[225px]
-//           xl:w-[245px]
-
-//           flex-col
-
-//           rounded-[24px]
-
-//           border
-//           border-cyan-400/20
-
-//           bg-[#020B18]/45
-
-//           backdrop-blur-2xl
-
-//           shadow-[0_20px_70px_rgba(0,0,0,0.5)]
-
-//           overflow-visible
-
-//           transition-all
-//           duration-500
-
-//           hover:border-cyan-400/35
-//           hover:bg-[#020B18]/55
-//         "
-//       >
-//         {/* Top glow */}
-
-//         <div
-//           className="
-//             absolute
-//             top-0
-//             left-8
-//             right-8
-
-//             h-px
-
-//             bg-gradient-to-r
-//             from-transparent
-//             via-cyan-400/60
-//             to-transparent
-//           "
-//         />
-
-//         {/* =================================================
-//             NAVIGATION
-//         ================================================== */}
-
-//         <nav className="py-5">
-//           {/* HOME */}
-
-//           <DesktopNavItem item={navItems[0]} />
-
-//           {/* ABOUT */}
-
-//           <DesktopNavItem item={navItems[1]} />
-
-//           {/* =================================================
-//               AUTHORS
-//           ================================================== */}
-
-//           <div
-//             ref={authorsRef}
-//             className="relative"
-//           >
-//             <button
-//               type="button"
-//               onClick={() => setAuthorsOpen(!authorsOpen)}
-//               aria-expanded={authorsOpen}
-//               aria-haspopup="true"
-//               className={`
-//                 group
-//                 relative
-
-//                 flex
-//                 w-full
-//                 items-center
-
-//                 px-6
-//                 py-4
-
-//                 text-[15px]
-//                 xl:text-[16px]
-
-//                 font-medium
-//                 tracking-wide
-
-//                 transition-all
-//                 duration-300
-
-//                 overflow-hidden
-
-//                 ${
-//                   isAuthorsActive || authorsOpen
-//                     ? "text-[#12B8E8]"
-//                     : "text-white/90 hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               {/* Hover background */}
-
-//               <span
-//                 className={`
-//                   absolute
-//                   inset-0
-
-//                   bg-gradient-to-r
-//                   from-[#12B8E8]/10
-//                   via-[#12B8E8]/5
-//                   to-transparent
-
-//                   transition-opacity
-//                   duration-300
-
-//                   ${
-//                     isAuthorsActive || authorsOpen
-//                       ? "opacity-100"
-//                       : "opacity-0 group-hover:opacity-100"
-//                   }
-//                 `}
-//               />
-
-//               {/* Left indicator */}
-
-//               <span
-//                 className={`
-//                   absolute
-//                   left-0
-//                   top-1/2
-//                   -translate-y-1/2
-
-//                   w-[4px]
-
-//                   rounded-r-full
-
-//                   bg-gradient-to-b
-//                   from-[#12B8E8]
-//                   to-[#2D6CF2]
-
-//                   shadow-[0_0_15px_rgba(18,184,232,0.8)]
-
-//                   transition-all
-//                   duration-300
-
-//                   ${
-//                     isAuthorsActive || authorsOpen
-//                       ? "h-14 opacity-100"
-//                       : "h-0 opacity-0 group-hover:h-10 group-hover:opacity-100"
-//                   }
-//                 `}
-//               />
-
-//               <span className="relative z-10 flex-1 text-left">
-//                 Authors
-//               </span>
-
-//               <ChevronDown
-//                 size={18}
-//                 strokeWidth={2}
-//                 className={`
-//                   relative
-//                   z-10
-
-//                   transition-transform
-//                   duration-300
-
-//                   ${
-//                     authorsOpen
-//                       ? "rotate-180"
-//                       : "rotate-0"
-//                   }
-//                 `}
-//               />
-//             </button>
-
-//             {/* =================================================
-//                 AUTHORS DROPDOWN
-//             ================================================== */}
-
-//             <div
-//               className={`
-//                 absolute
-
-//                 left-full
-//                 top-1/2
-//                 -translate-y-1/2
-
-//                 ml-3
-
-//                 w-[255px]
-
-//                 rounded-2xl
-
-//                 border
-//                 border-cyan-400/20
-
-//                 bg-[#051024]/90
-
-//                 backdrop-blur-2xl
-
-//                 shadow-[0_20px_50px_rgba(0,0,0,0.5)]
-
-//                 overflow-hidden
-
-//                 transition-all
-//                 duration-300
-
-//                 origin-left
-
-//                 ${
-//                   authorsOpen
-//                     ? "opacity-100 scale-100 translate-x-0 pointer-events-auto"
-//                     : "opacity-0 scale-95 -translate-x-2 pointer-events-none"
-//                 }
-//               `}
-//             >
-//               {/* Dropdown top glow */}
-
-//               <div
-//                 className="
-//                   h-px
-
-//                   bg-gradient-to-r
-//                   from-transparent
-//                   via-cyan-400/50
-//                   to-transparent
-//                 "
-//               />
-
-//               <div className="py-2">
-//                 {authorItems.map((item, index) => (
-//                   <Link
-//                     key={item.name}
-//                     to={item.path}
-//                     onClick={handleNavigation}
-//                     className={`
-//                       group/author
-
-//                       flex
-//                       items-center
-//                       gap-3
-
-//                       px-5
-//                       py-4
-
-//                       text-[14px]
-
-//                       border-b
-//                       border-white/5
-
-//                       last:border-b-0
-
-//                       transition-all
-//                       duration-300
-
-//                       ${
-//                         isActive(item.path)
-//                           ? "text-[#12B8E8] bg-cyan-400/10"
-//                           : "text-white/80 hover:text-[#12B8E8] hover:bg-cyan-400/5"
-//                       }
-//                     `}
-//                   >
-//                     <span
-//                       className="
-//                         flex
-//                         h-7
-//                         w-7
-
-//                         flex-shrink-0
-
-//                         items-center
-//                         justify-center
-
-//                         rounded-lg
-
-//                         border
-//                         border-cyan-400/20
-
-//                         bg-cyan-400/5
-
-//                         text-[10px]
-//                         font-bold
-
-//                         text-cyan-300
-
-//                         transition-all
-//                         duration-300
-
-//                         group-hover/author:border-cyan-400/50
-//                       "
-//                     >
-//                       {String(index + 1).padStart(2, "0")}
-//                     </span>
-
-//                     <span>
-//                       {item.name}
-//                     </span>
-//                   </Link>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* REGISTRATION */}
-
-//           <DesktopNavItem item={navItems[2]} />
-
-//           {/* COMMITTEE */}
-
-//           <DesktopNavItem item={navItems[3]} />
-
-//           {/* PROGRAM */}
-
-//           <DesktopNavItem item={navItems[4]} />
-
-//           {/* IMPORTANT DATES */}
-
-//           <DesktopNavItem item={navItems[5]} />
-
-//           {/* VENUE */}
-
-//           <DesktopNavItem item={navItems[6]} />
-//         </nav>
-
-//         {/* =================================================
-//             DIVIDER
-//         ================================================== */}
-
-//         <div
-//           className="
-//             mx-6
-
-//             h-px
-
-//             bg-gradient-to-r
-//             from-transparent
-//             via-cyan-400/20
-//             to-transparent
-//           "
-//         />
-
-//         {/* =================================================
-//             CONTACT US
-//         ================================================== */}
-
-//         <Link
-//           to="/contact"
-//           onClick={handleNavigation}
-//           className="
-//             group/contact
-
-//             relative
-
-//             mx-4
-//             my-5
-
-//             flex
-//             items-center
-//             justify-center
-
-//             rounded-xl
-
-//             border
-//             border-cyan-400/25
-
-//             bg-cyan-400/5
-
-//             px-4
-//             py-3
-
-//             text-[13px]
-
-//             font-semibold
-//             tracking-wider
-
-//             text-white
-
-//             overflow-hidden
-
-//             transition-all
-//             duration-300
-
-//             hover:border-cyan-400/50
-//             hover:bg-cyan-400/10
-
-//             hover:shadow-[0_0_25px_rgba(18,184,232,0.18)]
-//           "
-//         >
-//           {/* Animated shine */}
-
-//           <span
-//             className="
-//               absolute
-//               inset-0
-
-//               bg-gradient-to-r
-//               from-transparent
-//               via-white/10
-//               to-transparent
-
-//               -translate-x-full
-
-//               group-hover/contact:translate-x-full
-
-//               transition-transform
-//               duration-700
-//             "
-//           />
-
-//           <span className="relative z-10">
-//             CONTACT US
-//           </span>
-//         </Link>
-
-//         {/* Bottom glow */}
-
-//         <div
-//           className="
-//             absolute
-//             bottom-0
-//             left-8
-//             right-8
-
-//             h-px
-
-//             bg-gradient-to-r
-//             from-transparent
-//             via-cyan-400/40
-//             to-transparent
-//           "
-//         />
-//       </aside>
-
-//       {/* =====================================================
-//           MOBILE MENU BUTTON
-//       ====================================================== */}
-
-//       <button
-//         type="button"
-//         onClick={() => {
-//           setMenuOpen(!menuOpen);
-//           setAuthorsOpen(false);
-//         }}
-//         aria-label="Toggle navigation menu"
-//         aria-expanded={menuOpen}
-//         className="
-//           lg:hidden
-
-//           fixed
-
-//           top-5
-//           right-5
-
-//           z-[200]
-
-//           flex
-//           h-12
-//           w-12
-
-//           items-center
-//           justify-center
-
-//           rounded-2xl
-
-//           border
-//           border-cyan-400/30
-
-//           bg-[#020B18]/60
-
-//           backdrop-blur-xl
-
-//           text-[#12B8E8]
-
-//           shadow-[0_10px_35px_rgba(0,0,0,0.45)]
-
-//           transition-all
-//           duration-300
-
-//           hover:border-cyan-400/60
-//           hover:bg-[#020B18]/80
-
-//           active:scale-95
-//         "
-//       >
-//         {menuOpen ? (
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="h-6 w-6"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             stroke="currentColor"
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               strokeWidth={2}
-//               d="M6 18L18 6M6 6l12 12"
-//             />
-//           </svg>
-//         ) : (
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="h-6 w-6"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             stroke="currentColor"
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               strokeWidth={2}
-//               d="M4 6h16M4 12h16M4 18h16"
-//             />
-//           </svg>
-//         )}
-//       </button>
-
-//       {/* =====================================================
-//           MOBILE DARK OVERLAY
-//       ====================================================== */}
-
-//       <div
-//         onClick={() => setMenuOpen(false)}
-//         className={`
-//           lg:hidden
-
-//           fixed
-//           inset-0
-
-//           z-[150]
-
-//           bg-black/55
-
-//           backdrop-blur-[2px]
-
-//           transition-opacity
-//           duration-300
-
-//           ${
-//             menuOpen
-//               ? "opacity-100 pointer-events-auto"
-//               : "opacity-0 pointer-events-none"
-//           }
-//         `}
-//       />
-
-//       {/* =====================================================
-//           MOBILE LEFT SIDEBAR
-//       ====================================================== */}
-
-//       <aside
-//         ref={mobileMenuRef}
-//         className={`
-//           lg:hidden
-
-//           fixed
-//           left-0
-//           top-0
-//           bottom-0
-
-//           z-[180]
-
-//           w-[290px]
-//           max-w-[82vw]
-
-//           flex
-//           flex-col
-
-//           border-r
-//           border-cyan-400/20
-
-//           bg-[#020B18]/92
-
-//           backdrop-blur-2xl
-
-//           shadow-[20px_0_60px_rgba(0,0,0,0.55)]
-
-//           transition-transform
-//           duration-500
-
-//           ease-[cubic-bezier(0.22,1,0.36,1)]
-
-//           ${
-//             menuOpen
-//               ? "translate-x-0"
-//               : "-translate-x-full"
-//           }
-//         `}
-//       >
-//         {/* =================================================
-//             MOBILE HEADER
-//         ================================================== */}
-
-//         <div
-//           className="
-//             flex
-//             items-center
-//             justify-between
-
-//             px-6
-//             py-6
-
-//             border-b
-//             border-white/5
-//           "
-//         >
-//           <div>
-//             <p
-//               className="
-//                 text-[11px]
-//                 tracking-[0.35em]
-//                 text-cyan-400
-//               "
-//             >
-//               CYCRAI
-//             </p>
-
-//             <p
-//               className="
-//                 mt-1
-
-//                 text-xl
-//                 font-bold
-//                 tracking-wide
-
-//                 text-white
-//               "
-//             >
-//               2027
-//             </p>
-//           </div>
-
-//           <button
-//             type="button"
-//             onClick={() => setMenuOpen(false)}
-//             className="
-//               flex
-//               h-10
-//               w-10
-
-//               items-center
-//               justify-center
-
-//               rounded-xl
-
-//               border
-//               border-white/10
-
-//               text-white/70
-
-//               transition-all
-//               duration-300
-
-//               hover:border-cyan-400/40
-//               hover:text-cyan-400
-//             "
-//           >
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               className="h-5 w-5"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth={2}
-//                 d="M6 18L18 6M6 6l12 12"
-//               />
-//             </svg>
-//           </button>
-//         </div>
-
-//         {/* =================================================
-//             MOBILE NAVIGATION
-//         ================================================== */}
-
-//         <nav className="flex-1 overflow-y-auto py-4">
-//           {/* HOME */}
-
-//           <Link
-//             to="/"
-//             onClick={handleNavigation}
-//             className={`
-//               relative
-
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             Home
-//           </Link>
-
-//           {/* ABOUT */}
-
-//           <Link
-//             to="/about"
-//             onClick={handleNavigation}
-//             className={`
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/about")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             About
-//           </Link>
-
-//           {/* =================================================
-//               AUTHORS
-//           ================================================== */}
-
-//           <div>
-//             <button
-//               type="button"
-//               onClick={() =>
-//                 setMobileAuthorsOpen(!mobileAuthorsOpen)
-//               }
-//               className={`
-//                 flex
-//                 w-full
-//                 items-center
-
-//                 px-6
-//                 py-4
-
-//                 border-l-[3px]
-
-//                 text-[15px]
-
-//                 font-medium
-
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   isAuthorsActive
-//                     ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                     : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//                 }
-//               `}
-//             >
-//               <span className="flex-1 text-left">
-//                 Authors
-//               </span>
-
-//               <ChevronDown
-//                 size={19}
-//                 className={`
-//                   transition-transform
-//                   duration-300
-
-//                   ${
-//                     mobileAuthorsOpen
-//                       ? "rotate-180"
-//                       : ""
-//                   }
-//                 `}
-//               />
-//             </button>
-
-//             {/* Authors submenu */}
-
-//             <div
-//               className={`
-//                 overflow-hidden
-
-//                 bg-[#010713]/70
-
-//                 transition-all
-//                 duration-300
-
-//                 ${
-//                   mobileAuthorsOpen
-//                     ? "max-h-[220px]"
-//                     : "max-h-0"
-//                 }
-//               `}
-//             >
-//               {authorItems.map((item, index) => (
-//                 <Link
-//                   key={item.name}
-//                   to={item.path}
-//                   onClick={handleNavigation}
-//                   className={`
-//                     flex
-//                     items-center
-//                     gap-3
-
-//                     pl-10
-//                     pr-6
-//                     py-3.5
-
-//                     text-sm
-
-//                     transition-all
-//                     duration-300
-
-//                     ${
-//                       isActive(item.path)
-//                         ? "text-[#12B8E8] bg-cyan-400/10"
-//                         : "text-white/65 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//                     }
-//                   `}
-//                 >
-//                   <span
-//                     className="
-//                       flex
-//                       h-6
-//                       w-6
-
-//                       items-center
-//                       justify-center
-
-//                       rounded-md
-
-//                       border
-//                       border-cyan-400/20
-
-//                       bg-cyan-400/5
-
-//                       text-[9px]
-//                       font-bold
-
-//                       text-cyan-300
-//                     "
-//                   >
-//                     {String(index + 1).padStart(2, "0")}
-//                   </span>
-
-//                   {item.name}
-//                 </Link>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* REGISTRATION */}
-
-//           <Link
-//             to="/registration"
-//             onClick={handleNavigation}
-//             className={`
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/registration")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             Registration
-//           </Link>
-
-//           {/* COMMITTEE */}
-
-//           <Link
-//             to="/committee"
-//             onClick={handleNavigation}
-//             className={`
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/committee")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             Committee
-//           </Link>
-
-//           {/* PROGRAM */}
-
-//           <Link
-//             to="/speakers"
-//             onClick={handleNavigation}
-//             className={`
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/speakers")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             Program
-//           </Link>
-
-//           {/* IMPORTANT DATES */}
-
-//           <Link
-//             to="/important-dates"
-//             onClick={handleNavigation}
-//             className={`
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/important-dates")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             Important Dates
-//           </Link>
-
-//           {/* VENUE */}
-
-//           <Link
-//             to="/venue"
-//             onClick={handleNavigation}
-//             className={`
-//               flex
-//               items-center
-
-//               px-6
-//               py-4
-
-//               border-l-[3px]
-
-//               text-[15px]
-
-//               font-medium
-
-//               transition-all
-//               duration-300
-
-//               ${
-//                 isActive("/venue")
-//                   ? "border-[#12B8E8] bg-cyan-400/10 text-[#12B8E8]"
-//                   : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#12B8E8]"
-//               }
-//             `}
-//           >
-//             Venue
-//           </Link>
-//         </nav>
-
-//         {/* =================================================
-//             MOBILE CONTACT
-//         ================================================== */}
-
-//         <div
-//           className="
-//             border-t
-//             border-white/5
-
-//             p-5
-//           "
-//         >
-//           <Link
-//             to="/contact"
-//             onClick={handleNavigation}
-//             className="
-//               block
-//               w-full
-
-//               rounded-xl
-
-//               bg-gradient-to-r
-//               from-[#12B8E8]
-//               via-[#18AEEF]
-//               to-[#2D6CF2]
-
-//               px-5
-//               py-3.5
-
-//               text-center
-
-//               text-sm
-//               font-semibold
-//               tracking-wide
-
-//               text-white
-
-//               shadow-[0_8px_25px_rgba(37,108,242,0.25)]
-
-//               transition-all
-//               duration-300
-
-//               hover:brightness-110
-//               hover:shadow-[0_10px_30px_rgba(37,108,242,0.4)]
-//             "
-//           >
-//             CONTACT US
-//           </Link>
-//         </div>
-//       </aside>
-//     </>
-//   );
-// }
-
-
-
-
-
-
-// import { useEffect, useRef, useState } from "react";
-// import { Link, useLocation } from "react-router-dom";
 // import {
 //   ChevronDown,
 //   Menu,
@@ -2650,12 +8,14 @@
 //   Home,
 //   UserRound,
 //   PenLine,
+//   FileSearch,
 //   CreditCard,
 //   UsersRound,
 //   CalendarDays,
 //   Clock3,
 //   MapPin,
 // } from "lucide-react";
+
 
 // export default function Navbar() {
 //   const location = useLocation();
@@ -2672,8 +32,9 @@
 
 //   const collapseTimerRef = useRef(null);
 
+
 //   // =========================================================
-//   // NAVIGATION
+//   // MAIN NAVIGATION
 //   // =========================================================
 
 //   const navItems = [
@@ -2703,16 +64,12 @@
 //       icon: CalendarDays,
 //     },
 //     {
-//       name: "Important Dates",
-//       path: "/important-dates",
-//       icon: Clock3,
-//     },
-//     {
 //       name: "Venue",
 //       path: "/venue",
 //       icon: MapPin,
 //     },
 //   ];
+
 
 //   // =========================================================
 //   // AUTHORS
@@ -2730,11 +87,17 @@
 //       icon: PenLine,
 //     },
 //     {
-//       name: "Tracks",
-//       path: "/tracks",
-//       icon: PenLine,
+//       name: "Review Process",
+//       path: "/review-process",
+//       icon: FileSearch,
+//     },
+//     {
+//       name: "Important Dates",
+//       path: "/important-dates",
+//       icon: Clock3,
 //     },
 //   ];
+
 
 //   // =========================================================
 //   // ACTIVE ROUTE
@@ -2748,9 +111,11 @@
 //     return location.pathname === path;
 //   };
 
+
 //   const isAuthorsActive = authorItems.some(
 //     (item) => location.pathname === item.path
 //   );
+
 
 //   // =========================================================
 //   // DESKTOP EXPAND
@@ -2764,6 +129,7 @@
 
 //     setDesktopExpanded(true);
 //   };
+
 
 //   // =========================================================
 //   // DESKTOP COLLAPSE
@@ -2779,6 +145,7 @@
 //       setAuthorsOpen(false);
 //     }, 450);
 //   };
+
 
 //   // =========================================================
 //   // NAVIGATION CLICK
@@ -2801,8 +168,9 @@
 //     });
 //   };
 
+
 //   // =========================================================
-//   // ESCAPE
+//   // ESCAPE KEY
 //   // =========================================================
 
 //   useEffect(() => {
@@ -2821,6 +189,7 @@
 //       document.removeEventListener("keydown", handleEscape);
 //     };
 //   }, []);
+
 
 //   // =========================================================
 //   // ROUTE CHANGE
@@ -2843,6 +212,7 @@
 //     });
 //   }, [location.pathname]);
 
+
 //   // =========================================================
 //   // CLEANUP
 //   // =========================================================
@@ -2854,6 +224,7 @@
 //       }
 //     };
 //   }, []);
+
 
 //   // =========================================================
 //   // MOBILE BODY LOCK
@@ -2871,6 +242,7 @@
 //     };
 //   }, [menuOpen]);
 
+
 //   // =========================================================
 //   // DESKTOP NAV ITEM
 //   // =========================================================
@@ -2886,43 +258,38 @@
 //         className={`
 //           group
 //           relative
-
 //           flex
 //           items-center
 //           gap-4
-
-//           px-5
-//           py-4
-
-//           text-[15px]
-//           xl:text-[16px]
-
-//           font-medium
-
-//           transition-all
-//           duration-300
-
 //           overflow-hidden
+//           px-5
+//           py-3.5
+//           text-[14px]
+//           font-semibold
+//           transition-colors
+//           duration-300
+//           xl:text-[15px]
 
 //           ${
 //             active
-//               ? "text-[#13C8F3]"
-//               : "text-white/85 hover:text-[#13C8F3]"
+//               ? "text-white"
+//               : "text-[#CBD5E1] hover:text-white"
 //           }
 //         `}
 //       >
-//         {/* Hover background */}
+
+//         {/* =====================================================
+//             ACTIVE / HOVER BACKGROUND
+//         ====================================================== */}
 
 //         <span
 //           className={`
 //             absolute
-//             inset-0
-
-//             bg-gradient-to-r
-//             from-[#0CC8F2]/12
-//             via-[#0CC8F2]/5
-//             to-transparent
-
+//             inset-y-1
+//             left-1
+//             right-1
+//             rounded-xl
+//             bg-[#075DB8]
 //             transition-opacity
 //             duration-300
 
@@ -2934,71 +301,69 @@
 //           `}
 //         />
 
-//         {/* Active cyan line */}
+
+//         {/* =====================================================
+//             ACTIVE LEFT BORDER
+//         ====================================================== */}
 
 //         <span
 //           className={`
 //             absolute
 //             left-0
 //             top-1/2
-
 //             -translate-y-1/2
-
-//             w-[3px]
-
 //             rounded-r-full
-
-//             bg-gradient-to-b
-//             from-[#13C8F3]
-//             to-[#2877FF]
-
-//             shadow-[0_0_14px_rgba(19,200,243,0.9)]
-
+//             bg-[#60A5FA]
 //             transition-all
 //             duration-300
 
 //             ${
 //               active
-//                 ? "h-11 opacity-100"
-//                 : "h-0 opacity-0 group-hover:h-8 group-hover:opacity-100"
+//                 ? "h-8 w-[3px] opacity-100"
+//                 : "h-0 w-[3px] opacity-0 group-hover:h-6 group-hover:opacity-100"
 //             }
 //           `}
 //         />
 
-//         {/* Icon */}
+
+//         {/* =====================================================
+//             ICON
+//         ====================================================== */}
 
 //         <Icon
-//           size={20}
-//           strokeWidth={1.8}
+//           size={19}
+//           strokeWidth={1.9}
 //           className={`
 //             relative
 //             z-10
-//             flex-shrink-0
-
-//             transition-all
+//             shrink-0
+//             transition-colors
 //             duration-300
 
 //             ${
 //               active
-//                 ? "text-[#13C8F3]"
-//                 : "text-white/75 group-hover:text-[#13C8F3]"
+//                 ? "text-[#BFDBFE]"
+//                 : "text-[#94A3B8] group-hover:text-[#BFDBFE]"
 //             }
-
-//             group-hover:scale-110
 //           `}
 //         />
 
-//         {/* Text */}
+
+//         {/* =====================================================
+//             TEXT
+//         ====================================================== */}
 
 //         <span className="relative z-10">
 //           {item.name}
 //         </span>
+
 //       </Link>
 //     );
 //   };
 
+
 //   // =========================================================
-//   // DESKTOP AUTHORS ITEM
+//   // DESKTOP AUTHORS
 //   // =========================================================
 
 //   const AuthorsDesktop = () => {
@@ -3006,6 +371,11 @@
 
 //     return (
 //       <div className="relative">
+
+//         {/* =====================================================
+//             AUTHORS BUTTON
+//         ====================================================== */}
+
 //         <button
 //           type="button"
 //           onClick={() => {
@@ -3016,44 +386,38 @@
 //           className={`
 //             group
 //             relative
-
 //             flex
 //             w-full
 //             items-center
 //             gap-4
-
-//             px-5
-//             py-4
-
-//             text-[15px]
-//             xl:text-[16px]
-
-//             font-medium
-
-//             transition-all
-//             duration-300
-
 //             overflow-hidden
+//             px-5
+//             py-3.5
+//             text-left
+//             text-[14px]
+//             font-semibold
+//             transition-colors
+//             duration-300
+//             xl:text-[15px]
 
 //             ${
 //               active
-//                 ? "text-[#13C8F3]"
-//                 : "text-white/85 hover:text-[#13C8F3]"
+//                 ? "text-white"
+//                 : "text-[#CBD5E1] hover:text-white"
 //             }
 //           `}
 //         >
+
 //           {/* Background */}
 
 //           <span
 //             className={`
 //               absolute
-//               inset-0
-
-//               bg-gradient-to-r
-//               from-[#0CC8F2]/12
-//               via-[#0CC8F2]/5
-//               to-transparent
-
+//               inset-y-1
+//               left-1
+//               right-1
+//               rounded-xl
+//               bg-[#075DB8]
 //               transition-opacity
 //               duration-300
 
@@ -3065,6 +429,7 @@
 //             `}
 //           />
 
+
 //           {/* Active line */}
 
 //           <span
@@ -3072,59 +437,50 @@
 //               absolute
 //               left-0
 //               top-1/2
-
 //               -translate-y-1/2
-
-//               w-[3px]
-
 //               rounded-r-full
-
-//               bg-gradient-to-b
-//               from-[#13C8F3]
-//               to-[#2877FF]
-
-//               shadow-[0_0_14px_rgba(19,200,243,0.9)]
-
+//               bg-[#60A5FA]
 //               transition-all
 //               duration-300
 
 //               ${
 //                 active
-//                   ? "h-11 opacity-100"
-//                   : "h-0 opacity-0 group-hover:h-8 group-hover:opacity-100"
+//                   ? "h-8 w-[3px] opacity-100"
+//                   : "h-0 w-[3px] opacity-0 group-hover:h-6 group-hover:opacity-100"
 //               }
 //             `}
 //           />
+
 
 //           {/* Icon */}
 
 //           <PenLine
-//             size={20}
-//             strokeWidth={1.8}
+//             size={19}
+//             strokeWidth={1.9}
 //             className={`
 //               relative
 //               z-10
-
-//               flex-shrink-0
-
-//               transition-all
+//               shrink-0
+//               transition-colors
 //               duration-300
 
 //               ${
 //                 active
-//                   ? "text-[#13C8F3]"
-//                   : "text-white/75 group-hover:text-[#13C8F3]"
+//                   ? "text-[#BFDBFE]"
+//                   : "text-[#94A3B8] group-hover:text-[#BFDBFE]"
 //               }
-
-//               group-hover:scale-110
 //             `}
 //           />
 
+
 //           {/* Text */}
 
-//           <span className="relative z-10 flex-1 text-left">
+//           <span className="relative z-10 flex-1">
 //             Authors
 //           </span>
+
+
+//           {/* Arrow */}
 
 //           <ChevronDown
 //             size={17}
@@ -3132,77 +488,66 @@
 //             className={`
 //               relative
 //               z-10
-
 //               transition-transform
 //               duration-300
 
 //               ${
 //                 authorsOpen
-//                   ? "rotate-180 text-[#13C8F3]"
-//                   : "rotate-0"
+//                   ? "rotate-180 text-[#BFDBFE]"
+//                   : "rotate-0 text-[#94A3B8]"
 //               }
 //             `}
 //           />
+
 //         </button>
 
-//         {/* =================================================
+
+//         {/* =====================================================
 //             AUTHORS SUBMENU
-//         ================================================= */}
+//         ====================================================== */}
 
 //         <div
 //           onMouseEnter={expandDesktopNav}
 //           onMouseLeave={collapseDesktopNav}
 //           className={`
 //             absolute
-
 //             left-full
 //             top-1/2
-
-//             -translate-y-1/2
-
+//             z-[120]
 //             ml-3
-
-//             w-[245px]
-
-//             rounded-2xl
-
-//             border
-//             border-cyan-400/20
-
-//             bg-[#03101F]/95
-
-//             backdrop-blur-2xl
-
-//             shadow-[0_20px_60px_rgba(0,0,0,0.55)]
-
+//             w-[250px]
+//             -translate-y-1/2
 //             overflow-hidden
-
+//             rounded-[14px]
+//             border
+//             border-[#315783]
+//             bg-[#07152F]
+//             shadow-[0_18px_50px_rgba(0,0,0,0.35)]
 //             transition-all
 //             duration-300
-
 //             origin-left
 
 //             ${
 //               authorsOpen
-//                 ? "opacity-100 scale-100 translate-x-0 pointer-events-auto"
-//                 : "opacity-0 scale-95 -translate-x-3 pointer-events-none"
+//                 ? "pointer-events-auto translate-x-0 scale-100 opacity-100"
+//                 : "pointer-events-none -translate-x-2 scale-[0.98] opacity-0"
 //             }
 //           `}
 //         >
-//           {/* Top glow */}
+
+//           {/* Blue top strip */}
 
 //           <div
 //             className="
-//               h-[2px]
-
-//               bg-gradient-to-r
-//               from-transparent
-//               via-[#13C8F3]
-//               to-transparent
+//               h-[3px]
+//               w-full
+//               bg-[#075DB8]
 //             "
 //           />
 
+
 //           <div className="py-2">
+
 //             {authorItems.map((item, index) => {
 //               const Icon = item.icon;
 //               const activeItem = isActive(item.path);
@@ -3214,75 +559,89 @@
 //                   onClick={handleNavigation}
 //                   className={`
 //                     group/sub
-
 //                     flex
 //                     items-center
 //                     gap-3
-
+//                     border-b
+//                     border-[#1E3A5F]
 //                     px-4
 //                     py-3.5
-
-//                     border-b
-//                     border-white/[0.05]
-
 //                     last:border-b-0
-
 //                     text-sm
-
-//                     transition-all
+//                     font-medium
+//                     transition-colors
 //                     duration-300
 
 //                     ${
 //                       activeItem
-//                         ? "bg-cyan-400/10 text-[#13C8F3]"
-//                         : "text-white/75 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//                         ? "bg-[#0B376A] text-white"
+//                         : "text-[#CBD5E1] hover:bg-[#0B2144] hover:text-white"
 //                     }
 //                   `}
 //                 >
+
+//                   {/* Icon box */}
+
 //                   <span
 //                     className={`
 //                       flex
-//                       h-8
-//                       w-8
-
+//                       h-9
+//                       w-9
+//                       shrink-0
 //                       items-center
 //                       justify-center
-
 //                       rounded-lg
-
 //                       border
-
-//                       transition-all
+//                       transition-colors
 //                       duration-300
 
 //                       ${
 //                         activeItem
-//                           ? "border-cyan-400/50 bg-cyan-400/10"
-//                           : "border-cyan-400/15 bg-cyan-400/5 group-hover/sub:border-cyan-400/40"
+//                           ? "border-[#60A5FA] bg-[#075DB8] text-white"
+//                           : "border-[#315783] bg-[#0B2144] text-[#94A3B8] group-hover/sub:border-[#60A5FA] group-hover/sub:text-[#BFDBFE]"
 //                       }
 //                     `}
 //                   >
+
 //                     <Icon
 //                       size={15}
 //                       strokeWidth={1.8}
 //                     />
+
 //                   </span>
+
+
+//                   {/* Name */}
 
 //                   <span className="flex-1">
 //                     {item.name}
 //                   </span>
 
-//                   <span className="text-[9px] text-cyan-400/50">
+
+//                   {/* Number */}
+
+//                   <span
+//                     className="
+//                       text-[9px]
+//                       font-bold
+//                       text-[#64748B]
+//                     "
+//                   >
 //                     0{index + 1}
 //                   </span>
+
 //                 </Link>
 //               );
 //             })}
+
 //           </div>
+
 //         </div>
+
 //       </div>
 //     );
 //   };
+
 
 //   // =========================================================
 //   // DESKTOP NAVBAR
@@ -3290,47 +649,34 @@
 
 //   return (
 //     <>
-//       {/* =====================================================
+//       {/* =======================================================
 //           DESKTOP NAVBAR
-//       ====================================================== */}
+//       ======================================================== */}
 
 //       <aside
 //         onMouseEnter={expandDesktopNav}
 //         onMouseLeave={collapseDesktopNav}
 //         className={`
-//           hidden
-//           lg:flex
-
 //           fixed
-
 //           left-0
 //           top-1/2
-
-//           -translate-y-1/2
-
 //           z-[100]
-
+//           hidden
 //           w-[225px]
-//           xl:w-[235px]
-
+//           -translate-y-1/2
 //           flex-col
-
-//           rounded-r-[25px]
-
+//           overflow-visible
+//           rounded-r-[20px]
 //           border
 //           border-l-0
-//           border-cyan-400/25
-
-//           bg-[#020B18]/78
-
-//           backdrop-blur-2xl
-
-//           shadow-[15px_15px_60px_rgba(0,0,0,0.55)]
-
+//           border-[#315783]
+//           bg-[#07152F]
+//           shadow-[12px_18px_50px_rgba(0,0,0,0.28)]
 //           transition-transform
 //           duration-500
-
 //           ease-[cubic-bezier(0.22,1,0.36,1)]
+//           lg:flex
+//           xl:w-[235px]
 
 //           ${
 //             desktopExpanded
@@ -3339,358 +685,269 @@
 //           }
 //         `}
 //       >
-//         {/* =================================================
-//             OPTION 1 COLLAPSED TAB
-//         ================================================== */}
+
+//         {/* =====================================================
+//             COLLAPSED TAB
+//         ====================================================== */}
 
 //         <div
 //           className="
+//             group/tab
 //             absolute
-
 //             right-[-48px]
-
 //             top-1/2
-
-//             -translate-y-1/2
-
-//             h-[210px]
-//             w-[48px]
-
 //             flex
+//             h-[205px]
+//             w-[48px]
+//             -translate-y-1/2
+//             cursor-pointer
 //             flex-col
 //             items-center
 //             justify-between
-
-//             py-4
-
-//             rounded-r-[18px]
-
+//             overflow-hidden
+//             rounded-r-[16px]
 //             border
 //             border-l-0
-//             border-cyan-400/35
-// bg-gradient-to-r
-// from-[#13C8F3]
-// via-[#18AEEF]
-// to-[#2877FF]
-
-//             backdrop-blur-xl
-
-//             shadow-[8px_0_30px_rgba(0,0,0,0.4)]
-
-//             overflow-hidden
-
-//             cursor-pointer
-
-//             group/tab
-
-//             transition-all
+//             border-[#315783]
+//             bg-[#075DB8]
+//             py-4
+//             transition-colors
 //             duration-300
-
-//             hover:border-cyan-400/70
-//             hover:shadow-[0_0_30px_rgba(19,200,243,0.35)]
+//             hover:bg-[#064F9C]
 //           "
 //           onMouseEnter={expandDesktopNav}
 //           onClick={expandDesktopNav}
 //         >
-//           {/* =================================================
-//               GLOW
-//           ================================================== */}
+
+//           {/* Top highlight */}
 
 //           <span
 //             className="
 //               absolute
-//               inset-y-0
 //               left-0
-
-//               w-[2px]
-
-//               bg-gradient-to-b
-//               from-transparent
-//               via-[#13C8F3]
-//               to-transparent
-
-//               shadow-[0_0_15px_rgba(19,200,243,0.9)]
+//               right-0
+//               top-0
+//               h-[3px]
+//               bg-[#60A5FA]
 //             "
 //           />
 
-//           {/* =================================================
-//               MENU CIRCLE
-//           ================================================== */}
+
+//           {/* Menu circle */}
 
 //           <span
 //             className="
 //               relative
 //               z-10
-
 //               flex
 //               h-8
 //               w-8
-
 //               items-center
 //               justify-center
-
 //               rounded-full
-
 //               border
-//               border-cyan-400/60
-
-//               bg-[#061B30]/80
-
-//               text-cyan-300
-
-//               shadow-[0_0_15px_rgba(19,200,243,0.2)]
-
-//               transition-all
-//               duration-300
-
-//               group-hover/tab:bg-[#0A2944]
-//               group-hover/tab:border-cyan-300
-//               group-hover/tab:scale-105
+//               border-[#93C5FD]
+//               bg-[#0B376A]
+//               text-[#BFDBFE]
 //             "
 //           >
+
 //             <Menu
 //               size={17}
 //               strokeWidth={2}
 //             />
+
 //           </span>
 
-//           {/* =================================================
-//               VERTICAL TEXT
-//           ================================================== */}
 
-//           <span
-//   className="
-//     relative
-//     z-10
-
-//     flex-1
-
-//     flex
-//     items-center
-//     justify-center
-
-//     text-[9px]
-
-//     font-semibold
-
-//     tracking-[0.18em]
-
-//     text-black
-
-//     [writing-mode:vertical-rl]
-
-//     rotate-180
-
-//     whitespace-nowrap
-
-//     transition-colors
-//     duration-300
-
-//     group-hover/tab:text-black
-//   "
-// >
-//   CLICK HERE
-// </span>
-
-//           {/* =================================================
-//               SMALL ARROW
-//           ================================================== */}
+//           {/* Vertical text */}
 
 //           <span
 //             className="
 //               relative
 //               z-10
+//               flex
+//               flex-1
+//               items-center
+//               justify-center
+//               text-[9px]
+//               font-bold
+//               tracking-[0.18em]
+//               text-white
+//               [writing-mode:vertical-rl]
+//               rotate-180
+//               whitespace-nowrap
+//             "
+//           >
+//             CLICK HERE
+//           </span>
 
+
+//           {/* Arrow */}
+
+//           <span
+//             className="
+//               relative
+//               z-10
 //               text-lg
-
 //               leading-none
-
-//               text-[#13C8F3]
-
-//               transition-transform
-//               duration-300
-
-//               group-hover/tab:translate-x-1
+//               text-[#BFDBFE]
 //             "
 //           >
 //             »
 //           </span>
+
 //         </div>
 
-//         {/* =================================================
-//             TOP GLOW
-//         ================================================== */}
+
+//         {/* =====================================================
+//             TOP BLUE STRIP
+//         ====================================================== */}
 
 //         <div
 //           className="
 //             absolute
-//             left-8
-//             right-8
+//             left-6
+//             right-6
 //             top-0
-
-//             h-px
-
-//             bg-gradient-to-r
-//             from-transparent
-//             via-[#13C8F3]/70
-//             to-transparent
+//             h-[3px]
+//             rounded-b-full
+//             bg-[#075DB8]
 //           "
 //         />
 
-//         {/* =================================================
-//             NAVIGATION
-//         ================================================== */}
 
-//         <nav className="py-4">
+//         {/* =====================================================
+//             NAVIGATION
+//         ====================================================== */}
+
+//         <nav className="py-5">
+
 //           {/* HOME */}
 
-//           <DesktopNavItem item={navItems[0]} />
+//           <DesktopNavItem
+//             item={navItems[0]}
+//           />
+
 
 //           {/* ABOUT */}
 
-//           <DesktopNavItem item={navItems[1]} />
+//           <DesktopNavItem
+//             item={navItems[1]}
+//           />
+
 
 //           {/* AUTHORS */}
 
 //           <AuthorsDesktop />
 
+
 //           {/* REGISTRATION */}
 
-//           <DesktopNavItem item={navItems[2]} />
+//           <DesktopNavItem
+//             item={navItems[2]}
+//           />
+
 
 //           {/* COMMITTEE */}
 
-//           <DesktopNavItem item={navItems[3]} />
+//           <DesktopNavItem
+//             item={navItems[3]}
+//           />
+
 
 //           {/* PROGRAM */}
 
-//           <DesktopNavItem item={navItems[4]} />
+//           <DesktopNavItem
+//             item={navItems[4]}
+//           />
 
-//           {/* IMPORTANT DATES */}
-
-//           <DesktopNavItem item={navItems[5]} />
 
 //           {/* VENUE */}
 
-//           <DesktopNavItem item={navItems[6]} />
+//           <DesktopNavItem
+//             item={navItems[5]}
+//           />
+
 //         </nav>
 
-//         {/* =================================================
+
+//         {/* =====================================================
 //             DIVIDER
-//         ================================================== */}
+//         ====================================================== */}
 
 //         <div
 //           className="
 //             mx-5
-
 //             h-px
-
-//             bg-gradient-to-r
-//             from-transparent
-//             via-cyan-400/20
-//             to-transparent
+//             bg-[#1E3A5F]
 //           "
 //         />
 
-//         {/* =================================================
-//             CONTACT
-//         ================================================== */}
+
+//         {/* =====================================================
+//             CONTACT BUTTON
+//         ====================================================== */}
 
 //         <Link
 //           to="/contact"
 //           onClick={handleNavigation}
 //           className="
 //             group/contact
-
 //             relative
-
 //             mx-4
 //             my-4
-
 //             flex
 //             items-center
 //             justify-center
-
+//             overflow-hidden
 //             rounded-xl
-
 //             border
-//             border-cyan-400/30
-
-//             bg-cyan-400/5
-
+//             border-[#315783]
+//             bg-[#0B2144]
 //             px-4
 //             py-3
-
-//             text-[12px]
-
-//             font-semibold
-//             tracking-[0.08em]
-
-//             text-white
-
-//             overflow-hidden
-
-//             transition-all
+//             text-[11px]
+//             font-bold
+//             tracking-[0.12em]
+//             text-[#BFDBFE]
+//             transition-colors
 //             duration-300
-
-//             hover:border-cyan-400/70
-//             hover:bg-cyan-400/10
-//             hover:text-cyan-300
-
-//             hover:shadow-[0_0_25px_rgba(19,200,243,0.2)]
+//             hover:border-[#60A5FA]
+//             hover:bg-[#075DB8]
+//             hover:text-white
 //           "
 //         >
-//           {/* Shimmer */}
-
-//           <span
-//             className="
-//               absolute
-//               inset-0
-
-//               bg-gradient-to-r
-//               from-transparent
-//               via-white/10
-//               to-transparent
-
-//               -translate-x-full
-
-//               group-hover/contact:translate-x-full
-
-//               transition-transform
-//               duration-700
-//             "
-//           />
 
 //           <span className="relative z-10">
 //             CONTACT US
 //           </span>
+
 //         </Link>
 
-//         {/* =================================================
-//             BOTTOM GLOW
-//         ================================================== */}
+
+//         {/* =====================================================
+//             BOTTOM BLUE STRIP
+//         ====================================================== */}
 
 //         <div
 //           className="
 //             absolute
-
 //             bottom-0
-//             left-8
-//             right-8
-
-//             h-px
-
-//             bg-gradient-to-r
-//             from-transparent
-//             via-[#13C8F3]/50
-//             to-transparent
+//             left-6
+//             right-6
+//             h-[2px]
+//             rounded-t-full
+//             bg-[#075DB8]
 //           "
 //         />
+
 //       </aside>
 
-//       {/* =====================================================
+
+//       {/* =======================================================
 //           MOBILE MENU BUTTON
-//       ====================================================== */}
+//       ======================================================== */}
 
 //       <button
 //         type="button"
@@ -3701,115 +958,88 @@
 //         aria-label="Toggle navigation"
 //         aria-expanded={menuOpen}
 //         className="
-//           lg:hidden
-
 //           fixed
-
-//           top-5
 //           right-5
-
+//           top-5
 //           z-[200]
-
 //           flex
 //           h-12
 //           w-12
-
 //           items-center
 //           justify-center
-
 //           rounded-2xl
-
 //           border
-//           border-cyan-400/30
-
-//           bg-[#020B18]/70
-
-//           backdrop-blur-xl
-
-//           text-[#13C8F3]
-
-//           shadow-[0_10px_35px_rgba(0,0,0,0.5)]
-
-//           transition-all
+//           border-[#315783]
+//           bg-[#07152F]
+//           text-[#93C5FD]
+//           shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+//           transition-colors
 //           duration-300
-
-//           hover:border-cyan-400/70
-//           hover:bg-[#061B30]
-
+//           hover:border-[#60A5FA]
+//           hover:bg-[#075DB8]
+//           hover:text-white
 //           active:scale-95
+//           lg:hidden
 //         "
 //       >
+
 //         {menuOpen ? (
 //           <X size={23} />
 //         ) : (
 //           <Menu size={23} />
 //         )}
+
 //       </button>
 
-//       {/* =====================================================
+
+//       {/* =======================================================
 //           MOBILE OVERLAY
-//       ====================================================== */}
+//       ======================================================== */}
 
 //       <div
 //         onClick={() => setMenuOpen(false)}
 //         className={`
-//           lg:hidden
-
 //           fixed
 //           inset-0
-
 //           z-[150]
-
-//           bg-black/60
-
-//           backdrop-blur-[3px]
-
+//           bg-[#020B18]/70
+//           backdrop-blur-[2px]
 //           transition-opacity
 //           duration-300
+//           lg:hidden
 
 //           ${
 //             menuOpen
-//               ? "opacity-100 pointer-events-auto"
-//               : "opacity-0 pointer-events-none"
+//               ? "pointer-events-auto opacity-100"
+//               : "pointer-events-none opacity-0"
 //           }
 //         `}
 //       />
 
-//       {/* =====================================================
+
+//       {/* =======================================================
 //           MOBILE SIDEBAR
-//       ====================================================== */}
+//       ======================================================== */}
 
 //       <aside
 //         className={`
-//           lg:hidden
-
 //           fixed
-
+//           bottom-0
 //           left-0
 //           top-0
-//           bottom-0
-
 //           z-[180]
-
+//           flex
 //           w-[290px]
 //           max-w-[82vw]
-
-//           flex
 //           flex-col
-
 //           border-r
-//           border-cyan-400/20
-
-//           bg-[#020B18]/95
-
-//           backdrop-blur-2xl
-
-//           shadow-[20px_0_60px_rgba(0,0,0,0.6)]
-
+//           border-[#315783]
+//           bg-[#07152F]
+//           shadow-[20px_0_55px_rgba(0,0,0,0.35)]
 //           transition-transform
 //           duration-500
-
 //           ease-[cubic-bezier(0.22,1,0.36,1)]
+//           lg:hidden
 
 //           ${
 //             menuOpen
@@ -3818,29 +1048,46 @@
 //           }
 //         `}
 //       >
-//         {/* MOBILE HEADER */}
+
+//         {/* =====================================================
+//             MOBILE HEADER
+//         ====================================================== */}
 
 //         <div
 //           className="
+//             relative
 //             flex
 //             items-center
 //             justify-between
-
+//             border-b
+//             border-[#1E3A5F]
 //             px-6
 //             py-6
-
-//             border-b
-//             border-white/5
 //           "
 //         >
+
+//           {/* Blue top strip */}
+
+//           <span
+//             className="
+//               absolute
+//               left-6
+//               right-6
+//               top-0
+//               h-[3px]
+//               bg-[#075DB8]
+//             "
+//           />
+
+
 //           <div>
+
 //             <p
 //               className="
 //                 text-[10px]
-
+//                 font-bold
 //                 tracking-[0.4em]
-
-//                 text-[#13C8F3]
+//                 text-[#60A5FA]
 //               "
 //             >
 //               CYCRAI
@@ -3849,17 +1096,16 @@
 //             <p
 //               className="
 //                 mt-1
-
 //                 text-xl
-
-//                 font-bold
-
+//                 font-black
 //                 text-white
 //               "
 //             >
 //               2027
 //             </p>
+
 //           </div>
+
 
 //           <button
 //             type="button"
@@ -3868,31 +1114,33 @@
 //               flex
 //               h-10
 //               w-10
-
 //               items-center
 //               justify-center
-
 //               rounded-xl
-
 //               border
-//               border-white/10
-
-//               text-white/70
-
-//               transition-all
+//               border-[#315783]
+//               text-[#CBD5E1]
+//               transition-colors
 //               duration-300
-
-//               hover:border-cyan-400/50
-//               hover:text-cyan-400
+//               hover:border-[#60A5FA]
+//               hover:bg-[#075DB8]
+//               hover:text-white
 //             "
 //           >
+
 //             <X size={20} />
+
 //           </button>
+
 //         </div>
 
-//         {/* MOBILE NAVIGATION */}
+
+//         {/* =====================================================
+//             MOBILE NAVIGATION
+//         ====================================================== */}
 
 //         <nav className="flex-1 overflow-y-auto py-4">
+
 //           {/* HOME */}
 
 //           <MobileNavItem
@@ -3900,6 +1148,7 @@
 //             active={isActive("/")}
 //             onClick={handleNavigation}
 //           />
+
 
 //           {/* ABOUT */}
 
@@ -3909,46 +1158,51 @@
 //             onClick={handleNavigation}
 //           />
 
-//           {/* AUTHORS */}
+
+//           {/* =================================================
+//               AUTHORS
+//           ================================================== */}
 
 //           <div>
+
 //             <button
 //               type="button"
 //               onClick={() =>
 //                 setMobileAuthorsOpen((prev) => !prev)
 //               }
 //               className={`
+//                 relative
 //                 flex
 //                 w-full
 //                 items-center
 //                 gap-4
-
+//                 border-l-[3px]
 //                 px-6
 //                 py-4
-
-//                 border-l-[3px]
-
+//                 text-left
 //                 text-[15px]
-//                 font-medium
-
-//                 transition-all
+//                 font-semibold
+//                 transition-colors
 //                 duration-300
 
 //                 ${
 //                   isAuthorsActive
-//                     ? "border-[#13C8F3] bg-cyan-400/10 text-[#13C8F3]"
-//                     : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//                     ? "border-[#60A5FA] bg-[#075DB8] text-white"
+//                     : "border-transparent text-[#CBD5E1] hover:border-[#60A5FA] hover:bg-[#0B2144] hover:text-white"
 //                 }
 //               `}
 //             >
+
 //               <PenLine
 //                 size={20}
 //                 strokeWidth={1.8}
 //               />
 
-//               <span className="flex-1 text-left">
+
+//               <span className="flex-1">
 //                 Authors
 //               </span>
+
 
 //               <ChevronDown
 //                 size={18}
@@ -3958,31 +1212,34 @@
 
 //                   ${
 //                     mobileAuthorsOpen
-//                       ? "rotate-180"
-//                       : ""
+//                       ? "rotate-180 text-[#BFDBFE]"
+//                       : "rotate-0"
 //                   }
 //                 `}
 //               />
+
 //             </button>
 
-//             {/* MOBILE AUTHORS */}
+
+//             {/* =================================================
+//                 MOBILE AUTHORS SUBMENU
+//             ================================================== */}
 
 //             <div
 //               className={`
 //                 overflow-hidden
-
-//                 bg-[#010813]/70
-
+//                 bg-[#051126]
 //                 transition-all
 //                 duration-300
 
 //                 ${
 //                   mobileAuthorsOpen
-//                     ? "max-h-[220px]"
+//                     ? "max-h-[350px]"
 //                     : "max-h-0"
 //                 }
 //               `}
 //             >
+
 //               {authorItems.map((item) => {
 //                 const Icon = item.icon;
 
@@ -3995,31 +1252,41 @@
 //                       flex
 //                       items-center
 //                       gap-3
-
+//                       border-b
+//                       border-[#1E3A5F]
+//                       py-3.5
 //                       pl-11
 //                       pr-6
-//                       py-3.5
-
 //                       text-sm
-
-//                       transition-all
+//                       font-medium
+//                       transition-colors
 //                       duration-300
 
 //                       ${
 //                         isActive(item.path)
-//                           ? "bg-cyan-400/10 text-[#13C8F3]"
-//                           : "text-white/65 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//                           ? "bg-[#075DB8] text-white"
+//                           : "text-[#94A3B8] hover:bg-[#0B2144] hover:text-white"
 //                       }
 //                     `}
 //                   >
-//                     <Icon size={16} />
 
-//                     {item.name}
+//                     <Icon
+//                       size={16}
+//                       strokeWidth={1.8}
+//                     />
+
+//                     <span>
+//                       {item.name}
+//                     </span>
+
 //                   </Link>
 //                 );
 //               })}
+
 //             </div>
+
 //           </div>
+
 
 //           {/* REGISTRATION */}
 
@@ -4029,6 +1296,7 @@
 //             onClick={handleNavigation}
 //           />
 
+
 //           {/* COMMITTEE */}
 
 //           <MobileNavItem
@@ -4036,6 +1304,7 @@
 //             active={isActive("/committee")}
 //             onClick={handleNavigation}
 //           />
+
 
 //           {/* PROGRAM */}
 
@@ -4045,81 +1314,70 @@
 //             onClick={handleNavigation}
 //           />
 
-//           {/* IMPORTANT DATES */}
-
-//           <MobileNavItem
-//             item={navItems[5]}
-//             active={isActive("/important-dates")}
-//             onClick={handleNavigation}
-//           />
 
 //           {/* VENUE */}
 
 //           <MobileNavItem
-//             item={navItems[6]}
+//             item={navItems[5]}
 //             active={isActive("/venue")}
 //             onClick={handleNavigation}
 //           />
+
 //         </nav>
 
-//         {/* MOBILE CONTACT */}
+
+//         {/* =====================================================
+//             MOBILE CONTACT
+//         ====================================================== */}
 
 //         <div
 //           className="
 //             border-t
-//             border-white/5
-
+//             border-[#1E3A5F]
 //             p-5
 //           "
 //         >
+
 //           <Link
 //             to="/contact"
 //             onClick={handleNavigation}
 //             className="
 //               block
 //               w-full
-
 //               rounded-xl
-
-//               bg-gradient-to-r
-//               from-[#13C8F3]
-//               via-[#18AEEF]
-//               to-[#2877FF]
-
+//               bg-[#075DB8]
 //               px-5
 //               py-3.5
-
 //               text-center
-
 //               text-sm
-
-//               font-semibold
-
+//               font-bold
 //               tracking-wide
-
 //               text-white
-
-//               shadow-[0_8px_25px_rgba(37,108,246,0.25)]
-
-//               transition-all
+//               transition-colors
 //               duration-300
-
-//               hover:brightness-110
+//               hover:bg-[#064F9C]
 //             "
 //           >
 //             CONTACT US
 //           </Link>
+
 //         </div>
+
 //       </aside>
 //     </>
 //   );
 // }
 
-// // ===========================================================
-// // MOBILE NAV ITEM
-// // ===========================================================
 
-// function MobileNavItem({ item, active, onClick }) {
+// // =============================================================
+// // MOBILE NAV ITEM
+// // =============================================================
+
+// function MobileNavItem({
+//   item,
+//   active,
+//   onClick,
+// }) {
 //   const Icon = item.icon;
 
 //   return (
@@ -4128,52 +1386,54 @@
 //       onClick={onClick}
 //       className={`
 //         group
-
 //         flex
 //         items-center
 //         gap-4
-
+//         border-l-[3px]
 //         px-6
 //         py-4
-
-//         border-l-[3px]
-
 //         text-[15px]
-
-//         font-medium
-
-//         transition-all
+//         font-semibold
+//         transition-colors
 //         duration-300
 
 //         ${
 //           active
-//             ? "border-[#13C8F3] bg-cyan-400/10 text-[#13C8F3]"
-//             : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+//             ? "border-[#60A5FA] bg-[#075DB8] text-white"
+//             : "border-transparent text-[#CBD5E1] hover:border-[#60A5FA] hover:bg-[#0B2144] hover:text-white"
 //         }
 //       `}
 //     >
+
 //       <Icon
 //         size={20}
 //         strokeWidth={1.8}
-//         className="
-//           transition-transform
+//         className={`
+//           transition-colors
 //           duration-300
 
-//           group-hover:scale-110
-//         "
+//           ${
+//             active
+//               ? "text-[#BFDBFE]"
+//               : "text-[#94A3B8] group-hover:text-[#BFDBFE]"
+//           }
+//         `}
 //       />
+
 
 //       <span>
 //         {item.name}
 //       </span>
+
 //     </Link>
 //   );
 // }
 
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+
 import {
-   ChevronDown,
+  ChevronDown,
   Menu,
   X,
   Home,
@@ -4185,7 +1445,14 @@ import {
   CalendarDays,
   Clock3,
   MapPin,
+  Building2,
+  Globe2,
+  GraduationCap,
+  Landmark,
+  ShieldCheck,
+  Settings2,
 } from "lucide-react";
+
 
 export default function Navbar() {
   const location = useLocation();
@@ -4195,15 +1462,22 @@ export default function Navbar() {
   // =========================================================
 
   const [menuOpen, setMenuOpen] = useState(false);
+
   const [authorsOpen, setAuthorsOpen] = useState(false);
+
+  const [committeeOpen, setCommitteeOpen] = useState(false);
+
   const [mobileAuthorsOpen, setMobileAuthorsOpen] = useState(false);
+
+  const [mobileCommitteeOpen, setMobileCommitteeOpen] = useState(false);
 
   const [desktopExpanded, setDesktopExpanded] = useState(false);
 
   const collapseTimerRef = useRef(null);
 
+
   // =========================================================
-  // NAVIGATION
+  // MAIN NAVIGATION
   // =========================================================
 
   const navItems = [
@@ -4212,26 +1486,25 @@ export default function Navbar() {
       path: "/",
       icon: Home,
     },
+
     {
       name: "About",
       path: "/about",
       icon: UserRound,
     },
+
     {
       name: "Registration",
       path: "/registration",
       icon: CreditCard,
     },
-    {
-      name: "Committee",
-      path: "/committee",
-      icon: UsersRound,
-    },
+
     {
       name: "Program",
       path: "/speakers",
       icon: CalendarDays,
     },
+
     {
       name: "Venue",
       path: "/venue",
@@ -4239,32 +1512,86 @@ export default function Navbar() {
     },
   ];
 
+
   // =========================================================
-  // AUTHORS
+  // AUTHOR SUBMENU
   // =========================================================
 
   const authorItems = [
-  {
-    name: "Call For Papers",
-    path: "/call-for-papers",
-    icon: PenLine,
-  },
-  {
-    name: "Guidelines & Policies",
-    path: "/guidelines",
-    icon: PenLine,
-  },
-  {
-    name: "Review Process",
-    path: "/review-process",
-    icon: FileSearch,
-  },
-  {
-    name: "Important Dates",
-    path: "/important-dates",
-    icon: Clock3,
-  },
-];
+    {
+      name: "Call For Papers",
+      path: "/call-for-papers",
+      icon: PenLine,
+    },
+
+    {
+      name: "Guidelines & Policies",
+      path: "/guidelines",
+      icon: PenLine,
+    },
+
+    {
+      name: "Review Process",
+      path: "/review-process",
+      icon: FileSearch,
+    },
+
+    {
+      name: "Important Dates",
+      path: "/important-dates",
+      icon: Clock3,
+    },
+  ];
+
+
+  // =========================================================
+  // COMMITTEE SUBMENU
+  // =========================================================
+
+  const committeeItems = [
+    {
+      name: "Organizing Committee",
+      key: "organizing",
+      icon: Building2,
+    },
+
+    {
+      name: "IEEE Kolkata Section Steering Committee",
+      key: "ieeeKolkata",
+      icon: Landmark,
+    },
+
+    {
+      name: "IEEE Computer Society Kolkata Section",
+      key: "ieeeCS",
+      icon: ShieldCheck,
+    },
+
+    {
+      name: "National Advisory Committee",
+      key: "nationalAdvisory",
+      icon: Landmark,
+    },
+
+    {
+      name: "International Advisory Committee",
+      key: "internationalAdvisory",
+      icon: Globe2,
+    },
+
+    {
+      name: "Technical Program Committee",
+      key: "technicalProgram",
+      icon: Settings2,
+    },
+
+    {
+      name: "IEEE Computer Society UEMK Student Committee",
+      key: "student",
+      icon: GraduationCap,
+    },
+  ];
+
 
   // =========================================================
   // ACTIVE ROUTE
@@ -4278,12 +1605,34 @@ export default function Navbar() {
     return location.pathname === path;
   };
 
+
+  // =========================================================
+  // ACTIVE AUTHOR
+  // =========================================================
+
   const isAuthorsActive = authorItems.some(
     (item) => location.pathname === item.path
   );
 
+
   // =========================================================
-  // DESKTOP EXPAND
+  // ACTIVE COMMITTEE
+  // =========================================================
+
+  const isCommitteeActive =
+    location.pathname === "/committee";
+
+
+  // =========================================================
+  // CURRENT COMMITTEE
+  // =========================================================
+
+  const currentCommittee =
+    new URLSearchParams(location.search).get("committee");
+
+
+  // =========================================================
+  // EXPAND DESKTOP
   // =========================================================
 
   const expandDesktopNav = () => {
@@ -4295,8 +1644,9 @@ export default function Navbar() {
     setDesktopExpanded(true);
   };
 
+
   // =========================================================
-  // DESKTOP COLLAPSE
+  // COLLAPSE DESKTOP
   // =========================================================
 
   const collapseDesktopNav = () => {
@@ -4307,17 +1657,26 @@ export default function Navbar() {
     collapseTimerRef.current = setTimeout(() => {
       setDesktopExpanded(false);
       setAuthorsOpen(false);
+      setCommitteeOpen(false);
     }, 450);
   };
 
+
   // =========================================================
-  // NAVIGATION CLICK
+  // NAVIGATION
   // =========================================================
 
   const handleNavigation = () => {
     setMenuOpen(false);
+
     setAuthorsOpen(false);
+
+    setCommitteeOpen(false);
+
     setMobileAuthorsOpen(false);
+
+    setMobileCommitteeOpen(false);
+
     setDesktopExpanded(false);
 
     if (collapseTimerRef.current) {
@@ -4331,8 +1690,9 @@ export default function Navbar() {
     });
   };
 
+
   // =========================================================
-  // ESCAPE
+  // ESCAPE KEY
   // =========================================================
 
   useEffect(() => {
@@ -4340,7 +1700,9 @@ export default function Navbar() {
       if (event.key === "Escape") {
         setMenuOpen(false);
         setAuthorsOpen(false);
+        setCommitteeOpen(false);
         setMobileAuthorsOpen(false);
+        setMobileCommitteeOpen(false);
         setDesktopExpanded(false);
       }
     };
@@ -4352,6 +1714,7 @@ export default function Navbar() {
     };
   }, []);
 
+
   // =========================================================
   // ROUTE CHANGE
   // =========================================================
@@ -4359,19 +1722,17 @@ export default function Navbar() {
   useEffect(() => {
     setMenuOpen(false);
     setAuthorsOpen(false);
+    setCommitteeOpen(false);
     setMobileAuthorsOpen(false);
+    setMobileCommitteeOpen(false);
     setDesktopExpanded(false);
 
     if (collapseTimerRef.current) {
       clearTimeout(collapseTimerRef.current);
       collapseTimerRef.current = null;
     }
+  }, [location.pathname, location.search]);
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [location.pathname]);
 
   // =========================================================
   // CLEANUP
@@ -4384,6 +1745,7 @@ export default function Navbar() {
       }
     };
   }, []);
+
 
   // =========================================================
   // MOBILE BODY LOCK
@@ -4401,12 +1763,14 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
+
   // =========================================================
-  // DESKTOP NAV ITEM
+  // DESKTOP NORMAL NAV ITEM
   // =========================================================
 
   const DesktopNavItem = ({ item }) => {
     const active = isActive(item.path);
+
     const Icon = item.icon;
 
     return (
@@ -4416,43 +1780,36 @@ export default function Navbar() {
         className={`
           group
           relative
-
           flex
           items-center
           gap-4
-
-          px-5
-          py-4
-
-          text-[15px]
-          xl:text-[16px]
-
-          font-medium
-
-          transition-all
-          duration-300
-
           overflow-hidden
+          px-5
+          py-3.5
+          text-[14px]
+          font-semibold
+          transition-colors
+          duration-300
+          xl:text-[15px]
 
           ${
             active
-              ? "text-[#13C8F3]"
-              : "text-white/85 hover:text-[#13C8F3]"
+              ? "text-white"
+              : "text-[#CBD5E1] hover:text-white"
           }
         `}
       >
-        {/* Hover background */}
+
+        {/* Background */}
 
         <span
           className={`
             absolute
-            inset-0
-
-            bg-gradient-to-r
-            from-[#0CC8F2]/12
-            via-[#0CC8F2]/5
-            to-transparent
-
+            inset-y-1
+            left-1
+            right-1
+            rounded-xl
+            bg-[#075DB8]
             transition-opacity
             duration-300
 
@@ -4464,129 +1821,123 @@ export default function Navbar() {
           `}
         />
 
-        {/* Active cyan line */}
+
+        {/* Active indicator */}
 
         <span
           className={`
             absolute
             left-0
             top-1/2
-
             -translate-y-1/2
-
-            w-[3px]
-
             rounded-r-full
-
-            bg-gradient-to-b
-            from-[#13C8F3]
-            to-[#2877FF]
-
-            shadow-[0_0_14px_rgba(19,200,243,0.9)]
-
+            bg-[#60A5FA]
             transition-all
             duration-300
 
             ${
               active
-                ? "h-11 opacity-100"
-                : "h-0 opacity-0 group-hover:h-8 group-hover:opacity-100"
+                ? "h-8 w-[3px] opacity-100"
+                : "h-0 w-[3px] opacity-0 group-hover:h-6 group-hover:opacity-100"
             }
           `}
         />
+
 
         {/* Icon */}
 
         <Icon
-          size={20}
-          strokeWidth={1.8}
+          size={19}
+          strokeWidth={1.9}
           className={`
             relative
             z-10
-
-            flex-shrink-0
-
-            transition-all
-            duration-300
+            shrink-0
 
             ${
               active
-                ? "text-[#13C8F3]"
-                : "text-white/75 group-hover:text-[#13C8F3]"
+                ? "text-[#BFDBFE]"
+                : "text-[#94A3B8] group-hover:text-[#BFDBFE]"
             }
-
-            group-hover:scale-110
           `}
         />
+
 
         {/* Text */}
 
         <span className="relative z-10">
           {item.name}
         </span>
+
       </Link>
     );
   };
 
+
   // =========================================================
-  // DESKTOP AUTHORS ITEM
+  // AUTHORS DROPDOWN
   // =========================================================
 
   const AuthorsDesktop = () => {
     const active = isAuthorsActive || authorsOpen;
 
     return (
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => {
+          expandDesktopNav();
+          setAuthorsOpen(true);
+          setCommitteeOpen(false);
+        }}
+        onMouseLeave={() => {
+          setAuthorsOpen(false);
+        }}
+      >
+
+        {/* AUTHORS BUTTON */}
+
         <button
           type="button"
           onClick={() => {
             expandDesktopNav();
+
             setAuthorsOpen((prev) => !prev);
+
+            setCommitteeOpen(false);
           }}
-          aria-expanded={authorsOpen}
           className={`
             group
             relative
-
             flex
             w-full
             items-center
             gap-4
-
-            px-5
-            py-4
-
-            text-[15px]
-            xl:text-[16px]
-
-            font-medium
-
-            transition-all
-            duration-300
-
             overflow-hidden
+            px-5
+            py-3.5
+            text-left
+            text-[14px]
+            font-semibold
+            transition-colors
+            duration-300
+            xl:text-[15px]
 
             ${
               active
-                ? "text-[#13C8F3]"
-                : "text-white/85 hover:text-[#13C8F3]"
+                ? "text-white"
+                : "text-[#CBD5E1] hover:text-white"
             }
           `}
         >
-          {/* Background */}
 
           <span
             className={`
               absolute
-              inset-0
-
-              bg-gradient-to-r
-              from-[#0CC8F2]/12
-              via-[#0CC8F2]/5
-              to-transparent
-
-              transition-opacity
-              duration-300
+              inset-y-1
+              left-1
+              right-1
+              rounded-xl
+              bg-[#075DB8]
 
               ${
                 active
@@ -4596,148 +1947,96 @@ export default function Navbar() {
             `}
           />
 
-          {/* Active line */}
 
           <span
             className={`
               absolute
               left-0
               top-1/2
-
               -translate-y-1/2
-
-              w-[3px]
-
               rounded-r-full
-
-              bg-gradient-to-b
-              from-[#13C8F3]
-              to-[#2877FF]
-
-              shadow-[0_0_14px_rgba(19,200,243,0.9)]
-
-              transition-all
-              duration-300
+              bg-[#60A5FA]
 
               ${
                 active
-                  ? "h-11 opacity-100"
-                  : "h-0 opacity-0 group-hover:h-8 group-hover:opacity-100"
+                  ? "h-8 w-[3px]"
+                  : "h-0 w-[3px] group-hover:h-6"
               }
             `}
           />
 
-          {/* Icon */}
 
           <PenLine
-            size={20}
-            strokeWidth={1.8}
-            className={`
+            size={19}
+            strokeWidth={1.9}
+            className="
               relative
               z-10
-
-              flex-shrink-0
-
-              transition-all
-              duration-300
-
-              ${
-                active
-                  ? "text-[#13C8F3]"
-                  : "text-white/75 group-hover:text-[#13C8F3]"
-              }
-
-              group-hover:scale-110
-            `}
+              text-[#94A3B8]
+              group-hover:text-[#BFDBFE]
+            "
           />
 
-          {/* Text */}
 
-          <span className="relative z-10 flex-1 text-left">
+          <span className="relative z-10 flex-1">
             Authors
           </span>
 
-          {/* Arrow */}
 
           <ChevronDown
             size={17}
-            strokeWidth={2}
             className={`
               relative
               z-10
-
               transition-transform
               duration-300
 
               ${
                 authorsOpen
-                  ? "rotate-180 text-[#13C8F3]"
-                  : "rotate-0"
+                  ? "rotate-180 text-[#BFDBFE]"
+                  : "text-[#94A3B8]"
               }
             `}
           />
+
         </button>
 
-        {/* =================================================
-            AUTHORS SUBMENU
-        ================================================= */}
+
+        {/* AUTHORS SUBMENU */}
 
         <div
-          onMouseEnter={expandDesktopNav}
-          onMouseLeave={collapseDesktopNav}
           className={`
             absolute
-
             left-full
             top-1/2
-
-            -translate-y-1/2
-
+            z-[120]
             ml-3
-
-            w-[245px]
-
-            rounded-2xl
-
-            border
-            border-cyan-400/20
-
-            bg-[#03101F]/95
-
-            backdrop-blur-2xl
-
-            shadow-[0_20px_60px_rgba(0,0,0,0.55)]
-
+            w-[250px]
+            -translate-y-1/2
             overflow-hidden
-
+            rounded-[14px]
+            border
+            border-[#315783]
+            bg-[#07152F]
+            shadow-[0_18px_50px_rgba(0,0,0,0.35)]
             transition-all
             duration-300
 
-            origin-left
-
             ${
               authorsOpen
-                ? "opacity-100 scale-100 translate-x-0 pointer-events-auto"
-                : "opacity-0 scale-95 -translate-x-3 pointer-events-none"
+                ? "pointer-events-auto translate-x-0 scale-100 opacity-100"
+                : "pointer-events-none -translate-x-2 scale-[0.98] opacity-0"
             }
           `}
         >
-          {/* Top glow */}
 
-          <div
-            className="
-              h-[2px]
-
-              bg-gradient-to-r
-              from-transparent
-              via-[#13C8F3]
-              to-transparent
-            "
-          />
+          <div className="h-[3px] w-full bg-[#075DB8]" />
 
           <div className="py-2">
+
             {authorItems.map((item, index) => {
               const Icon = item.icon;
+
               const activeItem = isActive(item.path);
 
               return (
@@ -4747,37 +2046,345 @@ export default function Navbar() {
                   onClick={handleNavigation}
                   className={`
                     group/sub
-
                     flex
                     items-center
                     gap-3
-
+                    border-b
+                    border-[#1E3A5F]
                     px-4
                     py-3.5
-
-                    border-b
-                    border-white/[0.05]
-
                     last:border-b-0
-
                     text-sm
-
-                    transition-all
+                    font-medium
+                    transition-colors
                     duration-300
 
                     ${
                       activeItem
-                        ? "bg-cyan-400/10 text-[#13C8F3]"
-                        : "text-white/75 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+                        ? "bg-[#075DB8] text-white"
+                        : "text-[#CBD5E1] hover:bg-[#0B2144] hover:text-white"
                     }
                   `}
                 >
+
                   <span
                     className={`
                       flex
-                      h-8
-                      w-8
+                      h-9
+                      w-9
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-lg
+                      border
 
+                      ${
+                        activeItem
+                          ? "border-[#60A5FA] bg-[#0B376A] text-[#BFDBFE]"
+                          : "border-[#315783] bg-[#0B2144] text-[#94A3B8]"
+                      }
+                    `}
+                  >
+                    <Icon size={15} />
+                  </span>
+
+
+                  <span className="flex-1">
+                    {item.name}
+                  </span>
+
+
+                  <span className="text-[9px] font-bold text-[#64748B]">
+                    0{index + 1}
+                  </span>
+
+                </Link>
+              );
+            })}
+
+          </div>
+
+        </div>
+
+      </div>
+    );
+  };
+
+
+  // =========================================================
+  // COMMITTEE DROPDOWN
+  // =========================================================
+
+  const CommitteeDesktop = () => {
+    const active = isCommitteeActive || committeeOpen;
+
+    return (
+      <div
+        className="relative"
+        onMouseEnter={() => {
+          expandDesktopNav();
+          setCommitteeOpen(true);
+          setAuthorsOpen(false);
+        }}
+        onMouseLeave={() => {
+          setCommitteeOpen(false);
+        }}
+      >
+
+        {/* COMMITTEE BUTTON */}
+
+        <button
+          type="button"
+          onClick={() => {
+            expandDesktopNav();
+
+            setCommitteeOpen((prev) => !prev);
+
+            setAuthorsOpen(false);
+          }}
+          className={`
+            group
+            relative
+            flex
+            w-full
+            items-center
+            gap-4
+            overflow-hidden
+            px-5
+            py-3.5
+            text-left
+            text-[14px]
+            font-semibold
+            transition-colors
+            duration-300
+            xl:text-[15px]
+
+            ${
+              active
+                ? "text-white"
+                : "text-[#CBD5E1] hover:text-white"
+            }
+          `}
+        >
+
+          {/* Background */}
+
+          <span
+            className={`
+              absolute
+              inset-y-1
+              left-1
+              right-1
+              rounded-xl
+              bg-[#075DB8]
+
+              ${
+                active
+                  ? "opacity-100"
+                  : "opacity-0 group-hover:opacity-100"
+              }
+            `}
+          />
+
+
+          {/* Left indicator */}
+
+          <span
+            className={`
+              absolute
+              left-0
+              top-1/2
+              -translate-y-1/2
+              rounded-r-full
+              bg-[#60A5FA]
+
+              ${
+                active
+                  ? "h-8 w-[3px]"
+                  : "h-0 w-[3px] group-hover:h-6"
+              }
+            `}
+          />
+
+
+          {/* Icon */}
+
+          <UsersRound
+            size={19}
+            strokeWidth={1.9}
+            className="
+              relative
+              z-10
+              text-[#94A3B8]
+              group-hover:text-[#BFDBFE]
+            "
+          />
+
+
+          {/* Text */}
+
+          <span className="relative z-10 flex-1">
+            Committee
+          </span>
+
+
+          {/* Arrow */}
+
+          <ChevronDown
+            size={17}
+            className={`
+              relative
+              z-10
+              transition-transform
+              duration-300
+
+              ${
+                committeeOpen
+                  ? "rotate-180 text-[#BFDBFE]"
+                  : "text-[#94A3B8]"
+              }
+            `}
+          />
+
+        </button>
+
+
+        {/* =====================================================
+            COMMITTEE SUBMENU
+        ====================================================== */}
+
+        <div
+          className={`
+            absolute
+            left-full
+            top-1/2
+            z-[120]
+            ml-3
+
+            w-[300px]
+
+            -translate-y-1/2
+
+            overflow-hidden
+
+            rounded-[14px]
+
+            border
+            border-[#315783]
+
+            bg-[#07152F]
+
+            shadow-[0_18px_50px_rgba(0,0,0,0.35)]
+
+            transition-all
+            duration-300
+            origin-left
+
+            ${
+              committeeOpen
+                ? "pointer-events-auto translate-x-0 scale-100 opacity-100"
+                : "pointer-events-none -translate-x-2 scale-[0.98] opacity-0"
+            }
+          `}
+          onMouseEnter={() => {
+            expandDesktopNav();
+            setCommitteeOpen(true);
+          }}
+        >
+
+          {/* =================================================
+              BLUE TOP ACCENT
+          ================================================== */}
+
+          <div
+            className="
+              h-[3px]
+              w-full
+              bg-[#075DB8]
+            "
+          />
+
+
+          {/* =================================================
+              SUBMENU HEADER
+          ================================================== */}
+
+          <div
+            className="
+              border-b
+              border-[#1E3A5F]
+              px-4
+              py-3
+            "
+          >
+
+            <p
+              className="
+                text-[9px]
+                font-bold
+                uppercase
+                tracking-[2px]
+                text-[#60A5FA]
+              "
+            >
+              Conference Committee
+            </p>
+
+          </div>
+
+
+          {/* =================================================
+              SEVEN COMMITTEES
+          ================================================== */}
+
+          <div className="py-2">
+
+            {committeeItems.map((item, index) => {
+              const Icon = item.icon;
+
+              const activeItem =
+                isCommitteeActive &&
+                currentCommittee === item.key;
+
+
+              return (
+                <Link
+                  key={item.key}
+                  to={`/committee?committee=${item.key}`}
+                  onClick={handleNavigation}
+                  className={`
+                    group/sub
+                    flex
+                    items-center
+                    gap-3
+
+                    border-b
+                    border-[#1E3A5F]
+
+                    px-4
+                    py-3
+
+                    last:border-b-0
+
+                    transition-colors
+                    duration-300
+
+                    ${
+                      activeItem
+                        ? "bg-[#075DB8] text-white"
+                        : "text-[#CBD5E1] hover:bg-[#0B2144] hover:text-white"
+                    }
+                  `}
+                >
+
+                  {/* ICON */}
+
+                  <span
+                    className={`
+                      flex
+                      h-9
+                      w-9
+                      shrink-0
                       items-center
                       justify-center
 
@@ -4785,85 +2392,105 @@ export default function Navbar() {
 
                       border
 
-                      transition-all
+                      transition-colors
                       duration-300
 
                       ${
                         activeItem
-                          ? "border-cyan-400/50 bg-cyan-400/10"
-                          : "border-cyan-400/15 bg-cyan-400/5 group-hover/sub:border-cyan-400/40"
+                          ? "border-[#60A5FA] bg-[#0B376A] text-[#BFDBFE]"
+                          : "border-[#315783] bg-[#0B2144] text-[#94A3B8] group-hover/sub:border-[#60A5FA] group-hover/sub:text-[#BFDBFE]"
                       }
                     `}
                   >
+
                     <Icon
                       size={15}
                       strokeWidth={1.8}
                     />
+
                   </span>
 
-                  <span className="flex-1">
+
+                  {/* NAME */}
+
+                  <span
+                    className="
+                      min-w-0
+                      flex-1
+                      text-[11px]
+                      font-semibold
+                      leading-5
+                    "
+                  >
                     {item.name}
                   </span>
 
-                  <span className="text-[9px] text-cyan-400/50">
-                    0{index + 1}
+
+                  {/* NUMBER */}
+
+                  <span
+                    className="
+                      shrink-0
+                      text-[9px]
+                      font-bold
+                      text-[#64748B]
+                    "
+                  >
+                    {String(index + 1).padStart(2, "0")}
                   </span>
+
                 </Link>
               );
             })}
+
           </div>
+
         </div>
+
       </div>
     );
   };
 
-  // =========================================================
-  // DESKTOP NAVBAR
-  // =========================================================
 
   return (
     <>
-      {/* =====================================================
+      {/* =======================================================
           DESKTOP NAVBAR
-      ====================================================== */}
+      ======================================================== */}
 
       <aside
         onMouseEnter={expandDesktopNav}
         onMouseLeave={collapseDesktopNav}
         className={`
-          hidden
-          lg:flex
-
           fixed
-
           left-0
           top-1/2
+          z-[100]
+
+          hidden
+
+          w-[235px]
 
           -translate-y-1/2
 
-          z-[100]
-
-          w-[225px]
-          xl:w-[235px]
-
           flex-col
 
-          rounded-r-[25px]
+          overflow-visible
+
+          rounded-r-[20px]
 
           border
           border-l-0
-          border-cyan-400/25
+          border-[#315783]
 
-          bg-[#020B18]/78
+          bg-[#07152F]
 
-          backdrop-blur-2xl
-
-          shadow-[15px_15px_60px_rgba(0,0,0,0.55)]
+          shadow-[12px_18px_50px_rgba(0,0,0,0.28)]
 
           transition-transform
           duration-500
 
-          ease-[cubic-bezier(0.22,1,0.36,1)]
+          lg:flex
 
           ${
             desktopExpanded
@@ -4872,364 +2499,259 @@ export default function Navbar() {
           }
         `}
       >
-        {/* =================================================
+
+        {/* =====================================================
             COLLAPSED TAB
-        ================================================== */}
+        ====================================================== */}
 
         <div
           className="
+            group/tab
+
             absolute
 
             right-[-48px]
-
             top-1/2
+
+            flex
+            h-[205px]
+            w-[48px]
 
             -translate-y-1/2
 
-            h-[210px]
-            w-[48px]
+            cursor-pointer
 
-            flex
             flex-col
             items-center
             justify-between
 
-            py-4
+            overflow-hidden
 
-            rounded-r-[18px]
+            rounded-r-[16px]
 
             border
             border-l-0
-            border-cyan-400/35
+            border-[#315783]
 
-            bg-gradient-to-r
-            from-[#13C8F3]
-            via-[#18AEEF]
-            to-[#2877FF]
+            bg-[#075DB8]
 
-            backdrop-blur-xl
+            py-4
 
-            shadow-[8px_0_30px_rgba(0,0,0,0.4)]
-
-            overflow-hidden
-
-            cursor-pointer
-
-            group/tab
-
-            transition-all
+            transition-colors
             duration-300
 
-            hover:border-cyan-400/70
-            hover:shadow-[0_0_30px_rgba(19,200,243,0.35)]
+            hover:bg-[#064F9C]
           "
           onMouseEnter={expandDesktopNav}
           onClick={expandDesktopNav}
         >
-          {/* Glow */}
 
           <span
             className="
               absolute
-              inset-y-0
               left-0
-
-              w-[2px]
-
-              bg-gradient-to-b
-              from-transparent
-              via-[#13C8F3]
-              to-transparent
-
-              shadow-[0_0_15px_rgba(19,200,243,0.9)]
+              right-0
+              top-0
+              h-[3px]
+              bg-[#60A5FA]
             "
           />
 
-          {/* Menu Circle */}
 
           <span
             className="
               relative
               z-10
-
               flex
               h-8
               w-8
-
               items-center
               justify-center
-
               rounded-full
-
               border
-              border-cyan-400/60
-
-              bg-[#061B30]/80
-
-              text-cyan-300
-
-              shadow-[0_0_15px_rgba(19,200,243,0.2)]
-
-              transition-all
-              duration-300
-
-              group-hover/tab:bg-[#0A2944]
-              group-hover/tab:border-cyan-300
-              group-hover/tab:scale-105
+              border-[#93C5FD]
+              bg-[#0B376A]
+              text-[#BFDBFE]
             "
           >
-            <Menu
-              size={17}
-              strokeWidth={2}
-            />
+            <Menu size={17} />
           </span>
 
-          {/* Vertical Text */}
 
           <span
             className="
               relative
               z-10
-
-              flex-1
-
               flex
+              flex-1
               items-center
               justify-center
-
               text-[9px]
-
-              font-semibold
-
+              font-bold
               tracking-[0.18em]
-
-              text-black
-
+              text-white
               [writing-mode:vertical-rl]
-
               rotate-180
-
               whitespace-nowrap
-
-              transition-colors
-              duration-300
-
-              group-hover/tab:text-black
             "
           >
             CLICK HERE
           </span>
 
-          {/* Arrow */}
 
           <span
             className="
               relative
               z-10
-
               text-lg
-
               leading-none
-
-              text-[#13C8F3]
-
-              transition-transform
-              duration-300
-
-              group-hover/tab:translate-x-1
+              text-[#BFDBFE]
             "
           >
             »
           </span>
+
         </div>
 
-        {/* =================================================
-            TOP GLOW
-        ================================================== */}
+
+        {/* TOP ACCENT */}
 
         <div
           className="
             absolute
-            left-8
-            right-8
+            left-6
+            right-6
             top-0
-
-            h-px
-
-            bg-gradient-to-r
-            from-transparent
-            via-[#13C8F3]/70
-            to-transparent
+            h-[3px]
+            rounded-b-full
+            bg-[#075DB8]
           "
         />
 
-        {/* =================================================
-            NAVIGATION
-        ================================================== */}
 
-        <nav className="py-4">
+        {/* =====================================================
+            NAVIGATION
+        ====================================================== */}
+
+        <nav className="py-5">
+
           {/* HOME */}
 
           <DesktopNavItem item={navItems[0]} />
+
 
           {/* ABOUT */}
 
           <DesktopNavItem item={navItems[1]} />
 
+
           {/* AUTHORS */}
 
           <AuthorsDesktop />
+
 
           {/* REGISTRATION */}
 
           <DesktopNavItem item={navItems[2]} />
 
+
           {/* COMMITTEE */}
 
-          <DesktopNavItem item={navItems[3]} />
+          <CommitteeDesktop />
+
 
           {/* PROGRAM */}
 
-          <DesktopNavItem item={navItems[4]} />
+          <DesktopNavItem item={navItems[3]} />
+
 
           {/* VENUE */}
 
-          <DesktopNavItem item={navItems[5]} />
+          <DesktopNavItem item={navItems[4]} />
+
         </nav>
 
-        {/* =================================================
-            DIVIDER
-        ================================================== */}
+
+        {/* DIVIDER */}
 
         <div
           className="
             mx-5
-
             h-px
-
-            bg-gradient-to-r
-            from-transparent
-            via-cyan-400/20
-            to-transparent
+            bg-[#1E3A5F]
           "
         />
 
-        {/* =================================================
-            CONTACT
-        ================================================== */}
+
+        {/* CONTACT */}
 
         <Link
           to="/contact"
           onClick={handleNavigation}
           className="
             group/contact
-
             relative
-
             mx-4
             my-4
-
             flex
             items-center
             justify-center
-
+            overflow-hidden
             rounded-xl
-
             border
-            border-cyan-400/30
-
-            bg-cyan-400/5
-
+            border-[#315783]
+            bg-[#0B2144]
             px-4
             py-3
-
-            text-[12px]
-
-            font-semibold
-            tracking-[0.08em]
-
-            text-white
-
-            overflow-hidden
-
-            transition-all
+            text-[11px]
+            font-bold
+            tracking-[0.12em]
+            text-[#BFDBFE]
+            transition-colors
             duration-300
-
-            hover:border-cyan-400/70
-            hover:bg-cyan-400/10
-            hover:text-cyan-300
-
-            hover:shadow-[0_0_25px_rgba(19,200,243,0.2)]
+            hover:border-[#60A5FA]
+            hover:bg-[#075DB8]
+            hover:text-white
           "
         >
-          {/* Shimmer */}
-
-          <span
-            className="
-              absolute
-              inset-0
-
-              bg-gradient-to-r
-              from-transparent
-              via-white/10
-              to-transparent
-
-              -translate-x-full
-
-              group-hover/contact:translate-x-full
-
-              transition-transform
-              duration-700
-            "
-          />
-
-          <span className="relative z-10">
-            CONTACT US
-          </span>
+          CONTACT US
         </Link>
 
-        {/* =================================================
-            BOTTOM GLOW
-        ================================================== */}
+
+        {/* BOTTOM ACCENT */}
 
         <div
           className="
             absolute
-
             bottom-0
-            left-8
-            right-8
-
-            h-px
-
-            bg-gradient-to-r
-            from-transparent
-            via-[#13C8F3]/50
-            to-transparent
+            left-6
+            right-6
+            h-[2px]
+            rounded-t-full
+            bg-[#075DB8]
           "
         />
+
       </aside>
 
-      {/* =====================================================
+
+      {/* =======================================================
           MOBILE MENU BUTTON
-      ====================================================== */}
+      ======================================================== */}
 
       <button
         type="button"
         onClick={() => {
           setMenuOpen((prev) => !prev);
           setMobileAuthorsOpen(false);
+          setMobileCommitteeOpen(false);
         }}
         aria-label="Toggle navigation"
         aria-expanded={menuOpen}
         className="
-          lg:hidden
-
           fixed
-
-          top-5
           right-5
-
+          top-5
           z-[200]
 
           flex
@@ -5242,96 +2764,91 @@ export default function Navbar() {
           rounded-2xl
 
           border
-          border-cyan-400/30
+          border-[#315783]
 
-          bg-[#020B18]/70
+          bg-[#07152F]
 
-          backdrop-blur-xl
+          text-[#93C5FD]
 
-          text-[#13C8F3]
+          shadow-[0_10px_30px_rgba(0,0,0,0.25)]
 
-          shadow-[0_10px_35px_rgba(0,0,0,0.5)]
-
-          transition-all
+          transition-colors
           duration-300
 
-          hover:border-cyan-400/70
-          hover:bg-[#061B30]
+          hover:border-[#60A5FA]
+          hover:bg-[#075DB8]
+          hover:text-white
 
           active:scale-95
+
+          lg:hidden
         "
       >
+
         {menuOpen ? (
           <X size={23} />
         ) : (
           <Menu size={23} />
         )}
+
       </button>
 
-      {/* =====================================================
+
+      {/* =======================================================
           MOBILE OVERLAY
-      ====================================================== */}
+      ======================================================== */}
 
       <div
         onClick={() => setMenuOpen(false)}
         className={`
-          lg:hidden
-
           fixed
           inset-0
-
           z-[150]
 
-          bg-black/60
-
-          backdrop-blur-[3px]
+          bg-[#020B18]/70
 
           transition-opacity
           duration-300
 
+          lg:hidden
+
           ${
             menuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0"
           }
         `}
       />
 
-      {/* =====================================================
+
+      {/* =======================================================
           MOBILE SIDEBAR
-      ====================================================== */}
+      ======================================================== */}
 
       <aside
         className={`
-          lg:hidden
-
           fixed
-
+          bottom-0
           left-0
           top-0
-          bottom-0
-
           z-[180]
 
-          w-[290px]
-          max-w-[82vw]
-
           flex
+          w-[300px]
+          max-w-[84vw]
           flex-col
 
           border-r
-          border-cyan-400/20
+          border-[#315783]
 
-          bg-[#020B18]/95
+          bg-[#07152F]
 
-          backdrop-blur-2xl
-
-          shadow-[20px_0_60px_rgba(0,0,0,0.6)]
+          shadow-[20px_0_55px_rgba(0,0,0,0.35)]
 
           transition-transform
           duration-500
 
-          ease-[cubic-bezier(0.22,1,0.36,1)]
+          lg:hidden
 
           ${
             menuOpen
@@ -5340,29 +2857,44 @@ export default function Navbar() {
           }
         `}
       >
-        {/* MOBILE HEADER */}
+
+        {/* =====================================================
+            MOBILE HEADER
+        ====================================================== */}
 
         <div
           className="
+            relative
             flex
             items-center
             justify-between
-
+            border-b
+            border-[#1E3A5F]
             px-6
             py-6
-
-            border-b
-            border-white/5
           "
         >
+
+          <span
+            className="
+              absolute
+              left-6
+              right-6
+              top-0
+              h-[3px]
+              bg-[#075DB8]
+            "
+          />
+
+
           <div>
+
             <p
               className="
                 text-[10px]
-
+                font-bold
                 tracking-[0.4em]
-
-                text-[#13C8F3]
+                text-[#60A5FA]
               "
             >
               CYCRAI
@@ -5371,17 +2903,16 @@ export default function Navbar() {
             <p
               className="
                 mt-1
-
                 text-xl
-
-                font-bold
-
+                font-black
                 text-white
               "
             >
               2027
             </p>
+
           </div>
+
 
           <button
             type="button"
@@ -5390,32 +2921,29 @@ export default function Navbar() {
               flex
               h-10
               w-10
-
               items-center
               justify-center
-
               rounded-xl
-
               border
-              border-white/10
-
-              text-white/70
-
-              transition-all
-              duration-300
-
-              hover:border-cyan-400/50
-              hover:text-cyan-400
+              border-[#315783]
+              text-[#CBD5E1]
+              transition-colors
+              hover:border-[#60A5FA]
+              hover:bg-[#075DB8]
+              hover:text-white
             "
           >
             <X size={20} />
           </button>
+
         </div>
 
-        {/* MOBILE NAVIGATION */}
+
+        {/* =====================================================
+            MOBILE NAVIGATION
+        ====================================================== */}
 
         <nav className="flex-1 overflow-y-auto py-4">
-          {/* HOME */}
 
           <MobileNavItem
             item={navItems[0]}
@@ -5423,7 +2951,6 @@ export default function Navbar() {
             onClick={handleNavigation}
           />
 
-          {/* ABOUT */}
 
           <MobileNavItem
             item={navItems[1]}
@@ -5431,118 +2958,56 @@ export default function Navbar() {
             onClick={handleNavigation}
           />
 
-          {/* AUTHORS */}
 
-          <div>
-            <button
-              type="button"
-              onClick={() =>
-                setMobileAuthorsOpen((prev) => !prev)
-              }
-              className={`
-                flex
-                w-full
-                items-center
-                gap-4
+          {/* =================================================
+              MOBILE AUTHORS
+          ================================================== */}
 
-                px-6
-                py-4
+          <MobileDropdown
+            title="Authors"
+            icon={PenLine}
+            open={mobileAuthorsOpen}
+            setOpen={setMobileAuthorsOpen}
+            otherClose={() => setMobileCommitteeOpen(false)}
+            active={isAuthorsActive}
+          >
 
-                border-l-[3px]
+            {authorItems.map((item) => {
+              const Icon = item.icon;
 
-                text-[15px]
-                font-medium
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={handleNavigation}
+                  className={`
+                    flex
+                    items-center
+                    gap-3
+                    border-b
+                    border-[#1E3A5F]
+                    py-3.5
+                    pl-11
+                    pr-6
+                    text-sm
+                    font-medium
 
-                transition-all
-                duration-300
+                    ${
+                      isActive(item.path)
+                        ? "bg-[#075DB8] text-white"
+                        : "text-[#94A3B8] hover:bg-[#0B2144] hover:text-white"
+                    }
+                  `}
+                >
+                  <Icon size={16} />
 
-                ${
-                  isAuthorsActive
-                    ? "border-[#13C8F3] bg-cyan-400/10 text-[#13C8F3]"
-                    : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
-                }
-              `}
-            >
-              <PenLine
-                size={20}
-                strokeWidth={1.8}
-              />
+                  {item.name}
+                </Link>
+              );
+            })}
 
-              <span className="flex-1 text-left">
-                Authors
-              </span>
+          </MobileDropdown>
 
-              <ChevronDown
-                size={18}
-                className={`
-                  transition-transform
-                  duration-300
-
-                  ${
-                    mobileAuthorsOpen
-                      ? "rotate-180"
-                      : ""
-                  }
-                `}
-              />
-            </button>
-
-            {/* MOBILE AUTHORS */}
-
-            <div
-              className={`
-                overflow-hidden
-
-                bg-[#010813]/70
-
-                transition-all
-                duration-300
-
-                ${
-                  mobileAuthorsOpen
-                    ? "max-h-[350px]"
-                    : "max-h-0"
-                }
-              `}
-            >
-              {authorItems.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    onClick={handleNavigation}
-                    className={`
-                      flex
-                      items-center
-                      gap-3
-
-                      pl-11
-                      pr-6
-
-                      py-3.5
-
-                      text-sm
-
-                      transition-all
-                      duration-300
-
-                      ${
-                        isActive(item.path)
-                          ? "bg-cyan-400/10 text-[#13C8F3]"
-                          : "text-white/65 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
-                      }
-                    `}
-                  >
-                    <Icon size={16} />
-
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
 
           {/* REGISTRATION */}
 
@@ -5552,89 +3017,137 @@ export default function Navbar() {
             onClick={handleNavigation}
           />
 
-          {/* COMMITTEE */}
 
-          <MobileNavItem
-            item={navItems[3]}
-            active={isActive("/committee")}
-            onClick={handleNavigation}
-          />
+          {/* =================================================
+              MOBILE COMMITTEE
+          ================================================== */}
+
+          <MobileDropdown
+            title="Committee"
+            icon={UsersRound}
+            open={mobileCommitteeOpen}
+            setOpen={setMobileCommitteeOpen}
+            otherClose={() => setMobileAuthorsOpen(false)}
+            active={isCommitteeActive}
+          >
+
+            {committeeItems.map((item) => {
+              const Icon = item.icon;
+
+              const activeItem =
+                isCommitteeActive &&
+                currentCommittee === item.key;
+
+              return (
+                <Link
+                  key={item.key}
+                  to={`/committee?committee=${item.key}`}
+                  onClick={handleNavigation}
+                  className={`
+                    flex
+                    items-center
+                    gap-3
+                    border-b
+                    border-[#1E3A5F]
+                    py-3.5
+                    pl-11
+                    pr-5
+                    text-[12px]
+                    font-semibold
+                    leading-5
+
+                    ${
+                      activeItem
+                        ? "bg-[#075DB8] text-white"
+                        : "text-[#94A3B8] hover:bg-[#0B2144] hover:text-white"
+                    }
+                  `}
+                >
+
+                  <Icon
+                    size={15}
+                    className="shrink-0"
+                  />
+
+                  <span>
+                    {item.name}
+                  </span>
+
+                </Link>
+              );
+            })}
+
+          </MobileDropdown>
+
 
           {/* PROGRAM */}
 
           <MobileNavItem
-            item={navItems[4]}
+            item={navItems[3]}
             active={isActive("/speakers")}
             onClick={handleNavigation}
           />
 
+
           {/* VENUE */}
 
           <MobileNavItem
-            item={navItems[5]}
+            item={navItems[4]}
             active={isActive("/venue")}
             onClick={handleNavigation}
           />
+
         </nav>
+
 
         {/* MOBILE CONTACT */}
 
         <div
           className="
             border-t
-            border-white/5
-
+            border-[#1E3A5F]
             p-5
           "
         >
+
           <Link
             to="/contact"
             onClick={handleNavigation}
             className="
               block
               w-full
-
               rounded-xl
-
-              bg-gradient-to-r
-              from-[#13C8F3]
-              via-[#18AEEF]
-              to-[#2877FF]
-
+              bg-[#075DB8]
               px-5
               py-3.5
-
               text-center
-
               text-sm
-
-              font-semibold
-
+              font-bold
               tracking-wide
-
               text-white
-
-              shadow-[0_8px_25px_rgba(37,108,246,0.25)]
-
-              transition-all
-              duration-300
-
-              hover:brightness-110
+              hover:bg-[#064F9C]
             "
           >
             CONTACT US
           </Link>
+
         </div>
+
       </aside>
     </>
   );
 }
 
-// ===========================================================
-// MOBILE NAV ITEM
-// ===========================================================
 
-function MobileNavItem({ item, active, onClick }) {
+// =============================================================
+// MOBILE NORMAL ITEM
+// =============================================================
+
+function MobileNavItem({
+  item,
+  active,
+  onClick,
+}) {
   const Icon = item.icon;
 
   return (
@@ -5643,44 +3156,134 @@ function MobileNavItem({ item, active, onClick }) {
       onClick={onClick}
       className={`
         group
-
         flex
         items-center
         gap-4
-
+        border-l-[3px]
         px-6
         py-4
-
-        border-l-[3px]
-
         text-[15px]
-
-        font-medium
-
-        transition-all
+        font-semibold
+        transition-colors
         duration-300
 
         ${
           active
-            ? "border-[#13C8F3] bg-cyan-400/10 text-[#13C8F3]"
-            : "border-transparent text-white/85 hover:border-cyan-400/50 hover:bg-cyan-400/5 hover:text-[#13C8F3]"
+            ? "border-[#60A5FA] bg-[#075DB8] text-white"
+            : "border-transparent text-[#CBD5E1] hover:border-[#60A5FA] hover:bg-[#0B2144] hover:text-white"
         }
       `}
     >
+
       <Icon
         size={20}
         strokeWidth={1.8}
-        className="
-          transition-transform
-          duration-300
-
-          group-hover:scale-110
-        "
+        className={`
+          ${
+            active
+              ? "text-[#BFDBFE]"
+              : "text-[#94A3B8] group-hover:text-[#BFDBFE]"
+          }
+        `}
       />
 
       <span>
         {item.name}
       </span>
+
     </Link>
+  );
+}
+
+
+// =============================================================
+// MOBILE DROPDOWN
+// =============================================================
+
+function MobileDropdown({
+  title,
+  icon: Icon,
+  open,
+  setOpen,
+  otherClose,
+  active,
+  children,
+}) {
+  return (
+    <div>
+
+      <button
+        type="button"
+        onClick={() => {
+          setOpen((prev) => !prev);
+          otherClose();
+        }}
+        className={`
+          flex
+          w-full
+          items-center
+          gap-4
+          border-l-[3px]
+          px-6
+          py-4
+          text-left
+          text-[15px]
+          font-semibold
+          transition-colors
+
+          ${
+            active
+              ? "border-[#60A5FA] bg-[#075DB8] text-white"
+              : "border-transparent text-[#CBD5E1] hover:border-[#60A5FA] hover:bg-[#0B2144] hover:text-white"
+          }
+        `}
+      >
+
+        <Icon
+          size={20}
+          strokeWidth={1.8}
+        />
+
+
+        <span className="flex-1">
+          {title}
+        </span>
+
+
+        <ChevronDown
+          size={18}
+          className={`
+            transition-transform
+            duration-300
+
+            ${
+              open
+                ? "rotate-180 text-[#BFDBFE]"
+                : "text-[#94A3B8]"
+            }
+          `}
+        />
+
+      </button>
+
+
+      <div
+        className={`
+          overflow-hidden
+          bg-[#051126]
+          transition-all
+          duration-300
+
+          ${
+            open
+              ? "max-h-[700px]"
+              : "max-h-0"
+          }
+        `}
+      >
+        {children}
+      </div>
+
+    </div>
   );
 }

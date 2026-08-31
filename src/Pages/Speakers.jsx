@@ -1,5 +1,3 @@
-
-
 import { motion } from "framer-motion";
 import {
   Mic2,
@@ -13,6 +11,10 @@ import {
 import Footer from "../components/Footer";
 
 export default function Speakers() {
+  // =========================================================
+  // SPEAKER / PROGRAM SECTIONS
+  // =========================================================
+
   const sections = [
     {
       icon: Mic2,
@@ -33,6 +35,10 @@ export default function Speakers() {
         "The complete conference agenda including paper presentations, tutorials, workshops, poster sessions and networking events will be published after final confirmation.",
     },
   ];
+
+  // =========================================================
+  // PROGRAM HIGHLIGHTS
+  // =========================================================
 
   const highlights = [
     {
@@ -62,57 +68,281 @@ export default function Speakers() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
-      {/* =========================================================
-          HERO SECTION
-      ========================================================= */}
-      
+    <main className="min-h-screen overflow-hidden bg-[#F7FAFF] text-[#172554]">
 
       {/* =========================================================
-          SPEAKERS / PROGRAM SECTIONS
+          HERO
       ========================================================= */}
-      <section className="relative pt-6 pb-24 overflow-hidden bg-gradient-to-b from-[#020817] via-[#071326] to-[#020817]">
-        {/* Background Grid */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-[#07152F]
+          px-5
+          pb-20
+          pt-12
+          sm:px-6
+          sm:pb-24
+          sm:pt-16
+          lg:px-8
+          lg:pb-28
+          lg:pt-20
+        "
+      >
+
+        {/* Soft Blue Glow */}
+
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            -top-40
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-blue-500/10
+            blur-[140px]
+          "
         />
 
-        {/* Glows */}
-        <div className="absolute left-0 top-20 w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
-        <div className="absolute right-0 bottom-0 w-[450px] h-[450px] rounded-full bg-blue-600/10 blur-[170px]" />
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-48
+            -right-40
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-sky-400/10
+            blur-[150px]
+          "
+        />
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-20"
+
+        {/* Hero Content */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-5xl
+            text-center
+          "
+        >
+
+          <h1
+            className="
+              text-5xl
+              font-black
+              leading-tight
+              tracking-tight
+              text-white
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+            "
           >
-            <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-              Speakers & Program
+            Speakers &
+
+            <span
+              className="
+                block
+                bg-gradient-to-r
+                from-[#93C5FD]
+                via-[#60A5FA]
+                to-[#BFDBFE]
+                bg-clip-text
+                pb-3
+                text-transparent
+              "
+            >
+              Program
             </span>
+          </h1>
 
-            <h2 className="mt-8 text-5xl md:text-6xl font-black text-white">
-              Connect With
+          <p
+            className="
+              mx-auto
+              mt-6
+              max-w-3xl
+              text-sm
+              font-medium
+              leading-7
+              tracking-wide
+              text-blue-100/80
+              sm:text-base
+              md:text-lg
+            "
+          >
+            Connect with leading researchers, experts and innovators
+            shaping the future of secure and responsible technology.
+          </p>
 
-              <span className="block mt-3 bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-                Experts
-              </span>
+        </motion.div>
+
+      </section>
+
+
+      {/* =========================================================
+          SPEAKERS / PROGRAM
+      ========================================================= */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-gradient-to-b
+          from-white
+          via-[#F8FBFF]
+          to-[#F1F6FD]
+          px-5
+          py-16
+          sm:px-6
+          sm:py-20
+          lg:px-8
+          lg:py-24
+        "
+      >
+
+        {/* Soft Background Glows */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-20
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#BFDBFE]/20
+            blur-[140px]
+          "
+        />
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-40
+            -right-40
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-[#DBEAFE]/30
+            blur-[140px]
+          "
+        />
+
+
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-7xl
+          "
+        >
+
+          {/* =====================================================
+              SECTION HEADER
+          ====================================================== */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              mb-14
+              text-center
+            "
+          >
+
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                text-xs
+                font-bold
+                uppercase
+                tracking-[2.5px]
+                text-[#075DB8]
+                sm:text-sm
+              "
+            >
+              <Mic2 size={16} />
+
+              Conference Program
+            </div>
+
+            <h2
+              className="
+                mt-4
+                text-3xl
+                font-black
+                leading-tight
+                text-[#172554]
+                sm:text-4xl
+                md:text-5xl
+              "
+            >
+              Connect With Experts
             </h2>
 
-          
+            <p
+              className="
+                mx-auto
+                mt-5
+                max-w-2xl
+                text-base
+                font-semibold
+                leading-8
+                text-[#334155]
+                md:text-lg
+              "
+            >
+              Discover the speakers, sessions and academic interactions
+              planned for CYCRAI 2027.
+            </p>
+
           </motion.div>
 
-          {/* Main Cards */}
-          <div className="space-y-12">
+
+          {/* =====================================================
+              MAIN SPEAKER / PROGRAM BOXES
+          ====================================================== */}
+
+          <div className="space-y-8">
+
             {sections.map((item, index) => {
+
               const Icon = item.icon;
 
               return (
@@ -120,125 +350,341 @@ export default function Speakers() {
                   key={item.title}
                   initial={{
                     opacity: 0,
-                    y: 40,
+                    y: 25,
                   }}
                   whileInView={{
                     opacity: 1,
                     y: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                    margin: "-60px",
+                  }}
                   transition={{
-                    duration: 0.7,
-                    delay: index * 0.1,
+                    duration: 0.55,
+                    delay: index * 0.08,
                   }}
                   className="
-                    group
-                    relative
                     overflow-hidden
-                    rounded-[35px]
+                    rounded-[16px]
                     border
-                    border-cyan-400/20
-                    bg-white/5
-                    backdrop-blur-2xl
-                    p-10
-                    md:p-14
-                    transition-all
-                    duration-500
-                    hover:border-cyan-400/40
-                    hover:-translate-y-2
-                    hover:shadow-[0_0_45px_rgba(34,211,238,.12)]
+                    border-[#DCE3EB]
+                    border-t-4
+                    border-t-[#075DB8]
+                    bg-white
                   "
                 >
-                  {/* Top Gradient */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600" />
 
-                  {/* Hover Glow */}
-                  <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-cyan-500/10 blur-[120px] opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  {/* =================================================
+                      CARD CONTENT
+                  ================================================== */}
 
-                  <div className="relative z-10 grid lg:grid-cols-[auto_1fr] gap-10 items-center">
-                    {/* Icon */}
-                    <div className="mx-auto lg:mx-0 w-28 h-28 rounded-[30px] bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/15 transition-all duration-500">
+                  <div
+                    className="
+                      grid
+                      items-center
+                      gap-8
+                      p-7
+                      sm:p-9
+                      md:p-11
+                      lg:grid-cols-[auto_1fr]
+                      lg:gap-10
+                      lg:p-12
+                    "
+                  >
+
+                    {/* =================================================
+                        ICON
+                    ================================================== */}
+
+                    <div
+                      className="
+                        mx-auto
+                        flex
+                        h-20
+                        w-20
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        bg-[#E8F1FF]
+                        text-[#075DB8]
+                        lg:mx-0
+                      "
+                    >
                       <Icon
-                        size={52}
-                        strokeWidth={1.5}
-                        className="text-cyan-300"
+                        size={38}
+                        strokeWidth={1.7}
                       />
                     </div>
 
-                    {/* Content */}
-                    <div className="text-center lg:text-left">
-                      <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-xs md:text-sm">
+
+                    {/* =================================================
+                        CONTENT
+                    ================================================== */}
+
+                    <div
+                      className="
+                        text-center
+                        lg:text-left
+                      "
+                    >
+
+                      {/* Eyebrow */}
+
+                      <span
+                        className="
+                          inline-flex
+                          rounded-full
+                          bg-[#EFF6FF]
+                          px-4
+                          py-2
+                          text-[10px]
+                          font-bold
+                          uppercase
+                          tracking-[2px]
+                          text-[#075DB8]
+                          sm:text-xs
+                        "
+                      >
                         {item.eyebrow}
                       </span>
 
-                      <h3 className="mt-7 text-3xl md:text-4xl font-bold text-white">
+
+                      {/* Title */}
+
+                      <h3
+                        className="
+                          mt-5
+                          text-3xl
+                          font-black
+                          text-[#172554]
+                          md:text-4xl
+                        "
+                      >
                         {item.title}
                       </h3>
 
-                      <h4 className="mt-5 text-2xl md:text-3xl font-bold text-cyan-300">
+
+                      {/* Heading */}
+
+                      <h4
+                        className="
+                          mt-4
+                          text-xl
+                          font-bold
+                          text-[#075DB8]
+                          md:text-2xl
+                        "
+                      >
                         {item.heading}
                       </h4>
 
-                      <div className="mt-2 text-2xl md:text-3xl font-black bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+
+                      {/* Coming Soon */}
+
+                      <div
+                        className="
+                          mt-2
+                          text-2xl
+                          font-black
+                          text-[#075DB8]
+                          md:text-3xl
+                        "
+                      >
                         {item.gradient}
                       </div>
 
-                      <p className="mt-6 max-w-3xl text-slate-400 text-lg leading-8">
+
+                      {/* Description */}
+
+                      <p
+                        className="
+                          mt-5
+                          max-w-3xl
+                          text-base
+                          font-semibold
+                          leading-8
+                          text-[#334155]
+                          md:text-lg
+                        "
+                      >
                         {item.text}
                       </p>
+
                     </div>
+
                   </div>
+
                 </motion.div>
               );
             })}
+
           </div>
+
         </div>
+
       </section>
+
 
       {/* =========================================================
           WHAT TO EXPECT
       ========================================================= */}
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-        {/* Background */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-white
+          px-5
+          py-20
+          sm:px-6
+          sm:py-24
+          lg:px-8
+          lg:py-28
+        "
+      >
+
+        {/* Soft Blue Background */}
+
         <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "65px 65px",
-          }}
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-40
+            h-[400px]
+            w-[400px]
+            rounded-full
+            bg-[#DBEAFE]/30
+            blur-[140px]
+          "
         />
 
-        <div className="absolute -left-20 top-40 w-[350px] h-[350px] bg-cyan-500/10 blur-[140px] rounded-full" />
-        <div className="absolute right-0 bottom-20 w-[350px] h-[350px] bg-blue-600/10 blur-[140px] rounded-full" />
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -right-40
+            bottom-0
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#BFDBFE]/20
+            blur-[140px]
+          "
+        />
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          {/* Header */}
+
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-7xl
+          "
+        >
+
+          {/* =====================================================
+              HEADER
+          ====================================================== */}
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-20"
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              mb-14
+              text-center
+            "
           >
-            <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-              Program Highlights
-            </span>
 
-            <h2 className="mt-7 text-5xl md:text-6xl font-black text-white">
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                text-xs
+                font-bold
+                uppercase
+                tracking-[2.5px]
+                text-[#075DB8]
+                sm:text-sm
+              "
+            >
+              <Sparkles size={16} />
+
+              Program Highlights
+            </div>
+
+
+            <h2
+              className="
+                mt-4
+                text-3xl
+                font-black
+                leading-tight
+                text-[#172554]
+                sm:text-4xl
+                md:text-5xl
+              "
+            >
               More Than
 
-              <span className="block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+              <span
+                className="
+                  ml-2
+                  text-[#075DB8]
+                "
+              >
                 A Conference
               </span>
             </h2>
 
-            
+            <p
+              className="
+                mx-auto
+                mt-5
+                max-w-2xl
+                text-base
+                font-semibold
+                leading-8
+                text-[#334155]
+                md:text-lg
+              "
+            >
+              Experience meaningful technical discussions, expert
+              interaction and emerging research directions.
+            </p>
+
           </motion.div>
 
-          {/* Highlight Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+
+          {/* =====================================================
+              HIGHLIGHT BOXES
+          ====================================================== */}
+
+          <div
+            className="
+              grid
+              gap-6
+              md:grid-cols-2
+            "
+          >
+
             {highlights.map((item, index) => {
+
               const Icon = item.icon;
 
               return (
@@ -246,92 +692,201 @@ export default function Speakers() {
                   key={item.title}
                   initial={{
                     opacity: 0,
-                    y: 35,
+                    y: 25,
                   }}
                   whileInView={{
                     opacity: 1,
                     y: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.08,
+                    duration: 0.5,
+                    delay: index * 0.06,
                   }}
                   className="
-                    group
-                    relative
                     overflow-hidden
-                    rounded-[30px]
+                    rounded-[16px]
                     border
-                    border-cyan-400/15
-                    bg-white/5
-                    backdrop-blur-2xl
-                    p-8
-                    transition-all
-                    duration-500
-                    hover:-translate-y-2
-                    hover:border-cyan-400/40
-                    hover:shadow-[0_0_40px_rgba(34,211,238,.15)]
+                    border-[#DCE3EB]
+                    border-t-4
+                    border-t-[#075DB8]
+                    bg-white
                   "
                 >
-                  {/* Hover Gradient */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 to-transparent" />
 
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center mb-6 group-hover:bg-cyan-400/15 transition-all">
+                  <div
+                    className="
+                      p-7
+                      sm:p-8
+                    "
+                  >
+
+                    {/* Icon */}
+
+                    <div
+                      className="
+                        flex
+                        h-14
+                        w-14
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        bg-[#E8F1FF]
+                        text-[#075DB8]
+                      "
+                    >
                       <Icon
-                        size={30}
+                        size={28}
                         strokeWidth={1.7}
-                        className="text-cyan-300"
                       />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+
+                    {/* Title */}
+
+                    <h3
+                      className="
+                        mt-6
+                        text-2xl
+                        font-bold
+                        text-[#172554]
+                      "
+                    >
                       {item.title}
                     </h3>
 
-                    <p className="mt-5 text-slate-400 leading-8">
+
+                    {/* Description */}
+
+                    <p
+                      className="
+                        mt-4
+                        text-base
+                        font-semibold
+                        leading-8
+                        text-[#334155]
+                        md:text-lg
+                      "
+                    >
                       {item.desc}
                     </p>
+
                   </div>
+
                 </motion.div>
               );
             })}
+
           </div>
 
-          {/* Bottom Highlight */}
+
+          {/* =====================================================
+              BOTTOM ANNOUNCEMENT
+          ====================================================== */}
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="
-              mt-20
-              rounded-[35px]
-              border
-              border-cyan-400/20
-              bg-cyan-500/5
-              backdrop-blur-xl
-              p-10
-              text-center
-            "
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="mt-12"
           >
-            <Sparkles className="mx-auto text-cyan-300" size={38} />
 
-            <h3 className="mt-6 text-3xl md:text-4xl font-bold text-white">
-              Stay Tuned for Speaker Announcements
-            </h3>
+            <div
+              className="
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
+                p-8
+                text-center
+                sm:p-10
+              "
+            >
 
-            <p className="mt-5 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
-              Distinguished speakers and the complete conference program will
-              be announced soon. Follow CYCRAI 2027 for the latest updates.
-            </p>
+              {/* Icon */}
+
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-[#E8F1FF]
+                  text-[#075DB8]
+                "
+              >
+                <Sparkles size={26} />
+              </div>
+
+
+              {/* Heading */}
+
+              <h3
+                className="
+                  mt-6
+                  text-2xl
+                  font-bold
+                  text-[#172554]
+                  md:text-3xl
+                "
+              >
+                Stay Tuned for Speaker Announcements
+              </h3>
+
+
+              {/* Description */}
+
+              <p
+                className="
+                  mx-auto
+                  mt-4
+                  max-w-3xl
+                  text-base
+                  font-semibold
+                  leading-8
+                  text-[#334155]
+                  md:text-lg
+                "
+              >
+                Distinguished speakers and the complete conference
+                program will be announced soon. Follow CYCRAI 2027
+                for the latest updates.
+              </p>
+
+            </div>
+
           </motion.div>
+
         </div>
+
       </section>
 
-      {/* Footer */}
+
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
+
       <Footer />
+
     </main>
   );
 }

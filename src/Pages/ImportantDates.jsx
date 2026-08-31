@@ -52,437 +52,625 @@ const dates = [
 export default function ImportantDates() {
   return (
     <>
-    <section
-      id="dates"
-      className="
-        relative
-        overflow-hidden
-        bg-[#020817]
-        text-white
-        pt-6
-        pb-28
-        scroll-mt-24
-      "
-    >
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
+      {/* =========================================================
+          IMPORTANT DATES PAGE
+      ========================================================= */}
 
-      <div className="absolute inset-0 pointer-events-none">
-
-        {/* Grid */}
-
-        <div
-          className="absolute inset-0 opacity-[0.055]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
-        />
-
-        {/* Cyan Glow */}
-
-        <div
-          className="
-            absolute
-            -top-40
-            -left-40
-            w-[550px]
-            h-[550px]
-            rounded-full
-            bg-cyan-500/15
-            blur-[180px]
-          "
-        />
-
-        {/* Blue Glow */}
-
-        <div
-          className="
-            absolute
-            top-[45%]
-            -right-40
-            w-[550px]
-            h-[550px]
-            rounded-full
-            bg-blue-600/15
-            blur-[180px]
-          "
-        />
-
-        {/* Bottom Glow */}
-
-        <div
-          className="
-            absolute
-            bottom-0
-            left-[30%]
-            w-[500px]
-            h-[350px]
-            rounded-full
-            bg-cyan-500/10
-            blur-[180px]
-          "
-        />
-      </div>
-
-      {/* =====================================================
-          MAIN CONTENT
-      ====================================================== */}
-
-      <div className="relative max-w-7xl mx-auto px-6">
+      <section
+        id="dates"
+        className="
+          relative
+          min-h-screen
+          overflow-hidden
+          bg-[#F7FAFF]
+          scroll-mt-24
+        "
+      >
 
         {/* =====================================================
-            HEADER
+            DARK NAVY HERO
         ====================================================== */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-24 md:mb-32"
+        <div
+          className="
+            relative
+            overflow-hidden
+            bg-[#07152F]
+            px-5
+            pb-20
+            pt-12
+            sm:px-6
+            sm:pb-24
+            sm:pt-16
+            lg:px-8
+            lg:pb-28
+            lg:pt-20
+          "
         >
 
-          {/* Badge */}
+          {/* Soft blue glow */}
 
-          <span
+          <div
             className="
-              inline-flex
-              items-center
-              gap-2
-              px-5
-              py-2
+              pointer-events-none
+              absolute
+              -left-40
+              -top-40
+              h-[450px]
+              w-[450px]
               rounded-full
-              border
-              border-cyan-400/30
-              bg-cyan-500/10
-              text-cyan-300
-              uppercase
-              tracking-[3px]
-              text-sm
-              font-semibold
+              bg-blue-500/10
+              blur-[140px]
             "
-          >
-            <FaCalendarPlus />
+          />
 
-            Conference Timeline
-          </span>
-
-          {/* Heading */}
-
-          <h1
+          <div
             className="
-              mt-8
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              font-black
-              tracking-tight
-              leading-none
-              text-white
+              pointer-events-none
+              absolute
+              -bottom-48
+              -right-40
+              h-[500px]
+              w-[500px]
+              rounded-full
+              bg-sky-400/10
+              blur-[150px]
+            "
+          />
+
+          {/* HERO CONTENT */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="
+              relative
+              z-10
+              mx-auto
+              max-w-5xl
+              text-center
             "
           >
-            Important
 
-            <span
+            <h1
               className="
-                block
-                bg-gradient-to-r
-                from-cyan-300
-                via-sky-400
-                to-blue-500
-                bg-clip-text
-                text-transparent
+                text-5xl
+                font-black
+                leading-tight
+                tracking-tight
+                text-white
+                sm:text-6xl
+                md:text-7xl
+                lg:text-8xl
               "
             >
-              Dates
-            </span>
-          </h1>
+              Important
 
-          
-        </motion.div>
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-[#93C5FD]
+                  via-[#60A5FA]
+                  to-[#BFDBFE]
+                  bg-clip-text
+                  pb-3
+                  text-transparent
+                "
+              >
+                Dates
+              </span>
+            </h1>
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-sm
+                font-medium
+                leading-7
+                tracking-wide
+                text-blue-100/80
+                sm:text-base
+                md:text-lg
+              "
+            >
+              Important deadlines and key milestones for CYCRAI 2027.
+            </p>
+
+          </motion.div>
+        </div>
+
 
         {/* =====================================================
-            TIMELINE
+            LIGHT CONTENT AREA
         ====================================================== */}
 
-        <div className="relative max-w-5xl mx-auto">
+        <div
+          className="
+            relative
+            bg-gradient-to-b
+            from-white
+            via-[#F8FBFF]
+            to-[#F1F6FD]
+            px-5
+            py-14
+            sm:px-6
+            sm:py-16
+            lg:px-8
+            lg:py-20
+          "
+        >
+
+          {/* Soft background glow */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              left-0
+              top-20
+              h-[450px]
+              w-[450px]
+              rounded-full
+              bg-[#BFDBFE]/20
+              blur-[130px]
+            "
+          />
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              bottom-0
+              right-0
+              h-[500px]
+              w-[500px]
+              rounded-full
+              bg-[#DBEAFE]/30
+              blur-[140px]
+            "
+          />
+
 
           {/* =================================================
-              CENTRAL TIMELINE
+              CONTENT
           ================================================== */}
 
           <div
             className="
-              absolute
-              left-6
-              md:left-1/2
-              top-0
-              bottom-0
-              w-px
-              bg-gradient-to-b
-              from-transparent
-              via-cyan-400/50
-              to-transparent
-              md:-translate-x-1/2
+              relative
+              z-10
+              mx-auto
+              max-w-6xl
             "
-          />
+          >
 
-          {/* Timeline Items */}
+            
 
-          {dates.map((item, index) => {
-            const isLeft = index % 2 === 0;
 
-            return (
-              <motion.div
-                key={item.title}
-                initial={{
-                  opacity: 0,
-                  x: isLeft ? -50 : 50,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                  margin: "-80px",
-                }}
-                transition={{
-                  duration: 0.65,
-                  delay: index * 0.08,
-                }}
+            {/* =================================================
+                NEW DATE REPRESENTATION
+            ================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 25,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: "-60px",
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
+              "
+            >
+
+              {/* =================================================
+                  BOX HEADER
+              ================================================== */}
+
+              <div
                 className="
-                  relative
-                  grid
-                  md:grid-cols-2
-                  mb-20
-                  md:mb-28
-                  last:mb-0
+                  px-7
+                  pt-8
+                  sm:px-9
+                  sm:pt-10
+                  md:px-12
+                  md:pt-11
                 "
               >
 
-                {/* =================================================
-                    TIMELINE NODE
-                ================================================== */}
+                <h3
+                  className="
+                    text-2xl
+                    font-black
+                    uppercase
+                    tracking-[1px]
+                    text-[#075DB8]
+                    sm:text-3xl
+                  "
+                >
+                  Submission Timeline
+                </h3>
 
                 <div
                   className="
-                    absolute
-                    left-0
-                    md:left-1/2
-                    md:-translate-x-1/2
-                    top-0
-                    z-20
+                    mt-4
+                    h-[2px]
+                    w-full
+                    bg-[#E2E8F0]
+                  "
+                />
+
+              </div>
+
+
+              {/* =================================================
+                  TIMELINE
+              ================================================== */}
+
+              <div
+                className="
+                  px-7
+                  pb-8
+                  pt-2
+                  sm:px-9
+                  sm:pb-9
+                  md:px-12
+                  md:pb-10
+                "
+              >
+
+                <div
+                  className="
+                    relative
+                    pl-7
+                    sm:pl-8
                   "
                 >
+
+                  {/* Vertical line */}
+
                   <div
                     className="
-                      relative
-                      flex
-                      items-center
-                      justify-center
-                      w-12
-                      h-12
-                      rounded-full
-                      bg-[#020817]
-                      border
-                      border-cyan-400/60
-                      text-cyan-300
-                      text-lg
-                      shadow-[0_0_30px_rgba(34,211,238,0.2)]
+                      absolute
+                      bottom-0
+                      left-0
+                      top-0
+                      w-[3px]
+                      bg-[#DCE7F5]
                     "
-                  >
-                    {item.icon}
+                  />
 
-                    {/* Node Glow */}
 
-                    <div
-                      className="
-                        absolute
-                        inset-0
-                        rounded-full
-                        bg-cyan-400/10
-                        blur-md
-                        -z-10
-                      "
-                    />
-                  </div>
+                  {/* Date Rows */}
+
+                  {dates.map((item, index) => (
+
+                    <motion.div
+                      key={item.title}
+                      initial={{
+                        opacity: 0,
+                        x: -15,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
+                      transition={{
+                        duration: 0.45,
+                        delay: index * 0.06,
+                      }}
+                      className={`
+                        relative
+                        flex
+                        min-h-[76px]
+                        flex-col
+                        justify-center
+                        gap-2
+                        py-5
+                        sm:min-h-[78px]
+                        sm:flex-row
+                        sm:items-center
+                        sm:justify-between
+                        sm:gap-8
+                        ${
+                          index !== dates.length - 1
+                            ? "border-b border-dashed border-[#DCE3EB]"
+                            : ""
+                        }
+                      `}
+                    >
+
+                      {/* Timeline dot */}
+
+                      <div
+                        className="
+                          absolute
+                          -left-[35px]
+                          top-1/2
+                          h-3
+                          w-3
+                          -translate-y-1/2
+                          rounded-full
+                          bg-[#075DB8]
+                          ring-4
+                          ring-[#E8F1FF]
+                        "
+                      />
+
+
+                      {/* =================================================
+                          LEFT SIDE
+                      ================================================== */}
+
+                      <div
+                        className="
+                          flex
+                          min-w-0
+                          items-center
+                          gap-4
+                        "
+                      >
+
+                        {/* Icon */}
+
+                        <div
+                          className="
+                            hidden
+                            h-10
+                            w-10
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-xl
+                            bg-[#E8F1FF]
+                            text-[#075DB8]
+                            sm:flex
+                          "
+                        >
+                          {item.icon}
+                        </div>
+
+
+                        {/* Title */}
+
+                        <h4
+                          className="
+                            text-base
+                            font-bold
+                            leading-7
+                            text-[#172554]
+                            sm:text-lg
+                            md:text-xl
+                          "
+                        >
+                          {item.title}
+                        </h4>
+
+                      </div>
+
+
+                      {/* =================================================
+                          RIGHT SIDE
+                      ================================================== */}
+
+                      <div
+                        className="
+                          flex
+                          items-center
+                          justify-between
+                          gap-4
+                          pl-0
+                          sm:justify-end
+                          sm:pl-4
+                        "
+                      >
+
+                        {/* Badge */}
+
+                        <span
+                          className="
+                            rounded-full
+                            bg-[#EFF6FF]
+                            px-3
+                            py-1
+                            text-[9px]
+                            font-bold
+                            uppercase
+                            tracking-[1.5px]
+                            text-[#075DB8]
+                          "
+                        >
+                          {item.badge}
+                        </span>
+
+
+                        {/* Date */}
+
+                        <p
+                          className="
+                            whitespace-nowrap
+                            text-base
+                            font-bold
+                            leading-7
+                            text-[#075DB8]
+                            sm:text-lg
+                            md:text-xl
+                          "
+                        >
+                          {item.date}
+                        </p>
+
+                      </div>
+
+                    </motion.div>
+
+                  ))}
+
                 </div>
 
-                {/* =================================================
-                    LEFT SIDE
-                ================================================== */}
+              </div>
 
-                {isLeft ? (
+            </motion.div>
+
+
+            {/* =================================================
+                CONFERENCE HIGHLIGHT
+            ================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 25,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="mt-8"
+            >
+
+              <div
+                className="
+                  rounded-[16px]
+                  border
+                  border-[#BFDBFE]
+                  bg-[#F5F9FF]
+                  p-7
+                  sm:p-9
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    flex-col
+                    items-center
+                    gap-5
+                    text-center
+                    sm:flex-row
+                    sm:text-left
+                  "
+                >
+
                   <div
                     className="
-                      md:pr-20
-                      pl-20
-                      md:pl-0
-                      text-left
-                      md:text-right
+                      flex
+                      h-14
+                      w-14
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      bg-[#075DB8]
+                      text-xl
+                      text-white
                     "
                   >
+                    <FaMicrophoneAlt />
+                  </div>
 
-                    {/* Badge */}
 
-                    <span
-                      className="
-                        inline-flex
-                        px-3
-                        py-1
-                        rounded-full
-                        border
-                        border-cyan-400/20
-                        bg-cyan-500/10
-                        text-cyan-300
-                        text-[11px]
-                        tracking-[2px]
-                        font-semibold
-                      "
-                    >
-                      {item.badge}
-                    </span>
-
-                    {/* Date */}
+                  <div className="flex-1">
 
                     <p
                       className="
-                        mt-4
-                        text-xl
-                        md:text-2xl
+                        text-xs
                         font-bold
-                        text-cyan-300
+                        uppercase
+                        tracking-[2px]
+                        text-[#075DB8]
                       "
                     >
-                      {item.date}
+                      Conference Event
                     </p>
-
-                    {/* Title */}
 
                     <h3
                       className="
-                        mt-2
+                        mt-1
                         text-2xl
-                        md:text-3xl
                         font-bold
-                        text-white
-                        leading-tight
+                        text-[#172554]
+                        md:text-3xl
                       "
                     >
-                      {item.title}
+                      CYCRAI 2027
                     </h3>
-
-                    {/* Divider */}
-
-                    <div
-                      className="
-                        mt-5
-                        h-[2px]
-                        w-16
-                        md:ml-auto
-                        bg-gradient-to-r
-                        from-cyan-400
-                        to-blue-500
-                      "
-                    />
-
-                  </div>
-                ) : (
-                  <div className="hidden md:block" />
-                )}
-
-                {/* =================================================
-                    RIGHT SIDE
-                ================================================== */}
-
-                {!isLeft ? (
-                  <div
-                    className="
-                      md:pl-20
-                      pl-20
-                      text-left
-                    "
-                  >
-
-                    {/* Badge */}
-
-                    <span
-                      className="
-                        inline-flex
-                        px-3
-                        py-1
-                        rounded-full
-                        border
-                        border-cyan-400/20
-                        bg-cyan-500/10
-                        text-cyan-300
-                        text-[11px]
-                        tracking-[2px]
-                        font-semibold
-                      "
-                    >
-                      {item.badge}
-                    </span>
-
-                    {/* Date */}
 
                     <p
                       className="
-                        mt-4
-                        text-xl
-                        md:text-2xl
-                        font-bold
-                        text-cyan-300
+                        mt-2
+                        text-base
+                        font-semibold
+                        leading-7
+                        text-[#334155]
                       "
                     >
-                      {item.date}
+                      29–30 September 2027
                     </p>
 
-                    {/* Title */}
-
-                    <h3
-                      className="
-                        mt-2
-                        text-2xl
-                        md:text-3xl
-                        font-bold
-                        text-white
-                        leading-tight
-                      "
-                    >
-                      {item.title}
-                    </h3>
-
-                    {/* Divider */}
-
-                    <div
-                      className="
-                        mt-5
-                        h-[2px]
-                        w-16
-                        bg-gradient-to-r
-                        from-cyan-400
-                        to-blue-500
-                      "
-                    />
-
                   </div>
-                ) : (
-                  <div className="hidden md:block" />
-                )}
-              </motion.div>
-            );
-          })}
+
+
+                  <div
+                    className="
+                      rounded-full
+                      bg-[#E8F1FF]
+                      px-5
+                      py-2.5
+                      text-sm
+                      font-semibold
+                      text-[#075DB8]
+                    "
+                  >
+                    New Town, Kolkata
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+
         </div>
-        
-      </div>
-       
-    </section>
-    <Footer />
+
+      </section>
+
+
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
+
+      <Footer />
     </>
   );
 }

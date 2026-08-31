@@ -1,237 +1,343 @@
-
-
 import Footer from "../components/Footer.jsx";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
   MapPin,
   University,
-  Sparkles,
 } from "lucide-react";
 
 import uem from "../assets/image/uem.jpeg";
 
 export default function Venue() {
   return (
-    <div className="bg-[#020817] text-white overflow-hidden">
+    <main className="min-h-screen overflow-hidden bg-[#F7FAFF] text-[#172554]">
 
-      {/* =====================================================
-          VENUE LANDING SECTION
-      ====================================================== */}
+      {/* =========================================================
+          HERO / PAGE HEADING
+      ========================================================= */}
 
       <section
         className="
           relative
           overflow-hidden
-          bg-[#020817]
-          min-h-screen
-          mt-1
+          bg-[#07152F]
+          px-5
+          pb-20
+          pt-14
+          sm:px-6
+          sm:pb-24
+          sm:pt-16
+          lg:px-8
+          lg:pb-28
+          lg:pt-20
         "
       >
 
-        {/* =================================================
-            BACKGROUND GRID
-        ================================================== */}
-
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* =================================================
-            CYAN GLOW
-        ================================================== */}
+        {/* =====================================================
+            SOFT BLUE BACKGROUND
+        ====================================================== */}
 
         <div
           className="
+            pointer-events-none
             absolute
+            -left-40
             -top-40
-            left-0
-            w-[500px]
-            h-[500px]
-            bg-cyan-500/20
-            blur-[160px]
+            h-[450px]
+            w-[450px]
             rounded-full
+            bg-blue-500/10
+            blur-[140px]
           "
         />
-
-        {/* =================================================
-            BLUE GLOW
-        ================================================== */}
 
         <div
           className="
+            pointer-events-none
             absolute
-            bottom-0
-            right-0
-            w-[500px]
+            -bottom-48
+            -right-40
             h-[500px]
-            bg-blue-600/20
-            blur-[170px]
+            w-[500px]
             rounded-full
+            bg-sky-400/10
+            blur-[150px]
           "
         />
 
 
-        {/* =================================================
-            MAIN CONTAINER
-        ================================================== */}
+        {/* =====================================================
+            HERO CONTENT
+        ====================================================== */}
 
-        <div className="relative max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-5xl
+            text-center
+          "
+        >
 
-
-          {/* =================================================
-              VENUE HERO
-          ================================================== */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center pt-16 md:pt-20"
+          <h1
+            className="
+              text-5xl
+              font-black
+              leading-tight
+              tracking-tight
+              text-white
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+            "
           >
-
-            {/* Badge */}
+            Conference
 
             <span
               className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-cyan-400/30
-                bg-cyan-500/10
-                px-5
-                py-2
-                text-cyan-300
-                text-sm
-                tracking-[3px]
-                uppercase
+                block
+                bg-gradient-to-r
+                from-[#93C5FD]
+                via-[#60A5FA]
+                to-[#BFDBFE]
+                bg-clip-text
+                pb-3
+                text-transparent
               "
             >
-              <Sparkles size={16} />
-
-              Conference Venue
+              Venue
             </span>
+          </h1>
+
+          <p
+            className="
+              mx-auto
+              mt-6
+              max-w-3xl
+              text-sm
+              font-medium
+              leading-7
+              tracking-wide
+              text-blue-100/80
+              sm:text-base
+              md:text-lg
+            "
+          >
+            Discover the host institution and conference venue
+            for CYCRAI 2027.
+          </p>
+
+        </motion.div>
+
+      </section>
 
 
-            {/* Main Heading */}
+      {/* =========================================================
+          VENUE CONTENT
+      ========================================================= */}
 
-            <h1
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-gradient-to-b
+          from-white
+          via-[#F8FBFF]
+          to-[#F1F6FD]
+          px-5
+          py-16
+          sm:px-6
+          sm:py-20
+          lg:px-8
+          lg:py-24
+        "
+      >
+
+        {/* =====================================================
+            SOFT BACKGROUND EFFECTS
+        ====================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-20
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#BFDBFE]/20
+            blur-[140px]
+          "
+        />
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-40
+            -right-40
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-[#DBEAFE]/30
+            blur-[140px]
+          "
+        />
+
+
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-7xl
+          "
+        >
+
+          {/* =====================================================
+              HOST INSTITUTION
+          ====================================================== */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              mb-14
+              text-center
+              md:mb-16
+            "
+          >
+
+            {/* Icon */}
+
+            <div
               className="
-                mt-4
-                text-5xl
-                md:text-7xl
+                mx-auto
+                flex
+                h-14
+                w-14
+                items-center
+                justify-center
+                rounded-2xl
+                bg-[#E8F1FF]
+                text-[#075DB8]
+              "
+            >
+              <University size={26} />
+            </div>
+
+
+            {/* Institution Name */}
+
+            <h2
+              className="
+                mx-auto
+                mt-6
+                max-w-5xl
+                text-2xl
                 font-black
                 leading-tight
-                text-white
+                text-[#172554]
+                sm:text-3xl
+                md:text-4xl
               "
             >
-              Conference
+              Institute of Engineering &amp; Management Kolkata,
 
               <span
                 className="
+                  mt-2
                   block
-                  bg-gradient-to-r
-                  from-cyan-300
-                  via-sky-400
-                  to-blue-500
-                  bg-clip-text
-                  text-transparent
+                  text-[#075DB8]
                 "
               >
-                Venue
+                University of Engineering and Management Kolkata
               </span>
-            </h1>
+            </h2>
+
+
+            {/* Description */}
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                font-semibold
+                leading-8
+                text-[#334155]
+                md:text-lg
+              "
+            >
+              A technology-focused academic environment providing
+              the foundation for CYCRAI 2027 to connect research,
+              innovation, cybersecurity and responsible artificial
+              intelligence.
+            </p>
 
           </motion.div>
 
 
-          {/* =================================================
-              HOST INSTITUTION
-              PART OF SAME VENUE SECTION
-          ================================================== */}
+          {/* =====================================================
+              VENUE MAIN BOX
+          ====================================================== */}
 
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.15,
-              duration: 0.8,
+            initial={{
+              opacity: 0,
+              y: 25,
             }}
-            className="mt-20"
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              overflow-hidden
+              rounded-[16px]
+              border
+              border-[#DCE3EB]
+              border-t-4
+              border-t-[#075DB8]
+              bg-white
+            "
           >
-
-            {/* =================================================
-                INSTITUTION HEADER
-            ================================================== */}
-
-            <div className="text-center mb-16">
-
-              <h2
-                className="
-                  text-2xl
-                  md:text-4xl
-                  font-black
-                  text-white
-                  leading-tight
-                "
-              >
-                Institute of Engineering &amp; Management Kolkata,
-
-                <span
-                  className="
-                    block
-                    mt-3
-                    pb-1
-                    leading-normal
-                    bg-gradient-to-r
-                    from-cyan-300
-                    via-sky-400
-                    to-blue-500
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  University of Engineering and Management Kolkata
-                </span>
-              </h2>
-
-
-              <p
-                className="
-                  mt-8
-                  max-w-3xl
-                  mx-auto
-                  text-slate-400
-                  text-lg
-                  leading-9
-                "
-              >
-                A technology-focused academic environment providing the
-                foundation for CYCRAI 2027 to connect research, innovation,
-                cybersecurity and responsible artificial intelligence.
-              </p>
-
-            </div>
-
-
-            {/* =================================================
-                VENUE INFORMATION
-            ================================================== */}
 
             <div
               className="
                 grid
                 lg:grid-cols-2
-                gap-12
-                lg:gap-16
-                items-center
               "
             >
 
@@ -239,155 +345,149 @@ export default function Venue() {
                   CAMPUS IMAGE
               ================================================== */}
 
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  x: -40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.7,
-                }}
+              <div
                 className="
-                  relative
-                  rounded-[30px]
-                  border
-                  border-cyan-400/20
-                  bg-white/5
-                  backdrop-blur-2xl
-                  p-3
-                  shadow-[0_0_50px_rgba(34,211,238,.10)]
-                  overflow-hidden
+                  p-4
+                  sm:p-5
+                  lg:p-6
                 "
               >
 
-                <div className="overflow-hidden rounded-[22px]">
+                <div
+                  className="
+                    h-full
+                    overflow-hidden
+                    rounded-[12px]
+                    bg-[#EAF3FF]
+                  "
+                >
 
                   <img
                     src={uem}
                     alt="Institute of Engineering and Management campus"
                     className="
-                      w-full
                       aspect-[4/3]
+                      h-full
+                      w-full
                       object-cover
-                      transition-transform
-                      duration-700
-                      hover:scale-[1.04]
                     "
                   />
 
                 </div>
 
-              </motion.div>
+              </div>
 
 
               {/* =================================================
-                  VENUE CONTENT
+                  VENUE INFORMATION
               ================================================== */}
 
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  x: 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.7,
-                }}
+              <div
+                className="
+                  flex
+                  flex-col
+                  justify-center
+                  px-7
+                  pb-8
+                  pt-2
+                  sm:px-9
+                  sm:pb-10
+                  lg:px-10
+                  lg:py-10
+                "
               >
 
-                {/* LOCATION */}
+                {/* =================================================
+                    LOCATION
+                ================================================== */}
 
                 <div
                   className="
                     inline-flex
+                    w-fit
                     items-center
                     gap-3
+                    rounded-full
+                    bg-[#EFF6FF]
                     px-5
                     py-3
-                    rounded-full
-                    border
-                    border-cyan-400/20
-                    bg-cyan-500/10
-                    text-cyan-300
-                    font-semibold
+                    text-sm
+                    font-bold
+                    text-[#075DB8]
                   "
                 >
 
                   <MapPin size={18} />
 
-                  Newtown, Kolkata, West Bengal, India
+                  <span>
+                    Newtown, Kolkata, West Bengal, India
+                  </span>
 
                 </div>
 
 
-                {/* TITLE */}
+                {/* =================================================
+                    TITLE
+                ================================================== */}
 
                 <h3
                   className="
-                    mt-8
-                    text-2xl
-                  md:text-4xl
+                    mt-7
+                    text-3xl
                     font-black
-                    text-white
                     leading-tight
+                    text-[#172554]
+                    md:text-4xl
                   "
                 >
-
                   Welcome to the
 
                   <span
                     className="
+                      mt-2
                       block
-                      text-cyan-400
+                      text-[#075DB8]
                     "
                   >
                     Host Institution
                   </span>
-
                 </h3>
 
 
-                {/* DESCRIPTION */}
+                {/* =================================================
+                    DESCRIPTION
+                ================================================== */}
 
                 <p
                   className="
-                    mt-7
-                    text-slate-400
-                    text-lg
+                    mt-6
+                    text-base
+                    font-semibold
                     leading-8
+                    text-[#334155]
+                    md:text-lg
                   "
                 >
                   The Institute of Engineering &amp; Management, Kolkata,
-                  provides an academic environment focused on engineering,
-                  technology, research, innovation and professional development.
+                  provides an academic environment focused on
+                  engineering, technology, research, innovation and
+                  professional development.
                 </p>
-
 
                 <p
                   className="
                     mt-5
-                    text-slate-500
-                    text-lg
+                    text-base
+                    font-semibold
                     leading-8
+                    text-[#334155]
+                    md:text-lg
                   "
                 >
-                  Located in New Town, the campus provides a suitable setting
-                  for bringing together researchers, academicians, students and
-                  industry professionals for an international conference such
-                  as CYCRAI 2027.
+                  Located in New Town, the campus provides a suitable
+                  setting for bringing together researchers,
+                  academicians, students and industry professionals
+                  for an international conference such as CYCRAI 2027.
                 </p>
 
 
@@ -397,52 +497,48 @@ export default function Venue() {
 
                 <div
                   className="
-                    mt-9
+                    mt-8
                     flex
-                    flex-wrap
+                    flex-col
                     gap-4
-                    mb-10
+                    sm:flex-row
+                    sm:flex-wrap
                   "
                 >
 
-                  {/* GOOGLE MAPS */}
+                  {/* Google Maps */}
 
                   <a
                     href="https://maps.app.goo.gl/VFN2t1qFxYAxbgB57"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      group
                       inline-flex
                       items-center
+                      justify-center
                       gap-3
                       rounded-full
-                      bg-cyan-400
+                      bg-[#075DB8]
                       px-7
                       py-4
+                      text-sm
                       font-bold
-                      text-slate-950
-                      transition-all
+                      text-white
+                      transition-colors
                       duration-300
-                      hover:scale-105
-                      hover:shadow-[0_0_40px_rgba(34,211,238,.45)]
+                      hover:bg-[#064F9C]
+                      sm:text-base
                     "
                   >
 
                     View on Google Maps
 
-                    <ArrowRight
-                      size={19}
-                      className="
-                        group-hover:translate-x-1
-                        transition-transform
-                      "
-                    />
+                    <ArrowRight size={19} />
 
                   </a>
 
 
-                  {/* IEM WEBSITE */}
+                  {/* IEM Website */}
 
                   <a
                     href="https://iem.edu.in/"
@@ -451,20 +547,22 @@ export default function Venue() {
                     className="
                       inline-flex
                       items-center
+                      justify-center
                       gap-3
                       rounded-full
                       border
-                      border-cyan-400/40
-                      bg-white/5
-                      backdrop-blur-xl
+                      border-[#BFD5F0]
+                      bg-[#F5F9FF]
                       px-7
                       py-4
-                      font-semibold
-                      text-white
-                      transition-all
+                      text-sm
+                      font-bold
+                      text-[#075DB8]
+                      transition-colors
                       duration-300
-                      hover:border-cyan-400
-                      hover:bg-cyan-500/10
+                      hover:border-[#075DB8]
+                      hover:bg-[#EFF6FF]
+                      sm:text-base
                     "
                   >
 
@@ -476,29 +574,246 @@ export default function Venue() {
 
                 </div>
 
-              </motion.div>
+              </div>
 
             </div>
 
-
-            {/* =================================================
-                BOTTOM LOCATION INFORMATION
-            ================================================== */}
-
-            
           </motion.div>
+
+
+          {/* =====================================================
+              VENUE INFORMATION STRIP
+          ====================================================== */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="mt-10"
+          >
+
+            <div
+              className="
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
+              "
+            >
+
+              <div
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  gap-4
+                  px-6
+                  py-7
+                  text-center
+                  sm:flex-row
+                  sm:text-left
+                  md:px-8
+                "
+              >
+
+                {/* Icon */}
+
+                <div
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-[#E8F1FF]
+                    text-[#075DB8]
+                  "
+                >
+                  <MapPin size={22} />
+                </div>
+
+
+                {/* Information */}
+
+                <div>
+
+                  <p
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-[2px]
+                      text-[#64748B]
+                    "
+                  >
+                    Conference Venue
+                  </p>
+
+                  <p
+                    className="
+                      mt-1
+                      text-base
+                      font-bold
+                      leading-7
+                      text-[#172554]
+                      md:text-lg
+                    "
+                  >
+                    Institute of Engineering &amp; Management Kolkata,
+                    New Town, Kolkata, West Bengal, India
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
+
+
+          {/* =====================================================
+              VENUE HIGHLIGHTS
+          ====================================================== */}
+
+          <div
+            className="
+              mt-10
+              grid
+              gap-6
+              md:grid-cols-3
+            "
+          >
+
+            {/* Academic Environment */}
+
+            <VenueInfoBox
+              title="Academic Environment"
+              text="A technology-focused academic setting supporting research, innovation and professional development."
+            />
+
+
+            {/* Research & Innovation */}
+
+            <VenueInfoBox
+              title="Research & Innovation"
+              text="An environment designed to bring together researchers, academicians, students and industry professionals."
+            />
+
+
+            {/* Conference Setting */}
+
+            <VenueInfoBox
+              title="Conference Setting"
+              text="A suitable setting for meaningful academic interaction and international collaboration at CYCRAI 2027."
+            />
+
+          </div>
 
         </div>
 
       </section>
 
 
-      {/* =====================================================
+      {/* =========================================================
           FOOTER
-      ====================================================== */}
+      ========================================================= */}
 
       <Footer />
 
-    </div>
+    </main>
+  );
+}
+
+
+/* =============================================================
+   VENUE INFORMATION BOX
+============================================================= */
+
+function VenueInfoBox({
+  title,
+  text,
+}) {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+      className="
+        overflow-hidden
+        rounded-[16px]
+        border
+        border-[#DCE3EB]
+        border-t-4
+        border-t-[#075DB8]
+        bg-white
+      "
+    >
+
+      <div className="p-7">
+
+        <h3
+          className="
+            text-xl
+            font-black
+            uppercase
+            tracking-[0.5px]
+            text-[#075DB8]
+          "
+        >
+          {title}
+        </h3>
+
+        <div
+          className="
+            mt-4
+            h-[2px]
+            w-10
+            bg-[#F59E0B]
+          "
+        />
+
+        <p
+          className="
+            mt-5
+            text-base
+            font-semibold
+            leading-8
+            text-[#334155]
+          "
+        >
+          {text}
+        </p>
+
+      </div>
+
+    </motion.div>
   );
 }

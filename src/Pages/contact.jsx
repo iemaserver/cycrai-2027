@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -6,17 +5,19 @@ import {
   MapPin,
   MessageCircle,
   ShieldCheck,
-  Globe,
   Clock3,
   FileText,
   Users,
   Plane,
-  Sparkles,
 } from "lucide-react";
 
 import Footer from "../components/Footer";
 
 export default function Contact() {
+  // =========================================================
+  // SUPPORT AREAS
+  // =========================================================
+
   const supportItems = [
     {
       icon: FileText,
@@ -31,7 +32,7 @@ export default function Contact() {
         "Get guidance regarding author registration, participation and conference formalities.",
     },
     {
-      icon: Globe,
+      icon: MessageCircle,
       title: "Conference Information",
       description:
         "Find information about the conference program, participation and international delegates.",
@@ -45,519 +46,1320 @@ export default function Contact() {
   ];
 
   return (
-    <>
+    <main className="min-h-screen overflow-hidden bg-[#F7FAFF] text-[#172554]">
+
       {/* =========================================================
-          HERO / CONTACT HEADER
-      ========================================================== */}
+          HERO / PAGE HEADING
+      ========================================================= */}
+
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-[#07152F]
+          px-5
+          pb-20
+          pt-14
+          sm:px-6
+          sm:pb-24
+          sm:pt-16
+          lg:px-8
+          lg:pb-28
+          lg:pt-20
+        "
+      >
+
+        {/* =====================================================
+            SOFT BLUE BACKGROUND
+        ====================================================== */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            -top-40
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-blue-500/10
+            blur-[140px]
+          "
+        />
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-48
+            -right-40
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-sky-400/10
+            blur-[150px]
+          "
+        />
+
+
+        {/* =====================================================
+            HERO CONTENT
+        ====================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-5xl
+            text-center
+          "
+        >
+
+          <h1
+            className="
+              text-5xl
+              font-black
+              leading-tight
+              tracking-tight
+              text-white
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+            "
+          >
+            Contact
+
+            <span
+              className="
+                block
+                bg-gradient-to-r
+                from-[#93C5FD]
+                via-[#60A5FA]
+                to-[#BFDBFE]
+                bg-clip-text
+                pb-3
+                text-transparent
+              "
+            >
+              Information
+            </span>
+          </h1>
+
+          <p
+            className="
+              mx-auto
+              mt-6
+              max-w-3xl
+              text-sm
+              font-medium
+              leading-7
+              tracking-wide
+              text-blue-100/80
+              sm:text-base
+              md:text-lg
+            "
+          >
+            Get in touch with the CYCRAI 2027 organizing committee
+            for conference-related assistance and information.
+          </p>
+
+        </motion.div>
+
+      </section>
+
 
       {/* =========================================================
           CONTACT INFORMATION
-      ========================================================== */}
+      ========================================================= */}
 
-      <section className="relative pt-6 pb-24 overflow-hidden bg-gradient-to-b from-[#020817] via-[#071326] to-[#020817]">
-        {/* Background Grid */}
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-gradient-to-b
+          from-white
+          via-[#F8FBFF]
+          to-[#F1F6FD]
+          px-5
+          py-16
+          sm:px-6
+          sm:py-20
+          lg:px-8
+          lg:py-24
+        "
+      >
+
+        {/* =====================================================
+            SOFT BACKGROUND
+        ====================================================== */}
 
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-20
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#BFDBFE]/20
+            blur-[140px]
+          "
         />
 
-        {/* Glows */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-40
+            -right-40
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-[#DBEAFE]/30
+            blur-[140px]
+          "
+        />
 
-        <div className="absolute left-0 top-20 w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[170px]" />
 
-        <div className="absolute right-0 bottom-0 w-[450px] h-[450px] rounded-full bg-blue-600/10 blur-[170px]" />
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-7xl
+          "
+        >
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          {/* Section Heading */}
+          {/* =====================================================
+              INTRO
+          ====================================================== */}
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-20"
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              mb-14
+              text-center
+            "
           >
-            <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-              Conference Secretariat
-            </span>
 
-            <h2 className="mt-8 text-5xl md:text-6xl font-black text-white">
-              Contact
-              <span className="block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-                Information
-              </span>
-            </h2>
-
-            <p className="mt-8 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
-              Reach out to the CYCRAI 2027 organizing committee for conference
-              related assistance and information.
-            </p>
-          </motion.div>
-
-          {/* Main Contact Grid */}
-
-          <div className="grid lg:grid-cols-2 gap-10">
-            {/* =================================================
-                LEFT — CONTACT DETAILS
-            ================================================== */}
-
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+            <div
               className="
-                relative
-                overflow-hidden
-                rounded-[35px]
-                border
-                border-cyan-400/20
-                bg-white/5
-                backdrop-blur-2xl
-                p-10
+                mx-auto
+                flex
+                h-14
+                w-14
+                items-center
+                justify-center
+                rounded-2xl
+                bg-[#E8F1FF]
+                text-[#075DB8]
               "
             >
-              {/* Glow */}
+              <MessageCircle size={27} />
+            </div>
 
-              <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[120px] rounded-full" />
 
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                  <MessageCircle
-                    size={30}
-                    className="text-cyan-300"
-                  />
+            <h2
+              className="
+                mt-6
+                text-3xl
+                font-black
+                leading-tight
+                text-[#172554]
+                sm:text-4xl
+                md:text-5xl
+              "
+            >
+              Get in Touch
+            </h2>
+
+
+            {/* Orange accent */}
+
+            <div
+              className="
+                mx-auto
+                mt-5
+                h-[2px]
+                w-12
+                bg-[#F59E0B]
+              "
+            />
+
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                font-semibold
+                leading-8
+                text-[#334155]
+                md:text-lg
+              "
+            >
+              Reach out to the CYCRAI 2027 organizing committee
+              for conference-related assistance and information.
+            </p>
+
+          </motion.div>
+
+
+          {/* =====================================================
+              MAIN CONTACT GRID
+          ====================================================== */}
+
+          <div
+            className="
+              grid
+              gap-8
+              lg:grid-cols-2
+            "
+          >
+
+            {/* ===================================================
+                LEFT — CONTACT DETAILS
+            ==================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -30,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
+              "
+            >
+
+              {/* =================================================
+                  CARD HEADER
+              ================================================== */}
+
+              <div
+                className="
+                  px-7
+                  pt-8
+                  sm:px-9
+                  sm:pt-9
+                  lg:px-10
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    h-14
+                    w-14
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    bg-[#E8F1FF]
+                    text-[#075DB8]
+                  "
+                >
+                  <MessageCircle size={28} />
                 </div>
 
-                <h3 className="mt-8 text-3xl font-bold text-white">
+
+                <h3
+                  className="
+                    mt-6
+                    text-3xl
+                    font-black
+                    text-[#172554]
+                  "
+                >
                   CYCRAI 2027
                 </h3>
 
-                <p className="mt-5 text-slate-400 text-lg leading-8">
-                  Institute of Engineering & Management, Kolkata
-                  welcomes researchers, academicians, industry professionals,
-                  students and innovators from around the world to CYCRAI 2027.
+                <div
+                  className="
+                    mt-4
+                    h-[2px]
+                    w-12
+                    bg-[#F59E0B]
+                  "
+                />
+
+                <p
+                  className="
+                    mt-5
+                    text-base
+                    font-semibold
+                    leading-8
+                    text-[#334155]
+                    md:text-lg
+                  "
+                >
+                  Institute of Engineering &amp; Management, Kolkata
+                  welcomes researchers, academicians, industry
+                  professionals, students and innovators from around
+                  the world to CYCRAI 2027.
                 </p>
 
-                {/* Email */}
+              </div>
 
-                <div className="mt-10">
+
+              {/* =================================================
+                  EMAIL
+              ================================================== */}
+
+              <div className="px-7 pb-7 pt-7 sm:px-9 lg:px-10">
+
+                <div
+                  className="
+                    rounded-[14px]
+                    border
+                    border-[#DCE3EB]
+                    bg-[#F7FAFF]
+                    p-5
+                  "
+                >
+
                   <div
                     className="
-                      group
                       flex
                       items-start
-                      gap-5
-                      rounded-3xl
-                      border
-                      border-cyan-400/15
-                      bg-black/20
-                      p-6
-                      transition-all
-                      duration-300
-                      hover:border-cyan-400/40
-                      hover:bg-cyan-500/5
+                      gap-4
                     "
                   >
-                    <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center flex-shrink-0">
-                      <Mail size={25} className="text-cyan-300" />
+
+                    <div
+                      className="
+                        flex
+                        h-12
+                        w-12
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        bg-[#E8F1FF]
+                        text-[#075DB8]
+                      "
+                    >
+                      <Mail size={23} />
                     </div>
 
-                    <div>
-                      <p className="text-xs uppercase tracking-[3px] text-cyan-300 font-semibold">
+
+                    <div className="min-w-0">
+
+                      <p
+                        className="
+                          text-xs
+                          font-bold
+                          uppercase
+                          tracking-[2px]
+                          text-[#075DB8]
+                        "
+                      >
                         Email Support
                       </p>
 
                       <a
                         href="mailto:cycrai@iem.edu.in"
-                        className="mt-2 block text-lg text-white hover:text-cyan-300 transition-colors break-all"
+                        className="
+                          mt-2
+                          block
+                          break-all
+                          text-base
+                          font-bold
+                          text-[#172554]
+                          transition-colors
+                          duration-200
+                          hover:text-[#075DB8]
+                          sm:text-lg
+                        "
                       >
                         cycrai@iem.edu.in
                       </a>
 
-                      <p className="mt-2 text-sm text-slate-500">
+                      <p
+                        className="
+                          mt-2
+                          text-sm
+                          font-medium
+                          text-[#64748B]
+                        "
+                      >
                         Conference correspondence
                       </p>
+
                     </div>
+
                   </div>
+
                 </div>
 
-                {/* Venue */}
 
-                <div className="mt-5">
+                {/* =================================================
+                    VENUE
+                ================================================== */}
+
+                <div
+                  className="
+                    mt-5
+                    rounded-[14px]
+                    border
+                    border-[#DCE3EB]
+                    bg-[#F7FAFF]
+                    p-5
+                  "
+                >
+
                   <div
                     className="
-                      group
                       flex
                       items-start
-                      gap-5
-                      rounded-3xl
-                      border
-                      border-cyan-400/15
-                      bg-black/20
-                      p-6
-                      transition-all
-                      duration-300
-                      hover:border-cyan-400/40
-                      hover:bg-cyan-500/5
+                      gap-4
                     "
                   >
-                    <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center flex-shrink-0">
-                      <MapPin size={25} className="text-cyan-300" />
+
+                    <div
+                      className="
+                        flex
+                        h-12
+                        w-12
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        bg-[#E8F1FF]
+                        text-[#075DB8]
+                      "
+                    >
+                      <MapPin size={23} />
                     </div>
 
+
                     <div>
-                      <p className="text-xs uppercase tracking-[3px] text-cyan-300 font-semibold">
+
+                      <p
+                        className="
+                          text-xs
+                          font-bold
+                          uppercase
+                          tracking-[2px]
+                          text-[#075DB8]
+                        "
+                      >
                         Conference Venue
                       </p>
 
-                      <p className="mt-2 text-lg text-white">
-                        Institute of Engineering & Management, Kolkata
+                      <p
+                        className="
+                          mt-2
+                          text-base
+                          font-bold
+                          leading-7
+                          text-[#172554]
+                          sm:text-lg
+                        "
+                      >
+                        Institute of Engineering &amp; Management,
+                        Kolkata
                       </p>
 
-                      <p className="mt-1 text-slate-400 leading-7">
+                      <p
+                        className="
+                          mt-1
+                          text-sm
+                          font-semibold
+                          leading-7
+                          text-[#64748B]
+                          sm:text-base
+                        "
+                      >
                         University Campus, Newtown,
                         <br />
                         Kolkata, West Bengal, India
                       </p>
+
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
+
             </motion.div>
 
-            {/* =================================================
+
+            {/* ===================================================
                 RIGHT — SUPPORT
-            ================================================== */}
+            ==================================================== */}
 
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              initial={{
+                opacity: 0,
+                x: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
               className="
-                relative
                 overflow-hidden
-                rounded-[35px]
+                rounded-[16px]
                 border
-                border-cyan-400/20
-                bg-gradient-to-br
-                from-cyan-500/10
-                via-[#071326]
-                to-[#020817]
-                p-10
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
               "
             >
-              <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 blur-[120px] rounded-full" />
 
-              <div className="relative z-10">
-                {/* Badge */}
+              {/* =================================================
+                  HEADER
+              ================================================== */}
 
-                <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-semibold">
-                  <ShieldCheck size={18} />
-                  Conference Support
+              <div
+                className="
+                  px-7
+                  pt-8
+                  sm:px-9
+                  sm:pt-9
+                  lg:px-10
+                "
+              >
+
+                <div
+                  className="
+                    flex
+                    h-14
+                    w-14
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    bg-[#E8F1FF]
+                    text-[#075DB8]
+                  "
+                >
+                  <ShieldCheck size={27} />
                 </div>
 
-                <h3 className="mt-8 text-3xl md:text-4xl font-bold text-white">
+
+                <h3
+                  className="
+                    mt-6
+                    text-3xl
+                    font-black
+                    text-[#172554]
+                    md:text-4xl
+                  "
+                >
                   Need Assistance?
                 </h3>
 
-                <p className="mt-5 text-slate-400 leading-8 text-lg">
-                  Our organizing committee is available to assist with paper
-                  submission, registration, accommodation, presentation
-                  guidelines and other conference-related queries.
+                <div
+                  className="
+                    mt-4
+                    h-[2px]
+                    w-12
+                    bg-[#F59E0B]
+                  "
+                />
+
+                <p
+                  className="
+                    mt-5
+                    text-base
+                    font-semibold
+                    leading-8
+                    text-[#334155]
+                    md:text-lg
+                  "
+                >
+                  Our organizing committee is available to assist
+                  with paper submission, registration, accommodation,
+                  presentation guidelines and other
+                  conference-related queries.
                 </p>
 
-                {/* Support Items */}
+              </div>
 
-                <div className="mt-10 space-y-4">
-                  {[
-                    "Paper Submission Assistance",
-                    "Registration Support",
-                    "Presentation & Schedule Queries",
-                    "Accommodation & Travel Information",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-4 text-slate-300"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,.6)]" />
 
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
+              {/* =================================================
+                  SUPPORT LIST
+              ================================================== */}
 
-                {/* Email CTA */}
+              <div
+                className="
+                  space-y-3
+                  px-7
+                  pt-7
+                  sm:px-9
+                  lg:px-10
+                "
+              >
 
-                <div className="mt-10 flex flex-wrap gap-4">
-                  <a
-                    href="mailto:cycrai@iem.edu.in"
+                {[
+                  "Paper Submission Assistance",
+                  "Registration Support",
+                  "Presentation & Schedule Queries",
+                  "Accommodation & Travel Information",
+                ].map((item) => (
+
+                  <div
+                    key={item}
                     className="
-                      group
-                      inline-flex
+                      flex
                       items-center
-                      gap-3
-                      rounded-full
-                      bg-cyan-400
-                      px-8
+                      gap-4
+                      rounded-[12px]
+                      border
+                      border-[#E2E8F0]
+                      bg-[#F7FAFF]
+                      px-5
                       py-4
-                      font-bold
-                      text-slate-900
-                      transition-all
-                      duration-300
-                      hover:scale-105
-                      hover:shadow-[0_0_40px_rgba(34,211,238,.35)]
                     "
                   >
-                    Email Us
 
-                    <ArrowRight
-                      size={20}
-                      className="group-hover:translate-x-1 transition-transform"
+                    <div
+                      className="
+                        h-2.5
+                        w-2.5
+                        shrink-0
+                        rounded-full
+                        bg-[#075DB8]
+                      "
                     />
-                  </a>
-                </div>
 
-                {/* Availability */}
+                    <span
+                      className="
+                        text-sm
+                        font-bold
+                        leading-6
+                        text-[#334155]
+                        sm:text-base
+                      "
+                    >
+                      {item}
+                    </span>
 
-                <div className="mt-10 rounded-3xl border border-cyan-400/20 bg-black/20 p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                      <Clock3
-                        size={22}
-                        className="text-cyan-300"
-                      />
+                  </div>
+
+                ))}
+
+              </div>
+
+
+              {/* =================================================
+                  EMAIL BUTTON
+              ================================================== */}
+
+              <div
+                className="
+                  px-7
+                  pb-7
+                  pt-7
+                  sm:px-9
+                  lg:px-10
+                "
+              >
+
+                <a
+                  href="mailto:cycrai@iem.edu.in"
+                  className="
+                    inline-flex
+                    w-full
+                    items-center
+                    justify-center
+                    gap-3
+                    rounded-full
+                    bg-[#075DB8]
+                    px-8
+                    py-4
+                    text-sm
+                    font-bold
+                    text-white
+                    transition-colors
+                    duration-300
+                    hover:bg-[#064F9C]
+                    sm:text-base
+                  "
+                >
+
+                  Email Us
+
+                  <ArrowRight size={20} />
+
+                </a>
+
+
+                {/* =================================================
+                    AVAILABILITY
+                ================================================== */}
+
+                <div
+                  className="
+                    mt-6
+                    rounded-[14px]
+                    border
+                    border-[#DCE3EB]
+                    bg-[#F7FAFF]
+                    p-5
+                  "
+                >
+
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-4
+                    "
+                  >
+
+                    <div
+                      className="
+                        flex
+                        h-11
+                        w-11
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        bg-[#E8F1FF]
+                        text-[#075DB8]
+                      "
+                    >
+                      <Clock3 size={21} />
                     </div>
 
+
                     <div>
-                      <p className="text-cyan-300 font-semibold">
+
+                      <p
+                        className="
+                          font-bold
+                          text-[#172554]
+                        "
+                      >
                         Support Availability
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-400">
+                      <p
+                        className="
+                          mt-1
+                          text-sm
+                          font-medium
+                          leading-6
+                          text-[#64748B]
+                        "
+                      >
                         We aim to respond within{" "}
-                        <span className="text-white font-semibold">
+                        <span className="font-bold text-[#075DB8]">
                           24–48 hours
                         </span>
                         .
                       </p>
+
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
+
             </motion.div>
+
           </div>
+
         </div>
+
       </section>
+
 
       {/* =========================================================
           HOW WE CAN HELP
-      ========================================================== */}
+      ========================================================= */}
 
-      <section className="relative py-28 bg-[#020817] overflow-hidden">
-        {/* Grid */}
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-white
+          px-5
+          py-20
+          sm:px-6
+          sm:py-24
+          lg:px-8
+          lg:py-28
+        "
+      >
+
+        {/* =====================================================
+            SOFT BACKGROUND
+        ====================================================== */}
 
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-20
+            h-[400px]
+            w-[400px]
+            rounded-full
+            bg-[#DBEAFE]/30
+            blur-[140px]
+          "
         />
 
-        <div className="absolute left-0 top-20 w-[350px] h-[350px] bg-cyan-500/10 blur-[140px] rounded-full" />
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -bottom-40
+            -right-40
+            h-[450px]
+            w-[450px]
+            rounded-full
+            bg-[#BFDBFE]/20
+            blur-[140px]
+          "
+        />
 
-        <div className="absolute right-0 bottom-0 w-[350px] h-[350px] bg-blue-600/10 blur-[140px] rounded-full" />
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          {/* Heading */}
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-7xl
+          "
+        >
+
+          {/* =====================================================
+              HEADING
+          ====================================================== */}
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-20"
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="
+              mb-14
+              text-center
+            "
           >
-            <span className="inline-flex px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 uppercase tracking-[3px] text-sm">
-              Support Areas
-            </span>
 
-            <h2 className="mt-8 text-5xl md:text-6xl font-black text-white">
-              How We Can
-              <span className="block bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                text-xs
+                font-bold
+                uppercase
+                tracking-[2.5px]
+                text-[#075DB8]
+                sm:text-sm
+              "
+            >
+              <ShieldCheck size={16} />
+
+              Support Areas
+            </div>
+
+
+            <h2
+              className="
+                mt-4
+                text-3xl
+                font-black
+                text-[#172554]
+                sm:text-4xl
+                md:text-5xl
+              "
+            >
+              How We Can{" "}
+
+              <span className="text-[#075DB8]">
                 Help You
               </span>
             </h2>
 
-            <p className="mt-8 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
-              Whether you are submitting your first paper or joining CYCRAI
-              2027 as an international delegate, our team is ready to help.
+
+            <div
+              className="
+                mx-auto
+                mt-5
+                h-[2px]
+                w-12
+                bg-[#F59E0B]
+              "
+            />
+
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                font-semibold
+                leading-8
+                text-[#334155]
+                md:text-lg
+              "
+            >
+              Whether you are submitting your first paper or
+              joining CYCRAI 2027 as an international delegate,
+              our team is ready to help.
             </p>
+
           </motion.div>
 
-          {/* Support Cards */}
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {/* =====================================================
+              SUPPORT BOXES
+          ====================================================== */}
+
+          <div
+            className="
+              grid
+              gap-6
+              md:grid-cols-2
+              xl:grid-cols-4
+            "
+          >
+
             {supportItems.map((item, index) => {
+
               const Icon = item.icon;
 
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  initial={{
+                    opacity: 0,
+                    y: 25,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
                   transition={{
-                    duration: 0.55,
-                    delay: index * 0.08,
+                    duration: 0.5,
+                    delay: index * 0.06,
                   }}
                   className="
-                    group
-                    relative
                     overflow-hidden
-                    rounded-[30px]
+                    rounded-[16px]
                     border
-                    border-cyan-400/15
-                    bg-white/5
-                    backdrop-blur-2xl
-                    p-8
-                    transition-all
-                    duration-500
-                    hover:-translate-y-2
-                    hover:border-cyan-400/40
-                    hover:shadow-[0_0_40px_rgba(34,211,238,.12)]
+                    border-[#DCE3EB]
+                    border-t-4
+                    border-t-[#075DB8]
+                    bg-white
                   "
                 >
-                  {/* Hover Glow */}
 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cyan-500/10 to-transparent" />
+                  <div className="p-7">
 
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 transition-all duration-300">
-                      <Icon
-                        size={28}
-                        className="text-cyan-300"
-                      />
+                    {/* Icon */}
+
+                    <div
+                      className="
+                        flex
+                        h-14
+                        w-14
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        bg-[#E8F1FF]
+                        text-[#075DB8]
+                      "
+                    >
+                      <Icon size={27} />
                     </div>
 
-                    <h3 className="mt-7 text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+
+                    {/* Title */}
+
+                    <h3
+                      className="
+                        mt-6
+                        text-xl
+                        font-black
+                        text-[#172554]
+                      "
+                    >
                       {item.title}
                     </h3>
 
-                    <p className="mt-5 text-slate-400 leading-8">
+
+                    {/* Orange line */}
+
+                    <div
+                      className="
+                        mt-4
+                        h-[2px]
+                        w-10
+                        bg-[#F59E0B]
+                      "
+                    />
+
+
+                    {/* Description */}
+
+                    <p
+                      className="
+                        mt-5
+                        text-base
+                        font-semibold
+                        leading-8
+                        text-[#334155]
+                      "
+                    >
                       {item.description}
                     </p>
+
                   </div>
+
                 </motion.div>
               );
             })}
+
           </div>
+
         </div>
+
       </section>
+
 
       {/* =========================================================
           FINAL CTA
-      ========================================================== */}
+      ========================================================= */}
 
-      <section className="relative py-28 overflow-hidden bg-gradient-to-b from-[#020817] via-[#071326] to-[#020817]">
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
-          }}
+      <section
+        className="
+          relative
+          overflow-hidden
+          bg-[#07152F]
+          px-5
+          py-20
+          sm:px-6
+          sm:py-24
+          lg:px-8
+          lg:py-28
+        "
+      >
+
+        {/* Soft Glow */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-1/2
+            top-0
+            h-[350px]
+            w-[550px]
+            -translate-x-1/2
+            rounded-full
+            bg-blue-500/10
+            blur-[150px]
+          "
         />
 
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[500px] h-[300px] bg-cyan-500/10 blur-[150px] rounded-full" />
 
-        <div className="relative max-w-5xl mx-auto px-6">
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            max-w-5xl
+          "
+        >
+
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[35px]
-              border
-              border-cyan-400/20
-              bg-white/5
-              backdrop-blur-2xl
-              p-10
-              md:p-14
-              text-center
-            "
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="text-center"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-cyan-500/10 blur-[120px] rounded-full" />
 
-            <div className="relative z-10">
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center">
-                <MessageCircle
-                  size={30}
-                  className="text-cyan-300"
-                />
-              </div>
+            <div
+              className="
+                mx-auto
+                flex
+                h-16
+                w-16
+                items-center
+                justify-center
+                rounded-2xl
+                bg-blue-500/10
+                text-[#93C5FD]
+              "
+            >
+              <MessageCircle size={30} />
+            </div>
 
-              <h2 className="mt-8 text-4xl md:text-5xl font-black text-white">
-                We Look Forward to
-                <span className="block mt-2 pb-1 leading-normal bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-                    Welcoming You
-                 </span>
-              </h2>
 
-              <p className="mt-7 max-w-3xl mx-auto text-slate-400 text-lg leading-8">
-                Join researchers, academicians, industry experts and innovators
-                from across the globe to exchange ideas, present impactful
-                research and shape the future of Cyber Security, Artificial
-                Intelligence and Responsible Innovation.
-              </p>
+            <h2
+              className="
+                mt-7
+                text-3xl
+                font-black
+                text-white
+                sm:text-4xl
+                md:text-5xl
+              "
+            >
+              We Look Forward to
 
-              <a
-                href="mailto:cycrai@iem.edu.in"
+              <span
                 className="
-                  group
-                  mt-10
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-cyan-400
-                  px-9
-                  py-4
-                  font-bold
-                  text-slate-900
-                  transition-all
-                  duration-300
-                  hover:scale-105
-                  hover:shadow-[0_0_40px_rgba(34,211,238,.35)]
+                  mt-2
+                  block
+                  bg-gradient-to-r
+                  from-[#93C5FD]
+                  via-[#60A5FA]
+                  to-[#BFDBFE]
+                  bg-clip-text
+                  pb-2
+                  text-transparent
                 "
               >
-                Contact Conference Team
+                Welcoming You
+              </span>
+            </h2>
 
-                <ArrowRight
-                  size={20}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </a>
-            </div>
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                font-medium
+                leading-8
+                text-[#CBD5E1]
+                md:text-lg
+              "
+            >
+              Join researchers, academicians, industry experts
+              and innovators from across the globe to exchange
+              ideas, present impactful research and shape the
+              future of Cyber Security, Artificial Intelligence
+              and Responsible Innovation.
+            </p>
+
+
+            <a
+              href="mailto:cycrai@iem.edu.in"
+              className="
+                mt-8
+                inline-flex
+                items-center
+                gap-3
+                rounded-full
+                bg-[#075DB8]
+                px-8
+                py-4
+                text-sm
+                font-bold
+                text-white
+                transition-colors
+                duration-300
+                hover:bg-[#064F9C]
+                sm:text-base
+              "
+            >
+              Contact Conference Team
+
+              <ArrowRight size={20} />
+            </a>
+
           </motion.div>
+
         </div>
+
       </section>
+
 
       {/* =========================================================
           FOOTER
-      ========================================================== */}
+      ========================================================= */}
 
       <Footer />
-    </>
+
+    </main>
   );
 }

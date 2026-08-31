@@ -1,4 +1,3 @@
-
 import uem from "../assets/image/UEM_White.png";
 import iem from "../assets/image/IEM_White.png";
 import ieee_kol from "../assets/image/ieeek_logo_white.png";
@@ -40,7 +39,15 @@ export default function LogoStrip() {
   ];
 
   return (
-    <div className="w-full px-1 mt-4 md:mt-5">
+    <div
+      className="
+        w-full
+        px-2
+        mt-5
+        sm:px-3
+        md:mt-6
+      "
+    >
       {/* =====================================================
           MAIN LOGO STRIP
       ====================================================== */}
@@ -48,84 +55,60 @@ export default function LogoStrip() {
       <div
         className="
           relative
-
-          w-full
-          max-w-[1000px]
           mx-auto
 
-          h-[92px]
+          w-full
+          max-w-[1050px]
+
+          h-[90px]
+          sm:h-[100px]
           md:h-[112px]
           lg:h-[120px]
 
-          rounded-2xl
-
-          border
-          border-cyan-400/20
-
-          bg-[#020B18]/40
-
-          backdrop-blur-xl
-
           overflow-hidden
 
-          shadow-[0_10px_40px_rgba(0,0,0,0.3)]
+          rounded-[16px]
 
-          transition-all
-          duration-500
+          border
+          border-[#315783]
 
-          hover:border-cyan-400/35
-          hover:shadow-[0_10px_45px_rgba(0,150,255,0.15)]
+          bg-[#07152F]
+
+          shadow-[0_12px_35px_rgba(0,0,0,0.22)]
         "
       >
-        {/* =====================================================
-            TOP CYAN LIGHT
-        ====================================================== */}
 
-        <div
-          className="
-            absolute
-            top-0
-            left-[8%]
-            right-[8%]
+       
 
-            h-px
-
-            bg-gradient-to-r
-            from-transparent
-            via-cyan-400/60
-            to-transparent
-          "
-        />
-
-        {/* =====================================================
-            SOFT CENTER GLOW
-        ====================================================== */}
+        {/* ===================================================
+            VERY SOFT BLUE BACKGROUND
+        ==================================================== */}
 
         <div
           className="
             pointer-events-none
-
             absolute
-
-            -top-16
             left-1/2
+            top-1/2
+
+            h-[100px]
+            w-[45%]
 
             -translate-x-1/2
-
-            w-[55%]
-            h-[90px]
+            -translate-y-1/2
 
             rounded-full
 
-            bg-cyan-400/5
+            bg-[#075DB8]/10
 
-            blur-3xl
+            blur-[70px]
           "
         />
 
-        {/* =====================================================
+
+        {/* ===================================================
             LOGO ROW
-        ====================================================== */}
+        ==================================================== */}
 
         <div
           className="
@@ -133,177 +116,121 @@ export default function LogoStrip() {
             z-10
 
             flex
-
             h-full
             w-full
 
             items-center
             justify-between
 
-            px-4
+            px-2
+            sm:px-4
             md:px-5
             lg:px-6
           "
         >
+
           {logos.map((logo, index) => (
             <div
               key={`${logo.alt}-${index}`}
               className="
                 flex
                 h-full
-
+                min-w-0
                 flex-1
-
                 items-center
                 justify-center
-
-                min-w-0
               "
             >
+
               {/* =================================================
-                  EQUAL-SIZE LOGO AREA
+                  LOGO CONTAINER
               ================================================== */}
 
               <div
                 className="
                   flex
-
-                  h-[72px]
-                  md:h-[88px]
-                  lg:h-[96px]
-
-                  w-[105px]
-                  md:w-[125px]
-                  lg:w-[135px]
+                  h-[62px]
+                  w-[78px]
 
                   items-center
                   justify-center
 
-                  px-2
+                  px-1
 
-                  transition-all
-                  duration-300
+                  sm:h-[70px]
+                  sm:w-[92px]
 
-                  hover:scale-105
+                  md:h-[80px]
+                  md:w-[105px]
+
+                  lg:h-[88px]
+                  lg:w-[118px]
                 "
               >
+
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   className="
                     block
 
-                    w-full
                     h-full
+                    w-full
 
                     object-contain
 
                     opacity-95
-
-                    transition-all
-                    duration-300
-
-                    hover:opacity-100
                   "
                 />
+
               </div>
 
+
               {/* =================================================
-                  VERTICAL DIVIDER
+                  DIVIDER
               ================================================== */}
 
               {index !== logos.length - 1 && (
                 <div
                   className="
-                    h-[48px]
-                    md:h-[62px]
-                    lg:h-[68px]
-
+                    h-[38px]
                     w-px
+                    shrink-0
 
-                    flex-shrink-0
+                    bg-[#315783]/70
 
-                    bg-gradient-to-b
-                    from-transparent
-                    via-cyan-400/25
-                    to-transparent
+                    sm:h-[48px]
+                    md:h-[58px]
+                    lg:h-[64px]
                   "
                 />
               )}
+
             </div>
           ))}
+
         </div>
 
-        {/* =====================================================
-            BOTTOM CYAN LIGHT
-        ====================================================== */}
+
+        {/* ===================================================
+            BOTTOM BLUE LINE
+        ==================================================== */}
 
         <div
           className="
             absolute
-
             bottom-0
+            left-10
+            right-10
 
-            left-[10%]
-            right-[10%]
+            h-[1px]
 
-            h-px
-
-            bg-gradient-to-r
-            from-transparent
-            via-blue-500/35
-            to-transparent
+            bg-[#315783]/70
           "
         />
 
-        {/* =====================================================
-            CORNER GLOW
-        ====================================================== */}
-
-        <div
-          className="
-            pointer-events-none
-
-            absolute
-
-            left-0
-            top-1/2
-
-            -translate-y-1/2
-
-            w-[80px]
-            h-[80px]
-
-            rounded-full
-
-            bg-cyan-400/5
-
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            pointer-events-none
-
-            absolute
-
-            right-0
-            top-1/2
-
-            -translate-y-1/2
-
-            w-[80px]
-            h-[80px]
-
-            rounded-full
-
-            bg-blue-500/5
-
-            blur-3xl
-          "
-        />
       </div>
+
     </div>
   );
 }

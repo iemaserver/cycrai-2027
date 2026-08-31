@@ -1,7 +1,6 @@
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import {
-  Globe,
   Building2,
   Network,
   ShieldCheck,
@@ -11,117 +10,67 @@ export default function AboutSection() {
   return (
     <>
       {/* =========================================================
-          HERO SECTION
+          ABOUT PAGE
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-[#020817] min-h-screen pt-6 pb-24">
+      <section className="relative min-h-screen overflow-hidden bg-[#F7FAFF]">
 
-        {/* Background Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Background Glows */}
-        <div
-          className="
-            absolute
-            -top-40
-            left-0
-            w-[550px]
-            h-[550px]
-            bg-cyan-500/20
-            blur-[170px]
-            rounded-full
-          "
-        />
+        {/* =========================================================
+            DARK HEADER / HERO
+        ========================================================= */}
 
         <div
           className="
-            absolute
-            top-1/3
-            right-[-150px]
-            w-[500px]
-            h-[500px]
-            bg-blue-600/20
-            blur-[170px]
-            rounded-full
+            relative
+            overflow-hidden
+            bg-[#07152F]
+            px-5
+            pb-20
+            pt-12
+            sm:px-6
+            sm:pb-24
+            sm:pt-16
+            lg:px-8
+            lg:pb-28
+            lg:pt-20
           "
-        />
+        >
 
-        <div
-          className="
-            absolute
-            bottom-[-200px]
-            left-1/3
-            w-[450px]
-            h-[450px]
-            bg-cyan-500/10
-            blur-[160px]
-            rounded-full
-          "
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6">
-
-          {/* =====================================================
-              HERO CONTENT
-          ===================================================== */}
+          {/* Header Content */}
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
+            className="
+              relative
+              z-10
+              mx-auto
+              max-w-5xl
+              text-center
+            "
           >
 
-            {/* Badge */}
-            <span
-              className="
-                inline-flex
-                items-center
-                gap-2
-
-                rounded-full
-
-                border
-                border-cyan-400/30
-
-                bg-cyan-500/10
-
-                px-5
-                py-2
-
-                text-cyan-300
-                text-sm
-
-                tracking-[3px]
-                uppercase
-              "
-            >
-              <Globe size={16} />
-
-              CYCRAI 2027
-            </span>
-
-
             {/* Main Heading */}
+
             <h1
               className="
-                mt-8
-
                 text-5xl
-                md:text-7xl
-
                 font-black
-
                 leading-tight
-
+                tracking-tight
                 text-white
+                sm:text-6xl
+                md:text-7xl
+                lg:text-8xl
               "
             >
               About
@@ -129,13 +78,12 @@ export default function AboutSection() {
               <span
                 className="
                   block
-
                   bg-gradient-to-r
-                  from-cyan-300
-                  via-sky-400
-                  to-blue-500
-
+                  from-[#93C5FD]
+                  via-[#60A5FA]
+                  to-[#BFDBFE]
                   bg-clip-text
+                  pb-3
                   text-transparent
                 "
               >
@@ -143,113 +91,178 @@ export default function AboutSection() {
               </span>
             </h1>
 
+            {/* Conference Name */}
+
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                font-semibold
+                leading-8
+                tracking-wide
+                text-blue-100/90
+                sm:text-lg
+                md:text-xl
+              "
+            >
+              International Conference on Cyber Security,
+              Cryptography and Responsible AI
+            </p>
+
           </motion.div>
+        </div>
 
 
-          {/* =====================================================
-              CONFERENCE INTRODUCTION
-          ===================================================== */}
+        {/* =========================================================
+            LIGHT CONTENT AREA
+        ========================================================= */}
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+        <div
+          className="
+            relative
+            bg-gradient-to-b
+            from-white
+            via-[#F8FBFF]
+            to-[#F1F6FD]
+            px-5
+            py-12
+            sm:px-6
+            sm:py-16
+            lg:px-8
+            lg:py-20
+          "
+        >
 
+          {/* Soft Background Glows */}
+
+          <div
             className="
-              mt-20
-              w-full
-              max-w-6xl
+              pointer-events-none
+              absolute
+              left-0
+              top-20
+              h-[450px]
+              w-[450px]
+              rounded-full
+              bg-[#BFDBFE]/20
+              blur-[130px]
+            "
+          />
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              bottom-0
+              right-0
+              h-[500px]
+              w-[500px]
+              rounded-full
+              bg-[#DBEAFE]/30
+              blur-[140px]
+            "
+          />
+
+
+          {/* =======================================================
+              MAIN CONTENT
+          ======================================================= */}
+
+          <div
+            className="
+              relative
+              z-10
               mx-auto
+              max-w-7xl
             "
           >
 
-            {/* Conference Card */}
-            <div
+            {/* =====================================================
+                CONFERENCE OVERVIEW
+            ===================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: "-80px",
+              }}
+              transition={{
+                duration: 0.7,
+              }}
               className="
-                group
-                relative
-                overflow-hidden
-
-                rounded-[30px]
-
-                border
-                border-cyan-400/20
-
-                bg-white/5
-                backdrop-blur-2xl
-
-                p-8
-                md:p-10
-
-                transition-all
-                duration-500
-
-                hover:border-cyan-400/40
-                hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-                hover:-translate-y-2
+                mx-auto
+                mt-10
+                max-w-6xl
               "
             >
 
-              {/* Hover Glow */}
+              {/* Main White Box */}
+
               <div
                 className="
-                  absolute
-                  inset-0
-
-                  opacity-0
-                  group-hover:opacity-100
-
-                  transition
-                  duration-500
-
-                  bg-gradient-to-br
-                  from-cyan-500/10
-                  via-transparent
-                  to-blue-500/5
-
-                  pointer-events-none
+                  overflow-hidden
+                  rounded-[16px]
+                  border
+                  border-[#DCE3EB]
+                  border-t-4
+                  border-t-[#075DB8]
+                  bg-white
                 "
-              />
+              >
 
-              <div className="relative z-10">
+                {/* Card Header */}
 
-                {/* Card Heading */}
-                <div className="flex items-center gap-4 mb-7">
+                <div
+                  className="
+                    flex
+                    flex-col
+                    gap-5
+                    border-b
+                    border-[#E2E8F0]
+                    px-7
+                    py-7
+                    sm:flex-row
+                    sm:items-center
+                    sm:px-9
+                    md:px-11
+                  "
+                >
 
                   <div
                     className="
-                      w-14
-                      h-14
-                      shrink-0
-
-                      rounded-2xl
-
-                      bg-cyan-500/10
-
-                      border
-                      border-cyan-400/20
-
                       flex
+                      h-14
+                      w-14
+                      shrink-0
                       items-center
                       justify-center
+                      rounded-2xl
+                      bg-[#075DB8]
+                      text-white
                     "
                   >
-                    <ShieldCheck
-                      size={27}
-                      className="text-cyan-300"
-                    />
+                    <ShieldCheck size={27} />
                   </div>
-
 
                   <div>
 
                     <p
                       className="
-                        text-cyan-400
                         text-xs
+                        font-bold
                         uppercase
-                        tracking-[3px]
+                        tracking-[2px]
+                        text-[#075DB8]
                       "
                     >
                       Conference Overview
@@ -259,9 +272,9 @@ export default function AboutSection() {
                       className="
                         mt-1
                         text-2xl
-                        md:text-3xl
                         font-bold
-                        text-white
+                        text-[#172554]
+                        sm:text-3xl
                       "
                     >
                       About CYCRAI 2027
@@ -272,179 +285,148 @@ export default function AboutSection() {
                 </div>
 
 
-                {/* First Paragraph */}
-                <p
-                  className="
-                    text-slate-300
-                    text-base
-                    md:text-lg
-                    leading-8
-                  "
-                >
-                  First International Conference on Cybersecurity,
-                  Cryptography and Responsible AI (CYCRAI 2027) will be
-                  organized by Department of Computer Science and
-                  Engineering(Cyber Security), Institute of Engineering &
-                  Management Kolkata, under University of Engineering and
-                  Management Kolkata, with Technical Co-Sponsorship of the
-                  IEEE Kolkata Section and IEEE Computer Society SBC during
-                  29th September to 30th September, 2027.
-                </p>
+                {/* Card Content */}
 
-
-                {/* Second Paragraph */}
-                <p
-                  className="
-                    mt-6
-
-                    text-slate-400
-
-                    text-base
-                    md:text-lg
-
-                    leading-8
-                  "
-                >
-                  The event brings together researchers, professionals, and
-                  government representatives to share their work, examine
-                  key challenges, and explore potential solutions. Keynote
-                  addresses, technical sessions, and networking activities
-                  are designed to encourage cross-disciplinary dialogue.
-                  Papers that are accepted and presented will be submitted
-                  for publication in the IEEE Xplore Digital Library.
-                </p>
-
-
-                {/* Bottom Accent */}
                 <div
                   className="
-                    mt-8
-
-                    h-[2px]
-                    w-16
-
-                    bg-gradient-to-r
-                    from-cyan-400
-                    to-blue-500
-
-                    group-hover:w-28
-
-                    transition-all
-                    duration-500
+                    px-7
+                    py-8
+                    sm:px-9
+                    sm:py-9
+                    md:px-11
+                    md:py-10
                   "
-                />
+                >
+
+                  <p
+                    className="
+                      text-lg
+                      font-semibold
+                      leading-8
+                      text-[#1E3A5F]
+                      md:text-xl
+                    "
+                  >
+                    First International Conference on Cybersecurity,
+                    Cryptography and Responsible AI (CYCRAI 2027) will be
+                    organized by Department of Computer Science and
+                    Engineering(Cyber Security), Institute of Engineering &
+                    Management Kolkata, under University of Engineering and
+                    Management Kolkata, with Technical Co-Sponsorship of the
+                    IEEE Kolkata Section and IEEE Computer Society SBC during
+                    29th September to 30th September, 2027.
+                  </p>
+
+                  <p
+                    className="
+                      mt-6
+                      text-lg
+                      font-semibold
+                      leading-8
+                      text-[#334155]
+                      md:text-xl
+                    "
+                  >
+                    The event brings together researchers, professionals, and
+                    government representatives to share their work, examine
+                    key challenges, and explore potential solutions. Keynote
+                    addresses, technical sessions, and networking activities
+                    are designed to encourage cross-disciplinary dialogue.
+                    Papers that are accepted and presented will be submitted
+                    for publication in the IEEE Xplore Digital Library.
+                  </p>
+
+                </div>
 
               </div>
 
-            </div>
-
-          </motion.div>
+            </motion.div>
 
 
-          {/* =====================================================
-              ABOUT THE INSTITUTION
-          ===================================================== */}
+            {/* =====================================================
+                ABOUT INSTITUTION
+            ===================================================== */}
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-
-            className="
-              mt-12
-              w-full
-              max-w-6xl
-              mx-auto
-            "
-          >
-
-            {/* Institution Card */}
-            <div
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: "-80px",
+              }}
+              transition={{
+                duration: 0.7,
+              }}
               className="
-                group
-                relative
-                overflow-hidden
-
-                rounded-[30px]
-
-                border
-                border-cyan-400/20
-
-                bg-white/5
-                backdrop-blur-2xl
-
-                p-8
-                md:p-10
-
-                transition-all
-                duration-500
-
-                hover:border-cyan-400/40
-                hover:shadow-[0_0_45px_rgba(34,211,238,.14)]
-                hover:-translate-y-2
+                mx-auto
+                mt-8
+                max-w-6xl
               "
             >
 
-              {/* Hover Glow */}
+              {/* Main White Box */}
+
               <div
                 className="
-                  absolute
-                  inset-0
-
-                  opacity-0
-                  group-hover:opacity-100
-
-                  transition
-                  duration-500
-
-                  bg-gradient-to-br
-                  from-cyan-500/10
-                  via-transparent
-                  to-blue-500/5
-
-                  pointer-events-none
+                  overflow-hidden
+                  rounded-[16px]
+                  border
+                  border-[#DCE3EB]
+                  border-t-4
+                  border-t-[#075DB8]
+                  bg-white
                 "
-              />
+              >
 
-              <div className="relative z-10">
+                {/* Institution Header */}
 
-                {/* Institution Heading */}
-                <div className="flex items-center gap-4 mb-7">
+                <div
+                  className="
+                    flex
+                    flex-col
+                    gap-5
+                    border-b
+                    border-[#E2E8F0]
+                    px-7
+                    py-7
+                    sm:flex-row
+                    sm:items-center
+                    sm:px-9
+                    md:px-11
+                  "
+                >
 
                   <div
                     className="
-                      w-14
-                      h-14
-                      shrink-0
-
-                      rounded-2xl
-
-                      bg-cyan-500/10
-
-                      border
-                      border-cyan-400/20
-
                       flex
+                      h-14
+                      w-14
+                      shrink-0
                       items-center
                       justify-center
+                      rounded-2xl
+                      bg-[#075DB8]
+                      text-white
                     "
                   >
-                    <Building2
-                      size={27}
-                      className="text-cyan-300"
-                    />
+                    <Building2 size={27} />
                   </div>
-
 
                   <div>
 
                     <p
                       className="
-                        text-cyan-400
                         text-xs
+                        font-bold
                         uppercase
-                        tracking-[3px]
+                        tracking-[2px]
+                        text-[#075DB8]
                       "
                     >
                       Our Institution
@@ -453,13 +435,10 @@ export default function AboutSection() {
                     <h2
                       className="
                         mt-1
-
                         text-2xl
-                        md:text-3xl
-
                         font-bold
-
-                        text-white
+                        text-[#172554]
+                        sm:text-3xl
                       "
                     >
                       About the Institution
@@ -470,182 +449,174 @@ export default function AboutSection() {
                 </div>
 
 
-                {/* =================================================
-                    INSTITUTION PARAGRAPH 1
-                ================================================== */}
-
-                <p
-                  className="
-                    text-slate-300
-
-                    text-base
-                    md:text-lg
-
-                    leading-8
-                  "
-                >
-                  The University of Engineering &amp; Management (UEM),
-                  Kolkata stands as one of Eastern India's most distinguished
-                  centres of higher education, consistently recognised for
-                  its academic rigour, research output, and industry-aligned
-                  curriculum. Established under the aegis of the IEM-UEM
-                  Group — founded by Padma Bhushan awardee Prof. (Dr.) Satyajit
-                  Chakrabarti — the institution has earned top positions in
-                  the list of Best Engineering Colleges of West Bengal and
-                  ranks highly among leading private universities in India.
-                </p>
-
-
-                {/* =================================================
-                    INSTITUTION PARAGRAPH 2
-                ================================================== */}
-
-                <p
-                  className="
-                    mt-6
-
-                    text-slate-400
-
-                    text-base
-                    md:text-lg
-
-                    leading-8
-                  "
-                >
-                  Spread across a sprawling, state-of-the-art campus in New
-                  Town, Kolkata, UEM offers modern laboratories, dedicated
-                  research centres, a fully digitised library, and innovation
-                  hubs that foster entrepreneurial thinking and real-world
-                  problem solving.
-                </p>
-
-
-                {/* =================================================
-                    INSTITUTION PARAGRAPH 3
-                ================================================== */}
-
-                <p
-                  className="
-                    mt-6
-
-                    text-slate-400
-
-                    text-base
-                    md:text-lg
-
-                    leading-8
-                  "
-                >
-                  UEM offers a comprehensive blend of hardware and software
-                  programmes enabling deep expertise in Artificial
-                  Intelligence, Machine Learning, IoT, Renewable Energy
-                  Systems, Cloud Computing, Cybersecurity, and Astronomy &
-                  Astrophysics. The two flagship Centres of Excellence
-                  actively drive interdisciplinary research bridging
-                  engineering, science, and sustainability.
-                </p>
-
-
-                {/* =================================================
-                    GLOBAL COLLABORATION
-                ================================================== */}
+                {/* Institution Content */}
 
                 <div
                   className="
-                    mt-8
-
-                    rounded-2xl
-
-                    border
-                    border-cyan-400/10
-
-                    bg-[#020817]/50
-
-                    p-6
+                    px-7
+                    py-8
+                    sm:px-9
+                    sm:py-9
+                    md:px-11
+                    md:py-10
                   "
                 >
 
-                  <div className="flex items-start gap-4">
+                  <p
+                    className="
+                      text-lg
+                      font-semibold
+                      leading-8
+                      text-[#1E3A5F]
+                      md:text-xl
+                    "
+                  >
+                    The University of Engineering &amp; Management (UEM),
+                    Kolkata stands as one of Eastern India's most distinguished
+                    centres of higher education, consistently recognised for
+                    its academic rigour, research output, and industry-aligned
+                    curriculum. Established under the aegis of the IEM-UEM
+                    Group — founded by Padma Bhushan awardee Prof. (Dr.) Satyajit
+                    Chakrabarti — the institution has earned top positions in
+                    the list of Best Engineering Colleges of West Bengal and
+                    ranks highly among leading private universities in India.
+                  </p>
 
-                    {/* Icon */}
+
+                  <p
+                    className="
+                      mt-6
+                      text-lg
+                      font-semibold
+                      leading-8
+                      text-[#334155]
+                      md:text-xl
+                    "
+                  >
+                    Spread across a sprawling, state-of-the-art campus in New
+                    Town, Kolkata, UEM offers modern laboratories, dedicated
+                    research centres, a fully digitised library, and innovation
+                    hubs that foster entrepreneurial thinking and real-world
+                    problem solving.
+                  </p>
+
+
+                  <p
+                    className="
+                      mt-6
+                      text-lg
+                      font-semibold
+                      leading-8
+                      text-[#334155]
+                      md:text-xl
+                    "
+                  >
+                    UEM offers a comprehensive blend of hardware and software
+                    programmes enabling deep expertise in Artificial
+                    Intelligence, Machine Learning, IoT, Renewable Energy
+                    Systems, Cloud Computing, Cybersecurity, and Astronomy &
+                    Astrophysics. The two flagship Centres of Excellence
+                    actively drive interdisciplinary research bridging
+                    engineering, science, and sustainability.
+                  </p>
+
+
+                  {/* =====================================================
+                      GLOBAL COLLABORATION
+                  ===================================================== */}
+
+                  <div
+                    className="
+                      mt-8
+                      rounded-2xl
+                      border
+                      border-[#BFDBFE]
+                      bg-[#F5F9FF]
+                      p-6
+                      sm:p-7
+                    "
+                  >
+
                     <div
                       className="
-                        w-12
-                        h-12
-                        shrink-0
-
-                        rounded-xl
-
-                        bg-blue-500/10
-
-                        border
-                        border-blue-400/20
-
                         flex
-                        items-center
-                        justify-center
+                        items-start
+                        gap-4
                       "
                     >
-                      <Network
-                        size={23}
-                        className="text-cyan-300"
-                      />
+
+                      <div
+                        className="
+                          flex
+                          h-12
+                          w-12
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-xl
+                          bg-[#E8F1FF]
+                          text-[#075DB8]
+                        "
+                      >
+                        <Network size={23} />
+                      </div>
+
+
+                      <div>
+
+                        <p
+                          className="
+                            text-xs
+                            font-bold
+                            uppercase
+                            tracking-[1.8px]
+                            text-[#075DB8]
+                          "
+                        >
+                          Global Collaboration
+                        </p>
+
+                        <p
+                          className="
+                            mt-2
+                            text-lg
+                            font-semibold
+                            leading-8
+                            text-[#334155]
+                            md:text-xl
+                          "
+                        >
+                          With a distinguished faculty and strong global
+                          collaborations, UEM maintains active partnerships
+                          with leading international universities, research
+                          organisations, and technology enterprises.
+
+                          <span
+                            className="
+                              font-bold
+                              text-[#1E3A5F]
+                            "
+                          >
+                            {" "}
+                            CYCRAI 2027 embodies UEM's vision: a global platform
+                            where academia and industry converge to shape the
+                            future of technology.
+                          </span>
+                        </p>
+
+                      </div>
+
                     </div>
-
-
-                    {/* Text */}
-                    <p
-                      className="
-                        text-slate-400
-
-                        text-base
-                        md:text-lg
-
-                        leading-8
-                      "
-                    >
-                      With a distinguished faculty and strong global
-                      collaborations, UEM maintains active partnerships with
-                      leading international universities, research
-                      organisations, and technology enterprises.
-
-                      <span className="text-slate-300">
-                        {" "}CYCRAI 2027 embodies UEM's vision: a global
-                        platform where academia and industry converge to shape
-                        the future of technology.
-                      </span>
-                    </p>
 
                   </div>
 
                 </div>
 
-
-                {/* Bottom Accent */}
-                <div
-                  className="
-                    mt-8
-
-                    h-[2px]
-                    w-16
-
-                    bg-gradient-to-r
-                    from-cyan-400
-                    to-blue-500
-
-                    group-hover:w-28
-
-                    transition-all
-                    duration-500
-                  "
-                />
-
               </div>
 
-            </div>
+            </motion.div>
 
-          </motion.div>
-
+          </div>
         </div>
 
       </section>
