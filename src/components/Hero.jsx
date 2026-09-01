@@ -1,8 +1,12 @@
+// Hero.jsx
+
 import { useNavigate } from "react-router-dom";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 import LogoStrip from "./LogoStrip";
+import AnnouncementTicker from "./AnnouncementTicker.jsx";
+
 import heroBg from "../assets/image/4K Planet Earth Spinning in Space  Free HD Videos - No Copyright - Free HD videos - no copyright (1080p, h264).mp4";
 
 export default function Hero() {
@@ -68,10 +72,20 @@ export default function Hero() {
       >
 
         {/* =======================================================
+            ANNOUNCEMENT STRIP
+            TOP MOST POSITION
+        ======================================================= */}
+
+        <div className="w-full mt-0">
+          <AnnouncementTicker />
+        </div>
+
+
+        {/* =======================================================
             LOGO STRIP
         ======================================================= */}
 
-        <div className="w-full mt-6">
+        <div className="w-full mt-0">
           <LogoStrip />
         </div>
 
@@ -95,14 +109,14 @@ export default function Hero() {
 
           <p
             className="
-              mt-1
+              mt-2
 
-              text-base
-              sm:text-lg
-              md:text-xl
-              lg:text-2xl
+              text-lg
+              sm:text-xl
+              md:text-2xl
+              lg:text-3xl
 
-              font-semibold
+              font-bold
 
               leading-relaxed
 
@@ -121,12 +135,12 @@ export default function Hero() {
             className="
               mt-1
 
-              text-base
-              sm:text-lg
-              md:text-xl
-              lg:text-2xl
+              text-lg
+              sm:text-xl
+              md:text-2xl
+              lg:text-3xl
 
-              font-semibold
+              font-bold
 
               leading-relaxed
 
@@ -218,7 +232,6 @@ export default function Hero() {
                 gap-3
               "
             >
-
               <FaCalendarAlt
                 className="
                   text-[#16D8F5]
@@ -242,7 +255,6 @@ export default function Hero() {
               >
                 29 – 30 SEPTEMBER 2027
               </span>
-
             </div>
 
 
@@ -274,7 +286,6 @@ export default function Hero() {
                 gap-3
               "
             >
-
               <FaLocationDot
                 className="
                   text-[#16D8F5]
@@ -298,7 +309,6 @@ export default function Hero() {
               >
                 NEW TOWN, KOLKATA, INDIA
               </span>
-
             </div>
 
           </div>
@@ -416,7 +426,6 @@ export default function Hero() {
                 drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]
               "
             >
-
               *(All accepted and presented papers will be published in{" "}
 
               <span
@@ -439,8 +448,131 @@ export default function Hero() {
                 (Awaiting Approval)
               </span>
               )
-
             </p>
+
+
+            {/* ===================================================
+                ACTION BUTTONS
+            =================================================== */}
+
+            <div
+              className="
+                mt-4
+
+                flex
+                flex-col
+                sm:flex-row
+
+                items-center
+                justify-center
+
+                gap-3
+                sm:gap-4
+
+                mb-0
+              "
+            >
+
+              {/* =================================================
+                  DOWNLOAD BROCHURE
+              ================================================== */}
+
+              <button
+                type="button"
+                onClick={() => {
+                  window.open("/brochure.pdf", "_blank");
+                }}
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+
+                  min-w-[180px]
+
+                  px-6
+                  py-2.5
+
+                  rounded-md
+
+                  border-2
+                  border-[#27D9F7]
+
+                  bg-transparent
+
+                  text-[#27D9F7]
+
+                  text-sm
+                  sm:text-base
+
+                  font-bold
+
+                  tracking-wide
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-[#27D9F7]
+                  hover:text-[#010611]
+
+                  hover:shadow-[0_0_18px_rgba(39,217,247,0.55)]
+
+                  active:scale-95
+                "
+              >
+                Download Brochure
+              </button>
+
+
+              {/* =================================================
+                  SUBMIT PAPER
+              ================================================== */}
+
+              <button
+                type="button"
+                onClick={() => {
+                  navigate("/submit-paper");
+                }}
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+
+                  min-w-[180px]
+
+                  px-6
+                  py-2.5
+
+                  rounded-md
+
+                  border-2
+                  border-[#27D9F7]
+
+                  bg-transparent
+
+                  text-[#27D9F7]
+
+                  text-sm
+                  sm:text-base
+
+                  font-bold
+
+                  tracking-wide
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-[#27D9F7]
+                  hover:text-[#010611]
+
+                  hover:shadow-[0_0_18px_rgba(39,217,247,0.55)]
+
+                  active:scale-95
+                "
+              >
+                Submit Paper
+              </button>
+
+            </div>
 
           </div>
 
