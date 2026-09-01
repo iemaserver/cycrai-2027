@@ -109,12 +109,12 @@ export default function Hero() {
 
           <p
             className="
-              mt-2
+              mt-1
 
               text-lg
               sm:text-xl
-              md:text-2xl
-              lg:text-3xl
+              md:text-1xl
+              lg:text-2xl
 
               font-bold
 
@@ -137,8 +137,8 @@ export default function Hero() {
 
               text-lg
               sm:text-xl
-              md:text-2xl
-              lg:text-3xl
+              md:text-1xl
+              lg:text-2xl
 
               font-bold
 
@@ -163,20 +163,20 @@ export default function Hero() {
             className="
               mt-2
 
-              text-4xl
-              sm:text-6xl
-              md:text-8xl
-              lg:text-8xl
+    text-4xl
+    sm:text-5xl
+    md:text-7xl
+    lg:text-7xl
 
-              font-black
+    font-black
 
-              tracking-[0.04em]
+    tracking-[0.04em]
 
-              leading-none
+    leading-none
 
-              text-white
+    text-white
 
-              drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]
+    drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]
             "
           >
             CYCRAI{" "}
@@ -320,14 +320,14 @@ export default function Hero() {
 
           <div
             className="
-              mt-5
+              mt-3
 
               mx-auto
 
-              max-w-5xl
+              max-w-4xl
 
-              px-4
-              sm:px-5
+              px-3
+              sm:px-4
 
               text-center
             "

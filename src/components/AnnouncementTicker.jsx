@@ -23,7 +23,7 @@ export default function AnnouncementTicker() {
         ml-[calc(50%-50vw)]
         mr-[calc(50%-50vw)]
 
-        mt-2
+        mt-1
         mb-0
         p-0
 
@@ -50,7 +50,7 @@ export default function AnnouncementTicker() {
               shrink-0
               items-center
 
-              h-[45px]
+              h-[38px]
 
               px-5
               sm:px-7
@@ -67,24 +67,24 @@ export default function AnnouncementTicker() {
 
             <p
               className="
-                 whitespace-nowrap
+                whitespace-nowrap
 
-    text-center
+                text-center
 
-    text-sm
-    sm:text-base
-    md:text-lg
-    lg:text-xl
+                text-[10px]
+                sm:text-[11px]
+                md:text-xs
+                lg:text-sm
 
-    font-black
+                font-extrabold
 
-    leading-none
+                leading-none
 
-    tracking-wide
+                tracking-wide
 
-    text-[#172554]
+                text-[#172554]
 
-    drop-shadow-[0_1px_1px_rgba(255,255,255,0.3)]
+                drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]
               "
             >
               {announcement.text}
