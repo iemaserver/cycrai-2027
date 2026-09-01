@@ -105,11 +105,6 @@ export const committeeData = {
         title: "TPC Co-Chairs",
         members: [
           {
-            name: "Prof. Dr. Subhalaxmi Chakraborty",
-            designation:
-              "University of Engineering and Management, Kolkata",
-          },
-          {
             name: "Prof. Dr. Debanjana Datta Mitra",
             designation:
               "University of Engineering and Management, Kolkata",
