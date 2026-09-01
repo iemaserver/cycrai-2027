@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Logo from "../components/Logo";
 import {
   ArrowRight,
   FileText,
@@ -178,9 +178,9 @@ export default function CallForPapers() {
       {/* =========================================================
           PAGE
       ========================================================= */}
-
+      
       <main className="min-h-screen bg-[#F7FAFF] text-[#172554]">
-
+      <Logo></Logo>
         {/* =======================================================
             HERO / HEADER
         ======================================================= */}
@@ -324,17 +324,7 @@ export default function CallForPapers() {
               className="mb-12 text-center"
             >
 
-              <p
-                className="
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-[2.5px]
-                  text-[#075DB8]
-                "
-              >
-                Research Areas
-              </p>
+              
 
               <h2
                 className="
@@ -349,22 +339,7 @@ export default function CallForPapers() {
                 Topics of Interest
               </h2>
 
-              <p
-                className="
-                  mx-auto
-                  mt-5
-                  max-w-3xl
-                  text-lg
-                  font-semibold
-                  leading-8
-                  text-[#334155]
-                  md:text-xl
-                "
-              >
-                Authors are invited to submit original research papers
-                covering the following areas of Cyber Security,
-                Cryptography, and Responsible AI.
-              </p>
+              
 
             </motion.div>
 
@@ -433,19 +408,7 @@ export default function CallForPapers() {
                         </span>
                       </div>
 
-                      <span
-                        className="
-                          rounded-full
-                          bg-[#F5F9FF]
-                          px-3
-                          py-1
-                          text-xs
-                          font-semibold
-                          text-[#075DB8]
-                        "
-                      >
-                        Research Track
-                      </span>
+                      
 
                     </div>
 
@@ -594,17 +557,7 @@ export default function CallForPapers() {
               className="mb-12 text-center"
             >
 
-              <p
-                className="
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-[2.5px]
-                  text-[#075DB8]
-                "
-              >
-                Author Guide
-              </p>
+              
 
               <h2
                 className="
@@ -643,7 +596,7 @@ export default function CallForPapers() {
                 "
               >
                 Follow these steps to submit your manuscript to
-                IEEE CYCRAI 2027.
+                CYCRAI 2027.
               </p>
 
             </motion.div>
@@ -982,20 +935,7 @@ export default function CallForPapers() {
                     Microsoft CMT Submission
                   </h3>
 
-                  <p
-                    className="
-                      mt-4
-                      text-lg
-                      font-semibold
-                      leading-8
-                      text-[#334155]
-                    "
-                  >
-                    Submit your manuscript through the Microsoft CMT
-                    platform. Complete all metadata carefully before final
-                    submission. Authors can later update the camera-ready
-                    version after acceptance.
-                  </p>
+                  
 
 
                   <button
@@ -1029,109 +969,7 @@ export default function CallForPapers() {
             </div>
 
 
-            {/* =====================================================
-                PUBLICATION POLICY
-            ===================================================== */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 25,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
-              className="
-                mt-10
-                rounded-[16px]
-                border
-                border-[#DCE3EB]
-                border-t-4
-                border-t-[#075DB8]
-                bg-white
-                p-7
-                sm:p-9
-              "
-            >
-
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-6
-                  lg:flex-row
-                  lg:items-center
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    h-14
-                    w-14
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-[#E8F1FF]
-                    text-[#075DB8]
-                  "
-                >
-                  <BookOpen size={27} />
-                </div>
-
-                <div>
-
-                  <p
-                    className="
-                      text-xs
-                      font-bold
-                      uppercase
-                      tracking-[2px]
-                      text-[#075DB8]
-                    "
-                  >
-                    Publication
-                  </p>
-
-                  <h3
-                    className="
-                      mt-1
-                      text-2xl
-                      font-bold
-                      text-[#172554]
-                    "
-                  >
-                    Publication Policy
-                  </h3>
-
-                  <p
-                    className="
-                      mt-3
-                      text-lg
-                      font-semibold
-                      leading-8
-                      text-[#334155]
-                    "
-                  >
-                    Accepted papers that are registered, presented and
-                    satisfy all IEEE conference publication policies will be
-                    submitted for inclusion in the IEEE Xplore Digital
-                    Library subject to IEEE quality checks.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </motion.div>
+            
 
           </div>
 

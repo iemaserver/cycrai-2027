@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import Logo from "../components/Logo";
 import {
   Building2,
   Network,
@@ -12,7 +13,7 @@ export default function AboutSection() {
       {/* =========================================================
           ABOUT PAGE
       ========================================================= */}
-
+      <Logo></Logo>
       <section className="relative min-h-screen overflow-hidden bg-[#F7FAFF]">
 
         {/* =========================================================

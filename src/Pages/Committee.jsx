@@ -683,7 +683,7 @@ import { useSearchParams } from "react-router-dom";
 
 import { committeeData } from "../data/committeeData";
 import Footer from "../components/Footer";
-
+import Logo from "../components/Logo";
 
 // =============================================================
 // COMMITTEE PAGE
@@ -765,7 +765,7 @@ export default function Committee() {
       {/* =====================================================
           HERO SECTION
       ====================================================== */}
-
+<Logo></Logo>
       <section
         className="
           relative
@@ -786,7 +786,7 @@ export default function Committee() {
           lg:pt-20
         "
       >
-
+       
         {/* ===================================================
             BACKGROUND GLOW - LEFT
         ==================================================== */}

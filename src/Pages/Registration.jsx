@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 import Footer from "../components/Footer";
-
+import Logo from "../components/Logo";
 export default function Registration() {
   // =========================================================
   // EARLY BIRD FEES
@@ -130,27 +130,7 @@ export default function Registration() {
               {title}
             </h2>
 
-            {early && (
-              <span
-                className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  rounded-full
-                  bg-[#EFF6FF]
-                  px-3
-                  py-1.5
-                  text-[10px]
-                  font-bold
-                  uppercase
-                  tracking-[1.5px]
-                  text-[#075DB8]
-                "
-              >
-                <Sparkles size={12} />
-                Early Bird
-              </span>
-            )}
+            
 
           </div>
 
@@ -316,7 +296,7 @@ export default function Registration() {
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
-
+      <Logo></Logo>
       <section
         className="
           relative
@@ -333,7 +313,7 @@ export default function Registration() {
           lg:pt-20
         "
       >
-
+       
         {/* Soft background glow */}
 
         <div
@@ -440,40 +420,6 @@ export default function Registration() {
             </p>
 
 
-            {/* Scroll Button */}
-
-            <div className="mt-10 flex justify-center">
-
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("fees")
-                    ?.scrollIntoView({
-                      behavior: "smooth",
-                    })
-                }
-                className="
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-[#075DB8]
-                  px-8
-                  py-4
-                  font-bold
-                  text-white
-                  transition-colors
-                  duration-300
-                  hover:bg-[#064F9C]
-                "
-              >
-                View Registration Fees
-
-                <ArrowRight size={20} />
-
-              </button>
-
-            </div>
 
           </motion.div>
 
@@ -572,152 +518,10 @@ export default function Registration() {
               INFORMATION BOX
           ====================================================== */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="mt-10"
-          >
-
-            <div
-              className="
-                overflow-hidden
-                rounded-[16px]
-                border
-                border-[#DCE3EB]
-                border-t-4
-                border-t-[#075DB8]
-                bg-white
-                p-7
-                sm:p-9
-              "
-            >
-
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-5
-                  sm:flex-row
-                  sm:items-center
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    h-14
-                    w-14
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-[#E8F1FF]
-                    text-[#075DB8]
-                  "
-                >
-                  <Sparkles size={25} />
-                </div>
-
-                <div>
-
-                  <h3
-                    className="
-                      text-xl
-                      font-bold
-                      text-[#172554]
-                      sm:text-2xl
-                    "
-                  >
-                    Choose the appropriate registration category
-                  </h3>
-
-                  <p
-                    className="
-                      mt-2
-                      text-base
-                      font-semibold
-                      leading-7
-                      text-[#334155]
-                    "
-                  >
-                    Registration fees differ according to author
-                    category and IEEE membership status.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </motion.div>
+          
 
 
-          {/* =====================================================
-              REGISTRATION BUTTON
-          ====================================================== */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="
-              mt-12
-              flex
-              justify-center
-            "
-          >
-
-            <button
-              className="
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                bg-[#075DB8]
-                px-9
-                py-4
-                text-base
-                font-bold
-                text-white
-                transition-colors
-                duration-300
-                hover:bg-[#064F9C]
-                sm:px-10
-                sm:py-5
-                sm:text-lg
-              "
-            >
-              Proceed to Registration
-
-              <ArrowRight size={21} />
-
-            </button>
-
-          </motion.div>
+          
 
         </div>
 

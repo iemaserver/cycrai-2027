@@ -9,7 +9,7 @@ import {
 
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
-
+import Logo from "../components/Logo";
 const dates = [
   {
     icon: <FaCalendarPlus />,
@@ -65,7 +65,8 @@ export default function ImportantDates() {
           bg-[#F7FAFF]
           scroll-mt-24
         "
-      >
+      > 
+       <Logo></Logo>
 
         {/* =====================================================
             DARK NAVY HERO
@@ -492,14 +493,14 @@ export default function ImportantDates() {
                         <span
                           className="
                             rounded-full
-                            bg-[#EFF6FF]
+                            bg-[#FEE2E2]
                             px-3
                             py-1
-                            text-[9px]
+                            text-[11px]
                             font-bold
                             uppercase
                             tracking-[1.5px]
-                            text-[#075DB8]
+                            text-[#FF0E0E]
                           "
                         >
                           {item.badge}

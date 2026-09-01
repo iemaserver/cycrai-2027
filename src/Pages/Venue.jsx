@@ -1,5 +1,6 @@
 import Footer from "../components/Footer.jsx";
 import { motion } from "framer-motion";
+import Logo from "../components/Logo.jsx";
 import {
   ArrowRight,
   MapPin,
@@ -15,7 +16,7 @@ export default function Venue() {
       {/* =========================================================
           HERO / PAGE HEADING
       ========================================================= */}
-
+      <Logo></Logo>
       <section
         className="
           relative
@@ -283,24 +284,7 @@ export default function Venue() {
 
             {/* Description */}
 
-            <p
-              className="
-                mx-auto
-                mt-6
-                max-w-3xl
-                text-base
-                font-semibold
-                leading-8
-                text-[#334155]
-                md:text-lg
-              "
-            >
-              A technology-focused academic environment providing
-              the foundation for CYCRAI 2027 to connect research,
-              innovation, cybersecurity and responsible artificial
-              intelligence.
-            </p>
-
+            
           </motion.div>
 
 
@@ -420,7 +404,7 @@ export default function Venue() {
                   <MapPin size={18} />
 
                   <span>
-                    Newtown, Kolkata, West Bengal, India
+                    New Town, Kolkata, West Bengal, India
                   </span>
 
                 </div>
@@ -454,41 +438,7 @@ export default function Venue() {
                 </h3>
 
 
-                {/* =================================================
-                    DESCRIPTION
-                ================================================== */}
-
-                <p
-                  className="
-                    mt-6
-                    text-base
-                    font-semibold
-                    leading-8
-                    text-[#334155]
-                    md:text-lg
-                  "
-                >
-                  The Institute of Engineering &amp; Management, Kolkata,
-                  provides an academic environment focused on
-                  engineering, technology, research, innovation and
-                  professional development.
-                </p>
-
-                <p
-                  className="
-                    mt-5
-                    text-base
-                    font-semibold
-                    leading-8
-                    text-[#334155]
-                    md:text-lg
-                  "
-                >
-                  Located in New Town, the campus provides a suitable
-                  setting for bringing together researchers,
-                  academicians, students and industry professionals
-                  for an international conference such as CYCRAI 2027.
-                </p>
+                
 
 
                 {/* =================================================
@@ -675,7 +625,7 @@ export default function Venue() {
                       md:text-lg
                     "
                   >
-                    Institute of Engineering &amp; Management Kolkata,
+                    Institute of Engineering &amp; Management, University of Engineering and Management,
                     New Town, Kolkata, West Bengal, India
                   </p>
 
@@ -687,44 +637,6 @@ export default function Venue() {
 
           </motion.div>
 
-
-          {/* =====================================================
-              VENUE HIGHLIGHTS
-          ====================================================== */}
-
-          <div
-            className="
-              mt-10
-              grid
-              gap-6
-              md:grid-cols-3
-            "
-          >
-
-            {/* Academic Environment */}
-
-            <VenueInfoBox
-              title="Academic Environment"
-              text="A technology-focused academic setting supporting research, innovation and professional development."
-            />
-
-
-            {/* Research & Innovation */}
-
-            <VenueInfoBox
-              title="Research & Innovation"
-              text="An environment designed to bring together researchers, academicians, students and industry professionals."
-            />
-
-
-            {/* Conference Setting */}
-
-            <VenueInfoBox
-              title="Conference Setting"
-              text="A suitable setting for meaningful academic interaction and international collaboration at CYCRAI 2027."
-            />
-
-          </div>
 
         </div>
 
@@ -741,79 +653,3 @@ export default function Venue() {
   );
 }
 
-
-/* =============================================================
-   VENUE INFORMATION BOX
-============================================================= */
-
-function VenueInfoBox({
-  title,
-  text,
-}) {
-  return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 20,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-      className="
-        overflow-hidden
-        rounded-[16px]
-        border
-        border-[#DCE3EB]
-        border-t-4
-        border-t-[#075DB8]
-        bg-white
-      "
-    >
-
-      <div className="p-7">
-
-        <h3
-          className="
-            text-xl
-            font-black
-            uppercase
-            tracking-[0.5px]
-            text-[#075DB8]
-          "
-        >
-          {title}
-        </h3>
-
-        <div
-          className="
-            mt-4
-            h-[2px]
-            w-10
-            bg-[#F59E0B]
-          "
-        />
-
-        <p
-          className="
-            mt-5
-            text-base
-            font-semibold
-            leading-8
-            text-[#334155]
-          "
-        >
-          {text}
-        </p>
-
-      </div>
-
-    </motion.div>
-  );
-}
