@@ -480,7 +480,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => {
-                  window.open("/brochure.pdf", "_blank");
+                  window.open("");
                 }}
                 className="
                   inline-flex
@@ -530,7 +530,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => {
-                  navigate("/submit-paper");
+                  navigate("");
                 }}
                 className="
                   inline-flex
