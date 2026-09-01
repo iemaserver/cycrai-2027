@@ -143,7 +143,7 @@ export const committeeData = {
         ],
       },
       {
-        title: "Organizing Co-Chair",
+        title: "Organizing Co-Chairs",
         members: [
           {
             name: "Prof. Sanjukta Mishra",
@@ -248,7 +248,7 @@ export const committeeData = {
         ],
       },
       {
-        title: "Hospitality Chair",
+        title: "Hospitality Chairs",
         members: [
           {
             name: "Prof. Mousumi Ghosh",
