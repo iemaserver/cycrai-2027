@@ -1,5 +1,7 @@
 // AnnouncementTicker.jsx
 
+import { FaBullhorn } from "react-icons/fa";
+
 export default function AnnouncementTicker() {
   const announcements = [
     {
@@ -13,7 +15,10 @@ export default function AnnouncementTicker() {
   ];
 
   // Duplicate announcements for seamless infinite scrolling
-  const marqueeAnnouncements = [...announcements, ...announcements];
+  const marqueeAnnouncements = [
+    ...announcements,
+    ...announcements,
+  ];
 
   return (
     <div
@@ -37,11 +42,13 @@ export default function AnnouncementTicker() {
         shadow-[0_0_10px_rgba(242,169,0,0.35)]
       "
     >
+
       {/* =====================================================
           MOVING ANNOUNCEMENT TRACK
       ====================================================== */}
 
       <div className="announcement-marquee flex w-max items-center">
+
         {marqueeAnnouncements.map((announcement, index) => (
           <div
             key={`${announcement.id}-${index}`}
@@ -61,6 +68,68 @@ export default function AnnouncementTicker() {
               border-[#172554]/20
             "
           >
+
+            {/* =================================================
+                ANNOUNCEMENTS LABEL
+            ================================================== */}
+
+            <div
+              className="
+                flex
+                shrink-0
+                items-center
+                gap-2
+
+                mr-4
+                sm:mr-5
+                md:mr-6
+              "
+            >
+
+              {/* ICON */}
+
+              <FaBullhorn
+                className="
+                  shrink-0
+
+                  text-red-600
+
+                  text-[12px]
+                  sm:text-sm
+                  md:text-base
+
+                  drop-shadow-[0_1px_2px_rgba(255,255,255,0.3)]
+                "
+              />
+
+              {/* ANNOUNCEMENTS */}
+
+              <span
+                className="
+                  whitespace-nowrap
+
+                  text-red-600
+
+                  text-[10px]
+                  sm:text-[11px]
+                  md:text-xs
+                  lg:text-sm
+
+                  font-black
+
+                  uppercase
+
+                  tracking-wide
+
+                  drop-shadow-[0_1px_1px_rgba(255,255,255,0.25)]
+                "
+              >
+                Announcements
+              </span>
+
+            </div>
+
+
             {/* =================================================
                 ANNOUNCEMENT TEXT
             ================================================== */}
@@ -90,6 +159,7 @@ export default function AnnouncementTicker() {
               {announcement.text}
             </p>
 
+
             {/* =================================================
                 SEPARATOR
             ================================================== */}
@@ -108,10 +178,14 @@ export default function AnnouncementTicker() {
                 font-black
               "
             >
+              ◆
             </span>
+
           </div>
         ))}
+
       </div>
+
 
       {/* =====================================================
           MARQUEE ANIMATION
@@ -119,12 +193,14 @@ export default function AnnouncementTicker() {
       ====================================================== */}
 
       <style>{`
+
         .announcement-marquee {
           animation: announcementMarquee 30s linear infinite;
           will-change: transform;
         }
 
         @keyframes announcementMarquee {
+
           from {
             transform: translateX(0%);
           }
@@ -132,27 +208,35 @@ export default function AnnouncementTicker() {
           to {
             transform: translateX(-50%);
           }
+
         }
+
 
         /* =====================================================
            LARGE SCREENS
         ====================================================== */
 
         @media (min-width: 1024px) {
+
           .announcement-marquee {
             animation-duration: 34s;
           }
+
         }
+
 
         /* =====================================================
            VERY LARGE SCREENS
         ====================================================== */
 
         @media (min-width: 1536px) {
+
           .announcement-marquee {
             animation-duration: 38s;
           }
+
         }
+
 
         /* =====================================================
            PAUSE ON HOVER
@@ -162,17 +246,22 @@ export default function AnnouncementTicker() {
           animation-play-state: paused;
         }
 
+
         /* =====================================================
            ACCESSIBILITY
         ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
+
           .announcement-marquee {
             animation: none;
             transform: translateX(0);
           }
+
         }
+
       `}</style>
+
     </div>
   );
 }

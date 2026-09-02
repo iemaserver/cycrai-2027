@@ -6,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 import LogoStrip from "./LogoStrip";
 import AnnouncementTicker from "./AnnouncementTicker.jsx";
-
+import LiquidMetalButton from "./liquid-metal.jsx";
 import heroBg from "../assets/image/4K Planet Earth Spinning in Space  Free HD Videos - No Copyright - Free HD videos - no copyright (1080p, h264).mp4";
 
 export default function Hero() {
@@ -477,100 +477,52 @@ export default function Hero() {
                   DOWNLOAD BROCHURE
               ================================================== */}
 
-              <button
-                type="button"
-                onClick={() => {
-                  window.open("");
-                }}
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-
-                  min-w-[180px]
-
-                  px-6
-                  py-2.5
-
-                  rounded-md
-
-                  border-2
-                  border-[#27D9F7]
-
-                  bg-transparent
-
-                  text-[#27D9F7]
-
-                  text-sm
-                  sm:text-base
-
-                  font-bold
-
-                  tracking-wide
-
-                  transition-all
-                  duration-300
-
-                  hover:bg-[#27D9F7]
-                  hover:text-[#010611]
-
-                  hover:shadow-[0_0_18px_rgba(39,217,247,0.55)]
-
-                  active:scale-95
-                "
-              >
-                Download Brochure
-              </button>
+              <LiquidMetalButton
+  type="button"
+  size="md"
+  borderWidth={3}
+  metalConfig={{
+    colorBack: "#075DB8",
+    colorTint: "#4DA3FF",
+    speed: 0.2,
+    repetition: 3,
+    distortion: 0.20,
+    scale: 1,
+  }}
+  className="min-w-[200px]"
+  onClick={() => {
+    window.open("");
+  }}
+>
+  Download Brochure
+</LiquidMetalButton>
 
 
               {/* =================================================
                   SUBMIT PAPER
               ================================================== */}
 
-              <button
-                type="button"
-                onClick={() => {
-                  navigate("");
-                }}
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-
-                  min-w-[180px]
-
-                  px-6
-                  py-2.5
-
-                  rounded-md
-
-                  border-2
-                  border-[#27D9F7]
-
-                  bg-transparent
-
-                  text-[#27D9F7]
-
-                  text-sm
-                  sm:text-base
-
-                  font-bold
-
-                  tracking-wide
-
-                  transition-all
-                  duration-300
-
-                  hover:bg-[#27D9F7]
-                  hover:text-[#010611]
-
-                  hover:shadow-[0_0_18px_rgba(39,217,247,0.55)]
-
-                  active:scale-95
-                "
-              >
-                Submit Paper
-              </button>
+              <LiquidMetalButton
+  type="button"
+  size="md"
+  borderWidth={3}
+  metalConfig={{
+    colorBack: "#075DB8",
+    colorTint: "#4DA3FF",
+    speed: 0.2,
+    repetition: 3,
+    distortion: 0.20,
+  }}
+  className="
+    min-w-[200px]
+    shadow-[0_0_25px_rgba(39,217,247,0.25)]
+  "
+  onClick={() => {
+    navigate("");
+  }}
+>
+  Submit Paper
+</LiquidMetalButton>
 
             </div>
 
