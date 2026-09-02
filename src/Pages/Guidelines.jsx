@@ -1264,11 +1264,7 @@ export default function Guidelines() {
               text-[#64748B]
             "
           >
-            The Microsoft CMT service is used for managing the peer-review
-            process for this conference. This service is provided free of
-            charge by Microsoft, which bears all expenses, including costs
-            for Azure cloud services as well as software development and
-            support.
+            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
           </p>
         </div>
       </main>
