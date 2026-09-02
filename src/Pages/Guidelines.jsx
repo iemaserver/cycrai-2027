@@ -290,11 +290,6 @@ export default function Guidelines() {
               number="03"
               title="Foundation of Responsible AI"
             />
-
-            <TrackBox
-              number="04"
-              title="Emerging Technologies"
-            />
           </div>
 
           <SimpleBox>

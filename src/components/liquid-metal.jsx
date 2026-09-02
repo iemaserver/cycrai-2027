@@ -380,23 +380,24 @@ const LiquidMetalButton = ({
 
       /*
        * =====================================================
-       * WHITE METALLIC SHINE
+       * SUBTLE METALLIC SHINE
+       *
+       * IMPORTANT:
+       * The previous 0.9 opacity white stripe has been
+       * removed. This keeps only a very subtle reflection.
        * =====================================================
        */
 
       const shinePosition =
-        ((time * 0.18) %
-          1.4) -
+        ((time * 0.18) % 1.4) -
         0.2;
 
       const shine =
         ctx.createLinearGradient(
-          width *
-            shinePosition,
+          width * shinePosition,
           0,
           width *
-            (shinePosition +
-              0.25),
+            (shinePosition + 0.25),
           height
         );
 
@@ -407,23 +408,26 @@ const LiquidMetalButton = ({
 
       shine.addColorStop(
         0.45,
-        "rgba(255,255,255,0.08)"
+        "rgba(255,255,255,0.015)"
       );
 
       shine.addColorStop(
         0.5,
-        "rgba(255,255,255,0.9)"
+        "rgba(255,255,255,0.035)"
       );
 
       shine.addColorStop(
         0.55,
-        "rgba(255,255,255,0.08)"
+        "rgba(255,255,255,0.015)"
       );
 
       shine.addColorStop(
         1,
         "rgba(255,255,255,0)"
       );
+
+      ctx.globalCompositeOperation =
+        "screen";
 
       ctx.fillStyle =
         shine;
@@ -599,6 +603,7 @@ const LiquidMetalButton = ({
         `}
       />
 
+
       {/* ====================================================
           DEEP NAVY CLICK LAYER
       ==================================================== */}
@@ -622,6 +627,7 @@ const LiquidMetalButton = ({
           }
         `}
       />
+
 
       {/* ====================================================
           BLUE INNER GLOW
@@ -648,6 +654,7 @@ const LiquidMetalButton = ({
             "inset 0 0 25px rgba(7,93,184,0.45)",
         }}
       />
+
 
       {/* ====================================================
           CONTENT

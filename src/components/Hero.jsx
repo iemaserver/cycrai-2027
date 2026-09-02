@@ -339,10 +339,10 @@ export default function Hero() {
 
             <p
               className="
-                text-base
-                sm:text-lg
-                md:text-xl
-                lg:text-2xl
+                text-sm 
+sm:text-base 
+md:text-lg 
+lg:text-xl
 
                 font-extrabold
 
@@ -380,7 +380,7 @@ export default function Hero() {
                 "
               >
                 Department of Computer Science and Engineering
-                (Cyber Security)
+                (Cybersecurity),
               </span>
 
 
@@ -398,7 +398,7 @@ export default function Hero() {
                   drop-shadow-[0_2px_8px_rgba(244,201,93,0.25)]
                 "
               >
-                Institute of Engineering &amp; Management Kolkata,
+                Institute of Engineering &amp; Management Kolkata, <br />
                 University of Engineering and Management Kolkata
               </span>
 

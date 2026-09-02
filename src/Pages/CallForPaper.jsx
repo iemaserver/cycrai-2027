@@ -583,139 +583,13 @@ export default function CallForPapers() {
                 "
               />
 
-              <p
-                className="
-                  mx-auto
-                  mt-5
-                  max-w-3xl
-                  text-lg
-                  font-semibold
-                  leading-8
-                  text-[#334155]
-                  md:text-xl
-                "
-              >
-                Follow these steps to submit your manuscript to
-                CYCRAI 2027.
-              </p>
-
             </motion.div>
 
 
             {/* Submission Cards */}
-
-            <div
-              className="
-                grid
-                gap-6
-                md:grid-cols-2
-                xl:grid-cols-3
-              "
-            >
-
-              {submissionSteps.map((step, index) => {
-                const Icon = step.icon;
-
-                return (
-                  <motion.div
-                    key={step.number}
-                    initial={{
-                      opacity: 0,
-                      y: 30,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.07,
-                    }}
-                    className="
-                      relative
-                      overflow-hidden
-                      rounded-[16px]
-                      border
-                      border-[#DCE3EB]
-                      border-t-4
-                      border-t-[#075DB8]
-                      bg-white
-                      p-7
-                    "
-                  >
-
-                    {/* Number */}
-
-                    <div
-                      className="
-                        absolute
-                        right-6
-                        top-5
-                        text-5xl
-                        font-black
-                        text-[#E8F1FF]
-                      "
-                    >
-                      {step.number}
-                    </div>
-
-
-                    {/* Icon */}
-
-                    <div
-                      className="
-                        relative
-                        flex
-                        h-14
-                        w-14
-                        items-center
-                        justify-center
-                        rounded-2xl
-                        bg-[#E8F1FF]
-                        text-[#075DB8]
-                      "
-                    >
-                      <Icon size={25} />
-                    </div>
-
-
-                    <h3
-                      className="
-                        mt-6
-                        text-xl
-                        font-bold
-                        text-[#172554]
-                      "
-                    >
-                      {step.title}
-                    </h3>
-
-                    <p
-                      className="
-                        mt-3
-                        text-base
-                        font-medium
-                        leading-7
-                        text-[#334155]
-                      "
-                    >
-                      {step.desc}
-                    </p>
-
-                  </motion.div>
-                );
-              })}
-
-            </div>
-
-
             {/* =====================================================
                 IEEE + CMT
             ===================================================== */}
-
             <div
               className="
                 mt-14
