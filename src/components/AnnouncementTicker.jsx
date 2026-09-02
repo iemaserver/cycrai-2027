@@ -6,7 +6,7 @@ export default function AnnouncementTicker() {
   const announcements = [
     {
       id: 1,
-      text: "International Conference on Cyber Security, Cryptography and Responsible AI",
+      text: "First International Conference on Cyber Security, Cryptography and Responsible AI",
     },
     {
       id: 2,

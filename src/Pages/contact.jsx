@@ -10,7 +10,6 @@ export default function Contact() {
       {/* =========================================================
           HERO / PAGE HEADING
       ========================================================= */}
-
       <section
         className="
           relative
@@ -104,7 +103,6 @@ export default function Contact() {
       {/* =========================================================
           CONTACT INFORMATION
       ========================================================= */}
-
       <section
         className="
           relative
@@ -179,7 +177,9 @@ export default function Contact() {
               shadow-[0_20px_60px_rgba(7,93,184,0.08)]
             "
           >
-            {/* Card Header */}
+            {/* =====================================================
+                CARD HEADER
+            ===================================================== */}
             <div
               className="
                 px-7
@@ -223,7 +223,7 @@ export default function Contact() {
                   sm:text-4xl
                 "
               >
-                CYCRAI 2027
+                Contact Details
               </h2>
 
               <div
@@ -237,7 +237,9 @@ export default function Contact() {
               />
             </div>
 
-            {/* Email */}
+            {/* =====================================================
+                CONTACT DETAILS
+            ===================================================== */}
             <div
               className="
                 px-7
@@ -262,7 +264,35 @@ export default function Contact() {
                   sm:p-6
                 "
               >
-                <div className="flex items-start gap-4 sm:gap-5">
+                {/* Conference Chair */}
+                <div>
+                  <p
+                    className="
+                      text-sm
+                      font-bold
+                      text-[#075DB8]
+                      sm:text-base
+                    "
+                  >
+                    Conference Chair
+                  </p>
+
+                  <p
+                    className="
+                      mt-2
+                      text-base
+                      font-bold
+                      leading-relaxed
+                      text-[#172554]
+                      sm:text-lg
+                    "
+                  >
+                    Prof. Dr. Maumita Chakraborty
+                  </p>
+                </div>
+
+                {/* Email Support */}
+                <div className="mt-6 flex items-start gap-4 sm:gap-5">
                   {/* Email Icon */}
                   <div
                     className="
@@ -329,7 +359,6 @@ export default function Contact() {
       {/* =========================================================
           FOOTER
       ========================================================= */}
-
       <Footer />
     </main>
   );
