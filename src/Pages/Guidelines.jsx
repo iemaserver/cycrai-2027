@@ -9,7 +9,6 @@ import {
   ClipboardCheck,
   Code2,
   FileText,
-  Eye,
   HeartHandshake,
   LockKeyhole,
   Mail,
@@ -22,7 +21,6 @@ import {
 } from "lucide-react";
 
 import Footer from "../components/Footer";
-
 
 export default function Guidelines() {
   return (
@@ -40,8 +38,8 @@ export default function Guidelines() {
             absolute
             -left-32
             -top-32
-            h-[450px]
-            w-[450px]
+            h-[420px]
+            w-[420px]
             rounded-full
             bg-[#075DB8]/20
             blur-[140px]
@@ -54,8 +52,8 @@ export default function Guidelines() {
             absolute
             -bottom-40
             -right-32
-            h-[500px]
-            w-[500px]
+            h-[450px]
+            w-[450px]
             rounded-full
             bg-[#60A5FA]/15
             blur-[150px]
@@ -68,18 +66,18 @@ export default function Guidelines() {
             mx-auto
             max-w-7xl
             px-5
-            pb-20
-            pt-14
+            pb-16
+            pt-12
             sm:px-6
-            sm:pb-24
-            sm:pt-16
+            sm:pb-20
+            sm:pt-14
             lg:px-8
-            lg:pb-28
-            lg:pt-20
+            lg:pb-24
+            lg:pt-16
           "
         >
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mx-auto max-w-5xl text-center"
@@ -97,7 +95,6 @@ export default function Guidelines() {
               "
             >
               Guidelines
-
               <span
                 className="
                   block
@@ -106,7 +103,7 @@ export default function Guidelines() {
                   via-[#60A5FA]
                   to-[#BFDBFE]
                   bg-clip-text
-                  pb-3
+                  pb-2
                   text-transparent
                 "
               >
@@ -117,7 +114,7 @@ export default function Guidelines() {
             <p
               className="
                 mx-auto
-                mt-6
+                mt-5
                 max-w-3xl
                 text-sm
                 font-medium
@@ -135,7 +132,6 @@ export default function Guidelines() {
         </div>
       </section>
 
-
       {/* =========================================================
           MAIN CONTENT
       ========================================================= */}
@@ -148,12 +144,12 @@ export default function Guidelines() {
           from-white
           via-[#F8FBFF]
           to-[#F1F6FD]
-          px-5
-          py-14
+          px-4
+          py-8
           sm:px-6
-          sm:py-16
+          sm:py-10
           lg:px-8
-          lg:py-20
+          lg:py-12
         "
       >
         <div
@@ -162,8 +158,8 @@ export default function Guidelines() {
             absolute
             -left-40
             top-20
-            h-[450px]
-            w-[450px]
+            h-[400px]
+            w-[400px]
             rounded-full
             bg-[#BFDBFE]/20
             blur-[140px]
@@ -176,15 +172,15 @@ export default function Guidelines() {
             absolute
             -bottom-40
             -right-40
-            h-[500px]
-            w-[500px]
+            h-[450px]
+            w-[450px]
             rounded-full
             bg-[#DBEAFE]/30
             blur-[140px]
           "
         />
 
-        <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="relative z-10 mx-auto max-w-6xl space-y-3">
 
           {/* =======================================================
               IMPORTANT NOTICE
@@ -201,81 +197,62 @@ export default function Guidelines() {
             </p>
 
             <p>
-              Requirements stated as{" "}
-              <strong>mandatory</strong> are enforced by{" "}
-              <strong>administrative rejection without external review</strong>,
+              Requirements stated as <strong className="font-black text-black">mandatory</strong> are enforced
+              by <strong className="font-black text-black">administrative rejection without external review</strong>,
               and authors will not be given an opportunity to correct a
               defect after the submission deadline.
             </p>
           </InfoBox>
 
-
           {/* =======================================================
-              SCOPE & PRECEDENCE
+              SCOPE
           ======================================================= */}
 
-          <SectionHeading
-            icon={Scale}
-            title="Scope & Precedence"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
-            <InfoBox
-              icon={FileText}
-              title="Scope"
-            >
+          <div className="grid gap-3 lg:grid-cols-2">
+            <InfoBox icon={FileText} title="Scope">
               <p>
                 These guidelines govern the{" "}
-                <strong>
+                
                   preparation, submission, review, revision, presentation
                   and publication
-                </strong>{" "}
+                {" "}
                 of every manuscript submitted to CYCRAI 2027.
               </p>
 
               <p>
                 They apply to the{" "}
-                <strong>
+                
                   main technical tracks, special sessions, posters and
                   work-in-progress categories
-                </strong>
+                
                 .
               </p>
             </InfoBox>
 
-            <InfoBox
-              icon={Scale}
-              title="IEEE & CYCRAI Requirements"
-            >
+            <InfoBox icon={Scale} title="IEEE & CYCRAI Requirements">
               <p>
                 IEEE publication policy sets the{" "}
-                <strong>minimum standard for publication</strong>.
+                minimum standard for publication.
                 CYCRAI 2027 imposes additional requirements for submission.
               </p>
 
               <p>
                 Where a binding IEEE requirement cannot be reconciled with
                 a CYCRAI requirement, the{" "}
-                <strong>
+                
                   IEEE requirement governs eligibility for publication
                   in IEEE Xplore
-                </strong>
+                
                 .
               </p>
             </InfoBox>
           </div>
 
-
           {/* =======================================================
               TECHNICAL TRACKS
           ======================================================= */}
 
-          <SectionHeading
-            icon={BrainCircuit}
-            title="Technical Tracks"
-          />
-
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-3 md:grid-cols-3">
             <TrackBox
               number="01"
               title="Foundation of Cyber Security"
@@ -295,303 +272,231 @@ export default function Guidelines() {
           <SimpleBox>
             <p>
               Topic lists on the Call for Papers page are{" "}
-              <strong>indicative rather than exhaustive</strong>.
+              indicative rather than exhaustive.
               Interdisciplinary work spanning{" "}
-              <strong>
+              
                 security, cryptography and machine learning
-              </strong>{" "}
+              {" "}
               is expressly welcome.
             </p>
           </SimpleBox>
 
-
           {/* =======================================================
-              ORIGINALITY
+              ORIGINALITY + MANUSCRIPT
           ======================================================= */}
 
-          <SectionHeading
-            icon={ShieldCheck}
-            title="Originality & Exclusive Submission"
-          />
+          <div className="grid gap-3 lg:grid-cols-2">
+            <PolicyBox
+              icon={ShieldCheck}
+              title="Originality Requirements"
+              items={[
+                <>
+                  The manuscript must report{" "}
+                  original work by the listed authors.
+                </>,
+                <>
+                  The work must not have been previously published in
+                  substantially the same form.
+                </>,
+                <>
+                  The manuscript must not be{" "}
+                  under review or accepted elsewhere.
+                </>,
+                <>
+                  Concurrent submission results in immediate
+                  desk rejection.
+                </>,
+                <>
+                  Substantial extensions of earlier work are permitted only
+                  with genuinely new technical material.
+                </>,
+                <>
+                  Approximately{" "}
+                  
+                    30% or more genuinely new technical material
+                  {" "}
+                  is expected for an extended version.
+                </>,
+                <>
+                  Survey-only papers and tutorial restatements are not accepted.
+                </>,
+                <>
+                  Implementation reports without technical contribution are
+                  not accepted.
+                </>,
+                <>
+                  Authors are responsible for{" "}
+                  originality, accuracy and integrity.
+                </>,
+              ]}
+            />
 
-          <PolicyBox
-            icon={ShieldCheck}
-            title="Originality Requirements"
-            items={[
-              <>
-                The manuscript must report{" "}
-                <strong>original work</strong> by the listed authors.
-              </>,
-
-              <>
-                The work must not have been previously published in
-                substantially the same form.
-              </>,
-
-              <>
-                The manuscript must not be{" "}
-                <strong>
-                  under review or accepted elsewhere
-                </strong>
-                .
-              </>,
-
-              <>
-                <strong>Concurrent submission</strong> results in immediate
-                desk rejection.
-              </>,
-
-              <>
-                Substantial extensions of earlier work are permitted only
-                with genuinely new technical material.
-              </>,
-
-              <>
-                Approximately{" "}
-                <strong>
-                  30% or more genuinely new technical material
-                </strong>{" "}
-                is expected for an extended version.
-              </>,
-
-              <>
-                Survey-only papers and tutorial restatements are not accepted.
-              </>,
-
-              <>
-                Implementation reports without technical contribution are
-                not accepted.
-              </>,
-
-              <>
-                Authors are responsible for{" "}
-                <strong>
-                  originality, accuracy and integrity
-                </strong>
-                .
-              </>,
-            ]}
-          />
-
-
-          {/* =======================================================
-              MANUSCRIPT PREPARATION
-          ======================================================= */}
-
-          <SectionHeading
-            icon={FileText}
-            title="Manuscript Preparation"
-          />
-
-          <PolicyBox
-            icon={FileText}
-            title="Manuscript Requirements"
-            items={[
-              <>
-                Use the current{" "}
-                <strong>
-                  IEEE Standard two-column conference template
-                </strong>{" "}
-                for A4 paper.
-              </>,
-
-              <>
-                Do not alter{" "}
-                <strong>
-                  margins, font sizes, line spacing or column widths
-                </strong>
-                .
-              </>,
-
-              <>
-                Body text is{" "}
-                <strong>
-                  10-point, single-spaced and two columns
-                </strong>
-                .
-              </>,
-
-              <>
-                Review manuscript must be{" "}
-                <strong>four to six pages</strong>, including references.
-              </>,
-
-              <>
-                Manuscripts must be written in{" "}
-                <strong>English</strong>.
-              </>,
-
-              <>
-                Abstract must not exceed{" "}
-                <strong>250 words</strong>.
-              </>,
-
-              <>
-                Supply{" "}
-                <strong>three to six keywords</strong>.
-              </>,
-
-              <>
-                Every figure and table must be{" "}
-                <strong>numbered, captioned and cited</strong>.
-              </>,
-
-              <>
-                References must be{" "}
-                <strong>
-                  complete, accurate, independently verifiable and in
-                  IEEE style
-                </strong>
-                .
-              </>,
-
-              <>
-                Upload a single{" "}
-                <strong>
-                  readable, unencrypted and text-searchable PDF
-                </strong>
-                .
-              </>,
-
-              <>
-                No author-inserted{" "}
-                <strong>
-                  page numbers, headers, footers, watermarks, tracked
-                  changes, comments or annotations
-                </strong>
-                .
-              </>,
-            ]}
-          />
-
+            <PolicyBox
+              icon={FileText}
+              title="Manuscript Requirements"
+              items={[
+                <>
+                  Use the current{" "}
+                  
+                    IEEE Standard two-column conference template
+                  {" "}
+                  for A4 paper.
+                </>,
+                <>
+                  Do not alter{" "}
+                  
+                    margins, font sizes, line spacing or column widths
+                  .
+                </>,
+                <>
+                  Body text is{" "}
+                  
+                    10-point, single-spaced and two columns
+                  .
+                </>,
+                <>
+                  Review manuscript must be{" "}
+                  <strong className="font-black text-black">four to six pages</strong>, including references.
+                </>,
+                <>
+                  Manuscripts must be written in{" "}
+                  English.
+                </>,
+                <>
+                  Abstract must not exceed 250 words.
+                </>,
+                <>
+                  Supply three to six keywords.
+                </>,
+                <>
+                  Every figure and table must be{" "}
+                  numbered, captioned and cited.
+                </>,
+                <>
+                  References must be{" "}
+                  
+                    complete, accurate, independently verifiable and in
+                    IEEE style
+                  .
+                </>,
+                <>
+                  Upload a single{" "}
+                  
+                    readable, unencrypted and text-searchable PDF
+                  .
+                </>,
+                <>
+                  No author-inserted{" "}
+                  
+                    page numbers, headers, footers, watermarks, tracked
+                    changes, comments or annotations
+                  .
+                </>,
+              ]}
+            />
+          </div>
 
           {/* =======================================================
-              DOUBLE BLIND REVIEW
+              DOUBLE BLIND + SIMILARITY
           ======================================================= */}
 
-          <SectionHeading
-            icon={Eye}
-            title="Double-Blind Review"
-          />
+          <div className="grid gap-3 lg:grid-cols-2">
+            <PolicyBox
+              icon={ShieldCheck}
+              title="Anonymisation Requirements"
+              items={[
+                "Remove author names and photographs.",
+                "Remove affiliations, postal addresses, emails and telephone numbers.",
+                "Remove ORCID identifiers and biographies.",
+                "Remove acknowledgements and identifying funding statements.",
+                "Remove institutional logos and identifying laboratory or group names.",
+                "Anonymise personal and institutional links.",
+                "Write self-citations in the third person.",
+                <>
+                  Do not use{" "}
+                  "[removed for review]" in references.
+                </>,
+                "Anonymise repositories and supplementary material.",
+                "Clear author and creator information from PDF metadata.",
+                "Use a filename that does not identify the author or institution.",
+              ]}
+            />
 
-          <PolicyBox
-            icon={Eye}
-            title="Anonymisation Requirements"
-            items={[
-              "Remove author names and photographs.",
-              "Remove affiliations, postal addresses, emails and telephone numbers.",
-              "Remove ORCID identifiers and biographies.",
-              "Remove acknowledgements and identifying funding statements.",
-              "Remove institutional logos and identifying laboratory or group names.",
-              "Anonymise personal and institutional links.",
-              "Write self-citations in the third person.",
-              <>
-                Do not use{" "}
-                <strong>
-                  "[removed for review]"
-                </strong>{" "}
-                in references.
-              </>,
-              "Anonymise repositories and supplementary material.",
-              "Clear author and creator information from PDF metadata.",
-              "Use a filename that does not identify the author or institution.",
-            ]}
-          />
+            <InfoBox
+              icon={SearchCheck}
+              title="Similarity Screening"
+            >
+              <p>
+                Every submission is screened before review, and every accepted
+                camera-ready manuscript is screened again using{" "}
+                IEEE CrossCheck.
+              </p>
 
+              <ul className="space-y-2.5">
+                <Bullet>
+                  Overall similarity must remain{" "}
+                  <strong className="font-black text-black">below 15%</strong>.
+                </Bullet>
 
-          {/* =======================================================
-              SIMILARITY & PLAGIARISM
-          ======================================================= */}
+                <Bullet>
+                  Similarity from a single source must not exceed{" "}
+                  <strong className="font-black text-black">5%</strong>.
+                </Bullet>
 
-          <SectionHeading
-            icon={SearchCheck}
-            title="Similarity & Plagiarism"
-          />
+                <Bullet>
+                  Similarity is a{" "}
+                  screening indicator, not a finding.
+                </Bullet>
 
-          <InfoBox
-            icon={SearchCheck}
-            title="Similarity Screening"
-          >
-            <p>
-              Every submission is screened before review, and every accepted
-              camera-ready manuscript is screened again using{" "}
-              <strong>IEEE CrossCheck</strong>.
-            </p>
+                <Bullet>
+                  A manuscript below the threshold may still be rejected
+                  where substantive plagiarism is identified.
+                </Bullet>
 
-            <ul className="space-y-4">
-              <Bullet>
-                Overall similarity must remain{" "}
-                <strong>below 15%</strong>.
-              </Bullet>
+                <Bullet>
+                  Self-plagiarism is plagiarism.
+                </Bullet>
 
-              <Bullet>
-                Similarity from a single source must not exceed{" "}
-                <strong>5%</strong>.
-              </Bullet>
+                <Bullet>
+                  Authors must not disguise copied material through synonym
+                  substitution, automated paraphrasing, translation,
+                  character manipulation or citation fragmentation.
+                </Bullet>
 
-              <Bullet>
-                Similarity is a{" "}
-                <strong>screening indicator, not a finding</strong>.
-              </Bullet>
-
-              <Bullet>
-                A manuscript below the threshold may still be rejected
-                where substantive plagiarism is identified.
-              </Bullet>
-
-              <Bullet>
-                <strong>Self-plagiarism is plagiarism.</strong>
-              </Bullet>
-
-              <Bullet>
-                Authors must not disguise copied material through synonym
-                substitution, automated paraphrasing, translation,
-                character manipulation or citation fragmentation.
-              </Bullet>
-
-              <Bullet>
-                Authors are encouraged to run their own check using{" "}
-                <strong>
-                  Turnitin, iThenticate or an equivalent licensed tool
-                </strong>{" "}
-                before submission.
-              </Bullet>
-            </ul>
-          </InfoBox>
-
+                <Bullet>
+                  Authors are encouraged to run their own check using{" "}
+                  
+                    Turnitin, iThenticate or an equivalent licensed tool
+                  {" "}
+                  before submission.
+                </Bullet>
+              </ul>
+            </InfoBox>
+          </div>
 
           {/* =======================================================
               GENERATIVE AI
           ======================================================= */}
 
-          <SectionHeading
-            icon={BrainCircuit}
-            title="Generative AI & Human Authorship"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-3 lg:grid-cols-2">
             <PolicyBox
               icon={UserCheck}
               title="Human Authorship"
               items={[
                 <>
                   Substantive scholarly prose must be written by the{" "}
-                  <strong>listed human authors</strong>.
+                  listed human authors.
                 </>,
-
                 <>
                   Generative AI must not generate, rewrite, paraphrase,
                   expand, condense or summarise submitted scholarly text.
                 </>,
-
                 <>
                   Disclosure does not make{" "}
-                  <strong>
+                  
                     prohibited AI-generated prose acceptable
-                  </strong>
                   .
                 </>,
-
                 <>
                   Human authors remain accountable for all submitted content.
                 </>,
@@ -620,22 +525,18 @@ export default function Guidelines() {
               items={[
                 <>
                   AI must not fabricate{" "}
-                  <strong>
+                  
                     data, results, participants, experiments or evidence
-                  </strong>
                   .
                 </>,
-
                 <>
                   AI must not generate{" "}
-                  <strong>references or citations</strong>.
+                  references or citations.
                 </>,
-
                 <>
                   Confidential manuscripts must not be uploaded to{" "}
-                  <strong>public generative services</strong>.
+                  public generative services.
                 </>,
-
                 <>
                   AI must not be used to conceal plagiarism or research
                   misconduct.
@@ -650,7 +551,7 @@ export default function Guidelines() {
                 "AI research is permitted when the model, version, methodology and evaluation are transparently reported.",
                 "AI-generated code, images and synthetic datasets forming part of the methodology must be disclosed.",
                 <>
-                  <strong>AI detection scores alone</strong> will never
+                  AI detection scores alone will never
                   constitute evidence of a breach.
                 </>,
                 "Human authors remain accountable for every statement, number, figure and reference.",
@@ -658,80 +559,52 @@ export default function Guidelines() {
             />
           </div>
 
-
           {/* =======================================================
-              SUBMISSION
+              SUBMISSION + REVIEW
           ======================================================= */}
 
-          <SectionHeading
-            icon={Upload}
-            title="Submission"
-          />
+          <div className="grid gap-3 lg:grid-cols-2">
+            <PolicyBox
+              icon={Upload}
+              title="Microsoft CMT Requirements"
+              items={[
+                <>
+                  All manuscripts must be submitted through{" "}
+                  Microsoft CMT.
+                </>,
+                <>
+                  Submissions by email or other routes are{" "}
+                  discarded.
+                </>,
+                <>
+                  The submitting author must hold a{" "}
+                  CMT account.
+                </>,
+                <>
+                  Supply title, abstract, keywords and complete author
+                  metadata.
+                </>,
+                <>
+                  The submitting author acts as{" "}
+                  corresponding author.
+                </>,
+                <>
+                  The author list and order are{" "}
+                  final at the submission deadline.
+                </>,
+                "Revisions may be made before the deadline.",
+                <>
+                  Deadlines close at{" "}
+                  <strong className="font-black text-black">23:59 Anywhere on Earth (AoE)</strong>.
+                </>,
+              ]}
+            />
 
-          <PolicyBox
-            icon={Upload}
-            title="Microsoft CMT Requirements"
-            items={[
-              <>
-                All manuscripts must be submitted through{" "}
-                <strong>Microsoft CMT</strong>.
-              </>,
-
-              <>
-                Submissions by email or other routes are{" "}
-                <strong>discarded</strong>.
-              </>,
-
-              <>
-                The submitting author must hold a{" "}
-                <strong>CMT account</strong>.
-              </>,
-
-              <>
-                Supply title, abstract, keywords and complete author
-                metadata.
-              </>,
-
-              <>
-                The submitting author acts as{" "}
-                <strong>corresponding author</strong>.
-              </>,
-
-              <>
-                The author list and order are{" "}
-                <strong>final at the submission deadline</strong>.
-              </>,
-
-              <>
-                Revisions may be made before the deadline.
-              </>,
-
-              <>
-                Deadlines close at{" "}
-                <strong>
-                  23:59 Anywhere on Earth (AoE)
-                </strong>
-                .
-              </>,
-            ]}
-          />
-
-
-          {/* =======================================================
-              REVIEW
-          ======================================================= */}
-
-          <SectionHeading
-            icon={SearchCheck}
-            title="Review Criteria"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
             <InfoBox
               icon={SearchCheck}
               title="Review Criteria"
             >
-              <ul className="space-y-4">
+              <ul className="space-y-2.5">
                 <Bullet>Relevance to the selected technical track</Bullet>
                 <Bullet>Originality</Bullet>
                 <Bullet>Technical correctness</Bullet>
@@ -749,7 +622,7 @@ export default function Guidelines() {
               icon={Scale}
               title="Review Outcomes"
             >
-              <ul className="space-y-4">
+              <ul className="space-y-2.5">
                 <Bullet>Acceptance</Bullet>
                 <Bullet>
                   Acceptance subject to mandatory correction
@@ -761,107 +634,79 @@ export default function Guidelines() {
               </ul>
 
               <p>
-                There is{" "}
-                <strong>no rebuttal stage</strong>. Reviewer identities
+                There is no rebuttal stage. Reviewer identities
                 are never disclosed and reviewing material remains
                 confidential.
               </p>
             </InfoBox>
+
+            <PolicyBox
+              icon={ClipboardCheck}
+              title="Camera-Ready Requirements"
+              items={[
+                "Address mandatory reviewer comments.",
+                "Restore author names and affiliations.",
+                "Restore acknowledgements and funding information.",
+                "Restore full ethical approval details.",
+                <>
+                  Standard camera-ready length is <strong className="font-black text-black">six pages</strong>.
+                </>,
+                <>
+                  Up to <strong className="font-black text-black">two additional pages</strong> are permitted on
+                  payment of ₹1000 per additional page.
+                </>,
+                <>
+                  The <strong className="font-black text-black">absolute maximum is eight pages</strong>.
+                </>,
+                "Remove page numbers, headers and footers.",
+                <>
+                  Validate PDF through{" "}
+                  IEEE PDF eXpress.
+                </>,
+                "Complete IEEE Electronic Copyright Form.",
+                "Complete author registration and payment.",
+                "Upload validated PDF and signed eCF to CMT.",
+                "Complete final CrossCheck and prohibited-author screening.",
+                "Proofread before final upload.",
+              ]}
+            />
           </div>
 
-
           {/* =======================================================
-              CAMERA READY
+              REGISTRATION + WITHDRAWAL
           ======================================================= */}
 
-          <SectionHeading
-            icon={ClipboardCheck}
-            title="Camera-Ready Submission"
-          />
-
-          <PolicyBox
-            icon={ClipboardCheck}
-            title="Camera-Ready Requirements"
-            items={[
-              "Address mandatory reviewer comments.",
-              "Restore author names and affiliations.",
-              "Restore acknowledgements and funding information.",
-              "Restore full ethical approval details.",
-              <>
-                Standard camera-ready length is{" "}
-                <strong>six pages</strong>.
-              </>,
-              <>
-                Up to{" "}
-                <strong>two additional pages</strong> are permitted on
-                payment of ₹1000 per additional page.
-              </>,
-              <>
-                The{" "}
-                <strong>absolute maximum is eight pages</strong>.
-              </>,
-              "Remove page numbers, headers and footers.",
-              <>
-                Validate PDF through{" "}
-                <strong>IEEE PDF eXpress</strong>.
-              </>,
-              "Complete IEEE Electronic Copyright Form.",
-              "Complete author registration and payment.",
-              "Upload validated PDF and signed eCF to CMT.",
-              "Complete final CrossCheck and prohibited-author screening.",
-              "Proofread before final upload.",
-            ]}
-          />
-
-
-          {/* =======================================================
-              REGISTRATION
-          ======================================================= */}
-
-          <SectionHeading
-            icon={Users}
-            title="Registration, Presentation & Withdrawal"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-3 lg:grid-cols-2">
             <PolicyBox
               icon={Users}
               title="Registration & Presentation"
               items={[
                 <>
                   At least one author must complete{" "}
-                  <strong>full author registration</strong>.
+                  full author registration.
                 </>,
-
                 <>
-                  Each full registration covers{" "}
-                  <strong>one paper</strong>.
+                  Each full registration covers one paper.
                 </>,
-
                 <>
                   Valid membership/student proof is required where applicable.
                 </>,
-
                 <>
-                  <strong>Presentation is mandatory.</strong>
+                  <strong className="font-black text-black">Presentation is mandatory.</strong>
                 </>,
-
                 <>
                   At least one author must present the paper.
                 </>,
-
                 <>
                   Registered but unpresented papers are excluded from{" "}
-                  <strong>IEEE Xplore proceedings</strong>.
+                  IEEE Xplore proceedings.
                 </>,
-
                 <>
                   Remote presentation may be requested at least{" "}
-                  <strong>fourteen days before the conference</strong>.
+                  fourteen days before the conference.
                 </>,
-
                 <>
-                  <strong>Registration fees are non-refundable.</strong>
+                  <strong className="font-black text-black">Registration fees are non-refundable.</strong>
                 </>,
               ]}
             />
@@ -875,57 +720,35 @@ export default function Guidelines() {
                 "Agreement of all co-authors is required after acceptance.",
                 <>
                   Withdrawal to submit substantially the same work elsewhere
-                  may be treated as{" "}
-                  <strong>abuse of peer review</strong>.
+                  may be treated as abuse of peer review.
                 </>,
               ]}
             />
           </div>
 
-
-          {/* =======================================================
-              IEEE XPLORE
-          ======================================================= */}
-
-          <InfoBox
-            icon={FileText}
-            title="IEEE Xplore Submission"
-            className="mt-8"
-          >
+          <InfoBox icon={FileText} title="IEEE Xplore Submission">
             <p>
               All accepted papers that are{" "}
-              <strong>registered and presented</strong> will be submitted
+              registered and presented will be submitted
               for inclusion in the IEEE Xplore Digital Library, subject to
               IEEE Xplore's scope and quality requirements.
             </p>
 
             <p>
               Acceptance by CYCRAI 2027{" "}
-              <strong>
-                does not by itself guarantee inclusion
-              </strong>
-              .
+              <strong className="font-black text-black">does not by itself guarantee inclusion</strong>.
             </p>
           </InfoBox>
-
 
           {/* =======================================================
               AUTHORSHIP
           ======================================================= */}
 
-          <SectionHeading
-            icon={UserCheck}
-            title="Authorship, Conflicts & Confidentiality"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-3">
-            <InfoBox
-              icon={UserCheck}
-              title="Authorship"
-            >
+          <div className="grid gap-3 lg:grid-cols-3">
+            <InfoBox icon={UserCheck} title="Authorship">
               <p>
                 Every listed author must have made a{" "}
-                <strong>substantive intellectual contribution</strong>,
+                substantive intellectual contribution,
                 participated in drafting or critically revising the
                 manuscript, approved the submitted version and be prepared
                 to take public responsibility for its content.
@@ -938,10 +761,7 @@ export default function Guidelines() {
               </p>
             </InfoBox>
 
-            <InfoBox
-              icon={Scale}
-              title="Conflicts of Interest"
-            >
+            <InfoBox icon={Scale} title="Conflicts of Interest">
               <p>
                 Authors, reviewers and committee members must disclose any
                 circumstance that could reasonably compromise or appear to
@@ -956,13 +776,10 @@ export default function Guidelines() {
               </p>
             </InfoBox>
 
-            <InfoBox
-              icon={LockKeyhole}
-              title="Reviewer Confidentiality"
-            >
+            <InfoBox icon={LockKeyhole} title="Reviewer Confidentiality">
               <p>
                 A manuscript under review is a{" "}
-                <strong>confidential document</strong> and remains so in
+                confidential document and remains so in
                 perpetuity.
               </p>
 
@@ -975,17 +792,11 @@ export default function Guidelines() {
             </InfoBox>
           </div>
 
-
           {/* =======================================================
               RESEARCH INTEGRITY
           ======================================================= */}
 
-          <SectionHeading
-            icon={AlertTriangle}
-            title="Research Integrity & Responsible Cybersecurity"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-3 lg:grid-cols-3">
             <PolicyBox
               icon={FileText}
               title="Data & Result Integrity"
@@ -1025,17 +836,11 @@ export default function Guidelines() {
             />
           </div>
 
-
           {/* =======================================================
-              ETHICS
+              ETHICS + REPRODUCIBILITY
           ======================================================= */}
 
-          <SectionHeading
-            icon={HeartHandshake}
-            title="Ethics, AI Reporting & Reproducibility"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-3 lg:grid-cols-2">
             <InfoBox
               icon={HeartHandshake}
               title="Human Participants & Privacy"
@@ -1045,9 +850,8 @@ export default function Guidelines() {
                 experiments, interviews, surveys, biometric or medical data,
                 personally identifiable information, private communications
                 or protected data must comply with applicable{" "}
-                <strong>
+                
                   ethical, institutional and legal requirements
-                </strong>
                 .
               </p>
 
@@ -1058,15 +862,12 @@ export default function Guidelines() {
               </p>
             </InfoBox>
 
-            <InfoBox
-              icon={BrainCircuit}
-              title="AI Research Reporting"
-            >
+            <InfoBox icon={BrainCircuit} title="AI Research Reporting">
               <p>
                 AI research must be reported with enough transparency for
-                <strong>
+                
                   {" "}reliability, validity and limitations
-                </strong>{" "}
+                {" "}
                 to be assessed.
               </p>
 
@@ -1086,9 +887,8 @@ export default function Guidelines() {
                 Papers proposing cryptographic primitives, authentication
                 mechanisms, security protocols, key-management systems or
                 privacy-preserving mechanisms must explicitly state their{" "}
-                <strong>
+                
                   security assumptions and threat model
-                </strong>
                 .
               </p>
 
@@ -1099,10 +899,7 @@ export default function Guidelines() {
               </p>
             </InfoBox>
 
-            <InfoBox
-              icon={Code2}
-              title="Reproducibility"
-            >
+            <InfoBox icon={Code2} title="Reproducibility">
               <p>
                 Describe datasets, preprocessing, algorithms, implementation,
                 model configuration, evaluation procedure, software
@@ -1119,17 +916,11 @@ export default function Guidelines() {
             </InfoBox>
           </div>
 
-
           {/* =======================================================
               MISCONDUCT
           ======================================================= */}
 
-          <SectionHeading
-            icon={AlertTriangle}
-            title="Research Misconduct & Sanctions"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-3 lg:grid-cols-2">
             <PolicyBox
               icon={AlertTriangle}
               title="Serious Integrity Concerns"
@@ -1171,53 +962,41 @@ export default function Guidelines() {
               </p>
 
               <p>
-                <strong>
+                
                   Registration fees are not refunded
-                </strong>{" "}
+                {" "}
                 in these circumstances.
               </p>
             </InfoBox>
           </div>
 
-
           {/* =======================================================
               CONFERENCE CONDUCT
           ======================================================= */}
 
-          <SectionHeading
-            icon={Users}
-            title="Conference Conduct & Interpretation"
-          />
-
-          <div className="grid gap-8 lg:grid-cols-2">
-            <InfoBox
-              icon={Users}
-              title="Conference Conduct"
-            >
+          <div className="grid gap-3 lg:grid-cols-2">
+            <InfoBox icon={Users} title="Conference Conduct">
               <p>
                 CYCRAI 2027 is committed to an environment in which every
                 participant can take part without{" "}
-                <strong>
+                
                   harassment, discrimination or intimidation
-                </strong>
                 .
               </p>
 
               <p>
                 Authors, reviewers, speakers, delegates, volunteers, sponsors
                 and committee members are expected to observe the{" "}
-                <strong>
+                
                   IEEE Code of Ethics and IEEE Code of Conduct
-                </strong>
                 .
               </p>
 
               <p>
                 Concerns may be raised confidentially with a member of the
                 Organising Committee or by writing to{" "}
-                <strong className="text-[#075DB8]">
+                
                   cycrai@iem.edu.in
-                </strong>
                 .
               </p>
             </InfoBox>
@@ -1228,8 +1007,7 @@ export default function Guidelines() {
             >
               <p>
                 These guidelines protect authors, reviewers, participants
-                and the{" "}
-                <strong>integrity of the scientific record</strong>.
+                and the integrity of the scientific record.
               </p>
 
               <p>
@@ -1241,21 +1019,15 @@ export default function Guidelines() {
 
               <p>
                 The version published on the{" "}
-                <strong>official conference website</strong> at the relevant
+                official conference website at the relevant
                 time governs.
               </p>
             </InfoBox>
           </div>
 
-
           {/* =======================================================
               IMPORTANT DATES
           ======================================================= */}
-
-          <SectionHeading
-            icon={CalendarDays}
-            title="Important Dates"
-          />
 
           <SimpleBox>
             <DateRow
@@ -1290,18 +1062,12 @@ export default function Guidelines() {
             />
           </SimpleBox>
 
-
           {/* =======================================================
               CHECKLIST
           ======================================================= */}
 
-          <SectionHeading
-            icon={ClipboardCheck}
-            title="Checklist Before Submission"
-          />
-
           <SimpleBox>
-            <div className="grid grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-x-10 gap-y-4 md:grid-cols-2">
               <ChecklistItem>
                 Work is original and not under review or accepted elsewhere.
               </ChecklistItem>
@@ -1379,15 +1145,9 @@ export default function Guidelines() {
             </div>
           </SimpleBox>
 
-
           {/* =======================================================
               AUTHOR DECLARATION
           ======================================================= */}
-
-          <SectionHeading
-            icon={UserCheck}
-            title="Author Declaration"
-          />
 
           <InfoBox
             icon={UserCheck}
@@ -1396,36 +1156,29 @@ export default function Guidelines() {
             <p>
               By submitting a manuscript to CYCRAI 2027, the corresponding
               author confirms on behalf of all listed authors that the work is{" "}
-              <strong>
+              <strong className="font-black text-black">
                 original and is neither published nor under review elsewhere
               </strong>
               ; every named author has contributed substantively, has
               approved the submitted version, and no other person qualifies
               for authorship; the manuscript meets the{" "}
-              <strong>
+              <strong className="font-black text-black">
                 format, length and anonymity requirements
               </strong>
               ; similarity thresholds are met; the scholarly prose complies
-              with the{" "}
-              <strong>human-authorship requirement</strong>; references and
-              reported results are accurate; applicable ethical and
+              with the human-authorship requirement; references
+              and reported results are accurate; applicable ethical and
               research-integrity requirements have been observed; conflicts
               of interest have been disclosed; and the authors accept the
               registration, presentation and no-show provisions.
             </p>
           </InfoBox>
 
-
           {/* =======================================================
               IEEE RESOURCES
           ======================================================= */}
 
-          <SectionHeading
-            icon={FileText}
-            title="IEEE Author Resources"
-          />
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             <ResourceBox
               title="IEEE Author Center"
               href="https://ieeeauthorcenter.ieee.org/"
@@ -1467,23 +1220,12 @@ export default function Guidelines() {
             />
           </div>
 
-
           {/* =======================================================
               ENQUIRIES
           ======================================================= */}
 
-          <SectionHeading
-            icon={Mail}
-            title="Enquiries"
-          />
-
-          <InfoBox
-            icon={Mail}
-            title="CYCRAI 2027"
-          >
-            <p>
-              For enquiries, contact:
-            </p>
+          <InfoBox icon={Mail} title="CYCRAI 2027">
+            <p>For enquiries, contact:</p>
 
             <a
               href="mailto:cycrai@iem.edu.in"
@@ -1492,10 +1234,10 @@ export default function Guidelines() {
                 items-center
                 gap-2
                 text-lg
-                font-black
-                text-[#075DB8]
+                font-semibold
+                text-black
                 transition-colors
-                hover:text-[#054A91]
+                hover:text-[#172554]
                 sm:text-xl
               "
             >
@@ -1504,8 +1246,7 @@ export default function Guidelines() {
             </a>
 
             <p>
-              Quote the{" "}
-              <strong>CMT paper identifier</strong> where one exists.
+              Quote the CMT paper identifier where one exists.
               Enquiries about the scientific judgement of reviewers will not
               be answered. Confidential publication-ethics concerns should be
               addressed directly to the Conference Chairs.
@@ -1515,8 +1256,8 @@ export default function Guidelines() {
           <p
             className="
               mx-auto
-              mt-8
               max-w-5xl
+              pt-2
               text-center
               text-sm
               leading-7
@@ -1537,57 +1278,6 @@ export default function Guidelines() {
   );
 }
 
-
-/* =========================================================
-   SECTION HEADING
-   ONLY HEADING + ICON
-========================================================= */
-
-function SectionHeading({
-  icon: Icon,
-  title,
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55 }}
-      className="
-        mb-10
-        mt-20
-        text-center
-        sm:mb-12
-        sm:mt-24
-      "
-    >
-      <div className="flex items-center justify-center">
-        <Icon
-          size={21}
-          strokeWidth={2.2}
-          className="text-[#075DB8]"
-        />
-      </div>
-
-      <h2
-        className="
-          mt-3
-          text-3xl
-          font-black
-          leading-tight
-          tracking-tight
-          text-[#172554]
-          sm:text-4xl
-          md:text-5xl
-        "
-      >
-        {title}
-      </h2>
-    </motion.div>
-  );
-}
-
-
 /* =========================================================
    INFO BOX
 ========================================================= */
@@ -1600,47 +1290,48 @@ function InfoBox({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45 }}
       className={`
         overflow-hidden
-        rounded-[16px]
+        rounded-[14px]
         border
         border-[#DCE3EB]
-        border-t-4
+        border-t-[3px]
         border-t-[#075DB8]
         bg-white
-        p-7
-        sm:p-9
+        p-5
+        shadow-[0_6px_20px_rgba(15,23,42,0.035)]
+        sm:p-6
         ${className}
       `}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <div
           className="
             flex
-            h-12
-            w-12
+            h-10
+            w-10
             shrink-0
             items-center
             justify-center
-            rounded-xl
+            rounded-lg
             bg-[#E8F1FF]
             text-[#075DB8]
           "
         >
-          <Icon size={24} />
+          <Icon size={21} />
         </div>
 
         <h3
           className="
-            text-xl
+            text-lg
             font-black
             leading-tight
             text-[#172554]
-            sm:text-2xl
+            sm:text-xl
           "
         >
           {title}
@@ -1649,8 +1340,8 @@ function InfoBox({
 
       <div
         className="
-          mt-6
-          space-y-5
+          mt-4
+          space-y-3.5
           text-base
           font-semibold
           leading-8
@@ -1664,7 +1355,6 @@ function InfoBox({
   );
 }
 
-
 /* =========================================================
    POLICY BOX
 ========================================================= */
@@ -1677,46 +1367,47 @@ function PolicyBox({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45 }}
       className={`
-        rounded-[16px]
+        rounded-[14px]
         border
         border-[#DCE3EB]
-        border-t-4
+        border-t-[3px]
         border-t-[#075DB8]
         bg-white
-        p-7
-        sm:p-9
+        p-5
+        shadow-[0_6px_20px_rgba(15,23,42,0.035)]
+        sm:p-6
         ${className}
       `}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <div
           className="
             flex
-            h-12
-            w-12
+            h-10
+            w-10
             shrink-0
             items-center
             justify-center
-            rounded-xl
+            rounded-lg
             bg-[#E8F1FF]
             text-[#075DB8]
           "
         >
-          <Icon size={24} />
+          <Icon size={21} />
         </div>
 
         <h3
           className="
-            text-xl
+            text-lg
             font-black
             leading-tight
             text-[#172554]
-            sm:text-2xl
+            sm:text-xl
           "
         >
           {title}
@@ -1725,25 +1416,22 @@ function PolicyBox({
 
       <ul
         className="
-          mt-7
-          space-y-4
+          mt-4
+          space-y-2.5
           text-base
           font-semibold
-          leading-7
+          leading-8
           text-[#334155]
           sm:text-lg
         "
       >
         {items.map((item, index) => (
-          <Bullet key={index}>
-            {item}
-          </Bullet>
+          <Bullet key={index}>{item}</Bullet>
         ))}
       </ul>
     </motion.div>
   );
 }
-
 
 /* =========================================================
    BULLET
@@ -1751,7 +1439,7 @@ function PolicyBox({
 
 function Bullet({ children }) {
   return (
-    <li className="flex items-start gap-3">
+    <li className="flex items-start gap-2.5">
       <span
         className="
           mt-[11px]
@@ -1770,7 +1458,6 @@ function Bullet({ children }) {
   );
 }
 
-
 /* =========================================================
    SIMPLE BOX
 ========================================================= */
@@ -1781,20 +1468,20 @@ function SimpleBox({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45 }}
       className={`
-        mt-8
-        rounded-[16px]
+        rounded-[14px]
         border
         border-[#DCE3EB]
-        border-t-4
+        border-t-[3px]
         border-t-[#075DB8]
         bg-white
-        p-7
-        sm:p-9
+        p-5
+        shadow-[0_6px_20px_rgba(15,23,42,0.035)]
+        sm:p-6
         ${className}
       `}
     >
@@ -1813,7 +1500,6 @@ function SimpleBox({
   );
 }
 
-
 /* =========================================================
    TRACK BOX
 ========================================================= */
@@ -1824,32 +1510,33 @@ function TrackBox({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45 }}
+      transition={{ duration: 0.4 }}
       className="
-        rounded-[16px]
+        rounded-[14px]
         border
         border-[#DCE3EB]
-        border-t-4
+        border-t-[3px]
         border-t-[#075DB8]
         bg-white
-        p-7
+        p-5
+        shadow-[0_6px_20px_rgba(15,23,42,0.035)]
         transition-all
         duration-300
         hover:-translate-y-1
-        hover:shadow-[0_15px_35px_rgba(7,93,184,0.08)]
-        sm:p-8
+        hover:shadow-[0_12px_30px_rgba(7,93,184,0.08)]
+        sm:p-6
       "
     >
-      <div className="flex items-center justify-between gap-5">
+      <div className="flex items-center justify-between gap-4">
         <span
           className="
-            text-4xl
+            text-3xl
             font-black
             text-[#DBEAFE]
-            sm:text-5xl
+            sm:text-4xl
           "
         >
           {number}
@@ -1858,27 +1545,27 @@ function TrackBox({
         <div
           className="
             flex
-            h-11
-            w-11
+            h-10
+            w-10
             items-center
             justify-center
-            rounded-xl
+            rounded-lg
             bg-[#E8F1FF]
             text-[#075DB8]
           "
         >
-          <BrainCircuit size={22} />
+          <BrainCircuit size={20} />
         </div>
       </div>
 
       <h3
         className="
-          mt-6
-          text-xl
+          mt-4
+          text-lg
           font-black
           leading-tight
           text-[#172554]
-          sm:text-2xl
+          sm:text-xl
         "
       >
         {title}
@@ -1886,7 +1573,6 @@ function TrackBox({
     </motion.div>
   );
 }
-
 
 /* =========================================================
    DATE ROW
@@ -1902,12 +1588,12 @@ function DateRow({
       className={`
         flex
         flex-col
-        gap-2
-        py-5
+        gap-1.5
+        py-3.5
         sm:flex-row
         sm:items-center
         sm:justify-between
-        sm:gap-6
+        sm:gap-5
         ${!last ? "border-b border-[#E2E8F0]" : ""}
       `}
     >
@@ -1915,7 +1601,7 @@ function DateRow({
         className="
           text-base
           font-semibold
-          leading-7
+          leading-8
           text-[#334155]
           sm:text-lg
         "
@@ -1926,10 +1612,10 @@ function DateRow({
       <span
         className="
           shrink-0
-          text-base
+          text-sm
           font-black
-          text-[#075DB8]
-          sm:text-lg
+          text-black
+          sm:text-base
         "
       >
         {date}
@@ -1938,16 +1624,15 @@ function DateRow({
   );
 }
 
-
 /* =========================================================
    CHECKLIST ITEM
 ========================================================= */
 
 function ChecklistItem({ children }) {
   return (
-    <div className="flex items-start gap-3">
+    <div className="flex items-start gap-2.5">
       <CheckCircle2
-        size={20}
+        size={18}
         strokeWidth={2}
         className="mt-1 shrink-0 text-[#075DB8]"
       />
@@ -1956,7 +1641,7 @@ function ChecklistItem({ children }) {
         className="
           text-base
           font-semibold
-          leading-7
+          leading-8
           text-[#334155]
           sm:text-lg
         "
@@ -1966,7 +1651,6 @@ function ChecklistItem({ children }) {
     </div>
   );
 }
-
 
 /* =========================================================
    RESOURCE BOX
@@ -1981,46 +1665,47 @@ function ResourceBox({
       href={href}
       target="_blank"
       rel="noreferrer"
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45 }}
+      transition={{ duration: 0.4 }}
       className="
-        rounded-[16px]
+        rounded-[14px]
         border
         border-[#DCE3EB]
-        border-t-4
+        border-t-[3px]
         border-t-[#075DB8]
         bg-white
-        p-6
+        p-5
+        shadow-[0_6px_20px_rgba(15,23,42,0.035)]
         transition-all
         duration-300
         hover:-translate-y-1
         hover:border-[#BFD3EA]
-        hover:shadow-[0_15px_35px_rgba(7,93,184,0.08)]
+        hover:shadow-[0_12px_30px_rgba(7,93,184,0.08)]
       "
     >
       <div
         className="
           flex
-          h-11
-          w-11
+          h-10
+          w-10
           items-center
           justify-center
-          rounded-xl
+          rounded-lg
           bg-[#E8F1FF]
           text-[#075DB8]
         "
       >
-        <FileText size={21} />
+        <FileText size={20} />
       </div>
 
       <h3
         className="
-          mt-5
-          text-lg
+          mt-4
+          text-base
           font-black
-          leading-7
+          leading-6
           text-[#172554]
         "
       >
@@ -2029,10 +1714,10 @@ function ResourceBox({
 
       <p
         className="
-          mt-3
-          text-sm
-          font-bold
-          text-[#075DB8]
+          mt-2
+          text-xs
+          font-semibold
+          text-black
         "
       >
         Open IEEE Resource →
