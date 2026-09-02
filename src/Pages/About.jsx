@@ -108,7 +108,7 @@ export default function AboutSection() {
                 md:text-xl
               "
             >
-              International Conference on Cyber Security,
+              First International Conference on Cyber Security,
               Cryptography and Responsible AI
             </p>
 
