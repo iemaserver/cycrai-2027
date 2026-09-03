@@ -68,12 +68,12 @@ export const committeeData = {
               "University of Engineering and Management, Kolkata",
           },
           {
-            name: "Valentina Emilia Balas",
+            name: "Prof. Dr. Valentina Emilia Balas",
             designation:
               "Aurel Vlaicu University of Arad / Academy of Romanian Scientists, Romania",
           },
           {
-            name: "Wei Wei Jiang",
+            name: "Prof. Dr. Wei Wei Jiang",
             designation:
               "Beijing University of Posts and Telecommunication, China",
           },
@@ -219,7 +219,7 @@ export const committeeData = {
         title: "WIE Chair",
         members: [
           {
-            name: "Sheli Sinha Chaudhuri",
+            name: "Prof. Dr. Sheli Sinha Chaudhuri",
   
             designation: "Jadavpur University, India",
           },

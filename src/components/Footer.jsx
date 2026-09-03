@@ -142,7 +142,7 @@ export default function Footer() {
                 text-justify
               "
             >
-              First International Conference on Cyber Security, Cryptography and
+              First International Conference on Cybersecurity, Cryptography and
               Responsible AI.
             </p>
 

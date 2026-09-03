@@ -364,7 +364,7 @@ lg:text-xl
                   text-white
                 "
               >
-                Organized by{" "}
+                Organized by{" "} <br />
               </span>
 
 
@@ -518,7 +518,8 @@ lg:text-xl
     shadow-[0_0_25px_rgba(39,217,247,0.25)]
   "
   onClick={() => {
-    navigate("");
+    navigate("https://cmt3.research.microsoft.com/CYCRAI2027","_blank",
+    "noopener,noreferrer");
   }}
 >
   Submit Paper

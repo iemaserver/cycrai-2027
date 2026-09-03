@@ -706,11 +706,12 @@ export default function CallForPapers() {
                           border
                           border-[#D6E3F5]
                           bg-[#F8FBFF]
-                          px-5
-                          py-4
-                          text-sm
-                          font-semibold
-                          text-[#075DB8]
+                          px-6
+                          py-5
+                          text-mm
+                          font-bold
+                          text-[#0056B3]
+                          
                           transition-colors
                           duration-300
                           hover:bg-[#E8F1FF]
@@ -1012,7 +1013,7 @@ export default function CallForPapers() {
 
                     <button
                       onClick={() =>
-                        window.open("", "_blank")
+                        window.open("https://cmt3.research.microsoft.com/CYCRAI2027", "_blank", "noopener,noreferrer")
                       }
                       className="
                         inline-flex
