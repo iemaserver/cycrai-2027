@@ -308,10 +308,10 @@ export default function AboutSection() {
                       md:text-xl
                     "
                   >
-                    First International Conference on Cybersecurity,
+                    First International Conference on Cyber Security,
                     Cryptography and Responsible AI (CYCRAI 2027) will be
                     organized by Department of Computer Science and
-                    Engineering(Cybersecurity), Institute of Engineering &
+                    Engineering(Cyber Security), Institute of Engineering &
                     Management Kolkata, under University of Engineering and
                     Management Kolkata, with Technical Co-Sponsorship of the
                     IEEE Kolkata Section and IEEE Computer Society SBC during

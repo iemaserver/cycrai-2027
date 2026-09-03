@@ -230,10 +230,10 @@ export const committeeData = {
         title: "Finance Chair",
         members: [
           {
-            name: "Prof. Dr. Srilekha Mukherjee",
+            name: "Mr. Indranil Banerjee",
             designation:
               "University of Engineering and Management, Kolkata",
-          }
+          },
         ],
       },
 
@@ -241,7 +241,7 @@ export const committeeData = {
         title: "Finance Co-Chair",
         members: [
           {
-            name: "Mr. Indranil Banerjee",
+            name: "Prof. Dr. Srilekha Mukherjee",
             designation:
               "University of Engineering and Management, Kolkata",
           },

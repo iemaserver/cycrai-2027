@@ -15,10 +15,10 @@ const tracks = [
     icon: ShieldCheck,
     title: "Foundation of Cyber Security",
     description:
-      "Research addressing the foundations, technologies, architectures and emerging challenges in cybersecurity and resilient digital infrastructure.",
+      "Research addressing the foundations, technologies, architectures and emerging challenges in cyber Security and resilient digital infrastructure.",
     subtopics: [
-      "Cybersecurity Awareness",
-      "Cybersecurity Governance, Risk and Compliance",
+      "Cyber Security Awareness",
+      "Cyber Security Governance, Risk and Compliance",
       "Digital Forensics and Cybercrime Investigation",
       "Cyberattack Reconstruction and Attribution",
       "Hardware Security and Reliability",

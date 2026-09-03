@@ -28,8 +28,8 @@ export default function CallForPapers() {
       title: "Track 1: Foundation of Cyber Security",
       chair: "Prof. (Dr.) Shreya Nag",
       subtopics: [
-        "Cybersecurity Awareness",
-        "Cybersecurity Governance, Risk and Compliance",
+        "Cyber Security Awareness",
+        "Cyber Security Governance, Risk and Compliance",
         "Digital Forensics and Cybercrime Investigation",
         "Cyberattack Reconstruction and Attribution",
         "Hardware Security and Reliability",

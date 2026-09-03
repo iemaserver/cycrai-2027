@@ -380,7 +380,7 @@ lg:text-xl
                 "
               >
                 Department of Computer Science and Engineering
-                (Cybersecurity),
+                (Cyber Security),
               </span>
 
 

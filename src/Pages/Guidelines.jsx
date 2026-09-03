@@ -824,7 +824,7 @@ export default function Guidelines() {
 
             <PolicyBox
               icon={ShieldCheck}
-              title="Responsible Cybersecurity Research"
+              title="Responsible Cyber Security Research"
               items={[
                 "Experiments against third-party systems require documented authorisation where required.",
                 "Previously unknown vulnerabilities should follow coordinated disclosure practice.",

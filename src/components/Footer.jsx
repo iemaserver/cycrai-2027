@@ -142,7 +142,7 @@ export default function Footer() {
                 text-justify
               "
             >
-              First International Conference on Cybersecurity, Cryptography and
+              First International Conference on Cyber Security, Cryptography and
               Responsible AI.
             </p>
 
@@ -173,7 +173,7 @@ export default function Footer() {
                   text-justify
                 "
               >
-                Department of Computer Science and Engineering (Cybersecurity), Institute of Engineering and Management Kolkata,
+                Department of Computer Science and Engineering (Cyber Security), Institute of Engineering and Management Kolkata,
                 University of Engineering and Management Kolkata
               </p>
 
@@ -270,7 +270,7 @@ export default function Footer() {
                     "
                   >
                     Department of Computer Science and Engineering
-                    (Cybersecurity),
+                    (Cyber Security),
                     <br />
                     Institute of Engineering &amp; Management Kolkata,
                     <br />
@@ -325,7 +325,7 @@ export default function Footer() {
                 "
               >
                 Department of Computer Science and Engineering
-                (Cybersecurity), Institute of Engineering &amp;
+                (Cyber Security), Institute of Engineering &amp;
                 Management Kolkata, University of Engineering and
                 Management Kolkata
               </p>

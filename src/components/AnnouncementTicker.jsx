@@ -10,7 +10,7 @@ export default function AnnouncementTicker() {
     },
     {
       id: 2,
-      text: "Organized by Department of Computer Science and Engineering (Cybersecurity), Institute of Engineering & Management Kolkata, University of Engineering and Management Kolkata",
+      text: "Organized by Department of Computer Science and Engineering (Cyber Security), Institute of Engineering & Management Kolkata, University of Engineering and Management Kolkata",
     },
   ];
 
