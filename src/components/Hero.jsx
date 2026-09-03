@@ -518,7 +518,7 @@ lg:text-xl
     shadow-[0_0_25px_rgba(39,217,247,0.25)]
   "
   onClick={() => {
-    navigate("https://cmt3.research.microsoft.com/CYCRAI2027","_blank",
+    window.open("https://cmt3.research.microsoft.com/CYCRAI2027","_blank",
     "noopener,noreferrer");
   }}
 >
