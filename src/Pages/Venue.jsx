@@ -9,6 +9,33 @@ import {
 
 import uem from "../assets/image/uem.jpeg";
 
+
+/* =========================================================
+   UEM KOLKATA CONFERENCE VENUE
+   Exact location from the Google Maps link provided
+========================================================= */
+
+const UEM_LATITUDE = 22.5601079;
+const UEM_LONGITUDE = 88.4898782;
+
+
+/* =========================================================
+   GOOGLE MAP EMBED
+   The map is centered tightly around UEM Kolkata
+========================================================= */
+
+const UEM_MAP_URL =
+  "https://www.google.com/maps?q=22.5601079,88.4898782&z=18&output=embed";
+
+
+/* =========================================================
+   GOOGLE MAP DIRECTIONS
+========================================================= */
+
+const UEM_DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=22.5601079,88.4898782";
+
+
 export default function Venue() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#F7FAFF] text-[#172554]">
@@ -16,7 +43,9 @@ export default function Venue() {
       {/* =========================================================
           HERO / PAGE HEADING
       ========================================================= */}
-      <Logo></Logo>
+
+      <Logo />
+
       <section
         className="
           relative
@@ -208,84 +237,439 @@ export default function Venue() {
           "
         >
 
+
           {/* =====================================================
-              HOST INSTITUTION
+              HOST INSTITUTION + LOCATION MAP
+              SIDE BY SIDE ON DESKTOP
           ====================================================== */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
+          <div
             className="
-              mb-14
-              text-center
-              md:mb-16
+              grid
+              gap-8
+              lg:grid-cols-2
+              lg:items-stretch
             "
           >
 
-            {/* Icon */}
 
-            <div
+            {/* =================================================
+                HOST INSTITUTION CARD
+            ================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -25,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
               className="
-                mx-auto
                 flex
-                h-14
-                w-14
-                items-center
-                justify-center
-                rounded-2xl
-                bg-[#E8F1FF]
-                text-[#075DB8]
+                h-full
+                flex-col
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
               "
             >
-              <University size={26} />
-            </div>
 
-
-            {/* Institution Name */}
-
-            <h2
-              className="
-                mx-auto
-                mt-6
-                max-w-5xl
-                text-2xl
-                font-black
-                leading-tight
-                text-[#172554]
-                sm:text-3xl
-                md:text-4xl
-              "
-            >
-              Institute of Engineering &amp; Management Kolkata,
-
-              <span
+              <div
                 className="
-                  mt-2
-                  block
-                  text-[#075DB8]
+                  flex
+                  flex-1
+                  flex-col
+                  justify-center
+                  p-7
+                  text-center
+                  sm:p-9
+                  lg:p-10
                 "
               >
-                University of Engineering and Management Kolkata
-              </span>
-            </h2>
+
+                {/* =================================================
+                    ICON
+                ================================================== */}
+
+                <div
+                  className="
+                    mx-auto
+                    flex
+                    h-14
+                    w-14
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    bg-[#E8F1FF]
+                    text-[#075DB8]
+                  "
+                >
+                  <University size={26} />
+                </div>
 
 
-            {/* Description */}
+                {/* =================================================
+                    LABEL
+                ================================================== */}
 
-            
-          </motion.div>
+                <p
+                  className="
+                    mt-6
+                    text-xs
+                    font-bold
+                    uppercase
+                    tracking-[2px]
+                    text-[#64748B]
+                  "
+                >
+                  Host Institution
+                </p>
+
+
+                {/* =================================================
+                    INSTITUTION NAME
+                ================================================== */}
+
+                <h2
+                  className="
+                    mx-auto
+                    mt-4
+                    max-w-xl
+                    text-2xl
+                    font-black
+                    leading-tight
+                    text-[#172554]
+                    sm:text-3xl
+                    lg:text-4xl
+                  "
+                >
+                  Institute of Engineering &amp; Management Kolkata
+                </h2>
+
+                <span
+                  className="
+                    mx-auto
+                    mt-3
+                    block
+                    max-w-xl
+                    text-xl
+                    font-black
+                    leading-tight
+                    text-[#075DB8]
+                    sm:text-2xl
+                  "
+                >
+                  University of Engineering and Management Kolkata
+                </span>
+
+
+                {/* =================================================
+                    DIVIDER
+                ================================================== */}
+
+                <div
+                  className="
+                    mx-auto
+                    my-7
+                    h-px
+                    w-24
+                    bg-[#D6E3F5]
+                  "
+                />
+
+
+                {/* =================================================
+                    ADDRESS
+                ================================================== */}
+
+                <div
+                  className="
+                    mx-auto
+                    flex
+                    max-w-xl
+                    items-start
+                    justify-center
+                    gap-3
+                    text-center
+                  "
+                >
+
+                  <MapPin
+                    size={20}
+                    className="
+                      mt-1
+                      shrink-0
+                      text-[#075DB8]
+                    "
+                  />
+
+                  <p
+                    className="
+                      text-sm
+                      font-semibold
+                      leading-7
+                      text-[#475569]
+                      sm:text-base
+                    "
+                  >
+                    University Area, Plot No. III-B/5,
+                    <br />
+                    New Town, Action Area – III,
+                    <br />
+                    Kolkata, West Bengal, India
+                  </p>
+
+                </div>
+
+
+                {/* =================================================
+                    IEM WEBSITE
+                ================================================== */}
+
+                <a
+                  href="https://iem.edu.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    mx-auto
+                    mt-8
+                    inline-flex
+                    w-fit
+                    items-center
+                    justify-center
+                    gap-3
+                    rounded-full
+                    border
+                    border-[#BFD5F0]
+                    bg-[#F5F9FF]
+                    px-7
+                    py-4
+                    text-sm
+                    font-bold
+                    text-[#075DB8]
+                    transition-colors
+                    duration-300
+                    hover:border-[#075DB8]
+                    hover:bg-[#EFF6FF]
+                    sm:text-base
+                  "
+                >
+                  Visit IEM Website
+
+                  <ArrowRight size={19} />
+
+                </a>
+
+              </div>
+
+            </motion.div>
+
+
+            {/* =================================================
+                LOCATION MAP CARD
+            ================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 25,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="
+                flex
+                h-full
+                flex-col
+                overflow-hidden
+                rounded-[16px]
+                border
+                border-[#DCE3EB]
+                border-t-4
+                border-t-[#075DB8]
+                bg-white
+                p-5
+                sm:p-6
+                lg:p-7
+              "
+            >
+
+              {/* =================================================
+                  MAP HEADING
+              ================================================== */}
+
+              <div
+                className="
+                  border-b
+                  border-[#DCE3EB]
+                  pb-4
+                "
+              >
+
+                <h3
+                  className="
+                    text-2xl
+                    font-black
+                    uppercase
+                    tracking-[1px]
+                    text-[#075DB8]
+                    sm:text-3xl
+                  "
+                >
+                  Location Map
+                </h3>
+
+              </div>
+
+
+              {/* =================================================
+                  GOOGLE MAP
+                  
+                  The map is tightly centered on the UEM
+                  Kolkata campus location.
+              ================================================== */}
+
+              <div
+                className="
+                  relative
+                  mt-5
+                  flex-1
+                  overflow-hidden
+                  rounded-[14px]
+                  border
+                  border-[#E2E8F0]
+                  bg-[#EAF3FF]
+                "
+              >
+
+                <iframe
+                  title="UEM Kolkata Conference Venue"
+                  src={UEM_MAP_URL}
+                  className="
+                    h-[360px]
+                    w-full
+                    border-0
+                    sm:h-[400px]
+                    lg:h-full
+                    lg:min-h-[430px]
+                  "
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+
+              </div>
+
+
+              {/* =================================================
+                  CONFERENCE VENUE LABEL
+              ================================================== */}
+
+              <div
+                className="
+                  mt-4
+                  flex
+                  items-center
+                  gap-3
+                  rounded-xl
+                  bg-[#F5F9FF]
+                  px-4
+                  py-3
+                "
+              >
+
+                <MapPin
+                  size={19}
+                  className="
+                    shrink-0
+                    text-[#075DB8]
+                  "
+                />
+
+                <div>
+                  <p
+                    className="
+                      text-xs
+                      font-bold
+                      uppercase
+                      tracking-[1px]
+                      text-[#64748B]
+                    "
+                  >
+                    Conference Venue
+                  </p>
+
+                  <p
+                    className="
+                      mt-0.5
+                      text-sm
+                      font-bold
+                      text-[#172554]
+                    "
+                  >
+                    UEM Kolkata
+                  </p>
+                </div>
+
+              </div>
+
+
+              {/* =================================================
+                  GET DIRECTIONS
+              ================================================== */}
+
+              <a
+                href={UEM_DIRECTIONS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  mt-4
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-[10px]
+                  bg-[#075DB8]
+                  px-6
+                  py-4
+                  text-sm
+                  font-bold
+                  text-white
+                  transition-colors
+                  duration-300
+                  hover:bg-[#064F9C]
+                  sm:text-base
+                "
+              >
+
+                Get Directions
+
+                <ArrowRight size={19} />
+
+              </a>
+
+            </motion.div>
+
+          </div>
 
 
           {/* =====================================================
@@ -308,6 +692,7 @@ export default function Venue() {
               duration: 0.6,
             }}
             className="
+              mt-10
               overflow-hidden
               rounded-[16px]
               border
@@ -381,9 +766,7 @@ export default function Venue() {
                 "
               >
 
-                {/* =================================================
-                    LOCATION
-                ================================================== */}
+                {/* Location */}
 
                 <div
                   className="
@@ -410,9 +793,7 @@ export default function Venue() {
                 </div>
 
 
-                {/* =================================================
-                    TITLE
-                ================================================== */}
+                {/* Title */}
 
                 <h3
                   className="
@@ -433,17 +814,30 @@ export default function Venue() {
                       text-[#075DB8]
                     "
                   >
-                    Host Institution
+                    Conference Venue
                   </span>
                 </h3>
 
 
-                
+                {/* Description */}
+
+                <p
+                  className="
+                    mt-5
+                    max-w-xl
+                    text-sm
+                    leading-7
+                    text-[#64748B]
+                    sm:text-base
+                  "
+                >
+                  CYCRAI 2027 will be hosted at the University
+                  of Engineering and Management Kolkata in
+                  New Town, Kolkata.
+                </p>
 
 
-                {/* =================================================
-                    BUTTONS
-                ================================================== */}
+                {/* Buttons */}
 
                 <div
                   className="
@@ -459,7 +853,7 @@ export default function Venue() {
                   {/* Google Maps */}
 
                   <a
-                    href="https://maps.app.goo.gl/VFN2t1qFxYAxbgB57"
+                    href={UEM_DIRECTIONS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
@@ -625,8 +1019,10 @@ export default function Venue() {
                       md:text-lg
                     "
                   >
-                    Institute of Engineering &amp; Management, University of Engineering and Management,
-                    New Town, Kolkata, West Bengal, India
+                    University of Engineering and Management
+                    Kolkata, University Area, Plot No. III-B/5,
+                    New Town, Action Area – III, Kolkata,
+                    West Bengal, India
                   </p>
 
                 </div>
@@ -652,4 +1048,3 @@ export default function Venue() {
     </main>
   );
 }
-

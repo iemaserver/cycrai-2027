@@ -7,6 +7,7 @@ import {
 
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
+
 export default function Registration() {
   // =========================================================
   // EARLY BIRD FEES
@@ -36,6 +37,7 @@ export default function Registration() {
     },
   ];
 
+
   // =========================================================
   // REGULAR FEES
   // =========================================================
@@ -63,6 +65,7 @@ export default function Registration() {
       nonIeee: "₹ 4,000",
     },
   ];
+
 
   // =========================================================
   // FEE TABLE
@@ -101,25 +104,28 @@ export default function Registration() {
           bg-white
         "
       >
+
         {/* =====================================================
             TABLE TITLE
         ====================================================== */}
 
         <div
           className="
-            px-7
-            pb-5
-            pt-8
+            px-5
+            pb-4
+            pt-7
             sm:px-9
+            sm:pb-5
             sm:pt-9
             md:px-12
           "
         >
+
           <div className="flex flex-wrap items-center gap-3">
 
             <h2
               className="
-                text-2xl
+                text-xl
                 font-black
                 uppercase
                 tracking-[1px]
@@ -129,8 +135,6 @@ export default function Registration() {
             >
               {title}
             </h2>
-
-            
 
           </div>
 
@@ -142,6 +146,7 @@ export default function Registration() {
               bg-[#E2E8F0]
             "
           />
+
         </div>
 
 
@@ -151,15 +156,27 @@ export default function Registration() {
 
         <div
           className="
-            overflow-x-auto
-            px-7
-            pb-8
+            px-4
+            pb-6
             sm:px-9
+            sm:pb-8
             md:px-12
           "
         >
 
-          <div className="min-w-[700px]">
+          {/* =================================================
+              RESPONSIVE TABLE
+
+              Desktop:
+              2fr 1fr 1fr
+
+              Mobile:
+              1.65fr .8fr .8fr
+
+              This prevents horizontal scrolling.
+          ================================================== */}
+
+          <div className="w-full">
 
             {/* =================================================
                 BLUE TABLE HEADER
@@ -168,30 +185,54 @@ export default function Registration() {
             <div
               className="
                 grid
-                grid-cols-[2fr_1fr_1fr]
+                grid-cols-[1.65fr_.8fr_.8fr]
+                items-center
                 bg-[#075DB8]
-                px-5
+                px-3
                 py-4
-                text-sm
+                text-xs
                 font-bold
                 uppercase
                 tracking-wide
                 text-white
+                sm:grid-cols-[2fr_1fr_1fr]
                 sm:px-5
                 sm:text-base
               "
             >
 
-              <span>
+              <span
+                className="
+                  pr-2
+                  leading-tight
+                  sm:pr-4
+                "
+              >
                 Author Category
               </span>
 
-              <span className="text-center">
-                IEEE Member
+              <span
+                className="
+                  px-1
+                  text-center
+                  leading-tight
+                "
+              >
+                IEEE
+                <span className="hidden sm:inline"> Member</span>
+                <span className="sm:hidden"> Member</span>
               </span>
 
-              <span className="text-center">
-                Non-IEEE
+              <span
+                className="
+                  px-1
+                  text-center
+                  leading-tight
+                "
+              >
+                Non-
+                <span className="hidden sm:inline">IEEE</span>
+                <span className="sm:hidden">IEEE</span>
               </span>
 
             </div>
@@ -222,55 +263,75 @@ export default function Registration() {
                   }}
                   className="
                     grid
-                    grid-cols-[2fr_1fr_1fr]
+                    grid-cols-[1.65fr_.8fr_.8fr]
                     items-center
                     border-b
                     border-[#E2E8F0]
-                    px-5
+                    px-3
                     py-5
+                    sm:grid-cols-[2fr_1fr_1fr]
+                    sm:px-5
+                    sm:py-5
                   "
                 >
 
-                  {/* CATEGORY */}
+                  {/* =================================================
+                      CATEGORY
+                  ================================================== */}
 
                   <span
                     className="
-                      pr-6
-                      text-base
+                      min-w-0
+                      pr-2
+                      text-[14px]
                       font-medium
-                      leading-7
+                      leading-6
                       text-[#334155]
+                      sm:pr-6
                       sm:text-lg
+                      sm:leading-7
                     "
                   >
                     {fee.category}
                   </span>
 
 
-                  {/* IEEE */}
+                  {/* =================================================
+                      IEEE
+                  ================================================== */}
 
                   <span
                     className="
+                      min-w-0
+                      px-1
                       text-center
-                      text-base
+                      text-[13px]
                       font-bold
+                      leading-5
                       text-[#172554]
                       sm:text-lg
+                      sm:leading-7
                     "
                   >
                     {fee.ieee}
                   </span>
 
 
-                  {/* NON IEEE */}
+                  {/* =================================================
+                      NON IEEE
+                  ================================================== */}
 
                   <span
                     className="
+                      min-w-0
+                      px-1
                       text-center
-                      text-base
+                      text-[13px]
                       font-bold
+                      leading-5
                       text-[#172554]
                       sm:text-lg
+                      sm:leading-7
                     "
                   >
                     {fee.nonIeee}
@@ -296,7 +357,9 @@ export default function Registration() {
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
-      <Logo></Logo>
+
+      <Logo />
+
       <section
         className="
           relative
@@ -313,8 +376,10 @@ export default function Registration() {
           lg:pt-20
         "
       >
-       
-        {/* Soft background glow */}
+
+        {/* =====================================================
+            SOFT BACKGROUND GLOW
+        ====================================================== */}
 
         <div
           className="
@@ -345,7 +410,9 @@ export default function Registration() {
         />
 
 
-        {/* Hero Content */}
+        {/* =====================================================
+            HERO CONTENT
+        ====================================================== */}
 
         <div
           className="
@@ -419,8 +486,6 @@ export default function Registration() {
               CYCRAI 2027.
             </p>
 
-
-
           </motion.div>
 
         </div>
@@ -441,8 +506,8 @@ export default function Registration() {
           from-white
           via-[#F8FBFF]
           to-[#F1F6FD]
-          px-5
-          py-16
+          px-4
+          py-14
           sm:px-6
           sm:py-20
           lg:px-8
@@ -450,7 +515,9 @@ export default function Registration() {
         "
       >
 
-        {/* Background Glows */}
+        {/* =====================================================
+            BACKGROUND GLOWS
+        ====================================================== */}
 
         <div
           className="
@@ -490,14 +557,11 @@ export default function Registration() {
           "
         >
 
-          
-
-
           {/* =====================================================
               FEE TABLES
           ====================================================== */}
 
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
 
             <FeeTable
               title="Early Bird Registration Fees"
@@ -518,11 +582,6 @@ export default function Registration() {
               INFORMATION BOX
           ====================================================== */}
 
-          
-
-
-          
-
         </div>
 
       </section>
@@ -533,6 +592,7 @@ export default function Registration() {
       ========================================================= */}
 
       <Footer />
+
     </>
   );
 }
