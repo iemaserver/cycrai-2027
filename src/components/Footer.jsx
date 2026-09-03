@@ -1,4 +1,3 @@
-
 import {
   FaMapMarkerAlt,
   FaEnvelope,
@@ -18,9 +17,10 @@ export default function Footer() {
     { number: "03", name: "Authors", href: "/call-for-papers" },
     { number: "04", name: "Registration", href: "/registration" },
     { number: "05", name: "Committee", href: "/committee" },
-    { number: "06", name: "Program", href: "/program" },
-    { number: "07", name: "Important Dates", href: "/important-dates" },
-    { number: "08", name: "Venue", href: "/venue" },
+    { number: "06", name: "Speakers", href: "/keynote-speakers" },
+    { number: "07", name: "Program", href: "/speakers" },
+    { number: "08", name: "Gallery", href: "/gallery" },
+    { number: "09", name: "Venue", href: "/venue" },
   ];
 
   // =========================================================
@@ -173,7 +173,8 @@ export default function Footer() {
                   text-justify
                 "
               >
-                Department of Computer Science and Engineering (Cyber Security), Institute of Engineering and Management Kolkata,
+                Department of Computer Science and Engineering (Cyber Security),
+                Institute of Engineering and Management Kolkata,
                 University of Engineering and Management Kolkata
               </p>
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CalendarDays } from "lucide-react";
+import { Mic2 } from "lucide-react";
 
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
@@ -95,7 +95,7 @@ export default function Speakers() {
               lg:text-8xl
             "
           >
-            Conference
+            Keynote
 
             <span
               className="
@@ -109,7 +109,7 @@ export default function Speakers() {
                 text-transparent
               "
             >
-              Program
+              Speakers
             </span>
           </h1>
 
@@ -127,8 +127,9 @@ export default function Speakers() {
               md:text-lg
             "
           >
-            Connect with leading researchers, experts and innovators
-            shaping the future of secure and responsible technology.
+            Meet distinguished researchers, experts and innovators who will
+            share their perspectives on Cyber Security, Cryptography and
+            Responsible AI.
           </p>
 
         </motion.div>
@@ -137,7 +138,7 @@ export default function Speakers() {
 
 
       {/* =========================================================
-          PROGRAM CONTENT
+          KEYNOTE SPEAKERS CONTENT
       ========================================================= */}
 
       <section
@@ -263,7 +264,7 @@ export default function Speakers() {
                   text-[#075DB8]
                 "
               >
-                <CalendarDays
+                <Mic2
                   size={38}
                   strokeWidth={1.7}
                 />
@@ -288,7 +289,7 @@ export default function Speakers() {
                   sm:text-xs
                 "
               >
-                CONFERENCE PROGRAM
+                KEYNOTE SPEAKERS
               </span>
 
 

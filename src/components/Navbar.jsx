@@ -20,8 +20,9 @@ import {
   Landmark,
   ShieldCheck,
   Settings2,
+  Mic2,
+  Images,
 } from "lucide-react";
-
 
 // =============================================================
 // NAVBAR
@@ -70,9 +71,19 @@ export default function Navbar() {
       icon: CreditCard,
     },
     {
+      name: "Speakers",
+      path: "/keynote-speakers",
+      icon: Mic2,
+    },
+    {
       name: "Program",
       path: "/speakers",
       icon: CalendarDays,
+    },
+    {
+      name: "Gallery",
+      path: "/gallery",
+      icon: Images,
     },
     {
       name: "Venue",
@@ -195,11 +206,6 @@ export default function Navbar() {
 
   // ===========================================================
   // DESKTOP CLOSE
-  //
-  // IMPORTANT:
-  // Increased delay from 450ms to 1200ms.
-  // This gives enough time to move from the main navbar
-  // into the submenu.
   // ===========================================================
 
   const collapseDesktopNav = () => {
@@ -456,9 +462,7 @@ export default function Navbar() {
         onMouseLeave={collapseDesktopNav}
       >
 
-        {/* =====================================================
-            AUTHORS BUTTON
-        ====================================================== */}
+        {/* AUTHORS BUTTON */}
 
         <button
           type="button"
@@ -583,14 +587,7 @@ export default function Navbar() {
         </button>
 
 
-        {/* =====================================================
-            AUTHORS SUBMENU
-
-            IMPORTANT:
-            The outer wrapper has padding-left.
-            This creates an invisible hover bridge between
-            navbar and submenu.
-        ====================================================== */}
+        {/* AUTHORS SUBMENU */}
 
         <div
           className={`
@@ -762,9 +759,7 @@ export default function Navbar() {
         onMouseLeave={collapseDesktopNav}
       >
 
-        {/* =====================================================
-            COMMITTEE BUTTON
-        ====================================================== */}
+        {/* COMMITTEE BUTTON */}
 
         <button
           type="button"
@@ -889,12 +884,7 @@ export default function Navbar() {
         </button>
 
 
-        {/* =====================================================
-            COMMITTEE SUBMENU
-
-            IMPORTANT:
-            pl-3 creates the invisible hover bridge.
-        ====================================================== */}
+        {/* COMMITTEE SUBMENU */}
 
         <div
           className={`
@@ -1314,17 +1304,31 @@ export default function Navbar() {
           <CommitteeDesktop />
 
 
-          {/* Program */}
+          {/* Speakers */}
 
           <DesktopNavItem
             item={navItems[3]}
           />
 
 
-          {/* Venue */}
+          {/* Program */}
 
           <DesktopNavItem
             item={navItems[4]}
+          />
+
+
+          {/* Gallery */}
+
+          <DesktopNavItem
+            item={navItems[5]}
+          />
+
+
+          {/* Venue */}
+
+          <DesktopNavItem
+            item={navItems[6]}
           />
 
         </nav>
@@ -1778,11 +1782,29 @@ export default function Navbar() {
           </MobileDropdown>
 
 
-          {/* Program */}
+          {/* Speakers */}
 
           <MobileNavItem
             item={navItems[3]}
+            active={isActive("/keynote-speakers")}
+            onClick={handleNavigation}
+          />
+
+
+          {/* Program */}
+
+          <MobileNavItem
+            item={navItems[4]}
             active={isActive("/speakers")}
+            onClick={handleNavigation}
+          />
+
+
+          {/* Gallery */}
+
+          <MobileNavItem
+            item={navItems[5]}
+            active={isActive("/gallery")}
             onClick={handleNavigation}
           />
 
@@ -1790,7 +1812,7 @@ export default function Navbar() {
           {/* Venue */}
 
           <MobileNavItem
-            item={navItems[4]}
+            item={navItems[6]}
             active={isActive("/venue")}
             onClick={handleNavigation}
           />
