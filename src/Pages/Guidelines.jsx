@@ -241,9 +241,8 @@ export default function Guidelines() {
                 a CYCRAI requirement, the{" "}
                 
                   IEEE requirement governs eligibility for publication
-                  in IEEE Xplore
-                
-                .
+                  in <strong className="font-black text-black">IEEE Xplore.</strong>
+              
               </p>
             </InfoBox>
           </div>
@@ -595,7 +594,7 @@ export default function Guidelines() {
                 "Revisions may be made before the deadline.",
                 <>
                   Deadlines close at{" "}
-                  <strong className="font-black text-black">23:59 Anywhere on Earth (AoE)</strong>.
+                  23:59 Anywhere on Earth (AoE).
                 </>,
               ]}
             />
@@ -736,7 +735,7 @@ export default function Guidelines() {
 
             <p>
               Acceptance by CYCRAI 2027{" "}
-              <strong className="font-black text-black">does not by itself guarantee inclusion</strong>.
+              does not by itself guarantee inclusion.
             </p>
           </InfoBox>
 
@@ -1156,15 +1155,15 @@ export default function Guidelines() {
             <p>
               By submitting a manuscript to CYCRAI 2027, the corresponding
               author confirms on behalf of all listed authors that the work is{" "}
-              <strong className="font-black text-black">
+              
                 original and is neither published nor under review elsewhere
-              </strong>
+              
               ; every named author has contributed substantively, has
               approved the submitted version, and no other person qualifies
               for authorship; the manuscript meets the{" "}
-              <strong className="font-black text-black">
+
                 format, length and anonymity requirements
-              </strong>
+              
               ; similarity thresholds are met; the scholarly prose complies
               with the human-authorship requirement; references
               and reported results are accurate; applicable ethical and
