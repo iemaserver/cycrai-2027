@@ -2,7 +2,7 @@
 
 [![Build and Deploy](https://github.com/iemaserver/cycrai-2027/actions/workflows/build_and_deploy.yml/badge.svg)](https://github.com/iemaserver/cycrai-2027/actions/workflows/build_and_deploy.yml)
 
-Official website for the **First International Conference on Cyber Security, Cryptography and Responsible AI (CYCRAI 2027)**, organized by the Department of Computer Science and Engineering (Cyber Security), Institute of Engineering & Management Kolkata, under the University of Engineering and Management Kolkata, with Technical Co-Sponsorship of the IEEE Kolkata Section and IEEE Computer Society SBC.
+Official website for the **First International Conference on Cyber Security, Cryptography and Responsible AI (CYCRAI 2027)**, organized by the Department of Computer Science and Engineering (Cyber Security), Institute of Engineering & Management Kolkata, under the University of Engineering and Management Kolkata, with Technical Co-Sponsorship of IEEE Kolkata section, IEEE Computer Society SBC UEM Kolkata and IEEE Communication Society Kolkata.
 
 The conference takes place **29–30 September 2027**. Accepted and presented papers are submitted for publication in the **IEEE Xplore Digital Library**.
 
