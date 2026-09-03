@@ -19,17 +19,16 @@ export default function Speakers() {
           overflow-hidden
           bg-[#07152F]
           px-5
-          pb-20
-          pt-12
+          pb-12
+          pt-8
           sm:px-6
-          sm:pb-24
-          sm:pt-16
+          sm:pb-16
+          sm:pt-10
           lg:px-8
-          lg:pb-28
-          lg:pt-20
+          lg:pb-20
+          lg:pt-14
         "
       >
-
         {/* Soft Blue Glow */}
 
         <div
@@ -82,7 +81,6 @@ export default function Speakers() {
             text-center
           "
         >
-
           <h1
             className="
               text-5xl
@@ -90,9 +88,9 @@ export default function Speakers() {
               leading-tight
               tracking-tight
               text-white
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
+              sm:text-4xl
+              md:text-5xl
+              lg:text-6xl
             "
           >
             Conference
@@ -105,7 +103,7 @@ export default function Speakers() {
                 via-[#60A5FA]
                 to-[#BFDBFE]
                 bg-clip-text
-                pb-3
+                pb-1
                 text-transparent
               "
             >
@@ -130,11 +128,8 @@ export default function Speakers() {
             Connect with leading researchers, experts and innovators
             shaping the future of secure and responsible technology.
           </p>
-
         </motion.div>
-
       </section>
-
 
       {/* =========================================================
           PROGRAM CONTENT
@@ -150,14 +145,16 @@ export default function Speakers() {
           via-[#F8FBFF]
           to-[#F1F6FD]
           px-5
-          py-16
+          pt-8
+          pb-16
           sm:px-6
-          sm:py-20
+          sm:pt-10
+          sm:pb-20
           lg:px-8
-          lg:py-24
+          lg:pt-12
+          lg:pb-24
         "
       >
-
         {/* Soft Background Glows */}
 
         <div
@@ -188,7 +185,6 @@ export default function Speakers() {
           "
         />
 
-
         {/* =====================================================
             MAIN CONTENT
         ===================================================== */}
@@ -201,7 +197,6 @@ export default function Speakers() {
             max-w-6xl
           "
         >
-
           <motion.div
             initial={{
               opacity: 0,
@@ -228,7 +223,6 @@ export default function Speakers() {
               bg-white
             "
           >
-
             {/* =================================================
                 CARD CONTENT
             ================================================== */}
@@ -248,7 +242,6 @@ export default function Speakers() {
                 md:py-20
               "
             >
-
               {/* Icon */}
 
               <div
@@ -268,7 +261,6 @@ export default function Speakers() {
                   strokeWidth={1.7}
                 />
               </div>
-
 
               {/* Eyebrow */}
 
@@ -291,7 +283,6 @@ export default function Speakers() {
                 CONFERENCE PROGRAM
               </span>
 
-
               {/* Coming Soon */}
 
               <div
@@ -311,22 +302,16 @@ export default function Speakers() {
               >
                 Coming Soon
               </div>
-
             </div>
-
           </motion.div>
-
         </div>
-
       </section>
-
 
       {/* =========================================================
           FOOTER
       ========================================================= */}
 
       <Footer />
-
     </main>
   );
 }

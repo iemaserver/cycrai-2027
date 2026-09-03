@@ -14,7 +14,7 @@ export default function AboutSection() {
       {/* =========================================================
           ABOUT PAGE
       ========================================================= */}
-      <Logo></Logo>
+      <Logo />
 
       <section className="relative min-h-screen overflow-hidden bg-[#F7FAFF]">
 
@@ -28,14 +28,14 @@ export default function AboutSection() {
             overflow-hidden
             bg-[#07152F]
             px-5
-            pb-20
-            pt-12
+            pb-12
+            pt-8
             sm:px-6
-            sm:pb-24
-            sm:pt-16
+            sm:pb-16
+            sm:pt-10
             lg:px-8
-            lg:pb-28
-            lg:pt-20
+            lg:pb-20
+            lg:pt-14
           "
         >
 
@@ -71,9 +71,9 @@ export default function AboutSection() {
                 leading-tight
                 tracking-tight
                 text-white
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
               "
             >
               About
@@ -86,7 +86,7 @@ export default function AboutSection() {
                   via-[#60A5FA]
                   to-[#BFDBFE]
                   bg-clip-text
-                  pb-3
+                  pb-1
                   text-transparent
                 "
               >
@@ -130,11 +130,14 @@ export default function AboutSection() {
             via-[#F8FBFF]
             to-[#F1F6FD]
             px-5
-            py-12
+            pt-2
+            pb-12
             sm:px-6
-            sm:py-16
+            sm:pt-4
+            sm:pb-16
             lg:px-8
-            lg:py-20
+            lg:pt-6
+            lg:pb-20
           "
         >
 
@@ -171,7 +174,7 @@ export default function AboutSection() {
 
           {/* =======================================================
               MAIN CONTENT
-          ======================================================= */}
+          ===================================================== */}
 
           <div
             className="
@@ -204,7 +207,7 @@ export default function AboutSection() {
               }}
               className="
                 mx-auto
-                mt-10
+                mt-0
                 max-w-6xl
               "
             >
@@ -1127,6 +1130,7 @@ export default function AboutSection() {
             </motion.div>
 
           </div>
+
         </div>
 
       </section>

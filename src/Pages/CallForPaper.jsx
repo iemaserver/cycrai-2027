@@ -178,9 +178,10 @@ export default function CallForPapers() {
       {/* =========================================================
           PAGE
       ========================================================= */}
-      
+
       <main className="min-h-screen bg-[#F7FAFF] text-[#172554]">
-      <Logo></Logo>
+        <Logo />
+
         {/* =======================================================
             HERO / HEADER
         ======================================================= */}
@@ -191,14 +192,14 @@ export default function CallForPapers() {
             overflow-hidden
             bg-[#07152F]
             px-5
-            pb-20
-            pt-12
+            pb-12
+            pt-8
             sm:px-6
-            sm:pb-24
-            sm:pt-16
+            sm:pb-16
+            sm:pt-10
             lg:px-8
-            lg:pb-28
-            lg:pt-20
+            lg:pb-20
+            lg:pt-14
           "
         >
 
@@ -232,9 +233,9 @@ export default function CallForPapers() {
                 leading-tight
                 tracking-tight
                 text-white
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
               "
             >
               Call For
@@ -247,7 +248,7 @@ export default function CallForPapers() {
                   via-[#60A5FA]
                   to-[#BFDBFE]
                   bg-clip-text
-                  pb-3
+                  pb-1
                   text-transparent
                 "
               >
@@ -324,8 +325,6 @@ export default function CallForPapers() {
               className="mb-12 text-center"
             >
 
-              
-
               <h2
                 className="
                   mt-3
@@ -338,8 +337,6 @@ export default function CallForPapers() {
               >
                 Topics of Interest
               </h2>
-
-              
 
             </motion.div>
 
@@ -407,8 +404,6 @@ export default function CallForPapers() {
                           {String(index + 1).padStart(2, "0")}
                         </span>
                       </div>
-
-                      
 
                     </div>
 
@@ -557,8 +552,6 @@ export default function CallForPapers() {
               className="mb-12 text-center"
             >
 
-              
-
               <h2
                 className="
                   mt-3
@@ -587,9 +580,7 @@ export default function CallForPapers() {
 
 
             {/* Submission Cards */}
-            {/* =====================================================
-                IEEE + CMT
-            ===================================================== */}
+
             <div
               className="
                 mt-14
@@ -708,10 +699,9 @@ export default function CallForPapers() {
                           bg-[#F8FBFF]
                           px-6
                           py-5
-                          text-mm
+                          text-sm
                           font-bold
                           text-[#0056B3]
-                          
                           transition-colors
                           duration-300
                           hover:bg-[#E8F1FF]
@@ -810,8 +800,6 @@ export default function CallForPapers() {
                     Microsoft CMT Submission
                   </h3>
 
-                  
-
 
                   <button
                     onClick={() => setShowCmtPopup(true)}
@@ -842,9 +830,6 @@ export default function CallForPapers() {
               </motion.div>
 
             </div>
-
-
-            
 
           </div>
 
@@ -1013,7 +998,11 @@ export default function CallForPapers() {
 
                     <button
                       onClick={() =>
-                        window.open("https://cmt3.research.microsoft.com/CYCRAI2027", "_blank", "noopener,noreferrer")
+                        window.open(
+                          "https://cmt3.research.microsoft.com/CYCRAI2027",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
                       }
                       className="
                         inline-flex

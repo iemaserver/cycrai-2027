@@ -2,31 +2,35 @@ import { motion } from "framer-motion";
 import { Mail, MessageCircle } from "lucide-react";
 
 import Footer from "../components/Footer";
+import Logo from "../components/Logo";
 
 export default function Contact() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#F7FAFF] text-[#172554]">
+      <Logo />
 
       {/* =========================================================
           HERO / PAGE HEADING
       ========================================================= */}
+
       <section
         className="
           relative
           overflow-hidden
           bg-[#07152F]
           px-5
-          pb-20
-          pt-14
+          pb-12
+          pt-8
           sm:px-6
-          sm:pb-24
-          sm:pt-16
+          sm:pb-16
+          sm:pt-10
           lg:px-8
-          lg:pb-28
-          lg:pt-20
+          lg:pb-20
+          lg:pt-14
         "
       >
         {/* Background Glow */}
+
         <div
           className="
             pointer-events-none
@@ -56,10 +60,20 @@ export default function Contact() {
         />
 
         {/* Hero Content */}
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
           className="
             relative
             z-10
@@ -72,12 +86,12 @@ export default function Contact() {
             className="
               text-5xl
               font-black
-              leading-[1.05]
+              leading-tight
               tracking-tight
               text-white
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
+              sm:text-4xl
+              md:text-5xl
+              lg:text-6xl
             "
           >
             Contact
@@ -90,7 +104,7 @@ export default function Contact() {
                 via-[#60A5FA]
                 to-[#BFDBFE]
                 bg-clip-text
-                pb-3
+                pb-1
                 text-transparent
               "
             >
@@ -103,6 +117,7 @@ export default function Contact() {
       {/* =========================================================
           CONTACT INFORMATION
       ========================================================= */}
+
       <section
         className="
           relative
@@ -112,14 +127,18 @@ export default function Contact() {
           via-[#F8FBFF]
           to-[#F1F6FD]
           px-5
-          py-16
+          pt-8
+          pb-16
           sm:px-6
-          sm:py-20
+          sm:pt-10
+          sm:pb-20
           lg:px-8
-          lg:py-24
+          lg:pt-12
+          lg:pb-24
         "
       >
         {/* Background Glow */}
+
         <div
           className="
             pointer-events-none
@@ -149,6 +168,7 @@ export default function Contact() {
         />
 
         {/* Main Content */}
+
         <div
           className="
             relative
@@ -160,10 +180,22 @@ export default function Contact() {
           "
         >
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
             className="
               w-full
               max-w-2xl
@@ -180,6 +212,7 @@ export default function Contact() {
             {/* =====================================================
                 CARD HEADER
             ===================================================== */}
+
             <div
               className="
                 px-7
@@ -240,6 +273,7 @@ export default function Contact() {
             {/* =====================================================
                 CONTACT DETAILS
             ===================================================== */}
+
             <div
               className="
                 px-7
@@ -265,6 +299,7 @@ export default function Contact() {
                 "
               >
                 {/* Conference Chair */}
+
                 <div>
                   <p
                     className="
@@ -292,8 +327,10 @@ export default function Contact() {
                 </div>
 
                 {/* Email Support */}
+
                 <div className="mt-6 flex items-start gap-4 sm:gap-5">
                   {/* Email Icon */}
+
                   <div
                     className="
                       flex
@@ -317,6 +354,7 @@ export default function Contact() {
                   </div>
 
                   {/* Email Details */}
+
                   <div className="min-w-0 flex-1">
                     <p
                       className="
@@ -359,6 +397,7 @@ export default function Contact() {
       {/* =========================================================
           FOOTER
       ========================================================= */}
+
       <Footer />
     </main>
   );

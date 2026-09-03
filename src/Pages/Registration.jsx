@@ -363,17 +363,17 @@ export default function Registration() {
       <section
         className="
           relative
-          overflow-hidden
-          bg-[#07152F]
-          px-5
-          pb-20
-          pt-14
-          sm:px-6
-          sm:pb-24
-          sm:pt-16
-          lg:px-8
-          lg:pb-28
-          lg:pt-20
+            overflow-hidden
+            bg-[#07152F]
+            px-5
+            pb-12
+            pt-8
+            sm:px-6
+            sm:pb-16
+            sm:pt-10
+            lg:px-8
+            lg:pb-20
+            lg:pt-14
         "
       >
 
@@ -445,9 +445,9 @@ export default function Registration() {
                 leading-tight
                 tracking-tight
                 text-white
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
               "
             >
               Conference
@@ -471,7 +471,7 @@ export default function Registration() {
             <p
               className="
                 mx-auto
-                mt-6
+                mt-2
                 max-w-3xl
                 text-sm
                 font-medium

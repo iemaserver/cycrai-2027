@@ -63,17 +63,17 @@ export default function Guidelines() {
         <div
           className="
             relative
-            mx-auto
-            max-w-7xl
+            overflow-hidden
+            bg-[#07152F]
             px-5
-            pb-16
-            pt-12
+            pb-12
+            pt-8
             sm:px-6
-            sm:pb-20
-            sm:pt-14
+            sm:pb-16
+            sm:pt-10
             lg:px-8
-            lg:pb-24
-            lg:pt-16
+            lg:pb-20
+            lg:pt-14
           "
         >
           <motion.div
@@ -89,9 +89,9 @@ export default function Guidelines() {
                 leading-tight
                 tracking-tight
                 text-white
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
               "
             >
               Guidelines
@@ -114,7 +114,7 @@ export default function Guidelines() {
             <p
               className="
                 mx-auto
-                mt-5
+                mt-2
                 max-w-3xl
                 text-sm
                 font-medium

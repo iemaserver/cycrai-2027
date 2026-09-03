@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
@@ -18,20 +17,17 @@ export default function Committee() {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-
   // =========================================================
   // ALL COMMITTEES
   // =========================================================
 
   const committees = Object.entries(committeeData);
 
-
   // =========================================================
   // GET ACTIVE COMMITTEE FROM URL
   // =========================================================
 
   const requestedCommittee = searchParams.get("committee");
-
 
   // =========================================================
   // FALLBACK TO FIRST COMMITTEE
@@ -42,7 +38,6 @@ export default function Committee() {
       ? requestedCommittee
       : committees[0]?.[0] || "organizing";
 
-
   // =========================================================
   // CURRENT COMMITTEE DATA
   // =========================================================
@@ -50,7 +45,6 @@ export default function Committee() {
   const currentCommittee =
     committeeData[activeCommittee] ||
     committees[0]?.[1];
-
 
   // =========================================================
   // SET DEFAULT COMMITTEE IN URL
@@ -73,7 +67,6 @@ export default function Committee() {
     setSearchParams,
   ]);
 
-
   return (
     <main
       className="
@@ -86,29 +79,27 @@ export default function Committee() {
 
       {/* =====================================================
           HERO SECTION
-      ====================================================== */}
-<Logo></Logo>
+      ===================================================== */}
+
+      <Logo />
+
       <section
         className="
           relative
           overflow-hidden
-
           bg-[#07152F]
-
           px-5
-          pb-16
-          pt-12
-
+          pb-12
+          pt-8
           sm:px-6
-          sm:pb-20
-          sm:pt-16
-
+          sm:pb-16
+          sm:pt-10
           lg:px-8
-          lg:pb-24
-          lg:pt-20
+          lg:pb-20
+          lg:pt-14
         "
       >
-       
+
         {/* ===================================================
             BACKGROUND GLOW - LEFT
         ==================================================== */}
@@ -116,19 +107,13 @@ export default function Committee() {
         <div
           className="
             pointer-events-none
-
             absolute
-
             -left-40
             -top-40
-
             h-[450px]
             w-[450px]
-
             rounded-full
-
             bg-blue-500/10
-
             blur-[140px]
           "
         />
@@ -141,19 +126,13 @@ export default function Committee() {
         <div
           className="
             pointer-events-none
-
             absolute
-
             -bottom-48
             -right-40
-
             h-[500px]
             w-[500px]
-
             rounded-full
-
             bg-sky-400/10
-
             blur-[150px]
           "
         />
@@ -167,7 +146,6 @@ export default function Committee() {
           className="
             relative
             z-10
-
             mx-auto
             max-w-7xl
           "
@@ -213,10 +191,9 @@ export default function Committee() {
                 leading-tight
                 tracking-tight
                 text-white
-
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
               "
             >
 
@@ -225,16 +202,12 @@ export default function Committee() {
               <span
                 className="
                   block
-
                   bg-gradient-to-r
                   from-[#93C5FD]
                   via-[#60A5FA]
                   to-[#BFDBFE]
-
                   bg-clip-text
-
-                  pb-3
-
+                  pb-1
                   text-transparent
                 "
               >
@@ -263,7 +236,7 @@ export default function Committee() {
               }}
               className="
                 mx-auto
-                mt-8
+                mt-6
                 max-w-3xl
               "
             >
@@ -272,20 +245,14 @@ export default function Committee() {
                 className="
                   inline-flex
                   max-w-full
-
                   items-center
                   gap-3
-
                   rounded-full
-
                   border
                   border-[#315783]
-
                   bg-[#0B2144]
-
                   px-5
                   py-3
-
                   text-left
                 "
               >
@@ -297,11 +264,8 @@ export default function Committee() {
                     h-2
                     w-2
                     shrink-0
-
                     rounded-full
-
                     bg-[#60A5FA]
-
                     shadow-[0_0_10px_rgba(96,165,250,0.6)]
                   "
                 />
@@ -315,7 +279,6 @@ export default function Committee() {
                     font-semibold
                     leading-5
                     text-[#BFDBFE]
-
                     sm:text-sm
                   "
                 >
@@ -341,23 +304,18 @@ export default function Committee() {
         className="
           relative
           overflow-hidden
-
           bg-gradient-to-b
           from-white
           via-[#F8FBFF]
           to-[#F1F6FD]
-
           px-4
-
           pb-24
-          pt-12
-
+          pt-8
           sm:px-6
-          sm:pt-14
-
+          sm:pt-10
           lg:px-8
           lg:pb-28
-          lg:pt-16
+          lg:pt-12
         "
       >
 
@@ -368,19 +326,13 @@ export default function Committee() {
         <div
           className="
             pointer-events-none
-
             absolute
-
             -left-40
             top-20
-
             h-[450px]
             w-[450px]
-
             rounded-full
-
             bg-[#BFDBFE]/20
-
             blur-[140px]
           "
         />
@@ -393,19 +345,13 @@ export default function Committee() {
         <div
           className="
             pointer-events-none
-
             absolute
-
             -bottom-40
             -right-40
-
             h-[500px]
             w-[500px]
-
             rounded-full
-
             bg-[#DBEAFE]/30
-
             blur-[140px]
           "
         />
@@ -419,7 +365,6 @@ export default function Committee() {
           className="
             relative
             z-10
-
             mx-auto
             max-w-7xl
           "
@@ -450,8 +395,8 @@ export default function Committee() {
               }}
 
               className="
-                pt-2
-                md:pt-4
+                pt-0
+                md:pt-2
               "
             >
 
@@ -463,28 +408,19 @@ export default function Committee() {
                 className="
                   mb-10
                   text-center
-
                   md:mb-14
                 "
               >
 
-                
-
-
                 <h2
                   className="
                     mx-auto
-
                     mt-4
-
                     max-w-5xl
-
                     text-3xl
                     font-black
                     leading-tight
-
                     text-[#172554]
-
                     sm:text-4xl
                     md:text-5xl
                   "
@@ -498,12 +434,9 @@ export default function Committee() {
                 <div
                   className="
                     mx-auto
-
                     mt-5
-
                     h-[2px]
                     w-12
-
                     bg-[#075DB8]
                   "
                 />
@@ -518,7 +451,6 @@ export default function Committee() {
               <div
                 className="
                   space-y-10
-
                   md:space-y-12
                 "
               >
@@ -556,24 +488,16 @@ export default function Committee() {
                       <div
                         className="
                           mb-6
-
                           overflow-hidden
-
                           rounded-[16px]
-
                           border
                           border-[#DCE3EB]
-
                           border-t-4
                           border-t-[#075DB8]
-
                           bg-white
-
                           px-6
                           py-6
-
                           shadow-[0_5px_20px_rgba(15,23,42,0.03)]
-
                           md:px-8
                           md:py-7
                         "
@@ -583,7 +507,6 @@ export default function Committee() {
                           className="
                             flex
                             items-center
-
                             gap-4
                           "
                         >
@@ -595,24 +518,16 @@ export default function Committee() {
                           <div
                             className="
                               flex
-
                               h-11
                               w-11
-
                               shrink-0
-
                               items-center
                               justify-center
-
                               rounded-xl
-
                               bg-[#E8F1FF]
-
                               text-sm
                               font-bold
-
                               text-[#075DB8]
-
                               md:h-12
                               md:w-12
                               md:text-base
@@ -634,19 +549,13 @@ export default function Committee() {
                             "
                           >
 
-                            
-
-
                             <h3
                               className="
                                 mt-1
-
                                 text-lg
                                 font-bold
                                 leading-tight
-
                                 text-[#172554]
-
                                 md:text-2xl
                               "
                             >
@@ -666,13 +575,10 @@ export default function Committee() {
 
                       <motion.div
                         layout
-
                         className="
                           grid
                           grid-cols-1
-
                           gap-5
-
                           sm:grid-cols-2
                           lg:grid-cols-3
                           xl:grid-cols-4
@@ -681,13 +587,11 @@ export default function Committee() {
 
                         {section.members?.map(
                           (member, memberIndex) => (
-
                             <MemberBox
                               key={`${member.name}-${memberIndex}`}
                               member={member}
                               index={memberIndex}
                             />
-
                           )
                         )}
 
@@ -756,28 +660,18 @@ function MemberBox({
 
       className="
         group
-
         relative
-
         overflow-hidden
-
         rounded-[12px]
-
         border
         border-[#DCE3EB]
-
         border-t-4
         border-t-[#075DB8]
-
         bg-white
-
         shadow-[0_5px_18px_rgba(15,23,42,0.03)]
-
         transition-all
         duration-300
-
         hover:border-[#BFDBFE]
-
         hover:shadow-[0_12px_30px_rgba(7,93,184,0.10)]
       "
     >
@@ -789,16 +683,12 @@ function MemberBox({
       <div
         className="
           flex
-
           min-h-[190px]
-
           flex-col
           items-center
           justify-center
-
           px-6
           py-8
-
           text-center
         "
       >
@@ -811,17 +701,12 @@ function MemberBox({
           <div
             className="
               mb-5
-
               h-20
               w-20
-
               overflow-hidden
-
               rounded-full
-
               border-2
               border-[#E8F1FF]
-
               bg-[#F5F9FF]
             "
           >
@@ -832,7 +717,6 @@ function MemberBox({
               className="
                 h-full
                 w-full
-
                 object-cover
               "
             />
@@ -848,21 +732,15 @@ function MemberBox({
         <h3
           className="
             max-w-full
-
             text-lg
             font-black
             uppercase
             leading-7
-
             tracking-[-0.2px]
-
             text-[#075DB8]
-
             transition-colors
             duration-300
-
             group-hover:text-[#064F9C]
-
             sm:text-xl
           "
         >
@@ -877,10 +755,8 @@ function MemberBox({
         <div
           className="
             mt-5
-
             h-[2px]
             w-10
-
             bg-[#F59E0B]
           "
         />
@@ -894,11 +770,9 @@ function MemberBox({
           <p
             className="
               mt-4
-
               text-sm
               font-semibold
               leading-6
-
               text-[#475569]
             "
           >
@@ -915,13 +789,10 @@ function MemberBox({
           <p
             className="
               mt-2
-
               text-xs
               font-bold
               uppercase
-
               tracking-[1px]
-
               text-[#64748B]
             "
           >
@@ -938,11 +809,9 @@ function MemberBox({
           <p
             className="
               mt-1
-
               text-xs
               font-medium
               leading-5
-
               text-[#64748B]
             "
           >

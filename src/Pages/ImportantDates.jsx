@@ -78,14 +78,14 @@ export default function ImportantDates() {
             overflow-hidden
             bg-[#07152F]
             px-5
-            pb-20
-            pt-12
+            pb-12
+            pt-8
             sm:px-6
-            sm:pb-24
-            sm:pt-16
+            sm:pb-16
+            sm:pt-10
             lg:px-8
-            lg:pb-28
-            lg:pt-20
+            lg:pb-20
+            lg:pt-14
           "
         >
 
@@ -141,9 +141,9 @@ export default function ImportantDates() {
                 leading-tight
                 tracking-tight
                 text-white
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
               "
             >
               Important
@@ -167,7 +167,7 @@ export default function ImportantDates() {
             <p
               className="
                 mx-auto
-                mt-6
+                mt-2
                 max-w-3xl
                 text-sm
                 font-medium
@@ -305,7 +305,7 @@ export default function ImportantDates() {
                     uppercase
                     tracking-[1px]
                     text-[#075DB8]
-                    sm:text-3xl
+                    sm:text-2xl
                   "
                 >
                   Submission Timeline
