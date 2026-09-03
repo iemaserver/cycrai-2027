@@ -318,8 +318,7 @@ export default function AboutSection() {
                     organized by Department of Computer Science and
                     Engineering(Cyber Security), Institute of Engineering &
                     Management Kolkata, under University of Engineering and
-                    Management Kolkata, with Technical Co-Sponsorship of IEEE Kolkata section, IEEE Computer Society SBC UEM Kolkata and IEEE Communication Society Kolkata section
-                    29th September to 30th September, 2027.
+                    Management Kolkata, with Technical Co-Sponsorship of IEEE Kolkata section, IEEE Computer Society SBC UEM Kolkata and IEEE Communication Society Kolkata section during 29th September to 30th September, 2027.
                   </p>
 
                   <p
