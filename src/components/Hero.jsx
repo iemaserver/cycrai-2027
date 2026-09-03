@@ -426,7 +426,7 @@ lg:text-xl
                 drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]
               "
             >
-              *(All accepted and presented papers will be submitted for inclusion in the{" "}
+              **(All accepted and presented papers will be submitted for inclusion in the{" "}
 
               <span
                 className="
@@ -445,7 +445,7 @@ lg:text-xl
                   text-white/90
                 "
               >
-                Digital Library (Approval awaiting)
+                Digital Library (Approval awaiting)**
               </span>
               )
             </p>
