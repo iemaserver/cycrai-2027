@@ -197,8 +197,8 @@ export default function Guidelines() {
             </p>
 
             <p>
-              Requirements stated as <strong className="font-black text-black">mandatory</strong> are enforced
-              by <strong className="font-black text-black">administrative rejection without external review</strong>,
+              Requirements stated as mandatory are enforced
+              by administrative rejection without external review,
               and authors will not be given an opportunity to correct a
               defect after the submission deadline.
             </p>

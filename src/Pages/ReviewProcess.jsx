@@ -254,7 +254,7 @@ export default function ReviewProcess() {
                 <p>
                   We will use Turnitin as plagiarism-checking software (which
                   the university already has), and thus any paper having a
-                  similarity score above 15% and AI score above 0% will not be
+                  <strong className="font-black text-black"> similarity score above 15%</strong> and <strong className="font-black text-black">AI score above 0%</strong> will not be
                   processed further.
                 </p>
 
@@ -273,7 +273,7 @@ export default function ReviewProcess() {
 
                 <p>
                   The corresponding authors of qualifying submissions will be
-                  intimated for their papers to be double-blind reviewed by
+                  intimated for their papers to be <strong className="font-black text-black">double-blind</strong> reviewed by
                   three experts based on originality, novelty, clarity,
                   completeness, relevance, significance, and research
                   contribution.
