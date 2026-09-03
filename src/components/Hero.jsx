@@ -445,9 +445,9 @@ lg:text-xl
                   text-white/90
                 "
               >
-                Digital Library (Approval awaiting)**
+                Digital Library (Approval awaiting)
               </span>
-              )
+              )**
             </p>
 
 
