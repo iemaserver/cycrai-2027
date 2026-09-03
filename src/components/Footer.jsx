@@ -173,8 +173,7 @@ export default function Footer() {
                   text-justify
                 "
               >
-                Department of Computer Science and Engineering (Cyber
-                Security), Institute of Engineering and Management Kolkata,
+                Department of Computer Science and Engineering (Cybersecurity), Institute of Engineering and Management Kolkata,
                 University of Engineering and Management Kolkata
               </p>
 
