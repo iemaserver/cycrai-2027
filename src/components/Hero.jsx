@@ -419,14 +419,14 @@ lg:text-xl
                 sm:text-base
                 md:text-lg
 
-                font-medium
+                font-bold
 
                 leading-relaxed
 
                 drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]
               "
             >
-              *(All accepted and presented papers will be published in{" "}
+              *(All accepted and presented papers will be submitted for inclusion in the{" "}
 
               <span
                 className="
@@ -445,7 +445,7 @@ lg:text-xl
                   text-white/90
                 "
               >
-                (Awaiting Approval)
+                Digital Library (Approval awaiting)
               </span>
               )
             </p>
