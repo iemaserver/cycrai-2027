@@ -5,6 +5,7 @@ import ieee_sb from "../assets/image/Ieee_cs_kol_white.png";
 import iedc from "../assets/image/IEDC_White_Logo.png";
 import ieee_cs_sb from "../assets/image/pritam2.png";
 import cycrai_logo from "../assets/image/cycrai_latest_logo.png";
+import comsoc from "../assets/image/comsoc.png";
 
 export default function LogoStrip() {
   const logos = [
@@ -15,6 +16,10 @@ export default function LogoStrip() {
     {
       src: ieee_kol,
       alt: "IEEE Kolkata Section",
+    },
+    {
+      src: comsoc,
+      alt: "IEEE Comsoc Society",
     },
     {
       src: ieee_sb,
