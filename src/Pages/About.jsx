@@ -318,7 +318,7 @@ export default function AboutSection() {
                     organized by Department of Computer Science and
                     Engineering(Cyber Security), Institute of Engineering &
                     Management Kolkata, under University of Engineering and
-                    Management Kolkata, with Technical Co-Sponsorship of IEEE Kolkata section, IEEE Computer Society SBC UEM Kolkata and IEEE Communication Society Kolkata section during 29th September to 30th September, 2027.
+                    Management Kolkata, with Technical Co-Sponsorship of <span className="text-[#075DB8] font-bold">IEEE Kolkata section, IEEE Computer Society SBC UEM Kolkata and IEEE Communication Society Kolkata</span> section during <span className="text-[#FF0000] font-bold underline decoration-2">29th September to 30th September, 2027</span>.
                   </p>
 
                   <p
@@ -337,7 +337,7 @@ export default function AboutSection() {
                     addresses, technical sessions, and networking activities
                     are designed to encourage cross-disciplinary dialogue.
                     Papers that are accepted and presented will be submitted
-                    for publication in the IEEE Xplore Digital Library.
+                    for <span className="text-[#075DB8] font-bold">publication in the IEEE Xplore Digital Library.</span>
                   </p>
 
                 </div>
@@ -765,8 +765,9 @@ export default function AboutSection() {
                           text-lg
                           font-bold
                           leading-8
-                          text-[#1E3A5F]
+                          text-[#075DB8]
                           md:text-xl
+                          underline decoration-2
                         "
                       >
                         Institute of Engineering &amp; Management(IEM) Kolkata
@@ -803,8 +804,9 @@ export default function AboutSection() {
                           text-lg
                           font-bold
                           leading-8
-                          text-[#1E3A5F]
+                          text-[#075DB8]
                           md:text-xl
+                          underline decoration-2
                         "
                       >
                         University of Engineering &amp; Management(UEM) Jaipur
@@ -844,8 +846,9 @@ export default function AboutSection() {
                           text-lg
                           font-bold
                           leading-8
-                          text-[#1E3A5F]
+                          text-[#075DB8]
                           md:text-xl
+                          underline decoration-2
                         "
                       >
                         University of Engineering &amp; Management(UEM) Kolkata

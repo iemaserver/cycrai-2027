@@ -254,8 +254,8 @@ export default function ReviewProcess() {
                 <p>
                   We will use Turnitin as plagiarism-checking software (which
                   the university already has), and thus any paper having a
-                  <strong className="font-black text-black"> similarity score above 15%</strong> and <strong className="font-black text-black">AI score above 0%</strong> will not be
-                  processed further.
+                  <strong className="font-black text-[#FF0000] underline decoration-2"> similarity score above 15%</strong> and <strong className="font-black text-[#FF0000] underline decoration-2">AI score above 0% will not be
+                  processed further.</strong>
                 </p>
 
                 <p>
@@ -273,7 +273,7 @@ export default function ReviewProcess() {
 
                 <p>
                   The corresponding authors of qualifying submissions will be
-                  intimated for their papers to be <strong className="font-black text-black">double-blind</strong> reviewed by
+                  intimated for their papers to be <strong className="font-black text-[#075DB8]">double-blind</strong> reviewed by
                   three experts based on originality, novelty, clarity,
                   completeness, relevance, significance, and research
                   contribution.
@@ -374,15 +374,15 @@ export default function ReviewProcess() {
                 </ReviewPoint>
 
                 <ReviewPoint>
-                  The maximum number of pages of paper must not exceed{" "}
-                  <strong className="font-black text-black">6 pages</strong>.
+                  <strong className="font-black text-[#FF0000] underline decoration-2">The maximum number of pages of paper must not exceed{" "}
+                  6 pages</strong>.
                 </ReviewPoint>
 
                 <ReviewPoint>
-                  Authors should take note that it is a double-blind
+                  <strong className="font-black text-[#FF0000] underline decoration-2">Authors should take note that it is a double-blind
                   submission. Authors should not disclose their names,
                   affiliations, funding sources, and previous works that help
-                  find them via web search engines.
+                  find them via web search engines.</strong>
                 </ReviewPoint>
 
                 <ReviewPoint>

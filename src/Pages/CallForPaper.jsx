@@ -417,6 +417,7 @@ export default function CallForPapers() {
                         font-bold
                         leading-8
                         text-[#172554]
+                        underline decoration-2
                       "
                     >
                       {topic.title}

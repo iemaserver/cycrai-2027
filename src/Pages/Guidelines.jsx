@@ -241,7 +241,7 @@ export default function Guidelines() {
                 a CYCRAI requirement, the{" "}
                 
                   IEEE requirement governs eligibility for publication
-                  in <strong className="font-black text-black">IEEE Xplore.</strong>
+                  in IEEE Xplore.
               
               </p>
             </InfoBox>
@@ -270,13 +270,13 @@ export default function Guidelines() {
 
           <SimpleBox>
             <p>
-              Topic lists on the Call for Papers page are{" "}
+              <span className="text-[#FF0000] font-bold underline decoration-2">Topic lists on the Call for Papers page are{" "}
               indicative rather than exhaustive.
               Interdisciplinary work spanning{" "}
               
                 security, cryptography and machine learning
               {" "}
-              is expressly welcome.
+              is expressly welcome.</span>
             </p>
           </SimpleBox>
 
@@ -434,12 +434,12 @@ export default function Guidelines() {
               <ul className="space-y-2.5">
                 <Bullet>
                   Overall similarity must remain{" "}
-                  <strong className="font-black text-black">below 15%</strong>.
+                  below 15%.
                 </Bullet>
 
                 <Bullet>
                   Similarity from a single source must not exceed{" "}
-                  <strong className="font-black text-black">5%</strong>.
+                  5%.
                 </Bullet>
 
                 <Bullet>
@@ -691,7 +691,7 @@ export default function Guidelines() {
                   Valid membership/student proof is required where applicable.
                 </>,
                 <>
-                  <strong className="font-black text-black">Presentation is mandatory.</strong>
+                  <strong className="font-black text-[#FF0000] ">Presentation is mandatory.</strong>
                 </>,
                 <>
                   At least one author must present the paper.
@@ -705,7 +705,7 @@ export default function Guidelines() {
                   fourteen days before the conference.
                 </>,
                 <>
-                  <strong className="font-black text-black">Registration fees are non-refundable.</strong>
+                  <strong className="font-black text-[#FF0000]">Registration fees are non-refundable.</strong>
                 </>,
               ]}
             />
