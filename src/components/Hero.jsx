@@ -491,7 +491,12 @@ lg:text-xl
   }}
   className="min-w-[200px]"
   onClick={() => {
-    window.open("");
+    const link = document.createElement("a");
+    link.href = "/broucher.pdf";
+    link.download = "Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }}
 >
   Download Brochure
