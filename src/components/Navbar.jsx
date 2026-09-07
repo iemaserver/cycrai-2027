@@ -22,6 +22,7 @@ import {
   Settings2,
   Mic2,
   Images,
+  Radio,
 } from "lucide-react";
 
 // =============================================================
@@ -126,42 +127,54 @@ export default function Navbar() {
   // ===========================================================
 
   const committeeItems = [
-    {
-      name: "Organizing Committee",
-      key: "organizing",
-      icon: Building2,
-    },
-    {
-      name: "IEEE Kolkata Section Steering Committee",
-      key: "ieeeKolkata",
-      icon: Landmark,
-    },
-    {
-      name: "IEEE Computer Society Kolkata Section",
-      key: "ieeeCS",
-      icon: ShieldCheck,
-    },
-    {
-      name: "National Advisory Committee",
-      key: "nationalAdvisory",
-      icon: Landmark,
-    },
-    {
-      name: "International Advisory Committee",
-      key: "internationalAdvisory",
-      icon: Globe2,
-    },
-    {
-      name: "Technical Program Committee",
-      key: "technicalProgram",
-      icon: Settings2,
-    },
-    {
-      name: "IEEE Computer Society UEMK Student Committee",
-      key: "student",
-      icon: GraduationCap,
-    },
-  ];
+  {
+    name: "Organizing Committee",
+    key: "organizing",
+    icon: Building2,
+  },
+
+  {
+    name: "IEEE Kolkata Section Steering Committee",
+    key: "ieeeKolkata",
+    icon: Landmark,
+  },
+
+  {
+    name: "IEEE Computer Society Kolkata Section",
+    key: "ieeeCS",
+    icon: ShieldCheck,
+  },
+
+  {
+    name: "IEEE ComSoc Kolkata Section Steering Committee",
+    key: "ieeeComSoc",
+    icon: Radio,
+  },
+
+  {
+    name: "National Advisory Committee",
+    key: "nationalAdvisory",
+    icon: Landmark,
+  },
+
+  {
+    name: "International Advisory Committee",
+    key: "internationalAdvisory",
+    icon: Globe2,
+  },
+
+  {
+    name: "Technical Program Committee",
+    key: "technicalProgram",
+    icon: Settings2,
+  },
+
+  {
+    name: "IEEE Computer Society UEMK Student Committee",
+    key: "student",
+    icon: GraduationCap,
+  },
+];
 
 
   // ===========================================================

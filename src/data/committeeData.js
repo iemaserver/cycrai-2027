@@ -339,6 +339,41 @@ export const committeeData = {
       },
     ],
   },
+  // =========================================================
+// 8. IEEE COMSOC KOLKATA SECTION STEERING COMMITTEE
+// =========================================================
+ieeeComSoc: {
+  title: "IEEE ComSoc Kolkata Section Steering Committee",
+
+  sections: [
+    {
+      title: "Steering Committee",
+      members: [
+        {
+          name: "Prof. Dr. Sangita Roy",
+          designation: "Narula Institute of Technology, Kolkata",
+        },
+        {
+          name: "Prof. Dr. Amlan Chakrabarti",
+          designation: "Calcutta University",
+        },
+        {
+          name: "Prof. Dr. Debasis De",
+          designation:
+            "Maulana Abul Kalam Azad University of Technology, West Bengal",
+        },
+        {
+          name: "Prof. Dr. Sudipta Chattopadhyay",
+          designation: "Jadavpur University, West Bengal",
+        },
+        {
+          name: "Mr. Subhamoy Chakraborti",
+          designation: "ABP",
+        },
+      ],
+    },
+  ],
+},
 
   // =========================================================
   // 4. NATIONAL ADVISORY COMMITTEE
