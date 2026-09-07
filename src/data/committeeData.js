@@ -115,7 +115,7 @@ export const committeeData = {
               "University of Engineering and Management, Kolkata",
           },
           {
-            name: "Prof. Binit Kumar Pandit",
+            name: "Prof. Dr. Binit Kumar Pandit",
             designation:
               "University of Engineering and Management, Kolkata",
           },
@@ -172,7 +172,7 @@ export const committeeData = {
         title: "Publication Co-Chairs",
         members: [
           {
-            name: "Prof. Rajarshi Mukhopadhyay",
+            name: "Prof. Dr. Rajarshi Mukhopadhyay",
             designation:
               "University of Engineering and Management, Kolkata",
           },
@@ -182,7 +182,7 @@ export const committeeData = {
               "University of Engineering and Management, Kolkata",
           },
           {
-            name: "Prof. Suvaditya Majumdar",
+            name: "Prof. Dr. Suvaditya Majumdar",
             designation:
               "University of Engineering and Management, Kolkata",
           },
