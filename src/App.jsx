@@ -20,6 +20,7 @@ import Gallery from "./Pages/Gallery.jsx";
 import Venue from "./Pages/Venue.jsx";
 import Contact from "./Pages/contact.jsx";
 import Registration from "./Pages/Registration.jsx";
+import WomenInEngineering from "./Pages/WomenInEngineering";
 
 function App() {
   /* =========================================================
@@ -75,6 +76,10 @@ function App() {
 
           {/* REGISTRATION */}
           <Route path="/registration" element={<Registration />} />
+          <Route
+  path="/women-in-engineering"
+  element={<WomenInEngineering />}
+/>
 
           {/* COMMITTEE */}
           <Route path="/committee" element={<Committee />} />

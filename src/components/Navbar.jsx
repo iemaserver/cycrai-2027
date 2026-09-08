@@ -23,6 +23,7 @@ import {
   Mic2,
   Images,
   Radio,
+  Sparkles,
 } from "lucide-react";
 
 // =============================================================
@@ -50,7 +51,6 @@ export default function Navbar() {
 
   const collapseTimerRef = useRef(null);
 
-
   // ===========================================================
   // MAIN NAVIGATION
   // ===========================================================
@@ -70,6 +70,11 @@ export default function Navbar() {
       name: "Registration",
       path: "/registration",
       icon: CreditCard,
+    },
+    {
+      name: "Women In Engineering",
+      path: "/women-in-engineering",
+      icon: Sparkles,
     },
     {
       name: "Speakers",
@@ -92,7 +97,6 @@ export default function Navbar() {
       icon: MapPin,
     },
   ];
-
 
   // ===========================================================
   // AUTHORS
@@ -121,61 +125,59 @@ export default function Navbar() {
     },
   ];
 
-
   // ===========================================================
   // COMMITTEE
   // ===========================================================
 
   const committeeItems = [
-  {
-    name: "Organizing Committee",
-    key: "organizing",
-    icon: Building2,
-  },
+    {
+      name: "Organizing Committee",
+      key: "organizing",
+      icon: Building2,
+    },
 
-  {
-    name: "IEEE Kolkata Section Steering Committee",
-    key: "ieeeKolkata",
-    icon: Landmark,
-  },
+    {
+      name: "IEEE Kolkata Section Steering Committee",
+      key: "ieeeKolkata",
+      icon: Landmark,
+    },
 
-  {
-    name: "IEEE Computer Society Kolkata Section",
-    key: "ieeeCS",
-    icon: ShieldCheck,
-  },
+    {
+      name: "IEEE Computer Society Kolkata Section",
+      key: "ieeeCS",
+      icon: ShieldCheck,
+    },
 
-  {
-    name: "IEEE ComSoc Kolkata Section Steering Committee",
-    key: "ieeeComSoc",
-    icon: Radio,
-  },
+    {
+      name: "IEEE ComSoc Kolkata Section Steering Committee",
+      key: "ieeeComSoc",
+      icon: Radio,
+    },
 
-  {
-    name: "National Advisory Committee",
-    key: "nationalAdvisory",
-    icon: Landmark,
-  },
+    {
+      name: "National Advisory Committee",
+      key: "nationalAdvisory",
+      icon: Landmark,
+    },
 
-  {
-    name: "International Advisory Committee",
-    key: "internationalAdvisory",
-    icon: Globe2,
-  },
+    {
+      name: "International Advisory Committee",
+      key: "internationalAdvisory",
+      icon: Globe2,
+    },
 
-  {
-    name: "Technical Program Committee",
-    key: "technicalProgram",
-    icon: Settings2,
-  },
+    {
+      name: "Technical Program Committee",
+      key: "technicalProgram",
+      icon: Settings2,
+    },
 
-  {
-    name: "IEEE Computer Society UEMK Student Committee",
-    key: "student",
-    icon: GraduationCap,
-  },
-];
-
+    {
+      name: "IEEE Computer Society UEMK Student Committee",
+      key: "student",
+      icon: GraduationCap,
+    },
+  ];
 
   // ===========================================================
   // ACTIVE ROUTE
@@ -189,19 +191,15 @@ export default function Navbar() {
     return location.pathname === path;
   };
 
-
   const isAuthorsActive = authorItems.some(
     (item) => location.pathname === item.path
   );
 
-
   const isCommitteeActive =
     location.pathname === "/committee";
 
-
   const currentCommittee =
     new URLSearchParams(location.search).get("committee");
-
 
   // ===========================================================
   // DESKTOP OPEN
@@ -215,7 +213,6 @@ export default function Navbar() {
 
     setDesktopExpanded(true);
   };
-
 
   // ===========================================================
   // DESKTOP CLOSE
@@ -234,7 +231,6 @@ export default function Navbar() {
       collapseTimerRef.current = null;
     }, 1200);
   };
-
 
   // ===========================================================
   // CLOSE EVERYTHING
@@ -259,7 +255,6 @@ export default function Navbar() {
     }
   };
 
-
   // ===========================================================
   // NAVIGATION
   // ===========================================================
@@ -272,7 +267,6 @@ export default function Navbar() {
       behavior: "smooth",
     });
   };
-
 
   // ===========================================================
   // ESCAPE KEY
@@ -292,7 +286,6 @@ export default function Navbar() {
     };
   }, []);
 
-
   // ===========================================================
   // ROUTE CHANGE
   // ===========================================================
@@ -311,7 +304,6 @@ export default function Navbar() {
     }
   }, [location.pathname, location.search]);
 
-
   // ===========================================================
   // CLEANUP
   // ===========================================================
@@ -323,7 +315,6 @@ export default function Navbar() {
       }
     };
   }, []);
-
 
   // ===========================================================
   // MOBILE BODY LOCK
@@ -340,7 +331,6 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
-
 
   // ===========================================================
   // DESKTOP NORMAL ITEM
@@ -380,7 +370,6 @@ export default function Navbar() {
           }
         `}
       >
-
         {/* Hover background */}
 
         <span
@@ -401,7 +390,6 @@ export default function Navbar() {
             }
           `}
         />
-
 
         {/* Active indicator */}
 
@@ -424,7 +412,6 @@ export default function Navbar() {
           `}
         />
 
-
         {/* Icon */}
 
         <Icon
@@ -443,17 +430,14 @@ export default function Navbar() {
           `}
         />
 
-
         {/* Text */}
 
         <span className="relative z-10">
           {item.name}
         </span>
-
       </Link>
     );
   };
-
 
   // ===========================================================
   // AUTHORS DESKTOP
@@ -474,7 +458,6 @@ export default function Navbar() {
         }}
         onMouseLeave={collapseDesktopNav}
       >
-
         {/* AUTHORS BUTTON */}
 
         <button
@@ -513,7 +496,6 @@ export default function Navbar() {
             }
           `}
         >
-
           {/* Background */}
 
           <span
@@ -535,7 +517,6 @@ export default function Navbar() {
             `}
           />
 
-
           {/* Indicator */}
 
           <span
@@ -555,7 +536,6 @@ export default function Navbar() {
             `}
           />
 
-
           {/* Icon */}
 
           <PenLine
@@ -571,13 +551,11 @@ export default function Navbar() {
             "
           />
 
-
           {/* Text */}
 
           <span className="relative z-10 flex-1">
             Authors
           </span>
-
 
           {/* Arrow */}
 
@@ -596,9 +574,7 @@ export default function Navbar() {
               }
             `}
           />
-
         </button>
-
 
         {/* AUTHORS SUBMENU */}
 
@@ -634,7 +610,6 @@ export default function Navbar() {
 
           onMouseLeave={collapseDesktopNav}
         >
-
           <div
             className="
               overflow-hidden
@@ -645,16 +620,13 @@ export default function Navbar() {
               shadow-[0_18px_50px_rgba(0,0,0,0.35)]
             "
           >
-
             {/* Top accent */}
 
             <div className="h-[3px] w-full bg-[#075DB8]" />
 
-
             {/* Items */}
 
             <div className="py-2">
-
               {authorItems.map((item, index) => {
                 const Icon = item.icon;
 
@@ -692,7 +664,6 @@ export default function Navbar() {
                       }
                     `}
                   >
-
                     {/* Icon box */}
 
                     <span
@@ -716,13 +687,11 @@ export default function Navbar() {
                       <Icon size={16} />
                     </span>
 
-
                     {/* Name */}
 
                     <span className="min-w-0 flex-1">
                       {item.name}
                     </span>
-
 
                     {/* Number */}
 
@@ -736,21 +705,15 @@ export default function Navbar() {
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-
                   </Link>
                 );
               })}
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     );
   };
-
 
   // ===========================================================
   // COMMITTEE DESKTOP
@@ -771,7 +734,6 @@ export default function Navbar() {
         }}
         onMouseLeave={collapseDesktopNav}
       >
-
         {/* COMMITTEE BUTTON */}
 
         <button
@@ -810,7 +772,6 @@ export default function Navbar() {
             }
           `}
         >
-
           {/* Background */}
 
           <span
@@ -832,7 +793,6 @@ export default function Navbar() {
             `}
           />
 
-
           {/* Indicator */}
 
           <span
@@ -852,7 +812,6 @@ export default function Navbar() {
             `}
           />
 
-
           {/* Icon */}
 
           <UsersRound
@@ -868,13 +827,11 @@ export default function Navbar() {
             "
           />
 
-
           {/* Text */}
 
           <span className="relative z-10 flex-1">
             Committee
           </span>
-
 
           {/* Arrow */}
 
@@ -893,9 +850,7 @@ export default function Navbar() {
               }
             `}
           />
-
         </button>
-
 
         {/* COMMITTEE SUBMENU */}
 
@@ -932,7 +887,6 @@ export default function Navbar() {
 
           onMouseLeave={collapseDesktopNav}
         >
-
           <div
             className="
               overflow-hidden
@@ -943,11 +897,9 @@ export default function Navbar() {
               shadow-[0_18px_50px_rgba(0,0,0,0.35)]
             "
           >
-
             {/* Top accent */}
 
             <div className="h-[3px] w-full bg-[#075DB8]" />
-
 
             {/* Header */}
 
@@ -972,11 +924,9 @@ export default function Navbar() {
               </p>
             </div>
 
-
             {/* Committee items */}
 
             <div className="py-2">
-
               {committeeItems.map((item, index) => {
                 const Icon = item.icon;
 
@@ -1013,7 +963,6 @@ export default function Navbar() {
                       }
                     `}
                   >
-
                     {/* Icon */}
 
                     <span
@@ -1043,7 +992,6 @@ export default function Navbar() {
                       />
                     </span>
 
-
                     {/* Name */}
 
                     <span
@@ -1058,7 +1006,6 @@ export default function Navbar() {
                       {item.name}
                     </span>
 
-
                     {/* Number */}
 
                     <span
@@ -1071,21 +1018,15 @@ export default function Navbar() {
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-
                   </Link>
                 );
               })}
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     );
   };
-
 
   // ===========================================================
   // RENDER
@@ -1137,7 +1078,6 @@ export default function Navbar() {
           }
         `}
       >
-
         {/* =====================================================
             COLLAPSED TAB
         ====================================================== */}
@@ -1182,7 +1122,6 @@ export default function Navbar() {
           onMouseEnter={expandDesktopNav}
           onClick={expandDesktopNav}
         >
-
           {/* Accent */}
 
           <span
@@ -1195,7 +1134,6 @@ export default function Navbar() {
               bg-[#60A5FA]
             "
           />
-
 
           {/* Menu icon */}
 
@@ -1217,7 +1155,6 @@ export default function Navbar() {
           >
             <Menu size={17} />
           </span>
-
 
           {/* Vertical text */}
 
@@ -1245,7 +1182,6 @@ export default function Navbar() {
             CLICK HERE
           </span>
 
-
           {/* Arrow */}
 
           <span
@@ -1259,9 +1195,7 @@ export default function Navbar() {
           >
             »
           </span>
-
         </div>
-
 
         {/* =====================================================
             TOP ACCENT
@@ -1279,7 +1213,6 @@ export default function Navbar() {
           "
         />
 
-
         {/* =====================================================
             DESKTOP NAVIGATION
         ====================================================== */}
@@ -1292,18 +1225,15 @@ export default function Navbar() {
             item={navItems[0]}
           />
 
-
           {/* About */}
 
           <DesktopNavItem
             item={navItems[1]}
           />
 
-
           {/* Authors */}
 
           <AuthorsDesktop />
-
 
           {/* Registration */}
 
@@ -1311,41 +1241,41 @@ export default function Navbar() {
             item={navItems[2]}
           />
 
-
-          {/* Committee */}
-
-          <CommitteeDesktop />
-
-
-          {/* Speakers */}
+          {/* Women In Engineering */}
 
           <DesktopNavItem
             item={navItems[3]}
           />
 
+          {/* Committee */}
 
-          {/* Program */}
+          <CommitteeDesktop />
+
+          {/* Speakers */}
 
           <DesktopNavItem
             item={navItems[4]}
           />
 
-
-          {/* Gallery */}
+          {/* Program */}
 
           <DesktopNavItem
             item={navItems[5]}
           />
 
-
-          {/* Venue */}
+          {/* Gallery */}
 
           <DesktopNavItem
             item={navItems[6]}
           />
 
-        </nav>
+          {/* Venue */}
 
+          <DesktopNavItem
+            item={navItems[7]}
+          />
+
+        </nav>
 
         {/* =====================================================
             DIVIDER
@@ -1358,7 +1288,6 @@ export default function Navbar() {
             bg-[#1E3A5F]
           "
         />
-
 
         {/* =====================================================
             CONTACT
@@ -1407,7 +1336,6 @@ export default function Navbar() {
           CONTACT US
         </Link>
 
-
         {/* Bottom accent */}
 
         <div
@@ -1421,9 +1349,7 @@ export default function Navbar() {
             bg-[#075DB8]
           "
         />
-
       </aside>
-
 
       {/* =======================================================
           MOBILE MENU BUTTON
@@ -1483,7 +1409,6 @@ export default function Navbar() {
         )}
       </button>
 
-
       {/* =======================================================
           MOBILE OVERLAY
       ======================================================== */}
@@ -1509,7 +1434,6 @@ export default function Navbar() {
           }
         `}
       />
-
 
       {/* =======================================================
           MOBILE SIDEBAR
@@ -1547,7 +1471,6 @@ export default function Navbar() {
           }
         `}
       >
-
         {/* =====================================================
             MOBILE HEADER
         ====================================================== */}
@@ -1566,7 +1489,6 @@ export default function Navbar() {
             py-6
           "
         >
-
           {/* Top accent */}
 
           <span
@@ -1580,9 +1502,7 @@ export default function Navbar() {
             "
           />
 
-
           <div>
-
             <p
               className="
                 text-[10px]
@@ -1604,9 +1524,7 @@ export default function Navbar() {
             >
               2027
             </p>
-
           </div>
-
 
           <button
             type="button"
@@ -1636,9 +1554,7 @@ export default function Navbar() {
           >
             <X size={20} />
           </button>
-
         </div>
-
 
         {/* =====================================================
             MOBILE NAVIGATION
@@ -1654,7 +1570,6 @@ export default function Navbar() {
             onClick={handleNavigation}
           />
 
-
           {/* About */}
 
           <MobileNavItem
@@ -1662,7 +1577,6 @@ export default function Navbar() {
             active={isActive("/about")}
             onClick={handleNavigation}
           />
-
 
           {/* =================================================
               AUTHORS
@@ -1676,7 +1590,6 @@ export default function Navbar() {
             otherClose={() => setMobileCommitteeOpen(false)}
             active={isAuthorsActive}
           >
-
             {authorItems.map((item) => {
               const Icon = item.icon;
 
@@ -1707,19 +1620,15 @@ export default function Navbar() {
                     }
                   `}
                 >
-
                   <Icon size={17} />
 
                   <span>
                     {item.name}
                   </span>
-
                 </Link>
               );
             })}
-
           </MobileDropdown>
-
 
           {/* Registration */}
 
@@ -1729,6 +1638,13 @@ export default function Navbar() {
             onClick={handleNavigation}
           />
 
+          {/* Women In Engineering */}
+
+          <MobileNavItem
+            item={navItems[3]}
+            active={isActive("/women-in-engineering")}
+            onClick={handleNavigation}
+          />
 
           {/* =================================================
               COMMITTEE
@@ -1742,7 +1658,6 @@ export default function Navbar() {
             otherClose={() => setMobileAuthorsOpen(false)}
             active={isCommitteeActive}
           >
-
             {committeeItems.map((item) => {
               const Icon = item.icon;
 
@@ -1778,7 +1693,6 @@ export default function Navbar() {
                     }
                   `}
                 >
-
                   <Icon
                     size={16}
                     className="shrink-0"
@@ -1787,51 +1701,44 @@ export default function Navbar() {
                   <span>
                     {item.name}
                   </span>
-
                 </Link>
               );
             })}
-
           </MobileDropdown>
-
 
           {/* Speakers */}
 
           <MobileNavItem
-            item={navItems[3]}
+            item={navItems[4]}
             active={isActive("/keynote-speakers")}
             onClick={handleNavigation}
           />
 
-
           {/* Program */}
 
           <MobileNavItem
-            item={navItems[4]}
+            item={navItems[5]}
             active={isActive("/speakers")}
             onClick={handleNavigation}
           />
 
-
           {/* Gallery */}
 
           <MobileNavItem
-            item={navItems[5]}
+            item={navItems[6]}
             active={isActive("/gallery")}
             onClick={handleNavigation}
           />
 
-
           {/* Venue */}
 
           <MobileNavItem
-            item={navItems[6]}
+            item={navItems[7]}
             active={isActive("/venue")}
             onClick={handleNavigation}
           />
 
         </nav>
-
 
         {/* =====================================================
             MOBILE CONTACT
@@ -1844,7 +1751,6 @@ export default function Navbar() {
             p-5
           "
         >
-
           <Link
             to="/contact"
             onClick={handleNavigation}
@@ -1875,14 +1781,11 @@ export default function Navbar() {
           >
             CONTACT US
           </Link>
-
         </div>
-
       </aside>
     </>
   );
 }
-
 
 // =============================================================
 // MOBILE NORMAL NAV ITEM
@@ -1924,7 +1827,6 @@ function MobileNavItem({
         }
       `}
     >
-
       <Icon
         size={21}
         strokeWidth={1.8}
@@ -1940,11 +1842,9 @@ function MobileNavItem({
       <span>
         {item.name}
       </span>
-
     </Link>
   );
 }
-
 
 // =============================================================
 // MOBILE DROPDOWN
@@ -1998,17 +1898,14 @@ function MobileDropdown({
           }
         `}
       >
-
         <Icon
           size={21}
           strokeWidth={1.8}
         />
 
-
         <span className="flex-1">
           {title}
         </span>
-
 
         <ChevronDown
           size={19}
@@ -2023,9 +1920,7 @@ function MobileDropdown({
             }
           `}
         />
-
       </button>
-
 
       {/* Dropdown content */}
 
