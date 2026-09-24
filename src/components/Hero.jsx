@@ -431,7 +431,7 @@ export default function Hero() {
                   text-white/90
                 "
               >
-                Digital Library
+                Digital Library(Approval Awaiting)
               </span>
               )**
             </p>
