@@ -1251,6 +1251,15 @@ export const committeeData = {
           },
         ],
       },
+      {
+        title: "Web-Master",
+        members: [
+          {
+            name: "Mr. Aniket Kundu",
+            designation: "University of Engineering and Management, Kolkata",
+          },
+        ],
+      }
     ],
   },
 
