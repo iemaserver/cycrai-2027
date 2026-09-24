@@ -525,7 +525,7 @@ export default function Hero() {
 
             <div
               className="
-                mt-4
+                mt-2
                 text-center
                 text-white
                 drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]
@@ -533,13 +533,12 @@ export default function Hero() {
             >
               <p
                 className="
-                  text-sm
-                  sm:text-base
-                  md:text-lg
-                  lg:text-xl
-                  font-extrabold
-                  leading-relaxed
-                  tracking-wide
+                  text-xs
+sm:text-sm
+md:text-sm
+font-bold
+leading-snug
+tracking-normal
                 "
               >
                 <span className="text-white font-extrabold">
