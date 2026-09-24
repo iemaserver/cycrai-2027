@@ -403,7 +403,7 @@ export default function Hero() {
 
             <p
               className="
-                mt-3
+                mt-1
                 text-white
                 text-sm
                 sm:text-base
@@ -443,7 +443,7 @@ export default function Hero() {
 
             <div
               className="
-                mt-4
+                mt-1
                 flex
                 flex-col
                 sm:flex-row
@@ -526,7 +526,7 @@ export default function Hero() {
             <div>
               <p
                 className="
-                  mt-3
+                  mt-1
                 text-white
                 text-sm
                 sm:text-base
