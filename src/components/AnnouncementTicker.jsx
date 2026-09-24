@@ -12,6 +12,10 @@ export default function AnnouncementTicker() {
       id: 2,
       text: "Organized by Department of Computer Science and Engineering (Cyber Security), Institute of Engineering & Management Kolkata, University of Engineering and Management Kolkata",
     },
+    {
+      id: 3,
+      text: "*The Microsoft CMT service was used for managing the peer-reviewing\n            process for this conference. This service was provided for free by\n            Microsoft and they bore all expenses, including costs for Azure\n            cloud services as well as for software development and support.\n            ",
+    }
   ];
 
   // Duplicate announcements for seamless infinite scrolling

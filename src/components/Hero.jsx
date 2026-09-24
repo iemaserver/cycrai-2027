@@ -431,7 +431,7 @@ export default function Hero() {
                   text-white/90
                 "
               >
-                Digital Library (Approval awaiting)
+                Digital Library
               </span>
               )**
             </p>
@@ -523,22 +523,17 @@ export default function Hero() {
                 BELOW ACTION BUTTONS
             =================================================== */}
 
-            <div
-              className="
-                mt-2
-                text-center
-                text-white
-                drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]
-              "
-            >
+            <div>
               <p
                 className="
-                  text-xs
-sm:text-sm
-md:text-sm
-font-bold
-leading-snug
-tracking-normal
+                  mt-3
+                text-white
+                text-sm
+                sm:text-base
+                md:text-lg
+                font-bold
+                leading-relaxed
+                drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]
                 "
               >
                 <span className="text-white font-extrabold">
@@ -572,7 +567,7 @@ tracking-normal
             BOTTOM OF SCREEN
         ======================================================= */}
 
-        <div
+        {/* <div
           className="
             absolute
             bottom-3
@@ -604,7 +599,7 @@ tracking-normal
             cloud services as well as for software development and support.
           </p>
 
-        </div>
+        </div> */}
 
       </div>
 
