@@ -46,7 +46,6 @@ export default function LogoStrip() {
       {/* =====================================================
           MAIN LOGO STRIP
       ====================================================== */}
-
       <div
         className="
           relative
@@ -73,12 +72,9 @@ export default function LogoStrip() {
         "
       >
 
-       
-
         {/* ===================================================
             VERY SOFT BLUE BACKGROUND
         ==================================================== */}
-
         <div
           className="
             pointer-events-none
@@ -100,11 +96,9 @@ export default function LogoStrip() {
           "
         />
 
-
         {/* ===================================================
             LOGO ROW
         ==================================================== */}
-
         <div
           className="
             relative
@@ -115,7 +109,6 @@ export default function LogoStrip() {
             w-full
 
             items-center
-            justify-between
 
             px-2
             sm:px-4
@@ -130,61 +123,62 @@ export default function LogoStrip() {
               className="
                 flex
                 h-full
-                min-w-0
                 flex-1
                 items-center
                 justify-center
               "
             >
 
-              {/* =================================================
-                  LOGO CONTAINER
-              ================================================== */}
-
+              {/* ================================
+                  LOGO AREA
+              ================================= */}
               <div
                 className="
                   flex
-                  h-[62px]
-                  w-[78px]
-
+                  h-full
+                  flex-1
                   items-center
                   justify-center
-
-                  px-1
-
-                  sm:h-[70px]
-                  sm:w-[92px]
-
-                  md:h-[80px]
-                  md:w-[105px]
-
-                  lg:h-[88px]
-                  lg:w-[118px]
                 "
               >
-
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
+                <div
                   className="
-                    block
+                    flex
+                    h-[62px]
+                    w-[78px]
 
-                    h-full
-                    w-full
+                    items-center
+                    justify-center
 
-                    object-contain
+                    px-1
 
-                    opacity-95
+                    sm:h-[70px]
+                    sm:w-[92px]
+
+                    md:h-[80px]
+                    md:w-[105px]
+
+                    lg:h-[88px]
+                    lg:w-[118px]
                   "
-                />
-
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="
+                      block
+                      h-full
+                      w-full
+                      object-contain
+                      opacity-95
+                    "
+                  />
+                </div>
               </div>
 
-
-              {/* =================================================
-                  DIVIDER
-              ================================================== */}
-
+              {/* ================================
+                  CENTERED DIVIDER
+              ================================= */}
               {index !== logos.length - 1 && (
                 <div
                   className="
@@ -206,11 +200,9 @@ export default function LogoStrip() {
 
         </div>
 
-
         {/* ===================================================
             BOTTOM BLUE LINE
         ==================================================== */}
-
         <div
           className="
             absolute
@@ -225,7 +217,6 @@ export default function LogoStrip() {
         />
 
       </div>
-
     </div>
   );
 }
