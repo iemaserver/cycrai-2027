@@ -7,7 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import logo from "../assets/image/cycrai_latest_logo.png";
+import logo from "../assets/image/2.png";
 
 export default function Footer() {
   // =========================================================

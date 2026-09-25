@@ -413,8 +413,7 @@ export default function Hero() {
                 drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]
               "
             >
-              **(All accepted and presented papers will be submitted for
-              inclusion in the{" "}
+              **(All accepted and presented papers will be submitted for inclusion in the{" "}
 
               <span
                 className="
@@ -425,13 +424,12 @@ export default function Hero() {
               >
                 IEEE Xplore
               </span>{" "}
-
               <span
                 className="
                   text-white/90
                 "
               >
-                Digital Library(Approval Awaiting)
+              Digital Library subject to meeting IEEE Xplore’s scope and quality requirements-Approval Awaiting
               </span>
               )**
             </p>

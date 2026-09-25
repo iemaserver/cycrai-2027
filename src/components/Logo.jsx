@@ -6,7 +6,7 @@ import ieee_kol from "../assets/image/ieeek_logo_white.png";
 import ieee_sb from "../assets/image/Ieee_cs_kol_white.png";
 import iedc from "../assets/image/IEDC_White_Logo.png";
 import ieee_cs_sb from "../assets/image/pritam2.png";
-import cycrai_logo from "../assets/image/cycrai_latest_logo.png";
+import cycrai_logo from "../assets/image/2.png";
 import comsoc from "../assets/image/Comsoc.png";
 export default function Logo() {
   const logos = [
@@ -21,6 +21,11 @@ export default function Logo() {
       large: false,
     },
     {
+      src: cycrai_logo,
+      alt: "CYCRAI 2027",
+      large: true,
+    },
+    {
       src: comsoc,
       alt: "IEEE Comsoc Society",
       large: true,
@@ -29,21 +34,6 @@ export default function Logo() {
       src: ieee_sb,
       alt: "IEEE Computer Society Kolkata Section",
       large: false,
-    },
-    {
-      src: cycrai_logo,
-      alt: "CYCRAI 2027",
-      large: true,
-    },
-    {
-      src: ieee_cs_sb,
-      alt: "IEEE Computer Society Student Branch",
-      large: false,
-    },
-    {
-      src: iedc,
-      alt: "Innovation and Entrepreneurship Development Cell",
-      large: true,
     },
     {
       src: uem,

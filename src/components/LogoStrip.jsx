@@ -2,9 +2,7 @@ import uem from "../assets/image/UEM_White.png";
 import iem from "../assets/image/IEM_White.png";
 import ieee_kol from "../assets/image/ieeek_logo_white.png";
 import ieee_sb from "../assets/image/Ieee_cs_kol_white.png";
-import iedc from "../assets/image/IEDC_White_Logo.png";
-import ieee_cs_sb from "../assets/image/pritam2.png";
-import cycrai_logo from "../assets/image/cycrai_latest_logo.png";
+import cycrai_logo from "../assets/image/2.png";
 import comsoc from "../assets/image/Comsoc.png";
 
 export default function LogoStrip() {
@@ -18,24 +16,16 @@ export default function LogoStrip() {
       alt: "IEEE Kolkata Section",
     },
     {
+      src: cycrai_logo,
+      alt: "CYCRAI 2027",
+    },
+    {
       src: comsoc,
       alt: "IEEE Comsoc Society",
     },
     {
       src: ieee_sb,
       alt: "IEEE Computer Society Kolkata Section",
-    },
-    {
-      src: cycrai_logo,
-      alt: "CYCRAI 2027",
-    },
-    {
-      src: ieee_cs_sb,
-      alt: "IEEE Computer Society Student Branch",
-    },
-    {
-      src: iedc,
-      alt: "Innovation and Entrepreneurship Development Cell",
     },
     {
       src: uem,
